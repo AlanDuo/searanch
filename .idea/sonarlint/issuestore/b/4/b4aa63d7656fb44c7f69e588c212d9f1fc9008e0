@@ -1,0 +1,14 @@
+
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+dsquid:S1192ó"GDefine a constant instead of duplicating this literal "goods" 10 times.(ÌÂ¢ãûÿÿÿÿ
+asquid:S1192¯"IDefine a constant instead of duplicating this literal "addTime" 10 times.(Ç‘×
+csquid:S00112]"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+`squid:S1192ë"HDefine a constant instead of duplicating this literal "amount" 10 times.(­Õ¦
+wsquid:S1488="`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+csquid:S00112d"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
+`squid:S1192·"HDefine a constant instead of duplicating this literal "userId" 10 times.(İ§‰ 
+_squid:S1192{"HDefine a constant instead of duplicating this literal "cartId" 10 times.(½è„‚
+]squid:S00112k"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+
+asquid:S1192§"IDefine a constant instead of duplicating this literal "invalid" 10 times.(›şéö
+psquid:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù

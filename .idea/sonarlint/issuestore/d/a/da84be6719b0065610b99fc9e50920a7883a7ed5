@@ -1,0 +1,14 @@
+
+_squid:S1192Î"GDefine a constant instead of duplicating this literal "check" 10 times.(÷’™ 
+ksquid:S1192¶"NDefine a constant instead of duplicating this literal "merchantName" 12 times.(–™éùûÿÿÿÿ
+wsquid:S1488<"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+csquid:S00112\"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+csquid:S00112c"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºþÿÿÿÿ
+csquid:S1192z"LDefine a constant instead of duplicating this literal "registraId" 10 times.(Ç—Æ
+asquid:S1192ˆ"IDefine a constant instead of duplicating this literal "license" 12 times.(ˆª‡É
+dsquid:S1192Â"GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêÝþÿÿÿÿ
+]squid:S00112j"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+psquid:S2293K"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+lsquid:S1192ü"ODefine a constant instead of duplicating this literal "merchantPhone" 12 times.(ÖÊ¬‘øÿÿÿÿ

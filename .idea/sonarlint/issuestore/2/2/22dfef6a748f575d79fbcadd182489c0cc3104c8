@@ -1,0 +1,24 @@
+
+csquid:S00112s"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
+psquid:S2293|"YReplace the type specification in this constructor call with the diamond operator ("<>").(·ü–
+wsquid:S1488>"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+^squid:S00112†"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+
+csquid:S00112e"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
+`squid:S1192–"HDefine a constant instead of duplicating this literal "userId" 10 times.(İ§‰ 
+]squid:S00112l"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+
+bsquid:S1192˜"JDefine a constant instead of duplicating this literal "password" 12 times.(­â›Î
+hsquid:S1192î"KDefine a constant instead of duplicating this literal "lastLogin" 10 times.(ÒÜÕûüÿÿÿÿ
+esquid:S1192Ş"MDefine a constant instead of duplicating this literal "phoneNumber" 12 times.(òåò
+csquid:S00112^"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+bsquid:S1192¤"JDefine a constant instead of duplicating this literal "nickname" 12 times.(œÃçù
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+lsquid:S1192e"PDefine a constant instead of duplicating this literal " cannot be null" 4 times.(õÜ—ºşÿÿÿÿ
+psquid:S2293M"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+esquid:S1192ö"HDefine a constant instead of duplicating this literal "growth" 10 times.(ö‘¦ÿúÿÿÿÿ
+fsquid:S1192²"NDefine a constant instead of duplicating this literal "registerTime" 10 times.(üŒĞÕ
+fsquid:S1192°"IDefine a constant instead of duplicating this literal "address" 12 times.(°³«Ïøÿÿÿÿ
+^squid:S00112z"FDefine and throw a dedicated exception instead of using a generic one.(Áš¹
+gsquid:S1192Ò"JDefine a constant instead of duplicating this literal "username" 12 times.(×œÚşÿÿÿÿ
+dsquid:S1192ê"GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêİşÿÿÿÿ

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- 配置数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/searanch"
+                        userId="root"
+                        password="lhd021412">
+            <!--MySQL 不支持 schema 或者 catalog 所以需要添加这个-->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 指定Entity实体类生成的位置 -->
+        <javaModelGenerator targetPackage="com.yunyuan.searanch.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--指定SQL映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- 指定DAO接口生成的位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.yunyuan.searanch.dao"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- 指定Table的生成策略 -->
+        <!--<table tableName="user" domainObjectName="User"></table>-->
+        <!--<table tableName="role" domainObjectName="Role"></table>
+        <table tableName="permission" domainObjectName="Permission"></table>-->
+        <table tableName="merchant_register" domainObjectName="MerchantRegister"></table>
+        <!--<table tableName="feedback" domainObjectName="Feedback"></table>
+        <table tableName="browse" domainObjectName="Browse"></table>-->
+        <!--<table tableName="discount" domainObjectName="Discount"></table>-->
+        <!--<table tableName="goods" domainObjectName="Goods"></table>-->
+        <!--<table tableName="order" domainObjectName="Order"></table>-->
+        <!--<table tableName="shop_cart" domainObjectName="ShopCart"></table>
+        <table tableName="goods_type" domainObjectName="GoodsType"></table>-->
+        <!--<table tableName="evaluate" domainObjectName="Evaluate"></table>-->
+        <!--<table tableName="evaluate_reply" domainObjectName="EvaluateReply"></table>-->
+        <!--<table tableName="collect" domainObjectName="Collect"></table>-->
+        <!--<table tableName="push" domainObjectName="Push"></table>-->
+    </context>
+</generatorConfiguration>

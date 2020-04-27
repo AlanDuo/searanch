@@ -1,0 +1,9 @@
+
+wsquid:S1488<"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+psquid:S2293K"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+]squid:S00112j"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+
+csquid:S00112\"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+csquid:S00112c"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºþÿÿÿÿ
+_squid:S1192z"HDefine a constant instead of duplicating this literal "userId" 10 times.(Ý§‰ 
