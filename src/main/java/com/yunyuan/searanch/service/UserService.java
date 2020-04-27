@@ -72,11 +72,9 @@ public interface UserService {
      * 商家注册
      *
      * @param merchantRegisterDTO
-     * @param imageUrl
-     * @param licenceUrl
      * @return
      */
-    boolean registerMerchant(MerchantRegisterDTO merchantRegisterDTO,String imageUrl,String licenceUrl);
+    boolean registerMerchant(MerchantRegisterDTO merchantRegisterDTO);
 
     /**
      * 用户反馈

@@ -4,7 +4,6 @@ import com.yunyuan.searanch.dto.MerchantRegisterDTO;
 import com.yunyuan.searanch.dto.UserRegisterDTO;
 import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.service.UserService;
-import com.yunyuan.searanch.utils.FileUploadUtil;
 import com.yunyuan.searanch.utils.MessageCodeUtil;
 import com.yunyuan.searanch.utils.ResponseData;
 import io.swagger.annotations.Api;
@@ -20,9 +19,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -55,15 +51,11 @@ public class LoginController {
 
     @ApiOperation(value ="用户注册",notes = "普通用户注册")
     @PostMapping("/userRegister")
-    public ResponseData userRegister(MultipartFile file, String code, UserRegisterDTO userRegisterDTO, HttpServletRequest request){
+    public ResponseData userRegister(String code, UserRegisterDTO userRegisterDTO){
         if(null!=userService.getUserByPhone(userRegisterDTO.getPhoneNumber())){
             return new ResponseData(500,"该用户已经注册");
         }
         if (messageCode.equals(code) && userRegisterDTO.getPhoneNumber().equals(phone)) {
-            if (null != file && FileUploadUtil.uploadFile(file, request)) {
-                String url = FileUploadUtil.getUrl();
-                userRegisterDTO.setImage(url);
-            }
             userService.registerUser(userRegisterDTO);
             return ResponseData.ok();
         }else{
@@ -72,19 +64,12 @@ public class LoginController {
     }
     @ApiOperation(value ="商户注册",notes = "商户注册")
     @PostMapping("/merchantRegister")
-    public ResponseData merchantRegister(MultipartFile image,MultipartFile licence, MerchantRegisterDTO merchantRegisterDTO, HttpServletRequest request){
-        if(null!=userService.getMerchantByPhone(merchantRegisterDTO.getPhoneNumber())){
+    public ResponseData merchantRegister(MerchantRegisterDTO merchantRegisterDTO){
+        if(null!=userService.getMerchantByPhone(merchantRegisterDTO.getMerchantPhone())){
             return new ResponseData(500,"该商户已经注册");
         }
-        String imageUrl=null;
-        String licenceUrl=null;
-        if(null!=image && FileUploadUtil.uploadFile(image,request)){
-            imageUrl= FileUploadUtil.getUrl();
-        }
-        if(null!=licence && FileUploadUtil.uploadFile(licence,request)){
-           licenceUrl= FileUploadUtil.getUrl();
-        }
-        if(userService.registerMerchant(merchantRegisterDTO,imageUrl,licenceUrl)) {
+
+        if(userService.registerMerchant(merchantRegisterDTO)) {
             return ResponseData.ok();
         }else{
             return new ResponseData(500,"注册失败，该商户可能已存在");

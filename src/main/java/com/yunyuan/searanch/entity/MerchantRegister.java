@@ -5,7 +5,7 @@ import java.util.Date;
 public class MerchantRegister {
     private Long registraId;
 
-    private String userName;
+    private String username;
 
     private String merchantName;
 
@@ -21,7 +21,13 @@ public class MerchantRegister {
 
     private String licenseImag;
 
-    private Boolean check;
+    private String country;
+
+    private String city;
+
+    private String address;
+
+    private Boolean examine;
 
     private Date registraTime;
 
@@ -33,12 +39,12 @@ public class MerchantRegister {
         this.registraId = registraId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
     public String getMerchantName() {
@@ -97,12 +103,36 @@ public class MerchantRegister {
         this.licenseImag = licenseImag == null ? null : licenseImag.trim();
     }
 
-    public Boolean getCheck() {
-        return check;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCheck(Boolean check) {
-        this.check = check;
+    public void setCountry(String country) {
+        this.country = country == null ? null : country.trim();
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    public Boolean getExamine() {
+        return examine;
+    }
+
+    public void setExamine(Boolean examine) {
+        this.examine = examine;
     }
 
     public Date getRegistraTime() {

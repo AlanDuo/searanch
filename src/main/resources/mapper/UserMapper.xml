@@ -9,6 +9,8 @@
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="nickname" property="nickname" jdbcType="VARCHAR" />
     <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="growth" property="growth" jdbcType="INTEGER" />
     <result column="register_time" property="registerTime" jdbcType="DATE" />
@@ -73,8 +75,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    user_id, username, password, phone_number, email, nickname, image, address, growth, 
-    register_time, login_time
+    user_id, username, password, phone_number, email, nickname, image, country, city, 
+    address, growth, register_time, login_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.UserExample" >
     select
@@ -109,12 +111,14 @@
   <insert id="insert" parameterType="com.yunyuan.searanch.entity.User" >
     insert into user (user_id, username, password, 
       phone_number, email, nickname, 
-      image, address, growth, 
-      register_time, login_time)
+      image, country, city, 
+      address, growth, register_time, 
+      login_time)
     values (#{userId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phoneNumber,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
-      #{image,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{growth,jdbcType=INTEGER}, 
-      #{registerTime,jdbcType=DATE}, #{loginTime,jdbcType=TIMESTAMP})
+      #{image,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{growth,jdbcType=INTEGER}, #{registerTime,jdbcType=DATE}, 
+      #{loginTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.User" >
     insert into user
@@ -139,6 +143,12 @@
       </if>
       <if test="image != null" >
         image,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="city != null" >
+        city,
       </if>
       <if test="address != null" >
         address,
@@ -174,6 +184,12 @@
       </if>
       <if test="image != null" >
         #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
@@ -219,6 +235,12 @@
       <if test="record.image != null" >
         image = #{record.image,jdbcType=VARCHAR},
       </if>
+      <if test="record.country != null" >
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
       <if test="record.address != null" >
         address = #{record.address,jdbcType=VARCHAR},
       </if>
@@ -245,6 +267,8 @@
       email = #{record.email,jdbcType=VARCHAR},
       nickname = #{record.nickname,jdbcType=VARCHAR},
       image = #{record.image,jdbcType=VARCHAR},
+      country = #{record.country,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       growth = #{record.growth,jdbcType=INTEGER},
       register_time = #{record.registerTime,jdbcType=DATE},
@@ -274,6 +298,12 @@
       <if test="image != null" >
         image = #{image,jdbcType=VARCHAR},
       </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
       </if>
@@ -297,6 +327,8 @@
       email = #{email,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       growth = #{growth,jdbcType=INTEGER},
       register_time = #{registerTime,jdbcType=DATE},

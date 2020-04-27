@@ -3,7 +3,7 @@
 <mapper namespace="com.yunyuan.searanch.dao.MerchantRegisterMapper" >
   <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.MerchantRegister" >
     <id column="registra_id" property="registraId" jdbcType="BIGINT" />
-    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="merchant_name" property="merchantName" jdbcType="VARCHAR" />
     <result column="merchant_phone" property="merchantPhone" jdbcType="VARCHAR" />
     <result column="image" property="image" jdbcType="VARCHAR" />
@@ -11,7 +11,10 @@
     <result column="id_card_imag" property="idCardImag" jdbcType="VARCHAR" />
     <result column="license" property="license" jdbcType="VARCHAR" />
     <result column="license_imag" property="licenseImag" jdbcType="VARCHAR" />
-    <result column="check" property="check" jdbcType="BIT" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="examine" property="examine" jdbcType="BIT" />
     <result column="registra_time" property="registraTime" jdbcType="DATE" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -73,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    registra_id, user_name, merchant_name, merchant_phone, image, id_card, id_card_imag, 
-    license, license_imag, check, registra_time
+    registra_id, username, merchant_name, merchant_phone, image, id_card, id_card_imag, 
+    license, license_imag, country, city, address, examine, registra_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.MerchantRegisterExample" >
     select
@@ -107,14 +110,16 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
-    insert into merchant_register (registra_id, user_name, merchant_name, 
+    insert into merchant_register (registra_id, username, merchant_name, 
       merchant_phone, image, id_card, 
       id_card_imag, license, license_imag, 
-      check, registra_time)
-    values (#{registraId,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{merchantName,jdbcType=VARCHAR}, 
+      country, city, address, 
+      examine, registra_time)
+    values (#{registraId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{merchantName,jdbcType=VARCHAR}, 
       #{merchantPhone,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
       #{idCardImag,jdbcType=VARCHAR}, #{license,jdbcType=VARCHAR}, #{licenseImag,jdbcType=VARCHAR}, 
-      #{check,jdbcType=BIT}, #{registraTime,jdbcType=DATE})
+      #{country,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{examine,jdbcType=BIT}, #{registraTime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
     insert into merchant_register
@@ -122,8 +127,8 @@
       <if test="registraId != null" >
         registra_id,
       </if>
-      <if test="userName != null" >
-        user_name,
+      <if test="username != null" >
+        username,
       </if>
       <if test="merchantName != null" >
         merchant_name,
@@ -146,8 +151,17 @@
       <if test="licenseImag != null" >
         license_imag,
       </if>
-      <if test="check != null" >
-        check,
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="examine != null" >
+        examine,
       </if>
       <if test="registraTime != null" >
         registra_time,
@@ -157,8 +171,8 @@
       <if test="registraId != null" >
         #{registraId,jdbcType=BIGINT},
       </if>
-      <if test="userName != null" >
-        #{userName,jdbcType=VARCHAR},
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
       <if test="merchantName != null" >
         #{merchantName,jdbcType=VARCHAR},
@@ -181,8 +195,17 @@
       <if test="licenseImag != null" >
         #{licenseImag,jdbcType=VARCHAR},
       </if>
-      <if test="check != null" >
-        #{check,jdbcType=BIT},
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="examine != null" >
+        #{examine,jdbcType=BIT},
       </if>
       <if test="registraTime != null" >
         #{registraTime,jdbcType=DATE},
@@ -201,8 +224,8 @@
       <if test="record.registraId != null" >
         registra_id = #{record.registraId,jdbcType=BIGINT},
       </if>
-      <if test="record.userName != null" >
-        user_name = #{record.userName,jdbcType=VARCHAR},
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
       </if>
       <if test="record.merchantName != null" >
         merchant_name = #{record.merchantName,jdbcType=VARCHAR},
@@ -225,8 +248,17 @@
       <if test="record.licenseImag != null" >
         license_imag = #{record.licenseImag,jdbcType=VARCHAR},
       </if>
-      <if test="record.check != null" >
-        check = #{record.check,jdbcType=BIT},
+      <if test="record.country != null" >
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.examine != null" >
+        examine = #{record.examine,jdbcType=BIT},
       </if>
       <if test="record.registraTime != null" >
         registra_time = #{record.registraTime,jdbcType=DATE},
@@ -239,7 +271,7 @@
   <update id="updateByExample" parameterType="map" >
     update merchant_register
     set registra_id = #{record.registraId,jdbcType=BIGINT},
-      user_name = #{record.userName,jdbcType=VARCHAR},
+      username = #{record.username,jdbcType=VARCHAR},
       merchant_name = #{record.merchantName,jdbcType=VARCHAR},
       merchant_phone = #{record.merchantPhone,jdbcType=VARCHAR},
       image = #{record.image,jdbcType=VARCHAR},
@@ -247,7 +279,10 @@
       id_card_imag = #{record.idCardImag,jdbcType=VARCHAR},
       license = #{record.license,jdbcType=VARCHAR},
       license_imag = #{record.licenseImag,jdbcType=VARCHAR},
-      check = #{record.check,jdbcType=BIT},
+      country = #{record.country,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      examine = #{record.examine,jdbcType=BIT},
       registra_time = #{record.registraTime,jdbcType=DATE}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -256,8 +291,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
     update merchant_register
     <set >
-      <if test="userName != null" >
-        user_name = #{userName,jdbcType=VARCHAR},
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="merchantName != null" >
         merchant_name = #{merchantName,jdbcType=VARCHAR},
@@ -280,8 +315,17 @@
       <if test="licenseImag != null" >
         license_imag = #{licenseImag,jdbcType=VARCHAR},
       </if>
-      <if test="check != null" >
-        check = #{check,jdbcType=BIT},
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="examine != null" >
+        examine = #{examine,jdbcType=BIT},
       </if>
       <if test="registraTime != null" >
         registra_time = #{registraTime,jdbcType=DATE},
@@ -291,7 +335,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
     update merchant_register
-    set user_name = #{userName,jdbcType=VARCHAR},
+    set username = #{username,jdbcType=VARCHAR},
       merchant_name = #{merchantName,jdbcType=VARCHAR},
       merchant_phone = #{merchantPhone,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
@@ -299,7 +343,10 @@
       id_card_imag = #{idCardImag,jdbcType=VARCHAR},
       license = #{license,jdbcType=VARCHAR},
       license_imag = #{licenseImag,jdbcType=VARCHAR},
-      check = #{check,jdbcType=BIT},
+      country = #{country,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      examine = #{examine,jdbcType=BIT},
       registra_time = #{registraTime,jdbcType=DATE}
     where registra_id = #{registraId,jdbcType=BIGINT}
   </update>

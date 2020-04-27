@@ -18,14 +18,26 @@ public class MerchantRegisterDTO implements Serializable {
 
     private String password;
 
-    private String phoneNumber;
-
     private String email;
 
-    private String nickname;
+    private String merchantName;
+
+    private String merchantPhone;
+
+    private String image;
+
+    private String idCard;
+
+    private String idCardImag;
+
+    private String license;
+
+    private String licenseImag;
+
+    private String country;
+
+    private String city;
 
     private String address;
-
-    private Integer growth;
 
 }

@@ -102,13 +102,13 @@ public class AdminServiceImpl implements AdminService {
             registerCriteria.andRegistraIdEqualTo(merchantId);
         }
         if(null!=userName && !"".equals(userName.trim())){
-            registerCriteria.andUserNameLike("%"+userName+"%");
+            registerCriteria.andUsernameLike("%"+userName+"%");
         }
         if(null!=merchantName && !"".equals(merchantName.trim())){
             registerCriteria.andMerchantNameLike("%"+merchantName+"%");
         }
         if(null!=check){
-            registerCriteria.andCheckEqualTo(check);
+            registerCriteria.andExamineEqualTo(check);
         }
         List<MerchantRegister> merchantRegisters=merchantRegisterMapper.selectByExample(merchantRegisterExample);
         map.put("pageInfo",merchantRegisters);
@@ -135,7 +135,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional(rollbackFor = Exception.class)
     public boolean adminCheckMerchant(Long registerId, boolean check) {
         MerchantRegister merchantRegister=merchantRegisterMapper.selectByPrimaryKey(registerId);
-        merchantRegister.setCheck(check);
+        merchantRegister.setExamine(check);
         return merchantRegisterMapper.updateByPrimaryKey(merchantRegister)>0;
     }
 }

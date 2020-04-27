@@ -11,6 +11,7 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author alan
@@ -25,6 +27,8 @@ import java.util.Date;
  */
 @Service
 public class UserServiceImpl implements UserService {
+    @Resource
+    private RedisTemplate redisTemplate;
     @Resource
     private UserMapper userMapper;
     @Resource
@@ -93,6 +97,7 @@ public class UserServiceImpl implements UserService {
             user.setImage(FileUploadUtil.getUrl());
         }
         if(userMapper.updateByPrimaryKeySelective(user)>0){
+            redisTemplate.delete("loginUser"+user.getPhoneNumber());
             return user;
         }
         else{
@@ -126,25 +131,29 @@ public class UserServiceImpl implements UserService {
         MerchantRegisterExample merchantRegisterExample=new MerchantRegisterExample();
         MerchantRegisterExample.Criteria criteria=merchantRegisterExample.createCriteria();
         criteria.andMerchantPhoneEqualTo(phone);
-        return merchantRegisterMapper.selectByExample(merchantRegisterExample).get(0);
+        List<MerchantRegister> merchantRegisters=merchantRegisterMapper.selectByExample(merchantRegisterExample);
+        if(merchantRegisters.size()!=0){
+            return merchantRegisters.get(0);
+        }
+        return null;
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean registerMerchant(MerchantRegisterDTO merchantRegisterDTO,String imageUrl,String licence) {
-        User user=getUserByPhone(merchantRegisterDTO.getPhoneNumber());
-        if(null!=user){
-            BeanUtils.copyProperties(merchantRegisterDTO,user);
-            if(null!=imageUrl) {
-                user.setImage(imageUrl);
-            }
-            user.setPassword(new Md5Hash(merchantRegisterDTO.getPassword()
-                    ,merchantRegisterDTO.getPhoneNumber(),3).toString());
-            user.setRegisterTime(new Date());
-            user.setLoginTime(new Date());
-            user.setGrowth(0);
-            userMapper.insertSelective(user);
-            Long userId=getUserByPhone(user.getPhoneNumber()).getUserId();
+    public boolean registerMerchant(MerchantRegisterDTO merchantRegisterDTO) {
+        User user=getUserByPhone(merchantRegisterDTO.getMerchantPhone());
+        if(null==user){
+            User user1=new User();
+            BeanUtils.copyProperties(merchantRegisterDTO,user1);
+            user1.setPassword(new Md5Hash(merchantRegisterDTO.getPassword()
+                    ,merchantRegisterDTO.getMerchantPhone(),3).toString());
+            user1.setPhoneNumber(merchantRegisterDTO.getMerchantPhone());
+            user1.setNickname(merchantRegisterDTO.getMerchantPhone());
+            user1.setRegisterTime(new Date());
+            user1.setLoginTime(new Date());
+            user1.setGrowth(0);
+            userMapper.insertSelective(user1);
+            Long userId=getUserByPhone(user1.getPhoneNumber()).getUserId();
             Role role=new Role();
             role.setUserId(userId);
             role.setRole("merchant");
@@ -154,8 +163,13 @@ public class UserServiceImpl implements UserService {
             permission.setPermission("user:update,user:select,goods:apply");
             permissionMapper.insert(permission);
         }else{
-
-            Long userId=getUserByPhone(merchantRegisterDTO.getPhoneNumber()).getUserId();
+            user.setEmail(merchantRegisterDTO.getEmail());
+            user.setPassword(new Md5Hash(merchantRegisterDTO.getPassword()
+                    ,merchantRegisterDTO.getMerchantPhone(),3).toString());
+            user.setImage(merchantRegisterDTO.getImage());
+            userMapper.updateByPrimaryKey(user);
+            redisTemplate.delete("loginUser"+user.getPhoneNumber());
+            Long userId=getUserByPhone(merchantRegisterDTO.getMerchantPhone()).getUserId();
             Role role=roleMapper.selectByPrimaryKey(userId);
             role.setRole("merchant");
             roleMapper.updateByPrimaryKey(role);
@@ -164,17 +178,9 @@ public class UserServiceImpl implements UserService {
             permissionMapper.updateByPrimaryKey(permission);
         }
         MerchantRegister merchantRegister=new MerchantRegister();
-        merchantRegister.setMerchantPhone(merchantRegisterDTO.getPhoneNumber());
-        merchantRegister.setMerchantName(merchantRegisterDTO.getUsername());
+        BeanUtils.copyProperties(merchantRegisterDTO,merchantRegister);
         merchantRegister.setRegistraTime(new Date());
-        if(null!=imageUrl){
-            merchantRegister.setImage(imageUrl);
-        }
-        if(null!=licence) {
-            merchantRegister.setLicense(licence);
-        }
-        merchantRegister.setCheck(false);
-        merchantRegister.setImage(imageUrl);
+        merchantRegister.setExamine(false);
         return merchantRegisterMapper.insertSelective(merchantRegister)>0;
     }
 

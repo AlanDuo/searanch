@@ -18,6 +18,10 @@ public class User implements Serializable {
 
     private String image;
 
+    private String country;
+
+    private String city;
+
     private String address;
 
     private Integer growth;
@@ -80,6 +84,22 @@ public class User implements Serializable {
 
     public void setImage(String image) {
         this.image = image == null ? null : image.trim();
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country == null ? null : country.trim();
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
     }
 
     public String getAddress() {
