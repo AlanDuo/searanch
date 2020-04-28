@@ -1,16 +1,26 @@
 
-`squid:S1192¹"HDefine a constant instead of duplicating this literal "amount" 10 times.(­Õ¦
-gsquid:S1192±"JDefine a constant instead of duplicating this literal "discount" 10 times.(áÓúÿÿÿÿ
-isquid:S1192í"LDefine a constant instead of duplicating this literal "discountId" 10 times.(ßÇˆ–ÿÿÿÿÿ
-fsquid:S1192©"IDefine a constant instead of duplicating this literal "address" 12 times.(°³«Ïøÿÿÿÿ
-dsquid:S1192õ"GDefine a constant instead of duplicating this literal "price" 10 times.(º ‘Öøÿÿÿÿ
-esquid:S1192·"MDefine a constant instead of duplicating this literal "orderNumber" 12 times.(ßéÙÙ
-asquid:S1192ı"IDefine a constant instead of duplicating this literal "goodsId" 10 times.(ìæ¾
-`squid:S1192{"IDefine a constant instead of duplicating this literal "orderId" 10 times.(ÄæíÃ
-wsquid:S1488="`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
-csquid:S00112]"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
-csquid:S00112d"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
-]squid:S00112k"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+`squid:S1192º"HDefine a constant instead of duplicating this literal "amount" 10 times.(­Õ¦
+fsquid:S1192ª"IDefine a constant instead of duplicating this literal "address" 12 times.(°³«Ïøÿÿÿÿ
+isquid:S1192î"LDefine a constant instead of duplicating this literal "discountId" 10 times.(ßÇˆ–ÿÿÿÿÿ
+psquid:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+csquid:S00112Z"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+gsquid:S1192²"JDefine a constant instead of duplicating this literal "discount" 10 times.(áÓúÿÿÿÿ
+]squid:S00112h"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
 
-osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
-psquid:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+asquid:S1192ü"IDefine a constant instead of duplicating this literal "goodsId" 10 times.(ìæ¾
+csquid:S00112a"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
+wsquid:S1488:"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+`squid:S1192x"IDefine a constant instead of duplicating this literal "orderId" 10 times.(ÄæíÃ
+dsquid:S1192ö"GDefine a constant instead of duplicating this literal "price" 10 times.(º ‘Öøÿÿÿÿ
+esquid:S1192´"MDefine a constant instead of duplicating this literal "orderNumber" 12 times.(ßéÙÙ
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+osquid:S1192¸"KDefine a constant instead of duplicating this literal "goodsName" 12 times.(è‚‡Ÿûÿÿÿÿ8Ä¡’Ô›.
+nsquid:S1192¤"JDefine a constant instead of duplicating this literal "finished" 10 times.(‚ ¯–ıÿÿÿÿ8Ä¡’Ô›.
+isquid:S1192¶"JDefine a constant instead of duplicating this literal "userName" 12 times.( Ö¨•8Ä¡’Ô›.
+gsquid:S1192ú"HDefine a constant instead of duplicating this literal "userId" 10 times.(İ§‰ 8Ä¡’Ô›.
+osquid:S1192ğ"KDefine a constant instead of duplicating this literal "orderTime" 10 times.(óÌ‘ªøÿÿÿÿ8Ä¡’Ô›.
+nsquid:S1192Ø	"JDefine a constant instead of duplicating this literal "merchant" 12 times.(²æÏúúÿÿÿÿ8Ä¡’Ô›.
+lsquid:S1192ş"HDefine a constant instead of duplicating this literal "typeId" 10 times.(Êæ¦´øÿÿÿÿ8Ä¡’Ô›.
+hsquid:S1192è"IDefine a constant instead of duplicating this literal "payTime" 10 times.(Ú¬ï8Ä¡’Ô›.
+psquid:S1192à"LDefine a constant instead of duplicating this literal "finishTime" 10 times.(…îÂõıÿÿÿÿ8Ä¡’Ô›.
+psquid:S1192œ	"LDefine a constant instead of duplicating this literal "merchantId" 10 times.(ÈÿÛÃşÿÿÿÿ8Ä¡’Ô›.

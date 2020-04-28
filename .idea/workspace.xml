@@ -5,195 +5,207 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="219e5738-92fd-4d55-bcd6-5694ba50a4dc" name="Default Changelist" comment="version 1.0">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/UploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/SearanchApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/mvc/CustomCorsConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/mvc/WebConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/redis/CustomRedisConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/shiro/CorsAuthenticationFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/shiro/CustomRealm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/shiro/CustomSessionManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/shiro/ShiroConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/config/swagger/SwaggerConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ChatManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/GoodsManagerController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/LoginController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/OrderController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PushController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ShopCartController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/SuperManagerController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/BrowseMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/CollectMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/DiscountMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/EvaluateMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/EvaluateReplyMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/FeedbackMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/GoodsMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/GoodsTypeMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/MerchantRegisterMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/OrderMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/PermissionMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/PushMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/RoleMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/ShopCartMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dao/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/GoodsAddDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/MerchantRegisterDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/OrderDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/ShopCartDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/UserRegisterDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/UserUpdateDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Browse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/BrowseExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/BrowseExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/BrowseExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/BrowseExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Collect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/CollectExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/CollectExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/CollectExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/CollectExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Discount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/DiscountExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/DiscountExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/DiscountExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/DiscountExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Evaluate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateReply.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateReplyExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateReplyExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateReplyExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/EvaluateReplyExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Feedback.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/FeedbackExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/FeedbackExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/FeedbackExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/FeedbackExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Goods.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsTypeExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsTypeExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsTypeExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/GoodsTypeExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/MerchantRegister.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/MerchantRegisterExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/MerchantRegisterExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/MerchantRegisterExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/MerchantRegisterExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Order.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/OrderExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/OrderExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/OrderExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/OrderExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Permission.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PermissionExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PermissionExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PermissionExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PermissionExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Push.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PushExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PushExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PushExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/PushExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/RoleExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/RoleExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/RoleExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/RoleExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/ShopCart.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/ShopCartExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/ShopCartExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/ShopCartExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/ShopCartExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/UserExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/UserExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/UserExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/entity/UserExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/AdminService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/GoodsManagerService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/OrderService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/PageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/PushService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/ShiroService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/ShopCartService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/SuperManagerService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PageServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PushServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/ShiroServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/ShopCartServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/SuperManagerServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/utils/FileUploadUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/utils/HttpUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/utils/HttpUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/utils/MessageCodeUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/utils/ResponseData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminMerchantListVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminOrderListVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/DiscountVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/EvaluateReplyVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/EvaluateVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/GoodsInfoVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/OrderListVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/OrderVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/PageGoodsVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/ShopCartVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/TableVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/generator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BrowseMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/CollectMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/DiscountMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/EvaluateMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/EvaluateReplyMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/FeedbackMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/GoodsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/GoodsTypeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/MerchantRegisterMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PushMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ShopCartMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/yunyuan/searanch/SearanchApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/02375f20ed5087cce31ab2496fb198bb2b8167d1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/038ab1f87a40331ef8e1a819e9556a3431fd4e32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/044079f109670d3a1f35671dbec1f4eb1aa35257" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/0630ad025feb1033b05129cc7907fd66f81173cd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/063a782fb99267553a9a09f8377de690b0f8e18a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/0660e0c46e3baf97099389da5b92eb312c7c51c6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/06e4ac9e590e93114618d6efba11f942b7043925" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/07b45662e7215cfb2a2461b0df8433077ccd7d7d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/093eb2b2a937d8481d418db55efa4e87d44ed5fc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0d23a63f54383da7354484534bfcdfd0d82e96e3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f73261a48e4ec98e927ba05e8a8213b2c7ba6f9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/1124fb8628714e95e3add5530336a8b7df40d8d7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/115f11d0e8bee40b2f5e2b26b9b5ca1f1f868c39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/12a11e88e6f651476f315f0267c8a68c063b693f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/13f7c931ba34bbca87db6cdc26530aba15a790de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/14896c9d8ddbbe8c8b7ab98f7d28b590d5c63b83" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/155520b13954d8146c1b6695fa3e10cc7513ad13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/17ce5bdb1b86504d2a1b0c706b722f55facc647e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/17f7babae87b48dc52759fa71bcf399b359cc78c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18c55eebd1c839b6ab8721b7ec6ef28bcaa0b44e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18f0eda0db0a483e46aea0432680fc3c9e6b58b9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a57d1d84fbfbbd6d0dcb4e4612ea8a875b295db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1afd7a1b40ebf79c8352e4fa6a9a862ac6642fb0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c404fdc0b2a26a0075cee8b80eed0a0b9c7ba56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1daa2a9cb5a9a1949b6fac89aef50d7d923783fe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e9075f5bf079c01ef2c910709e91a497d262080" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1f32c4e97004076ac7e5b7cebc508db91bbb9228" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/226dd9fde44c79b0f62c2514c9084fa48dc0e022" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/22bea1bbc122072772f7e0d697aa79a36b07ba74" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/245aa3798b1f1353b302826ecfdd49939f2fd8d1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2b5f94b4c9e7960331c461b2dc2613350a97fd85" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d879485abb08850ad0b49a803f9632d4bd7138b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2dfa7669c20c41273cb505d16f04d17467fb3330" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/329e535284f8cb2427019dec16adeb71d042294d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/33f0443b09cebbcdbad58b7685424d0369bd0705" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36474f8e6ff2b770a1ede9381efa524b1ffb3a4b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/3842d1f9c56ba6b857b560fe7ad3a37e41a1b49d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/38f76205b5a972945d78a441330f950ef7517b1f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a4145f5310fef055a8b83c6962a3033b6aa0745" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a77908e815ec75d6967a4cbba5210398083f667" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3a8ed863530c9b4b4695b45249a150df044a139f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3b82105402bb96837de593df4cb5b1e792c5006b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/e/3eb1d80a90376a26f22a28121caff0a3bf463e0b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41ca2a8da8430f08a44ce0a74e789e5838d0c9de" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/451025e0788476da5afec59c58760c85e56e3b69" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45a29d9e09f0762c34d6406bb834e3cc974645d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45ffd0f4098bc87650c375087d3a202e11ab7a34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/4777b4cd6401c6fbf53c8d8e9838ad5ff2b92216" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/482fe248ab09a0c5ea5fe0919a983dada38954e7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/48de9dffc5f343708705b0ec8f13048f23ac37a0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/496a238a6afa168dbaf6efd37bb459331589579c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/4992c7f3edfa6777f2bd1bdbc6f7436e4eea7bf9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4c103f0fb2e8c3a0855c46867623911fa2c535e5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4cc9c29c6d154f47edb146b1714205a98a0d4a17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/505f41f1d9c41b6d57cb003340308a73e1b52a7f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/50bdd1a61174511f059315e6baeaa8f794b9a43e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/50c69ced91fbfe9587e3df12b69acddd482ae047" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/5231af30efc5f3395c58798eb6f6cb3e242c7bb2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52cf93d3ad71f0256c59d3a025e80ba0a05a8002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/54d49c19c9a2fc574a0026c1f132c9dca3379b7e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/552fff5d795b5d1b79c97ffb65eb3ec7232e5391" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/563136e22fac468ccad093a76c85c49e0b29b8b0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/57c30eca21f189cec9cdce9baf03dde822e25fd4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/57e317f047cce141e4c49cd497ab1d8dcfe0281f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/8/58002710dd08c3e8d80141aeab326caf3139c246" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/59a27be5af5a7bf8c471d53763c808468a3180fd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5a2b486bd55ff5055e6173124cf29cd50c4c0114" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5c67e1e636c96aaab12f4733bb7040b46452cbf8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5cf4de23ab88050f8c013b30e4d65407a8cf2512" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e29e4c5b2b3a3c6f3aa57e97dd15ee8c312b6d5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e7d005d1bb81fff8fe7c895c41aa932c248953f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/610bf7bd67c93ad985dfd49172986b6815b78477" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61c5f47fa853f5cb6a857c137e511792ebaa817c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/2/6254461a3d8a7341c7436409b649e5b267f0ed34" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63ef5783cbf71fdf39c1fd6ae6873fd812259930" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63ffc2848768f4ed723c7f8debcdc09defff5927" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/661ab1e9a3b8c9292621ee6c2f6fccd93c781258" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/682f61e4f3359d1fef9c56bc33f1e7da1b59c3a4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b72245e22193ca46c439004b5d7322b4b0c9e2f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c8970b41c72d6f4433562f2d651dceaaa2af5b2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6e9ecd9c8c0504e33a244e3f927b076b445ecaf1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f2bcea28e31728cb204a5a8d94312872b1bbd2b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6fc1b90e21ad40ff111785ca0bc450998131ad4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/708f6d33cde4078c0aa8e852af6c55fd652cb7eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74d1246287010b04df437cdeb7e5e892077d9352" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/5/75a5efe07bfd556010ee7fac1ea79d75c68724a1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/76462f763968a0d2cbc5ad278f85cc35b4a3524c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/783df73dfd4aab6e1bbc4ad18ebadeae6ffca3f4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/796e618c37c2cb980dd1b45478a5fc10a47bab35" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a44f0b704744a79299c532ddb62af9e796eac3c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7c81ba4baa50d32307fa090c2970f7e03ecba056" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7d0c37c46a72af3e4fb3ed890c82b7a02c5dc700" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e1ec5a270c294abebf2e8304bfad1d28c1491f6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7fe66522992d858c2550c52220cf5e05b973ab4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7fefaf5617da62f1e82d6c6b295d95a2af0b3896" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/8008c950b24ba1f06d7afaef97fbc1327a3e4984" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/82cbb6b3fb7d4a4d91c86eeeab052633a510b5c2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83cc4e31b84a2a5090f51e50d6a344742e32233c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/858474d8d215ec25f84b3be6f80418553ae8d1df" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/864ec60d46fe4eb2b27500a29422b46fbd548631" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/86d2d130495f42fde18b503433a80dcb57fe5a32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/876b75ba750375c311b95af30872d8a1794a6d4e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c0faeacaa20a7d1c8b36fc1be9a1a4b86c6bef7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c49d27afb3b740591a08cc031453232ca047a5d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8cffc42467c0e95f27581fb31ef96189c6bc5e8d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e9363a4169237d271cbf7efb91557b45d341c4f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8f9770eb0d4517ed44c342c969ba5eb049674feb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/91cfe15bf6dc58afe16c318b1528bc8d3af89888" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93cb7867b597e672ee9d74f052fc35c41a72a606" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/9441e6b1356fbd398758253cd275774b28325a15" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/946a6760d1c81dc2dee2feb019bf4882e9c3ae06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/95f26a8b5410c7184a925d463683fea22e4cc429" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/962ba66301d4387686a24686e00d76e409796162" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/968174fb201e2ef8d5925fef2e8465aa6e5ff5c6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/9852914940330060766fca305c4dc24fa2beddf5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99122f1a09d01382be32de9f5a4fda5f58dcdf44" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9a1f3207f970c71845551528467e0a9cd1192101" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9a877f87484da48cd0be9e1587e747e58be94677" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9ba046056c41c5df531c83d9d8b9e3d9ae5226f7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f594e90f4f66752dc32a1fb95f99e1142cb6f27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a20907b3639716acb0cbd3853a978873bb6078eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a4b5708660ae43417cd5948c618d9603a01871aa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aaf61c2580909104dcfbec7dfadfa5ea352eae17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af35c4aff8af4261d9ce9f2a450f0a581808db09" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5e2d5121ec270b1ba270b21f70623166b5f1973" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b69b05e528aee01f7b2080ee7254dbfa4653856f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b880bf0f7479cae614bac96eae6cf00c5321cb62" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8de7fe31c3b4109adf737ae28f804dd572ed218" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bce32e576717d360c7ab0fd119f2b9c4a6ea840b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/d/bdf08cb299d086d2af777631bf1435f68d45b7af" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf0f6aaed9c0e83a68192499789e70ef15ea04d7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c49ccf53a7a1c35a1f2d7f41d91cab4cd95a0ece" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c618d4c3e43187812e12b250617939dcc2b50fdd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c645dfaa5b3831abb7c4c6095842daedc309a36d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c917175f83a81c95d6f8196e8bdcbc7f3994db96" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c9a9f61d2fc13d069617ae4aa1482658f64976e2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd455843acf973b4ad04f3591ae7adf3d1f699b4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d15a2687ea717a9b15b1dda989121c2964760762" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d15a3463c7d8488171b141d59b1a3ea0514bd5cd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d35285882ab0755ba3217b6661590499e3eb1a5a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d547cb1fb5bdfb2adb7662382f960595e698dbd1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6fab3ec08d3e5dc11c78948d94a3e4948decfa4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d748d8766080efc90fdc1cab153cb0f95a859ff1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d7e192fded84830a10a0b5c0f000e03ec33b9dce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8b1247ff97278ff46848c76a8fcd3257048c766" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/daccd9990f5af95f33e55d43e305773f8dd72857" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db0889bc86278b17b31f650bafd0783287ff524d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dda21f1ffcdf97681f35b857a43be70b5b99d30e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/f/df4af0c84b0abadd7244c17dcaab48acaaabc1e2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/f/dff9de1e1bed9533289848ac9bbd935c49464085" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e03bce039fa9d9ba114f054de978bf0b0266cc8a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/1/e11341d3ba4ad50769e9b2a775f4ef6e765e0f51" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e4d5b70b5319e206f2d5274f2049e8454e9706bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6c82a6c31da2390c03c78aa611c18aad9716985" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6fd2d2c5972d29f404246c27de8383117923ab8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e7b48e95b1fb8a8f13e935f11e94a454b8b2f927" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8076da2b8727671c0ba05c5cf03e9635cf5d664" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/ea27eb1eadbff7519343f3a4c6bf01f78b7e334e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/edfe0a1f8a0ca4959a7d696440a4ce22579a4d1b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee6a923fe414c7376390cb664dac91a3f90c0838" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef28e586f138c7e1d2c73da8b5577585a3f427d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0cb507f37a7c5213e1ef056ae3f3dc750c3ffea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f327cc313f29b08696a82daf03c70ab88335f92b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f5552204b7d8ad4026dd007b5e9f2d1ad68c0203" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6a05f5c173e976ccaf2a2bbe9147f38998144ee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7aa6aadcf22c24ef5bc9109592f5dd41e593102" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/8/f82ff6a7cb894310d8fe83a2e18c69c63b21b01e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa4c2fc74c5d44163ecbad76009e6336e9f9329b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fc6a604cbad9c49b4ba1614c51dce3cc474e53be" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe857d1d58485aac3ffbd4d9ae0081a6106345a0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe96ce1371f7c54dc15b9016b6d8cf3aa256c79c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/febd817ac0f7b4c5d2fd79665bfead0a149486a5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff64bab503625531b6c2edb7b08b11e51cabd0df" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ffdfa4fb6743d86b16ed65a9ad10dc877371a0b7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/config/websocket/SpringConfigurator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/config/websocket/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b5db6a3ce5d3adbd6ba8c065bc198f5fb1eaf24" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b5db6a3ce5d3adbd6ba8c065bc198f5fb1eaf24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d091c1c20aeac37ca245d7988284ca2c52af27d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d091c1c20aeac37ca245d7988284ca2c52af27d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/22dfef6a748f575d79fbcadd182489c0cc3104c8" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/22dfef6a748f575d79fbcadd182489c0cc3104c8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36633cc27383f157863bdc4b6591c0f6713d1b89" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36633cc27383f157863bdc4b6591c0f6713d1b89" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61ba2d75f3f04e099148e7a84c6a909f2000ff04" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61ba2d75f3f04e099148e7a84c6a909f2000ff04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/709d54ecccabbf4fb57395ae63a2aa70c093ae9a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/709d54ecccabbf4fb57395ae63a2aa70c093ae9a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74adc15cfb777acd3745665d5a1c126181afe114" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74adc15cfb777acd3745665d5a1c126181afe114" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74ea94f02fa816828a7b042d83d473ecde6bda3b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74ea94f02fa816828a7b042d83d473ecde6bda3b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e552ae2bf48744b4fe5898130a5dad21e1987a4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e552ae2bf48744b4fe5898130a5dad21e1987a4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a12a3c7d6c921f2396b31d7722f4c8259b694ecc" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/0106b68d6e952e33f7a6a07b925183930fdac77f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2ed2240a6c3918595ebbbcfd1ba87ba8db1a201" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2ed2240a6c3918595ebbbcfd1ba87ba8db1a201" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a53bf4ca7c003524a77a9661a52f3250bdf0aa6e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/5/a53bf4ca7c003524a77a9661a52f3250bdf0aa6e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4aa63d7656fb44c7f69e588c212d9f1fc9008e0" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4aa63d7656fb44c7f69e588c212d9f1fc9008e0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b568e7725a9184620eb3105dd599eed35b752d33" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b568e7725a9184620eb3105dd599eed35b752d33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da84be6719b0065610b99fc9e50920a7883a7ed5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da84be6719b0065610b99fc9e50920a7883a7ed5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/MerchantRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/MerchantRegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/UserRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/UserRegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/MerchantRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/MerchantRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/MerchantRegisterExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/MerchantRegisterExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/UserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/entity/UserExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MerchantRegisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MerchantRegisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/SearanchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/SearanchApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/config/shiro/ShiroConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/config/shiro/ShiroConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ShopCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ShopCartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +301,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/xzlmk-spring_boot_vue_chat-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -505,7 +517,8 @@
       <workItem from="1587818985517" duration="4880000" />
       <workItem from="1587860662545" duration="4878000" />
       <workItem from="1587888573679" duration="1436000" />
-      <workItem from="1587969420304" duration="11802000" />
+      <workItem from="1587969420304" duration="20861000" />
+      <workItem from="1588054798883" duration="11806000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.0">
       <created>1587972206309</created>
@@ -514,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587972206309</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="version 2.0：更改注册方式">
+      <created>1587981566407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587981566407</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +570,9 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -564,61 +586,62 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="version 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.0" />
+    <MESSAGE value="version 2.0：更改注册方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 2.0：更改注册方式" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584537764975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584537764975" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1587823069637">
+    <state x="866" y="166" width="388" height="553" key="#com.intellij.ide.util.MemberChooser" timestamp="1588060596838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587823069637" />
+    <state x="866" y="166" width="388" height="553" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588060596838" />
     <state x="520" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586682005922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1586682005922" />
-    <state x="249" y="7" key="CommitChangelistDialog2" timestamp="1587981371333">
+    <state x="181" y="4" key="CommitChangelistDialog2" timestamp="1587981691134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587981371333" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1587971806214">
+    <state x="181" y="4" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587981691134" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588067335916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587971806214" />
-    <state width="1493" height="184" key="GridCell.Tab.0.bottom" timestamp="1587981118524">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588067335916" />
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
-    <state width="1493" height="184" key="GridCell.Tab.0.center" timestamp="1587981118524">
+    <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
+    <state width="1493" height="167" key="GridCell.Tab.0.center" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
-    <state width="1493" height="184" key="GridCell.Tab.0.left" timestamp="1587981118524">
+    <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
+    <state width="1493" height="167" key="GridCell.Tab.0.left" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
-    <state width="1493" height="184" key="GridCell.Tab.0.right" timestamp="1587981118524">
+    <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
+    <state width="1493" height="167" key="GridCell.Tab.0.right" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
-    <state width="1493" height="184" key="GridCell.Tab.1.bottom" timestamp="1587981118524">
+    <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
+    <state width="1493" height="167" key="GridCell.Tab.1.bottom" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
-    <state width="1493" height="184" key="GridCell.Tab.1.center" timestamp="1587981118524">
+    <state width="1493" height="167" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
+    <state width="1493" height="167" key="GridCell.Tab.1.center" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
-    <state width="1493" height="184" key="GridCell.Tab.1.left" timestamp="1587981118524">
+    <state width="1493" height="167" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
+    <state width="1493" height="167" key="GridCell.Tab.1.left" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
-    <state width="1493" height="184" key="GridCell.Tab.1.right" timestamp="1587981118524">
+    <state width="1493" height="167" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
+    <state width="1493" height="167" key="GridCell.Tab.1.right" timestamp="1588069161911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="184" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587981118524" />
+    <state width="1493" height="167" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588069161911" />
     <state width="1493" height="86" key="GridCell.Tab.2.bottom" timestamp="1586692363058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -635,14 +658,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="86" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1586692363058" />
+    <state x="508" y="123" key="RollbackChangesDialog" timestamp="1587983753034">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="508" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587983753034" />
     <state x="270" y="0" key="SettingsEditor" timestamp="1587971607918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587971607918" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1587972888725">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1587981877973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587972888725" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587981877973" />
     <state x="695" y="225" width="439" height="330" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1585036887711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -659,10 +686,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587972537318" />
-    <state x="178" y="114" key="new project wizard" timestamp="1584456764783">
+    <state x="478" y="204" key="git4idea.merge.GitPullDialog" timestamp="1587981725114">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="114" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584456764783" />
+    <state x="478" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1587981725114" />
+    <state x="578" y="307" key="git4idea.ui.GitResetDialog" timestamp="1587984317505">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="307" key="git4idea.ui.GitResetDialog/0.0.1536.824@0.0.1536.824" timestamp="1587984317505" />
+    <state x="178" y="114" key="new project wizard" timestamp="1588067353836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="114" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1588067353836" />
     <state x="287" y="94" width="715" height="602" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1587969573012">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

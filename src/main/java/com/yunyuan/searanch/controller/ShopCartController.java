@@ -64,7 +64,7 @@ public class ShopCartController {
     }
     @ApiOperation(value="删除购物车")
     @DeleteMapping("/deleteShopCart")
-    public ResponseData deleteShopCart(List<Long> cartIdList){
+    public ResponseData deleteShopCart(@RequestBody List<Long> cartIdList){
         for(Long cartId:cartIdList) {
             shopCartService.deleteShopCart(cartId);
         }

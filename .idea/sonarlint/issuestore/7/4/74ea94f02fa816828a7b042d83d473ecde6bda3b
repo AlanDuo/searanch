@@ -1,13 +1,13 @@
 
-isquid:S1192ó"QDefine a constant instead of duplicating this literal "feedbackContent" 12 times.(ù³¨ð
-dsquid:S1192¹"GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêÝþÿÿÿÿ
-fsquid:S1192·"NDefine a constant instead of duplicating this literal "feedbackUser" 10 times.(ß¡ûí
-fsquid:S1192ÿ"NDefine a constant instead of duplicating this literal "feedbackTime" 10 times.(«ÉÃƒ
-wsquid:S1488="`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
-]squid:S00112k"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+wsquid:S14889"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+isquid:S1192ï"QDefine a constant instead of duplicating this literal "feedbackContent" 12 times.(ù³¨ð
+csquid:S00112`"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºþÿÿÿÿ
+csquid:S00112Y"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+psquid:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+dsquid:S1192µ"GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêÝþÿÿÿÿ
+]squid:S00112g"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
 
-osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
-csquid:S00112]"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
-psquid:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
-hsquid:S1192{"LDefine a constant instead of duplicating this literal "feedbackId" 10 times.(¨æè±üÿÿÿÿ
-csquid:S00112d"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºþÿÿÿÿ
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+fsquid:S1192³"NDefine a constant instead of duplicating this literal "feedbackUser" 10 times.(ß¡ûí
+hsquid:S1192w"LDefine a constant instead of duplicating this literal "feedbackId" 10 times.(¨æè±üÿÿÿÿ
+fsquid:S1192û"NDefine a constant instead of duplicating this literal "feedbackTime" 10 times.(«ÉÃƒ

@@ -1,14 +1,14 @@
 
-]squid:S00112k"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+ksquid:S1192ï"NDefine a constant instead of duplicating this literal "discountDesc" 12 times.(¥Äƒˆùÿÿÿÿ
+fsquid:S1192­"NDefine a constant instead of duplicating this literal "discountType" 10 times.(Êåð©
+psquid:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+hsquid:S1192w"LDefine a constant instead of duplicating this literal "discountId" 10 times.(ßÇˆ–ÿÿÿÿÿ
+asquid:S1192³"IDefine a constant instead of duplicating this literal "goodsId" 10 times.(ìæ¾ž
+csquid:S00112`"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºþÿÿÿÿ
+csquid:S00112Y"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+wsquid:S14889"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+hsquid:S1192µ"PDefine a constant instead of duplicating this literal "discountAmount" 10 times.(“éç¹
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+]squid:S00112g"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
 
-psquid:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
-wsquid:S1488="`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
-hsquid:S1192¹"PDefine a constant instead of duplicating this literal "discountAmount" 10 times.(“éç¹
-osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
-hsquid:S1192{"LDefine a constant instead of duplicating this literal "discountId" 10 times.(ßÇˆ–ÿÿÿÿÿ
-csquid:S00112]"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
-ksquid:S1192ó"NDefine a constant instead of duplicating this literal "discountDesc" 12 times.(¥Äƒˆùÿÿÿÿ
-csquid:S00112d"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºþÿÿÿÿ
-fsquid:S1192±"NDefine a constant instead of duplicating this literal "discountType" 10 times.(Êåð©
-bsquid:S1192õ"KDefine a constant instead of duplicating this literal "condition" 10 times.(¢Ã‰P
-asquid:S1192·"IDefine a constant instead of duplicating this literal "goodsId" 10 times.(ìæ¾ž
+msquid:S1192ñ"NDefine a constant instead of duplicating this literal "discountTerm" 10 times.(’âÔ‰8È¡’Ô›.

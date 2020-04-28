@@ -1,4 +1,4 @@
 
 lsquid:S11925"IDefine a constant instead of duplicating this literal "pageInfo" 3 times.(áƒÉíùÿÿÿÿ8ÊÀÙ€’.
-rsquid:S3252I"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8À”Ò€’.
 rsquid:S3252A"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8®å¯Ş.
+rsquid:S3252I"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8À”Ò€’.
