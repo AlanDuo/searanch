@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyuan.searanch.dao.EvaluateReplyMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.EvaluateReply" >
+    <id column="reply_id" property="replyId" jdbcType="BIGINT" />
+    <result column="reply_user" property="replyUser" jdbcType="BIGINT" />
+    <result column="evaluate_id" property="evaluateId" jdbcType="BIGINT" />
+    <result column="reply_content" property="replyContent" jdbcType="VARCHAR" />
+    <result column="reply_time" property="replyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    reply_id, reply_user, evaluate_id, reply_content, reply_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.EvaluateReplyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from evaluate_reply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from evaluate_reply
+    where reply_id = #{replyId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from evaluate_reply
+    where reply_id = #{replyId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunyuan.searanch.entity.EvaluateReplyExample" >
+    delete from evaluate_reply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yunyuan.searanch.entity.EvaluateReply" >
+    insert into evaluate_reply (reply_id, reply_user, evaluate_id, 
+      reply_content, reply_time)
+    values (#{replyId,jdbcType=BIGINT}, #{replyUser,jdbcType=BIGINT}, #{evaluateId,jdbcType=BIGINT}, 
+      #{replyContent,jdbcType=VARCHAR}, #{replyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.EvaluateReply" >
+    insert into evaluate_reply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="replyId != null" >
+        reply_id,
+      </if>
+      <if test="replyUser != null" >
+        reply_user,
+      </if>
+      <if test="evaluateId != null" >
+        evaluate_id,
+      </if>
+      <if test="replyContent != null" >
+        reply_content,
+      </if>
+      <if test="replyTime != null" >
+        reply_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="replyId != null" >
+        #{replyId,jdbcType=BIGINT},
+      </if>
+      <if test="replyUser != null" >
+        #{replyUser,jdbcType=BIGINT},
+      </if>
+      <if test="evaluateId != null" >
+        #{evaluateId,jdbcType=BIGINT},
+      </if>
+      <if test="replyContent != null" >
+        #{replyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="replyTime != null" >
+        #{replyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yunyuan.searanch.entity.EvaluateReplyExample" resultType="java.lang.Integer" >
+    select count(*) from evaluate_reply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update evaluate_reply
+    <set >
+      <if test="record.replyId != null" >
+        reply_id = #{record.replyId,jdbcType=BIGINT},
+      </if>
+      <if test="record.replyUser != null" >
+        reply_user = #{record.replyUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.evaluateId != null" >
+        evaluate_id = #{record.evaluateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.replyContent != null" >
+        reply_content = #{record.replyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.replyTime != null" >
+        reply_time = #{record.replyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update evaluate_reply
+    set reply_id = #{record.replyId,jdbcType=BIGINT},
+      reply_user = #{record.replyUser,jdbcType=BIGINT},
+      evaluate_id = #{record.evaluateId,jdbcType=BIGINT},
+      reply_content = #{record.replyContent,jdbcType=VARCHAR},
+      reply_time = #{record.replyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.EvaluateReply" >
+    update evaluate_reply
+    <set >
+      <if test="replyUser != null" >
+        reply_user = #{replyUser,jdbcType=BIGINT},
+      </if>
+      <if test="evaluateId != null" >
+        evaluate_id = #{evaluateId,jdbcType=BIGINT},
+      </if>
+      <if test="replyContent != null" >
+        reply_content = #{replyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="replyTime != null" >
+        reply_time = #{replyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where reply_id = #{replyId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.EvaluateReply" >
+    update evaluate_reply
+    set reply_user = #{replyUser,jdbcType=BIGINT},
+      evaluate_id = #{evaluateId,jdbcType=BIGINT},
+      reply_content = #{replyContent,jdbcType=VARCHAR},
+      reply_time = #{replyTime,jdbcType=TIMESTAMP}
+    where reply_id = #{replyId,jdbcType=BIGINT}
+  </update>
+</mapper>

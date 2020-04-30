@@ -48,6 +48,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/v2/**","anon");
         filterChainDefinitionMap.put("/webjars/springfox-swagger-ui/**","anon");
         filterChainDefinitionMap.put("/static/**", "anon");
+        filterChainDefinitionMap.put("/onlineAdmin","anon");
         filterChainDefinitionMap.put("/websocket/**","anon");
         filterChainDefinitionMap.put("/**","corsAuthenticationFilter");
         filterFactory.setFilterChainDefinitionMap(filterChainDefinitionMap );

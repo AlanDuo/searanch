@@ -53,18 +53,6 @@ U
 %.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
 4
 mvnw,5\d\5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d
-T
-$target/classes/mapper/RoleMapper.xml,6\b\6b87ae40781216b2645f3e7f7790a899b93801b0
-T
-$target/classes/mapper/UserMapper.xml,6\e\6eeb5241764a04467e13473f5f1ebacd8b64a3f6
-Z
-*target/classes/mapper/PermissionMapper.xml,3\5\3550af03c994bb4e789861cb68ae84a7d409e328
-J
-target/classes/logback.xml,a\1\a1f34499467b4defbdd2155fa7239595540a7587
-L
-target/classes/generator.xml,9\2\924110612ddf7b875c648b73fb18b3addf1db237
-N
-target/classes/application.yml,8\1\8177d69a8350a3085ca59b26a51aa2d336a55649
 7
 HELP.md,1\a\1a273f73b7a477b0745593641bd708a6182c7ad5
 8
@@ -98,8 +86,6 @@ l
 ,src/main/resources/mapper/FeedbackMapper.xml,7\0\703dbb554bbda7fa2b20f309395386a04eea8181
 d
 4src/main/resources/mapper/MerchantRegisterMapper.xml,f\5\f550a94d3e8dd0de7571be18835e099efc7a9888
-`
-0target/classes/mapper/MerchantRegisterMapper.xml,6\b\6b4b7f88dc2ccfa36c0d8437b10e387e1b2b1aae
 e
 5src/main/java/com/yunyuan/searanch/entity/Browse.java,e\2\e2c97438f936e24b3dfe1b84ca76ba8a98e9166c
 l
@@ -580,3 +566,11 @@ X
 searanch.iml,7\0\708f6d33cde4078c0aa8e852af6c55fd652cb7eb
 s
 Csrc/main/java/com/yunyuan/searanch/controller/UploadController.java,8\7\876b75ba750375c311b95af30872d8a1794a6d4e
+x
+Hsrc/main/java/com/yunyuan/searanch/config/websocket/WebSocketConfig.java,2\3\23cd32bc84b8bd35d5c4a6546e916fd78edc6b31
+t
+Dsrc/main/java/com/yunyuan/searanch/service/impl/ChatServiceImpl.java,6\7\674c0ee671b278f48d62f59045778c6706c5f191
+k
+;src/main/java/com/yunyuan/searanch/service/ChatService.java,e\1\e17f8643f283dfb658db561ce45db4446b045835
+p
+@src/main/java/com/yunyuan/searanch/controller/ChatWebSocket.java,9\c\9cd1590a7486e8141bf3edefe122ea4087a113ac

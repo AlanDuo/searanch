@@ -79,7 +79,7 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseData userLogin(String phoneNumber, String password){
         try {
-            Map<String,String> map=new HashMap<>(5);
+            Map<String,String> map=new HashMap<>(6);
             password=new Md5Hash(password,phoneNumber,3).toString();
             UsernamePasswordToken token=new UsernamePasswordToken(phoneNumber,password);
             Subject subject= SecurityUtils.getSubject();
@@ -93,6 +93,7 @@ public class LoginController {
             map.put("nickname",user.getNickname());
             map.put("image",user.getImage());
             map.put("role",role);
+            map.put("userId",user.getUserId()+"");
             return ResponseData.ok().putDataValue(map);
         }catch (Exception e){
             LOGGER.info(e.getMessage());

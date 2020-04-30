@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyuan.searanch.dao.MerchantRegisterMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.MerchantRegister" >
+    <id column="registra_id" property="registraId" jdbcType="BIGINT" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="merchant_name" property="merchantName" jdbcType="VARCHAR" />
+    <result column="merchant_phone" property="merchantPhone" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="id_card_imag" property="idCardImag" jdbcType="VARCHAR" />
+    <result column="license" property="license" jdbcType="VARCHAR" />
+    <result column="license_imag" property="licenseImag" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="examine" property="examine" jdbcType="BIT" />
+    <result column="registra_time" property="registraTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    registra_id, username, merchant_name, merchant_phone, image, id_card, id_card_imag, 
+    license, license_imag, country, city, address, examine, registra_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.MerchantRegisterExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from merchant_register
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from merchant_register
+    where registra_id = #{registraId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from merchant_register
+    where registra_id = #{registraId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunyuan.searanch.entity.MerchantRegisterExample" >
+    delete from merchant_register
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
+    insert into merchant_register (registra_id, username, merchant_name, 
+      merchant_phone, image, id_card, 
+      id_card_imag, license, license_imag, 
+      country, city, address, 
+      examine, registra_time)
+    values (#{registraId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{merchantName,jdbcType=VARCHAR}, 
+      #{merchantPhone,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{idCardImag,jdbcType=VARCHAR}, #{license,jdbcType=VARCHAR}, #{licenseImag,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{examine,jdbcType=BIT}, #{registraTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
+    insert into merchant_register
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="registraId != null" >
+        registra_id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="merchantName != null" >
+        merchant_name,
+      </if>
+      <if test="merchantPhone != null" >
+        merchant_phone,
+      </if>
+      <if test="image != null" >
+        image,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="idCardImag != null" >
+        id_card_imag,
+      </if>
+      <if test="license != null" >
+        license,
+      </if>
+      <if test="licenseImag != null" >
+        license_imag,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="examine != null" >
+        examine,
+      </if>
+      <if test="registraTime != null" >
+        registra_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="registraId != null" >
+        #{registraId,jdbcType=BIGINT},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantName != null" >
+        #{merchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantPhone != null" >
+        #{merchantPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardImag != null" >
+        #{idCardImag,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null" >
+        #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseImag != null" >
+        #{licenseImag,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="examine != null" >
+        #{examine,jdbcType=BIT},
+      </if>
+      <if test="registraTime != null" >
+        #{registraTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yunyuan.searanch.entity.MerchantRegisterExample" resultType="java.lang.Integer" >
+    select count(*) from merchant_register
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update merchant_register
+    <set >
+      <if test="record.registraId != null" >
+        registra_id = #{record.registraId,jdbcType=BIGINT},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantName != null" >
+        merchant_name = #{record.merchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantPhone != null" >
+        merchant_phone = #{record.merchantPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.image != null" >
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idCard != null" >
+        id_card = #{record.idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idCardImag != null" >
+        id_card_imag = #{record.idCardImag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.license != null" >
+        license = #{record.license,jdbcType=VARCHAR},
+      </if>
+      <if test="record.licenseImag != null" >
+        license_imag = #{record.licenseImag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.country != null" >
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.examine != null" >
+        examine = #{record.examine,jdbcType=BIT},
+      </if>
+      <if test="record.registraTime != null" >
+        registra_time = #{record.registraTime,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update merchant_register
+    set registra_id = #{record.registraId,jdbcType=BIGINT},
+      username = #{record.username,jdbcType=VARCHAR},
+      merchant_name = #{record.merchantName,jdbcType=VARCHAR},
+      merchant_phone = #{record.merchantPhone,jdbcType=VARCHAR},
+      image = #{record.image,jdbcType=VARCHAR},
+      id_card = #{record.idCard,jdbcType=VARCHAR},
+      id_card_imag = #{record.idCardImag,jdbcType=VARCHAR},
+      license = #{record.license,jdbcType=VARCHAR},
+      license_imag = #{record.licenseImag,jdbcType=VARCHAR},
+      country = #{record.country,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      examine = #{record.examine,jdbcType=BIT},
+      registra_time = #{record.registraTime,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
+    update merchant_register
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantName != null" >
+        merchant_name = #{merchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantPhone != null" >
+        merchant_phone = #{merchantPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardImag != null" >
+        id_card_imag = #{idCardImag,jdbcType=VARCHAR},
+      </if>
+      <if test="license != null" >
+        license = #{license,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseImag != null" >
+        license_imag = #{licenseImag,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="examine != null" >
+        examine = #{examine,jdbcType=BIT},
+      </if>
+      <if test="registraTime != null" >
+        registra_time = #{registraTime,jdbcType=DATE},
+      </if>
+    </set>
+    where registra_id = #{registraId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.MerchantRegister" >
+    update merchant_register
+    set username = #{username,jdbcType=VARCHAR},
+      merchant_name = #{merchantName,jdbcType=VARCHAR},
+      merchant_phone = #{merchantPhone,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      id_card_imag = #{idCardImag,jdbcType=VARCHAR},
+      license = #{license,jdbcType=VARCHAR},
+      license_imag = #{licenseImag,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      examine = #{examine,jdbcType=BIT},
+      registra_time = #{registraTime,jdbcType=DATE}
+    where registra_id = #{registraId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyuan.searanch.dao.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.Goods" >
+    <id column="goods_id" property="goodsId" jdbcType="BIGINT" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="process_mode" property="processMode" jdbcType="VARCHAR" />
+    <result column="picture" property="picture" jdbcType="VARCHAR" />
+    <result column="video" property="video" jdbcType="VARCHAR" />
+    <result column="goods_desc" property="goodsDesc" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="up_shelf" property="upShelf" jdbcType="BIT" />
+    <result column="up_time" property="upTime" jdbcType="TIMESTAMP" />
+    <result column="stock" property="stock" jdbcType="INTEGER" />
+    <result column="business" property="business" jdbcType="BIGINT" />
+    <result column="breed_time" property="breedTime" jdbcType="DATE" />
+    <result column="produce_time" property="produceTime" jdbcType="DATE" />
+    <result column="pack_time" property="packTime" jdbcType="DATE" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="region" property="region" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    goods_id, goods_name, type, process_mode, picture, video, goods_desc, price, up_shelf, 
+    up_time, stock, business, breed_time, produce_time, pack_time, country, region, city
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.GoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from goods
+    where goods_id = #{goodsId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from goods
+    where goods_id = #{goodsId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunyuan.searanch.entity.GoodsExample" >
+    delete from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yunyuan.searanch.entity.Goods" >
+    insert into goods (goods_id, goods_name, type, 
+      process_mode, picture, video, 
+      goods_desc, price, up_shelf, 
+      up_time, stock, business, 
+      breed_time, produce_time, pack_time, 
+      country, region, city
+      )
+    values (#{goodsId,jdbcType=BIGINT}, #{goodsName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{processMode,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, #{video,jdbcType=VARCHAR}, 
+      #{goodsDesc,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{upShelf,jdbcType=BIT}, 
+      #{upTime,jdbcType=TIMESTAMP}, #{stock,jdbcType=INTEGER}, #{business,jdbcType=BIGINT}, 
+      #{breedTime,jdbcType=DATE}, #{produceTime,jdbcType=DATE}, #{packTime,jdbcType=DATE}, 
+      #{country,jdbcType=VARCHAR}, #{region,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Goods" >
+    insert into goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="goodsName != null" >
+        goods_name,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="processMode != null" >
+        process_mode,
+      </if>
+      <if test="picture != null" >
+        picture,
+      </if>
+      <if test="video != null" >
+        video,
+      </if>
+      <if test="goodsDesc != null" >
+        goods_desc,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="upShelf != null" >
+        up_shelf,
+      </if>
+      <if test="upTime != null" >
+        up_time,
+      </if>
+      <if test="stock != null" >
+        stock,
+      </if>
+      <if test="business != null" >
+        business,
+      </if>
+      <if test="breedTime != null" >
+        breed_time,
+      </if>
+      <if test="produceTime != null" >
+        produce_time,
+      </if>
+      <if test="packTime != null" >
+        pack_time,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="region != null" >
+        region,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsName != null" >
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="processMode != null" >
+        #{processMode,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="video != null" >
+        #{video,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDesc != null" >
+        #{goodsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="upShelf != null" >
+        #{upShelf,jdbcType=BIT},
+      </if>
+      <if test="upTime != null" >
+        #{upTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stock != null" >
+        #{stock,jdbcType=INTEGER},
+      </if>
+      <if test="business != null" >
+        #{business,jdbcType=BIGINT},
+      </if>
+      <if test="breedTime != null" >
+        #{breedTime,jdbcType=DATE},
+      </if>
+      <if test="produceTime != null" >
+        #{produceTime,jdbcType=DATE},
+      </if>
+      <if test="packTime != null" >
+        #{packTime,jdbcType=DATE},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null" >
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yunyuan.searanch.entity.GoodsExample" resultType="java.lang.Integer" >
+    select count(*) from goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update goods
+    <set >
+      <if test="record.goodsId != null" >
+        goods_id = #{record.goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="record.goodsName != null" >
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processMode != null" >
+        process_mode = #{record.processMode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.picture != null" >
+        picture = #{record.picture,jdbcType=VARCHAR},
+      </if>
+      <if test="record.video != null" >
+        video = #{record.video,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsDesc != null" >
+        goods_desc = #{record.goodsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.upShelf != null" >
+        up_shelf = #{record.upShelf,jdbcType=BIT},
+      </if>
+      <if test="record.upTime != null" >
+        up_time = #{record.upTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.stock != null" >
+        stock = #{record.stock,jdbcType=INTEGER},
+      </if>
+      <if test="record.business != null" >
+        business = #{record.business,jdbcType=BIGINT},
+      </if>
+      <if test="record.breedTime != null" >
+        breed_time = #{record.breedTime,jdbcType=DATE},
+      </if>
+      <if test="record.produceTime != null" >
+        produce_time = #{record.produceTime,jdbcType=DATE},
+      </if>
+      <if test="record.packTime != null" >
+        pack_time = #{record.packTime,jdbcType=DATE},
+      </if>
+      <if test="record.country != null" >
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.region != null" >
+        region = #{record.region,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update goods
+    set goods_id = #{record.goodsId,jdbcType=BIGINT},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      process_mode = #{record.processMode,jdbcType=VARCHAR},
+      picture = #{record.picture,jdbcType=VARCHAR},
+      video = #{record.video,jdbcType=VARCHAR},
+      goods_desc = #{record.goodsDesc,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      up_shelf = #{record.upShelf,jdbcType=BIT},
+      up_time = #{record.upTime,jdbcType=TIMESTAMP},
+      stock = #{record.stock,jdbcType=INTEGER},
+      business = #{record.business,jdbcType=BIGINT},
+      breed_time = #{record.breedTime,jdbcType=DATE},
+      produce_time = #{record.produceTime,jdbcType=DATE},
+      pack_time = #{record.packTime,jdbcType=DATE},
+      country = #{record.country,jdbcType=VARCHAR},
+      region = #{record.region,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.Goods" >
+    update goods
+    <set >
+      <if test="goodsName != null" >
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="processMode != null" >
+        process_mode = #{processMode,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        picture = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="video != null" >
+        video = #{video,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDesc != null" >
+        goods_desc = #{goodsDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="upShelf != null" >
+        up_shelf = #{upShelf,jdbcType=BIT},
+      </if>
+      <if test="upTime != null" >
+        up_time = #{upTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stock != null" >
+        stock = #{stock,jdbcType=INTEGER},
+      </if>
+      <if test="business != null" >
+        business = #{business,jdbcType=BIGINT},
+      </if>
+      <if test="breedTime != null" >
+        breed_time = #{breedTime,jdbcType=DATE},
+      </if>
+      <if test="produceTime != null" >
+        produce_time = #{produceTime,jdbcType=DATE},
+      </if>
+      <if test="packTime != null" >
+        pack_time = #{packTime,jdbcType=DATE},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null" >
+        region = #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where goods_id = #{goodsId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.Goods" >
+    update goods
+    set goods_name = #{goodsName,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      process_mode = #{processMode,jdbcType=VARCHAR},
+      picture = #{picture,jdbcType=VARCHAR},
+      video = #{video,jdbcType=VARCHAR},
+      goods_desc = #{goodsDesc,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      up_shelf = #{upShelf,jdbcType=BIT},
+      up_time = #{upTime,jdbcType=TIMESTAMP},
+      stock = #{stock,jdbcType=INTEGER},
+      business = #{business,jdbcType=BIGINT},
+      breed_time = #{breedTime,jdbcType=DATE},
+      produce_time = #{produceTime,jdbcType=DATE},
+      pack_time = #{packTime,jdbcType=DATE},
+      country = #{country,jdbcType=VARCHAR},
+      region = #{region,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR}
+    where goods_id = #{goodsId,jdbcType=BIGINT}
+  </update>
+</mapper>

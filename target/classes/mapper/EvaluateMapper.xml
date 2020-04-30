@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyuan.searanch.dao.EvaluateMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.Evaluate" >
+    <id column="evaluate_id" property="evaluateId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="goods_id" property="goodsId" jdbcType="BIGINT" />
+    <result column="goods_eva" property="goodsEva" jdbcType="VARCHAR" />
+    <result column="service_eva" property="serviceEva" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="goods_desc" property="goodsDesc" jdbcType="INTEGER" />
+    <result column="seller_service" property="sellerService" jdbcType="INTEGER" />
+    <result column="logistics" property="logistics" jdbcType="INTEGER" />
+    <result column="goods_about" property="goodsAbout" jdbcType="INTEGER" />
+    <result column="anonymous" property="anonymous" jdbcType="BIT" />
+    <result column="evaluate_time" property="evaluateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    evaluate_id, user_id, goods_id, goods_eva, service_eva, image, goods_desc, seller_service, 
+    logistics, goods_about, anonymous, evaluate_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.EvaluateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from evaluate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from evaluate
+    where evaluate_id = #{evaluateId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from evaluate
+    where evaluate_id = #{evaluateId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunyuan.searanch.entity.EvaluateExample" >
+    delete from evaluate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yunyuan.searanch.entity.Evaluate" >
+    insert into evaluate (evaluate_id, user_id, goods_id, 
+      goods_eva, service_eva, image, 
+      goods_desc, seller_service, logistics, 
+      goods_about, anonymous, evaluate_time
+      )
+    values (#{evaluateId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, 
+      #{goodsEva,jdbcType=VARCHAR}, #{serviceEva,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
+      #{goodsDesc,jdbcType=INTEGER}, #{sellerService,jdbcType=INTEGER}, #{logistics,jdbcType=INTEGER}, 
+      #{goodsAbout,jdbcType=INTEGER}, #{anonymous,jdbcType=BIT}, #{evaluateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Evaluate" >
+    insert into evaluate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="evaluateId != null" >
+        evaluate_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="goodsEva != null" >
+        goods_eva,
+      </if>
+      <if test="serviceEva != null" >
+        service_eva,
+      </if>
+      <if test="image != null" >
+        image,
+      </if>
+      <if test="goodsDesc != null" >
+        goods_desc,
+      </if>
+      <if test="sellerService != null" >
+        seller_service,
+      </if>
+      <if test="logistics != null" >
+        logistics,
+      </if>
+      <if test="goodsAbout != null" >
+        goods_about,
+      </if>
+      <if test="anonymous != null" >
+        anonymous,
+      </if>
+      <if test="evaluateTime != null" >
+        evaluate_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="evaluateId != null" >
+        #{evaluateId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsEva != null" >
+        #{goodsEva,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceEva != null" >
+        #{serviceEva,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDesc != null" >
+        #{goodsDesc,jdbcType=INTEGER},
+      </if>
+      <if test="sellerService != null" >
+        #{sellerService,jdbcType=INTEGER},
+      </if>
+      <if test="logistics != null" >
+        #{logistics,jdbcType=INTEGER},
+      </if>
+      <if test="goodsAbout != null" >
+        #{goodsAbout,jdbcType=INTEGER},
+      </if>
+      <if test="anonymous != null" >
+        #{anonymous,jdbcType=BIT},
+      </if>
+      <if test="evaluateTime != null" >
+        #{evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yunyuan.searanch.entity.EvaluateExample" resultType="java.lang.Integer" >
+    select count(*) from evaluate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update evaluate
+    <set >
+      <if test="record.evaluateId != null" >
+        evaluate_id = #{record.evaluateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+      <if test="record.goodsId != null" >
+        goods_id = #{record.goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="record.goodsEva != null" >
+        goods_eva = #{record.goodsEva,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serviceEva != null" >
+        service_eva = #{record.serviceEva,jdbcType=VARCHAR},
+      </if>
+      <if test="record.image != null" >
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsDesc != null" >
+        goods_desc = #{record.goodsDesc,jdbcType=INTEGER},
+      </if>
+      <if test="record.sellerService != null" >
+        seller_service = #{record.sellerService,jdbcType=INTEGER},
+      </if>
+      <if test="record.logistics != null" >
+        logistics = #{record.logistics,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsAbout != null" >
+        goods_about = #{record.goodsAbout,jdbcType=INTEGER},
+      </if>
+      <if test="record.anonymous != null" >
+        anonymous = #{record.anonymous,jdbcType=BIT},
+      </if>
+      <if test="record.evaluateTime != null" >
+        evaluate_time = #{record.evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update evaluate
+    set evaluate_id = #{record.evaluateId,jdbcType=BIGINT},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      goods_id = #{record.goodsId,jdbcType=BIGINT},
+      goods_eva = #{record.goodsEva,jdbcType=VARCHAR},
+      service_eva = #{record.serviceEva,jdbcType=VARCHAR},
+      image = #{record.image,jdbcType=VARCHAR},
+      goods_desc = #{record.goodsDesc,jdbcType=INTEGER},
+      seller_service = #{record.sellerService,jdbcType=INTEGER},
+      logistics = #{record.logistics,jdbcType=INTEGER},
+      goods_about = #{record.goodsAbout,jdbcType=INTEGER},
+      anonymous = #{record.anonymous,jdbcType=BIT},
+      evaluate_time = #{record.evaluateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.Evaluate" >
+    update evaluate
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsEva != null" >
+        goods_eva = #{goodsEva,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceEva != null" >
+        service_eva = #{serviceEva,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsDesc != null" >
+        goods_desc = #{goodsDesc,jdbcType=INTEGER},
+      </if>
+      <if test="sellerService != null" >
+        seller_service = #{sellerService,jdbcType=INTEGER},
+      </if>
+      <if test="logistics != null" >
+        logistics = #{logistics,jdbcType=INTEGER},
+      </if>
+      <if test="goodsAbout != null" >
+        goods_about = #{goodsAbout,jdbcType=INTEGER},
+      </if>
+      <if test="anonymous != null" >
+        anonymous = #{anonymous,jdbcType=BIT},
+      </if>
+      <if test="evaluateTime != null" >
+        evaluate_time = #{evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where evaluate_id = #{evaluateId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.Evaluate" >
+    update evaluate
+    set user_id = #{userId,jdbcType=BIGINT},
+      goods_id = #{goodsId,jdbcType=BIGINT},
+      goods_eva = #{goodsEva,jdbcType=VARCHAR},
+      service_eva = #{serviceEva,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      goods_desc = #{goodsDesc,jdbcType=INTEGER},
+      seller_service = #{sellerService,jdbcType=INTEGER},
+      logistics = #{logistics,jdbcType=INTEGER},
+      goods_about = #{goodsAbout,jdbcType=INTEGER},
+      anonymous = #{anonymous,jdbcType=BIT},
+      evaluate_time = #{evaluateTime,jdbcType=TIMESTAMP}
+    where evaluate_id = #{evaluateId,jdbcType=BIGINT}
+  </update>
+</mapper>

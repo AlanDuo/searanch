@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyuan.searanch.dao.DiscountMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.Discount" >
+    <id column="discount_id" property="discountId" jdbcType="BIGINT" />
+    <result column="goods_id" property="goodsId" jdbcType="BIGINT" />
+    <result column="discount_desc" property="discountDesc" jdbcType="VARCHAR" />
+    <result column="discount_amount" property="discountAmount" jdbcType="DECIMAL" />
+    <result column="discount_term" property="discountTerm" jdbcType="DECIMAL" />
+    <result column="discount_type" property="discountType" jdbcType="TINYINT" />
+    <result column="work" property="work" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    discount_id, goods_id, discount_desc, discount_amount, discount_term, discount_type, 
+    work
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.DiscountExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from discount
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from discount
+    where discount_id = #{discountId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from discount
+    where discount_id = #{discountId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunyuan.searanch.entity.DiscountExample" >
+    delete from discount
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yunyuan.searanch.entity.Discount" >
+    insert into discount (discount_id, goods_id, discount_desc, 
+      discount_amount, discount_term, discount_type, 
+      work)
+    values (#{discountId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, #{discountDesc,jdbcType=VARCHAR}, 
+      #{discountAmount,jdbcType=DECIMAL}, #{discountTerm,jdbcType=DECIMAL}, #{discountType,jdbcType=TINYINT}, 
+      #{work,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Discount" >
+    insert into discount
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="discountId != null" >
+        discount_id,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="discountDesc != null" >
+        discount_desc,
+      </if>
+      <if test="discountAmount != null" >
+        discount_amount,
+      </if>
+      <if test="discountTerm != null" >
+        discount_term,
+      </if>
+      <if test="discountType != null" >
+        discount_type,
+      </if>
+      <if test="work != null" >
+        work,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="discountId != null" >
+        #{discountId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="discountDesc != null" >
+        #{discountDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="discountAmount != null" >
+        #{discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountTerm != null" >
+        #{discountTerm,jdbcType=DECIMAL},
+      </if>
+      <if test="discountType != null" >
+        #{discountType,jdbcType=TINYINT},
+      </if>
+      <if test="work != null" >
+        #{work,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yunyuan.searanch.entity.DiscountExample" resultType="java.lang.Integer" >
+    select count(*) from discount
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update discount
+    <set >
+      <if test="record.discountId != null" >
+        discount_id = #{record.discountId,jdbcType=BIGINT},
+      </if>
+      <if test="record.goodsId != null" >
+        goods_id = #{record.goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="record.discountDesc != null" >
+        discount_desc = #{record.discountDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.discountAmount != null" >
+        discount_amount = #{record.discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.discountTerm != null" >
+        discount_term = #{record.discountTerm,jdbcType=DECIMAL},
+      </if>
+      <if test="record.discountType != null" >
+        discount_type = #{record.discountType,jdbcType=TINYINT},
+      </if>
+      <if test="record.work != null" >
+        work = #{record.work,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update discount
+    set discount_id = #{record.discountId,jdbcType=BIGINT},
+      goods_id = #{record.goodsId,jdbcType=BIGINT},
+      discount_desc = #{record.discountDesc,jdbcType=VARCHAR},
+      discount_amount = #{record.discountAmount,jdbcType=DECIMAL},
+      discount_term = #{record.discountTerm,jdbcType=DECIMAL},
+      discount_type = #{record.discountType,jdbcType=TINYINT},
+      work = #{record.work,jdbcType=BIT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.Discount" >
+    update discount
+    <set >
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="discountDesc != null" >
+        discount_desc = #{discountDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="discountAmount != null" >
+        discount_amount = #{discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountTerm != null" >
+        discount_term = #{discountTerm,jdbcType=DECIMAL},
+      </if>
+      <if test="discountType != null" >
+        discount_type = #{discountType,jdbcType=TINYINT},
+      </if>
+      <if test="work != null" >
+        work = #{work,jdbcType=BIT},
+      </if>
+    </set>
+    where discount_id = #{discountId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.Discount" >
+    update discount
+    set goods_id = #{goodsId,jdbcType=BIGINT},
+      discount_desc = #{discountDesc,jdbcType=VARCHAR},
+      discount_amount = #{discountAmount,jdbcType=DECIMAL},
+      discount_term = #{discountTerm,jdbcType=DECIMAL},
+      discount_type = #{discountType,jdbcType=TINYINT},
+      work = #{work,jdbcType=BIT}
+    where discount_id = #{discountId,jdbcType=BIGINT}
+  </update>
+</mapper>

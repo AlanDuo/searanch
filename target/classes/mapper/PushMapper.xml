@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyuan.searanch.dao.PushMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.Push" >
+    <id column="push_id" property="pushId" jdbcType="BIGINT" />
+    <result column="push_from" property="pushFrom" jdbcType="BIGINT" />
+    <result column="push_to" property="pushTo" jdbcType="BIGINT" />
+    <result column="push_content" property="pushContent" jdbcType="VARCHAR" />
+    <result column="push_time" property="pushTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    push_id, push_from, push_to, push_content, push_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.PushExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from push
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from push
+    where push_id = #{pushId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from push
+    where push_id = #{pushId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunyuan.searanch.entity.PushExample" >
+    delete from push
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yunyuan.searanch.entity.Push" >
+    insert into push (push_id, push_from, push_to, 
+      push_content, push_time)
+    values (#{pushId,jdbcType=BIGINT}, #{pushFrom,jdbcType=BIGINT}, #{pushTo,jdbcType=BIGINT}, 
+      #{pushContent,jdbcType=VARCHAR}, #{pushTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Push" >
+    insert into push
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pushId != null" >
+        push_id,
+      </if>
+      <if test="pushFrom != null" >
+        push_from,
+      </if>
+      <if test="pushTo != null" >
+        push_to,
+      </if>
+      <if test="pushContent != null" >
+        push_content,
+      </if>
+      <if test="pushTime != null" >
+        push_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pushId != null" >
+        #{pushId,jdbcType=BIGINT},
+      </if>
+      <if test="pushFrom != null" >
+        #{pushFrom,jdbcType=BIGINT},
+      </if>
+      <if test="pushTo != null" >
+        #{pushTo,jdbcType=BIGINT},
+      </if>
+      <if test="pushContent != null" >
+        #{pushContent,jdbcType=VARCHAR},
+      </if>
+      <if test="pushTime != null" >
+        #{pushTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yunyuan.searanch.entity.PushExample" resultType="java.lang.Integer" >
+    select count(*) from push
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update push
+    <set >
+      <if test="record.pushId != null" >
+        push_id = #{record.pushId,jdbcType=BIGINT},
+      </if>
+      <if test="record.pushFrom != null" >
+        push_from = #{record.pushFrom,jdbcType=BIGINT},
+      </if>
+      <if test="record.pushTo != null" >
+        push_to = #{record.pushTo,jdbcType=BIGINT},
+      </if>
+      <if test="record.pushContent != null" >
+        push_content = #{record.pushContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pushTime != null" >
+        push_time = #{record.pushTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update push
+    set push_id = #{record.pushId,jdbcType=BIGINT},
+      push_from = #{record.pushFrom,jdbcType=BIGINT},
+      push_to = #{record.pushTo,jdbcType=BIGINT},
+      push_content = #{record.pushContent,jdbcType=VARCHAR},
+      push_time = #{record.pushTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.Push" >
+    update push
+    <set >
+      <if test="pushFrom != null" >
+        push_from = #{pushFrom,jdbcType=BIGINT},
+      </if>
+      <if test="pushTo != null" >
+        push_to = #{pushTo,jdbcType=BIGINT},
+      </if>
+      <if test="pushContent != null" >
+        push_content = #{pushContent,jdbcType=VARCHAR},
+      </if>
+      <if test="pushTime != null" >
+        push_time = #{pushTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where push_id = #{pushId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.Push" >
+    update push
+    set push_from = #{pushFrom,jdbcType=BIGINT},
+      push_to = #{pushTo,jdbcType=BIGINT},
+      push_content = #{pushContent,jdbcType=VARCHAR},
+      push_time = #{pushTime,jdbcType=TIMESTAMP}
+    where push_id = #{pushId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunyuan.searanch.dao.FeedbackMapper" >
+  <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.Feedback" >
+    <id column="feedback_id" property="feedbackId" jdbcType="BIGINT" />
+    <result column="feedback_user" property="feedbackUser" jdbcType="BIGINT" />
+    <result column="feedback_content" property="feedbackContent" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="feedback_time" property="feedbackTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    feedback_id, feedback_user, feedback_content, image, feedback_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.FeedbackExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from feedback
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from feedback
+    where feedback_id = #{feedbackId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from feedback
+    where feedback_id = #{feedbackId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yunyuan.searanch.entity.FeedbackExample" >
+    delete from feedback
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yunyuan.searanch.entity.Feedback" >
+    insert into feedback (feedback_id, feedback_user, feedback_content, 
+      image, feedback_time)
+    values (#{feedbackId,jdbcType=BIGINT}, #{feedbackUser,jdbcType=BIGINT}, #{feedbackContent,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{feedbackTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Feedback" >
+    insert into feedback
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="feedbackId != null" >
+        feedback_id,
+      </if>
+      <if test="feedbackUser != null" >
+        feedback_user,
+      </if>
+      <if test="feedbackContent != null" >
+        feedback_content,
+      </if>
+      <if test="image != null" >
+        image,
+      </if>
+      <if test="feedbackTime != null" >
+        feedback_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="feedbackId != null" >
+        #{feedbackId,jdbcType=BIGINT},
+      </if>
+      <if test="feedbackUser != null" >
+        #{feedbackUser,jdbcType=BIGINT},
+      </if>
+      <if test="feedbackContent != null" >
+        #{feedbackContent,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackTime != null" >
+        #{feedbackTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yunyuan.searanch.entity.FeedbackExample" resultType="java.lang.Integer" >
+    select count(*) from feedback
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update feedback
+    <set >
+      <if test="record.feedbackId != null" >
+        feedback_id = #{record.feedbackId,jdbcType=BIGINT},
+      </if>
+      <if test="record.feedbackUser != null" >
+        feedback_user = #{record.feedbackUser,jdbcType=BIGINT},
+      </if>
+      <if test="record.feedbackContent != null" >
+        feedback_content = #{record.feedbackContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.image != null" >
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.feedbackTime != null" >
+        feedback_time = #{record.feedbackTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update feedback
+    set feedback_id = #{record.feedbackId,jdbcType=BIGINT},
+      feedback_user = #{record.feedbackUser,jdbcType=BIGINT},
+      feedback_content = #{record.feedbackContent,jdbcType=VARCHAR},
+      image = #{record.image,jdbcType=VARCHAR},
+      feedback_time = #{record.feedbackTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.Feedback" >
+    update feedback
+    <set >
+      <if test="feedbackUser != null" >
+        feedback_user = #{feedbackUser,jdbcType=BIGINT},
+      </if>
+      <if test="feedbackContent != null" >
+        feedback_content = #{feedbackContent,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackTime != null" >
+        feedback_time = #{feedbackTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where feedback_id = #{feedbackId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.Feedback" >
+    update feedback
+    set feedback_user = #{feedbackUser,jdbcType=BIGINT},
+      feedback_content = #{feedbackContent,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      feedback_time = #{feedbackTime,jdbcType=TIMESTAMP}
+    where feedback_id = #{feedbackId,jdbcType=BIGINT}
+  </update>
+</mapper>
