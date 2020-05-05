@@ -37,10 +37,11 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
         String path=FileUploadUtil.getUrl();
         goods.setPicture(path);
         flag=goodsMapper.insert(goods);
-        List<GoodsType> goodsTypeList=goodsAddDTO.getGoodsTypeList();
-        for(GoodsType goodsType:goodsTypeList){
-            flag+=goodsTypeMapper.insert(goodsType);
-        }
-        return flag>goodsTypeList.size()+1;
+//        List<GoodsType> goodsTypeList=goodsAddDTO.getGoodsTypeList();
+//        for(GoodsType goodsType:goodsTypeList){
+//            flag+=goodsTypeMapper.insert(goodsType);
+//        }
+        return false;
+
     }
 }

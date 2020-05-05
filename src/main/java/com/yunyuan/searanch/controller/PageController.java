@@ -13,10 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -29,6 +26,7 @@ import java.util.Map;
 @RequestMapping("/page")
 @Api(value = "商品页面展示",tags = "商品页面展示接口")
 public class PageController {
+    private static final String PAGE_INFO="pageInfo";
     private PageService pageService;
     @Autowired
     public PageController(PageService pageService){
@@ -37,7 +35,8 @@ public class PageController {
 
     @ApiOperation(value = "首页推荐商品接口")
     @GetMapping("/recommendIndex")
-    public TableVO recommendIndex(Integer page,Integer limit){
+    public TableVO recommendIndex(@RequestParam(value = "page",defaultValue = "1") Integer page,
+                                  @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
         List<PageGoodsVO> pageGoodsVOS;
@@ -50,7 +49,7 @@ public class PageController {
             map=pageService.recommendWithLogin(page,limit,user.getUserId());
         }
         pageGoodsVOS=(List<PageGoodsVO>)map.get("pageGoodsVOList");
-        PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get("pageInfo"));
+        PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO<>(pageInfo,pageGoodsVOS);
     }
     @ApiOperation(value="单个商品的具体信息")
@@ -61,18 +60,22 @@ public class PageController {
     }
     @ApiOperation(value = "获取评论")
     @GetMapping("/goodsEvaluate/{goodsId}")
-    public TableVO goodsEvaluate(@PathVariable("goodsId") Long goodsId,Integer page,Integer limit){
+    public TableVO goodsEvaluate(@PathVariable("goodsId") Long goodsId,
+                                 @RequestParam(value = "page",defaultValue = "1") Integer page,
+                                 @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         PageHelper.startPage(page,limit);
         Map<String,Object> map=pageService.evaluateInfo(goodsId);
-        PageInfo pageInfo=new PageInfo<>((List< Evaluate>)map.get("pageInfo"));
+        PageInfo pageInfo=new PageInfo<>((List< Evaluate>)map.get(PAGE_INFO));
         return new TableVO(pageInfo,(List<EvaluateVO>)map.get("evaluateVOList"));
     }
     @ApiOperation(value="商品搜索")
     @GetMapping("/search/{searchName}")
-    public TableVO searchGoods(Integer page,Integer limit,@PathVariable("searchName") String searchName){
+    public TableVO searchGoods(@RequestParam(value = "page",defaultValue = "1") Integer page,
+                               @RequestParam(value = "limit",defaultValue = "10") Integer limit,
+                               @PathVariable("searchName") String searchName){
         PageHelper.startPage(page,limit);
         Map<String,Object> map=pageService.searchGoods(searchName);
-        PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get("pageInfo"));
+        PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO(pageInfo,(List<PageGoodsVO>)map.get("pageGoodsVOList"));
     }
 }

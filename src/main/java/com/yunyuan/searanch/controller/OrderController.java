@@ -49,7 +49,8 @@ public class OrderController {
     }
     @ApiOperation(value="查询订单")
     @GetMapping("/orderList")
-    public TableVO searchMyOrder(Integer page,Integer limit){
+    public TableVO searchMyOrder(@RequestParam(value = "page",defaultValue = "1") Integer page,
+                                 @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
         if(null!=user) {

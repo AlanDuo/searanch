@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -14,12 +16,13 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserRegisterDTO implements Serializable {
+    @NotBlank(message = "用户名")
     private String username;
-
+    @NotBlank(message = "密码")
     private String password;
-
+    @NotBlank(message = "手机号不能为空")
     private String phoneNumber;
-
+    @Email(message = "必须为邮件格式xxx@xxx.xxx")
     private String email;
 
     private String nickname;

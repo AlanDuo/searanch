@@ -913,66 +913,6 @@ public class GoodsExample {
             return (Criteria) this;
         }
 
-        public Criteria andBreedTimeIsNull() {
-            addCriterion("breed_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeIsNotNull() {
-            addCriterion("breed_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeEqualTo(Date value) {
-            addCriterionForJDBCDate("breed_time =", value, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeNotEqualTo(Date value) {
-            addCriterionForJDBCDate("breed_time <>", value, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeGreaterThan(Date value) {
-            addCriterionForJDBCDate("breed_time >", value, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("breed_time >=", value, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeLessThan(Date value) {
-            addCriterionForJDBCDate("breed_time <", value, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("breed_time <=", value, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeIn(List<Date> values) {
-            addCriterionForJDBCDate("breed_time in", values, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeNotIn(List<Date> values) {
-            addCriterionForJDBCDate("breed_time not in", values, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("breed_time between", value1, value2, "breedTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andBreedTimeNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("breed_time not between", value1, value2, "breedTime");
-            return (Criteria) this;
-        }
-
         public Criteria andProduceTimeIsNull() {
             addCriterion("produce_time is null");
             return (Criteria) this;

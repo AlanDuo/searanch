@@ -48,7 +48,8 @@ public class AdminController {
     @GetMapping("/orderList")
     @RequiresRoles("admin")
     public TableVO getOrderList(String orderNumber, String goodsName, String userName, String merchant,
-                                Integer page,Integer limit){
+                                @RequestParam(value = "page",defaultValue = "1") Integer page,
+                                @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         PageHelper.startPage(page,limit);
         Map<String,Object> map=adminService.adminOrderList(orderNumber,goodsName,userName,merchant);
         PageInfo pageInfo=new PageInfo<>((List<Order>)map.get("pageInfo"));
@@ -73,7 +74,8 @@ public class AdminController {
     @GetMapping("/merchantList")
     @RequiresRoles("admin")
     public TableVO getMerchantList(Long merchantId,String userName,String merchantName,Boolean check,
-                                   Integer page,Integer limit){
+                                   @RequestParam(value = "page",defaultValue = "1") Integer page,
+                                   @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         PageHelper.startPage(page,limit);
         Map<String,Object> map=adminService.adminMerchantList(merchantId,userName,merchantName,check);
         PageInfo pageInfo=new PageInfo<>((List<MerchantRegister>)map.get("pageInfo"));

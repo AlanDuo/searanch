@@ -30,6 +30,7 @@ spring:
     filters: stat,wall,log4j
   jackson:
     time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
   http:
     encoding:
       charset: UTF-8

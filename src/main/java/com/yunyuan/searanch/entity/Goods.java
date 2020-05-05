@@ -28,8 +28,6 @@ public class Goods {
 
     private Long business;
 
-    private Date breedTime;
-
     private Date produceTime;
 
     private Date packTime;
@@ -134,14 +132,6 @@ public class Goods {
 
     public void setBusiness(Long business) {
         this.business = business;
-    }
-
-    public Date getBreedTime() {
-        return breedTime;
-    }
-
-    public void setBreedTime(Date breedTime) {
-        this.breedTime = breedTime;
     }
 
     public Date getProduceTime() {

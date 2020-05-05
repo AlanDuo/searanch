@@ -1,13 +1,11 @@
 package com.yunyuan.searanch.dto;
 
-import com.yunyuan.searanch.entity.GoodsType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author alan
@@ -23,17 +21,15 @@ public class GoodsAddDTO {
 
     private String processMode;
 
-    private String video;
+    private String picture;
 
-    private String desc;
+    private String goodsDesc;
 
     private BigDecimal price;
 
-    private Boolean upShelf;
-
     private Integer stock;
 
-    private String business;
+    private Date upTime;
 
     private Date breedTime;
 
@@ -47,5 +43,4 @@ public class GoodsAddDTO {
 
     private String city;
 
-    List<GoodsType> goodsTypeList;
 }

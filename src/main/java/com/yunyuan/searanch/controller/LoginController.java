@@ -16,8 +16,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +34,7 @@ import java.util.Random;
 public class LoginController {
     private static final Logger LOGGER= LoggerFactory.getLogger(LoginController.class);
     private RedisTemplate redisTemplate;
+
     private UserService userService;
     private String messageCode;
     private String phone;
@@ -51,7 +54,7 @@ public class LoginController {
 
     @ApiOperation(value ="用户注册",notes = "普通用户注册")
     @PostMapping("/userRegister")
-    public ResponseData userRegister(String code, UserRegisterDTO userRegisterDTO){
+    public ResponseData userRegister(String code, @Validated @RequestBody UserRegisterDTO userRegisterDTO){
         if(null!=userService.getUserByPhone(userRegisterDTO.getPhoneNumber())){
             return new ResponseData(500,"该用户已经注册");
         }
@@ -64,7 +67,7 @@ public class LoginController {
     }
     @ApiOperation(value ="商户注册",notes = "商户注册")
     @PostMapping("/merchantRegister")
-    public ResponseData merchantRegister(MerchantRegisterDTO merchantRegisterDTO){
+    public ResponseData merchantRegister(@Validated @RequestBody MerchantRegisterDTO merchantRegisterDTO){
         if(null!=userService.getMerchantByPhone(merchantRegisterDTO.getMerchantPhone())){
             return new ResponseData(500,"该商户已经注册");
         }
