@@ -17,6 +17,16 @@ public class DateUtil {
     private static final Integer TEN=10;
     private DateUtil(){}
 
+    public static Date parseDate(Integer year){
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy");
+        try {
+            return simpleDateFormat.parse(year.toString());
+        }catch (Exception e) {
+            LOGGER.info(e.getMessage());
+            return null;
+        }
+    }
+
     /**
      * 根据年月转化为Date
      *

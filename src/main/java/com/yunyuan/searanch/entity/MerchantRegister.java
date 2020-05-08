@@ -23,6 +23,8 @@ public class MerchantRegister {
 
     private String country;
 
+    private String province;
+
     private String city;
 
     private String address;
@@ -30,6 +32,8 @@ public class MerchantRegister {
     private Boolean examine;
 
     private Date registraTime;
+
+    private Integer star;
 
     public Long getRegistraId() {
         return registraId;
@@ -111,6 +115,14 @@ public class MerchantRegister {
         this.country = country == null ? null : country.trim();
     }
 
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
+    }
+
     public String getCity() {
         return city;
     }
@@ -141,5 +153,13 @@ public class MerchantRegister {
 
     public void setRegistraTime(Date registraTime) {
         this.registraTime = registraTime;
+    }
+
+    public Integer getStar() {
+        return star;
+    }
+
+    public void setStar(Integer star) {
+        this.star = star;
     }
 }

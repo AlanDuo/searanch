@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -29,13 +30,7 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
     @Resource
     private GoodsMapper goodsMapper;
 
-    /**
-     * 根据时间区间查询订单
-     *
-     * @param date1
-     * @param date2
-     * @return
-     */
+    @Override
     public List<Order> getOrdersByTime(Date date1,Date date2){
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
@@ -43,13 +38,8 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         orderCriteria.andFinishTimeLessThan(date2);
         return orderMapper.selectByExample(orderExample);
     }
-    /**
-     * 根据时间区间查询订单的数量
-     *
-     * @param date1
-     * @param date2
-     * @return
-     */
+
+    @Override
     public int getOrderAmountByTime(Date date1,Date date2){
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
@@ -116,22 +106,35 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
     }
 
     @Override
-    public Map<Integer, Integer> quarterOrderAmount(Integer year) {
-        Map<Integer,Integer> map=new HashMap<>();
+    public Map<Integer, Float> quarterOrderRatio(Integer year) {
+        Map<Integer,Float> map=new HashMap<>();
+        Map<Integer,Integer> quarterMap=new HashMap<>();
         int k=1;
+        int sum=0;
         for(int i=1;i<=MONTHS;i=i+3){
             Date date1=DateUtil.parseDate(year,i);
             Date date2=DateUtil.parseDate(year,i+3);
             int orderAmount=getOrderAmountByTime(date1,date2);
-            map.put(k,orderAmount);
+            sum+=orderAmount;
+            quarterMap.put(k,orderAmount);
             k++;
+        }
+        DecimalFormat df=new DecimalFormat("0.00");
+        for(Map.Entry<Integer,Integer> entry:quarterMap.entrySet()){
+            if(sum!=0) {
+                float proportion = Float.parseFloat(df.format((float) entry.getValue() / sum));
+                map.put(entry.getKey(), proportion);
+            }else{
+                map.put(entry.getKey(),(float)0);
+            }
         }
         return map;
     }
 
     @Override
-    public Map<String, Integer> quarterGoodsTypeOrderAmount(Integer year, Integer quarter) {
-        Map<String,Integer> map=new HashMap<>();
+    public Map<String, Float> quarterGoodsTypeOrderRatio(Integer year, Integer quarter) {
+        Map<String,Float> map=new HashMap<>();
+        Map<String,Integer> typeMap=new HashMap<>();
         Date date1=null;
         Date date2=null;
         switch (quarter){
@@ -157,21 +160,28 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         int k=1;
         for(Order order:orderList){
             Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
-            if (map.containsKey(goods.getType())) {
-                k=map.get(goods.getType());
-                map.put(goods.getType(),k+1);
+            if (typeMap.containsKey(goods.getType())) {
+                k=typeMap.get(goods.getType());
+                typeMap.put(goods.getType(),k+1);
 
             }else{
-                map.put(goods.getType(),k);
+                typeMap.put(goods.getType(),k);
             }
             k=1;
         }
+        DecimalFormat df=new DecimalFormat("0.00");
+        int len=orderList.size();
+        for(Map.Entry<String,Integer> entry:typeMap.entrySet()){
+            float proportion=Float.parseFloat(df.format((float)entry.getValue()/len));
+            map.put(entry.getKey(),proportion);
+        }
         return map;
     }
 
     @Override
-    public Map<String, Integer> quarterOrderAmountOfType(Integer year, Integer quarter, String type) {
-        Map<String,Integer> map=new HashMap<>();
+    public Map<String, Float> quarterOrderRatioOfType(Integer year, Integer quarter, String type) {
+        Map<String,Float> map=new HashMap<>();
+        Map<String,Integer> goodsMap=new HashMap<>();
         Date date1=null;
         Date date2=null;
         switch (quarter){
@@ -195,18 +205,85 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         }
         List<Order> orderList=getOrdersByTime(date1,date2);
         int k=1;
+        int thisType=0;
         for(Order order:orderList){
             Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
+
             if(!goods.getType().equals(type)){
                 continue;
             }
-            if(map.containsKey(goods.getGoodsName())){
-                k=map.get(goods.getGoodsName());
-                map.put(goods.getGoodsName(),k+1);
+            if(goodsMap.containsKey(goods.getGoodsName())){
+                k=goodsMap.get(goods.getGoodsName());
+                goodsMap.put(goods.getGoodsName(),k+1);
             }else{
-                map.put(goods.getGoodsName(),k);
+                goodsMap.put(goods.getGoodsName(),k);
             }
             k=1;
+            thisType++;
+        }
+        DecimalFormat df=new DecimalFormat("0.00");
+        for(Map.Entry<String,Integer> entry:goodsMap.entrySet()){
+            if(thisType!=0) {
+                float proportion = Float.parseFloat(df.format((float) entry.getValue() / thisType));
+                map.put(entry.getKey(),proportion);
+            }else {
+                map.put(entry.getKey(), (float)0);
+            }
+        }
+        return map;
+    }
+
+    @Override
+    public Map<String, BigDecimal> ratioOfProvince(Integer year) {
+        Map<String,BigDecimal> map=new HashMap<>();
+        Map<String,BigDecimal> provinceMap=new HashMap<>();
+        Date date1=DateUtil.parseDate(year);
+        Date date2=DateUtil.parseDate(year+1);
+        List<Order> orderList=getOrdersByTime(date1,date2);
+        BigDecimal thisProvince;
+        BigDecimal salesVolume=BigDecimal.ZERO;
+        for(Order order:orderList){
+            salesVolume=salesVolume.add(order.getPrice().multiply(new BigDecimal(order.getAmount())));
+            if (provinceMap.containsKey(order.getProvince())) {
+                thisProvince=provinceMap.get(order.getProvince());
+                provinceMap.put(order.getProvince(),thisProvince.add(order.getPrice().multiply(new BigDecimal(order.getAmount()))));
+            }else{
+                provinceMap.put(order.getProvince(),order.getPrice().multiply(new BigDecimal(order.getAmount())));
+            }
+        }
+        for(Map.Entry<String,BigDecimal> entry:provinceMap.entrySet()){
+            BigDecimal ratio=entry.getValue().divide(salesVolume,2,BigDecimal.ROUND_HALF_UP);
+            map.put(entry.getKey(),ratio);
+        }
+        return map;
+    }
+
+    @Override
+    public Map<String, BigDecimal> ratioOfCity(Integer year, String province) {
+        Map<String,BigDecimal> map=new HashMap<>();
+        Date date1=DateUtil.parseDate(year);
+        Date date2=DateUtil.parseDate(year+1);
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andFinishTimeGreaterThanOrEqualTo(date1);
+        orderCriteria.andFinishTimeLessThan(date2);
+        orderCriteria.andProvinceEqualTo(province);
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        Map<String,BigDecimal> cityMap=new HashMap<>();
+        BigDecimal salesVolume=BigDecimal.ZERO;
+        BigDecimal thisCity;
+        for(Order order:orderList){
+            salesVolume=salesVolume.add(order.getPrice().multiply(new BigDecimal(order.getAmount())));
+            if(cityMap.containsKey(order.getCity())){
+                thisCity=map.get(order.getCity());
+                cityMap.put(order.getCity(),thisCity.add(order.getPrice().multiply(new BigDecimal(order.getAmount()))));
+            }else{
+                cityMap.put(order.getCity(),order.getPrice().multiply(new BigDecimal(order.getAmount())));
+            }
+        }
+        for(Map.Entry<String,BigDecimal> entry:cityMap.entrySet()){
+            BigDecimal ratio=entry.getValue().divide(salesVolume,2,BigDecimal.ROUND_HALF_UP);
+            map.put(entry.getKey(),ratio);
         }
         return map;
     }

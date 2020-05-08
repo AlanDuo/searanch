@@ -1,9 +1,8 @@
 package com.yunyuan.searanch.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
+public class User {
     private Long userId;
 
     private String username;
@@ -19,6 +18,8 @@ public class User implements Serializable {
     private String image;
 
     private String country;
+
+    private String province;
 
     private String city;
 
@@ -92,6 +93,14 @@ public class User implements Serializable {
 
     public void setCountry(String country) {
         this.country = country == null ? null : country.trim();
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
     }
 
     public String getCity() {

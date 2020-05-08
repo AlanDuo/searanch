@@ -40,15 +40,15 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <!-- 指定Table的生成策略 -->
-        <!--<table tableName="user" domainObjectName="User"></table>-->
+        <table tableName="user" domainObjectName="User"></table>
         <!--<table tableName="role" domainObjectName="Role"></table>
         <table tableName="permission" domainObjectName="Permission"></table>-->
-        <!--<table tableName="merchant_register" domainObjectName="MerchantRegister"></table>-->
+        <table tableName="merchant_register" domainObjectName="MerchantRegister"></table>
         <!--<table tableName="feedback" domainObjectName="Feedback"></table>
         <table tableName="browse" domainObjectName="Browse"></table>-->
         <!--<table tableName="discount" domainObjectName="Discount"></table>-->
-        <table tableName="goods" domainObjectName="Goods"></table>
-        <!--<table tableName="order" domainObjectName="Order"></table>-->
+        <!--<table tableName="goods" domainObjectName="Goods"></table>-->
+        <table tableName="order" domainObjectName="Order"></table>
         <!--<table tableName="shop_cart" domainObjectName="ShopCart"></table>
         <table tableName="goods_type" domainObjectName="GoodsType"></table>-->
         <!--<table tableName="evaluate" domainObjectName="Evaluate"></table>-->

@@ -26,6 +26,12 @@ public class Order {
 
     private Long discountId;
 
+    private String country;
+
+    private String province;
+
+    private String city;
+
     private String address;
 
     private Date orderTime;
@@ -128,6 +134,30 @@ public class Order {
 
     public void setDiscountId(Long discountId) {
         this.discountId = discountId;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country == null ? null : country.trim();
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
     }
 
     public String getAddress() {

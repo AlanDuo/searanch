@@ -10,6 +10,7 @@
     <result column="nickname" property="nickname" jdbcType="VARCHAR" />
     <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
     <result column="city" property="city" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="growth" property="growth" jdbcType="INTEGER" />
@@ -75,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    user_id, username, password, phone_number, email, nickname, image, country, city, 
-    address, growth, register_time, login_time
+    user_id, username, password, phone_number, email, nickname, image, country, province, 
+    city, address, growth, register_time, login_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.UserExample" >
     select
@@ -111,14 +112,14 @@
   <insert id="insert" parameterType="com.yunyuan.searanch.entity.User" >
     insert into user (user_id, username, password, 
       phone_number, email, nickname, 
-      image, country, city, 
-      address, growth, register_time, 
-      login_time)
+      image, country, province, 
+      city, address, growth, 
+      register_time, login_time)
     values (#{userId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phoneNumber,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
-      #{image,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR}, #{growth,jdbcType=INTEGER}, #{registerTime,jdbcType=DATE}, 
-      #{loginTime,jdbcType=TIMESTAMP})
+      #{image,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{growth,jdbcType=INTEGER}, 
+      #{registerTime,jdbcType=DATE}, #{loginTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.User" >
     insert into user
@@ -146,6 +147,9 @@
       </if>
       <if test="country != null" >
         country,
+      </if>
+      <if test="province != null" >
+        province,
       </if>
       <if test="city != null" >
         city,
@@ -187,6 +191,9 @@
       </if>
       <if test="country != null" >
         #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
       </if>
       <if test="city != null" >
         #{city,jdbcType=VARCHAR},
@@ -238,6 +245,9 @@
       <if test="record.country != null" >
         country = #{record.country,jdbcType=VARCHAR},
       </if>
+      <if test="record.province != null" >
+        province = #{record.province,jdbcType=VARCHAR},
+      </if>
       <if test="record.city != null" >
         city = #{record.city,jdbcType=VARCHAR},
       </if>
@@ -268,6 +278,7 @@
       nickname = #{record.nickname,jdbcType=VARCHAR},
       image = #{record.image,jdbcType=VARCHAR},
       country = #{record.country,jdbcType=VARCHAR},
+      province = #{record.province,jdbcType=VARCHAR},
       city = #{record.city,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       growth = #{record.growth,jdbcType=INTEGER},
@@ -301,6 +312,9 @@
       <if test="country != null" >
         country = #{country,jdbcType=VARCHAR},
       </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
       <if test="city != null" >
         city = #{city,jdbcType=VARCHAR},
       </if>
@@ -328,6 +342,7 @@
       nickname = #{nickname,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
       country = #{country,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       growth = #{growth,jdbcType=INTEGER},

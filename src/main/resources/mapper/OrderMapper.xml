@@ -13,6 +13,9 @@
     <result column="price" property="price" jdbcType="DECIMAL" />
     <result column="discount" property="discount" jdbcType="DECIMAL" />
     <result column="discount_id" property="discountId" jdbcType="BIGINT" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="order_time" property="orderTime" jdbcType="TIMESTAMP" />
     <result column="paid" property="paid" jdbcType="BIT" />
@@ -82,8 +85,8 @@
   </sql>
   <sql id="Base_Column_List" >
     order_id, order_number, user_id, user_name, goods_id, goods_name, type_id, amount, 
-    price, discount, discount_id, address, order_time, paid, pay_time, finished, finish_time, 
-    merchant_id, merchant
+    price, discount, discount_id, country, province, city, address, order_time, paid, 
+    pay_time, finished, finish_time, merchant_id, merchant
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.OrderExample" >
     select
@@ -119,14 +122,16 @@
     insert into order (order_id, order_number, user_id, 
       user_name, goods_id, goods_name, 
       type_id, amount, price, 
-      discount, discount_id, address, 
+      discount, discount_id, country, 
+      province, city, address, 
       order_time, paid, pay_time, 
       finished, finish_time, merchant_id, 
       merchant)
     values (#{orderId,jdbcType=BIGINT}, #{orderNumber,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
       #{userName,jdbcType=VARCHAR}, #{goodsId,jdbcType=BIGINT}, #{goodsName,jdbcType=VARCHAR}, 
       #{typeId,jdbcType=BIGINT}, #{amount,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, 
-      #{discount,jdbcType=DECIMAL}, #{discountId,jdbcType=BIGINT}, #{address,jdbcType=VARCHAR}, 
+      #{discount,jdbcType=DECIMAL}, #{discountId,jdbcType=BIGINT}, #{country,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
       #{orderTime,jdbcType=TIMESTAMP}, #{paid,jdbcType=BIT}, #{payTime,jdbcType=TIMESTAMP}, 
       #{finished,jdbcType=BIT}, #{finishTime,jdbcType=TIMESTAMP}, #{merchantId,jdbcType=BIGINT}, 
       #{merchant,jdbcType=VARCHAR})
@@ -166,6 +171,15 @@
       </if>
       <if test="discountId != null" >
         discount_id,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
       </if>
       <if test="address != null" >
         address,
@@ -225,6 +239,15 @@
       </if>
       <if test="discountId != null" >
         #{discountId,jdbcType=BIGINT},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
@@ -294,6 +317,15 @@
       <if test="record.discountId != null" >
         discount_id = #{record.discountId,jdbcType=BIGINT},
       </if>
+      <if test="record.country != null" >
+        country = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.province != null" >
+        province = #{record.province,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
       <if test="record.address != null" >
         address = #{record.address,jdbcType=VARCHAR},
       </if>
@@ -336,6 +368,9 @@
       price = #{record.price,jdbcType=DECIMAL},
       discount = #{record.discount,jdbcType=DECIMAL},
       discount_id = #{record.discountId,jdbcType=BIGINT},
+      country = #{record.country,jdbcType=VARCHAR},
+      province = #{record.province,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       order_time = #{record.orderTime,jdbcType=TIMESTAMP},
       paid = #{record.paid,jdbcType=BIT},
@@ -381,6 +416,15 @@
       <if test="discountId != null" >
         discount_id = #{discountId,jdbcType=BIGINT},
       </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
       </if>
@@ -420,6 +464,9 @@
       price = #{price,jdbcType=DECIMAL},
       discount = #{discount,jdbcType=DECIMAL},
       discount_id = #{discountId,jdbcType=BIGINT},
+      country = #{country,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       order_time = #{orderTime,jdbcType=TIMESTAMP},
       paid = #{paid,jdbcType=BIT},

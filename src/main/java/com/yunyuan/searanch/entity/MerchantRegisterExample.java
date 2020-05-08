@@ -822,6 +822,76 @@ public class MerchantRegisterExample {
             return (Criteria) this;
         }
 
+        public Criteria andProvinceIsNull() {
+            addCriterion("province is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceIsNotNull() {
+            addCriterion("province is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceEqualTo(String value) {
+            addCriterion("province =", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceNotEqualTo(String value) {
+            addCriterion("province <>", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceGreaterThan(String value) {
+            addCriterion("province >", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceGreaterThanOrEqualTo(String value) {
+            addCriterion("province >=", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceLessThan(String value) {
+            addCriterion("province <", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceLessThanOrEqualTo(String value) {
+            addCriterion("province <=", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceLike(String value) {
+            addCriterion("province like", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceNotLike(String value) {
+            addCriterion("province not like", value, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceIn(List<String> values) {
+            addCriterion("province in", values, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceNotIn(List<String> values) {
+            addCriterion("province not in", values, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceBetween(String value1, String value2) {
+            addCriterion("province between", value1, value2, "province");
+            return (Criteria) this;
+        }
+
+        public Criteria andProvinceNotBetween(String value1, String value2) {
+            addCriterion("province not between", value1, value2, "province");
+            return (Criteria) this;
+        }
+
         public Criteria andCityIsNull() {
             addCriterion("city is null");
             return (Criteria) this;
@@ -1079,6 +1149,66 @@ public class MerchantRegisterExample {
 
         public Criteria andRegistraTimeNotBetween(Date value1, Date value2) {
             addCriterionForJDBCDate("registra_time not between", value1, value2, "registraTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarIsNull() {
+            addCriterion("star is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarIsNotNull() {
+            addCriterion("star is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarEqualTo(Integer value) {
+            addCriterion("star =", value, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarNotEqualTo(Integer value) {
+            addCriterion("star <>", value, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarGreaterThan(Integer value) {
+            addCriterion("star >", value, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarGreaterThanOrEqualTo(Integer value) {
+            addCriterion("star >=", value, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarLessThan(Integer value) {
+            addCriterion("star <", value, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarLessThanOrEqualTo(Integer value) {
+            addCriterion("star <=", value, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarIn(List<Integer> values) {
+            addCriterion("star in", values, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarNotIn(List<Integer> values) {
+            addCriterion("star not in", values, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarBetween(Integer value1, Integer value2) {
+            addCriterion("star between", value1, value2, "star");
+            return (Criteria) this;
+        }
+
+        public Criteria andStarNotBetween(Integer value1, Integer value2) {
+            addCriterion("star not between", value1, value2, "star");
             return (Criteria) this;
         }
     }
