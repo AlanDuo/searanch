@@ -14,6 +14,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class OrderController {
 
     @ApiOperation(value="下单")
     @PostMapping("/addOrder")
-    public ResponseData addOrder(OrderDTO orderDTO){
+    public ResponseData addOrder(@Validated @RequestBody OrderDTO orderDTO){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
         orderService.addOrder(orderDTO,user);
@@ -43,8 +44,8 @@ public class OrderController {
     }
     @ApiOperation(value="支付")
     @PostMapping("/pay")
-    public ResponseData pay(){
-
+    public ResponseData pay(String orderNumber){
+        orderService.payOrder(orderNumber);
         return ResponseData.ok();
     }
     @ApiOperation(value="查询订单")

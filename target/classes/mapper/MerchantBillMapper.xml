@@ -4,11 +4,10 @@
   <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.MerchantBill" >
     <id column="bill_id" property="billId" jdbcType="BIGINT" />
     <result column="merchant_id" property="merchantId" jdbcType="BIGINT" />
-    <result column="goods_id" property="goodsId" jdbcType="BIGINT" />
+    <result column="apply_id" property="applyId" jdbcType="BIGINT" />
     <result column="goods_type" property="goodsType" jdbcType="VARCHAR" />
     <result column="amount" property="amount" jdbcType="INTEGER" />
     <result column="income" property="income" jdbcType="DECIMAL" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="record_date" property="recordDate" jdbcType="DATE" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -70,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    bill_id, merchant_id, goods_id, goods_type, amount, income, update_time, record_date
+    bill_id, merchant_id, apply_id, goods_type, amount, income, record_date
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.MerchantBillExample" >
     select
@@ -103,12 +102,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.yunyuan.searanch.entity.MerchantBill" >
-    insert into merchant_bill (bill_id, merchant_id, goods_id, 
+    insert into merchant_bill (bill_id, merchant_id, apply_id, 
       goods_type, amount, income, 
-      update_time, record_date)
-    values (#{billId,jdbcType=BIGINT}, #{merchantId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, 
+      record_date)
+    values (#{billId,jdbcType=BIGINT}, #{merchantId,jdbcType=BIGINT}, #{applyId,jdbcType=BIGINT}, 
       #{goodsType,jdbcType=VARCHAR}, #{amount,jdbcType=INTEGER}, #{income,jdbcType=DECIMAL}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{recordDate,jdbcType=DATE})
+      #{recordDate,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.MerchantBill" >
     insert into merchant_bill
@@ -119,8 +118,8 @@
       <if test="merchantId != null" >
         merchant_id,
       </if>
-      <if test="goodsId != null" >
-        goods_id,
+      <if test="applyId != null" >
+        apply_id,
       </if>
       <if test="goodsType != null" >
         goods_type,
@@ -130,9 +129,6 @@
       </if>
       <if test="income != null" >
         income,
-      </if>
-      <if test="updateTime != null" >
-        update_time,
       </if>
       <if test="recordDate != null" >
         record_date,
@@ -145,8 +141,8 @@
       <if test="merchantId != null" >
         #{merchantId,jdbcType=BIGINT},
       </if>
-      <if test="goodsId != null" >
-        #{goodsId,jdbcType=BIGINT},
+      <if test="applyId != null" >
+        #{applyId,jdbcType=BIGINT},
       </if>
       <if test="goodsType != null" >
         #{goodsType,jdbcType=VARCHAR},
@@ -156,9 +152,6 @@
       </if>
       <if test="income != null" >
         #{income,jdbcType=DECIMAL},
-      </if>
-      <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="recordDate != null" >
         #{recordDate,jdbcType=DATE},
@@ -180,8 +173,8 @@
       <if test="record.merchantId != null" >
         merchant_id = #{record.merchantId,jdbcType=BIGINT},
       </if>
-      <if test="record.goodsId != null" >
-        goods_id = #{record.goodsId,jdbcType=BIGINT},
+      <if test="record.applyId != null" >
+        apply_id = #{record.applyId,jdbcType=BIGINT},
       </if>
       <if test="record.goodsType != null" >
         goods_type = #{record.goodsType,jdbcType=VARCHAR},
@@ -191,9 +184,6 @@
       </if>
       <if test="record.income != null" >
         income = #{record.income,jdbcType=DECIMAL},
-      </if>
-      <if test="record.updateTime != null" >
-        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.recordDate != null" >
         record_date = #{record.recordDate,jdbcType=DATE},
@@ -207,11 +197,10 @@
     update merchant_bill
     set bill_id = #{record.billId,jdbcType=BIGINT},
       merchant_id = #{record.merchantId,jdbcType=BIGINT},
-      goods_id = #{record.goodsId,jdbcType=BIGINT},
+      apply_id = #{record.applyId,jdbcType=BIGINT},
       goods_type = #{record.goodsType,jdbcType=VARCHAR},
       amount = #{record.amount,jdbcType=INTEGER},
       income = #{record.income,jdbcType=DECIMAL},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       record_date = #{record.recordDate,jdbcType=DATE}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -223,8 +212,8 @@
       <if test="merchantId != null" >
         merchant_id = #{merchantId,jdbcType=BIGINT},
       </if>
-      <if test="goodsId != null" >
-        goods_id = #{goodsId,jdbcType=BIGINT},
+      <if test="applyId != null" >
+        apply_id = #{applyId,jdbcType=BIGINT},
       </if>
       <if test="goodsType != null" >
         goods_type = #{goodsType,jdbcType=VARCHAR},
@@ -235,9 +224,6 @@
       <if test="income != null" >
         income = #{income,jdbcType=DECIMAL},
       </if>
-      <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="recordDate != null" >
         record_date = #{recordDate,jdbcType=DATE},
       </if>
@@ -247,11 +233,10 @@
   <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.MerchantBill" >
     update merchant_bill
     set merchant_id = #{merchantId,jdbcType=BIGINT},
-      goods_id = #{goodsId,jdbcType=BIGINT},
+      apply_id = #{applyId,jdbcType=BIGINT},
       goods_type = #{goodsType,jdbcType=VARCHAR},
       amount = #{amount,jdbcType=INTEGER},
       income = #{income,jdbcType=DECIMAL},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
       record_date = #{recordDate,jdbcType=DATE}
     where bill_id = #{billId,jdbcType=BIGINT}
   </update>

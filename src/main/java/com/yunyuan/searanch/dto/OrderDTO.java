@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-import java.util.Date;
+import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 /**
  * @author alan
@@ -16,28 +16,21 @@ import java.util.Date;
 @AllArgsConstructor
 public class OrderDTO {
 
-    private Long orderId;
-
+    @NotBlank(message = "订单编号不能为空")
     private String orderNumber;
 
-    private Long goodsId;
+    private String phoneNumber;
 
-    private Long typeId;
+    private String addressee;
 
-    private Integer amount;
+    private List<OrderGoodsDTO> goodsList;
 
-    private BigDecimal price;
+    private  String country;
 
-    private BigDecimal discount;
+    private String province;
 
-    private Long discountId;
-
+    private String city;
+    @NotBlank(message = "地址不能为空")
     private String address;
-
-    private Date orderTime;
-
-    private Boolean paid;
-
-    private Boolean finished;
 
 }

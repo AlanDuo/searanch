@@ -24,10 +24,10 @@ public interface OrderService {
     /**
      * 订单支付
      *
-     * @param cartId
+     * @param orderNumber
      * @return
      */
-    boolean payOrder(Long cartId);
+    boolean payOrder(String orderNumber);
 
     /**
      * 查看我的订单

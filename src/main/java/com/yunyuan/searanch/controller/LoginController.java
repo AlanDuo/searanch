@@ -2,6 +2,7 @@ package com.yunyuan.searanch.controller;
 
 import com.yunyuan.searanch.dto.MerchantRegisterDTO;
 import com.yunyuan.searanch.dto.UserRegisterDTO;
+import com.yunyuan.searanch.entity.MerchantRegister;
 import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.service.UserService;
 import com.yunyuan.searanch.utils.MessageCodeUtil;
@@ -67,12 +68,13 @@ public class LoginController {
     }
     @ApiOperation(value ="商户注册",notes = "商户注册")
     @PostMapping("/merchantRegister")
-    public ResponseData merchantRegister(@Validated @RequestBody MerchantRegisterDTO merchantRegisterDTO){
+    public ResponseData merchantRegister(String code,@Validated @RequestBody MerchantRegisterDTO merchantRegisterDTO){
         if(null!=userService.getMerchantByPhone(merchantRegisterDTO.getMerchantPhone())){
             return new ResponseData(500,"该商户已经注册");
         }
 
-        if(userService.registerMerchant(merchantRegisterDTO)) {
+        if(messageCode.equals(code) && merchantRegisterDTO.getMerchantPhone().equals(phone)) {
+            userService.registerMerchant(merchantRegisterDTO);
             return ResponseData.ok();
         }else{
             return new ResponseData(500,"注册失败，该商户可能已存在");
@@ -82,7 +84,7 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseData userLogin(String phoneNumber, String password){
         try {
-            Map<String,String> map=new HashMap<>(6);
+            Map<String,String> map=new HashMap<>(7);
             password=new Md5Hash(password,phoneNumber,3).toString();
             UsernamePasswordToken token=new UsernamePasswordToken(phoneNumber,password);
             Subject subject= SecurityUtils.getSubject();
@@ -96,12 +98,26 @@ public class LoginController {
             map.put("nickname",user.getNickname());
             map.put("image",user.getImage());
             map.put("role",role);
-            map.put("userId",user.getUserId()+"");
+            MerchantRegister merchant=userService.getMerchantByPhone(user.getPhoneNumber());
+            if(null!=merchant && "merchant".equals(role)){
+                map.put("star",merchant.getStar()+"");
+            }else{
+                map.put("growth",user.getGrowth()+"");
+            }
             return ResponseData.ok().putDataValue(map);
         }catch (Exception e){
             LOGGER.info(e.getMessage());
             return new ResponseData(500,"login failed");
         }
+    }
+    @ApiOperation(value = "退出登录")
+    @GetMapping("/logout")
+    public ResponseData logout(){
+        Subject subject= SecurityUtils.getSubject();
+        User user=(User)subject.getPrincipal();
+        subject.logout();
+        redisTemplate.delete("loginUser"+user.getPhoneNumber());
+        return ResponseData.ok();
     }
     @GetMapping("/noAuth")
     public ResponseData noAuth(){

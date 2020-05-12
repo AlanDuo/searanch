@@ -660,3 +660,5 @@ Z
 *target/classes/mapper/GoodsApplyMapper.xml,4\d\4d1f6f26590c8694bef2a2ecff4909f30f596182
 \
 ,target/classes/mapper/MerchantBillMapper.xml,5\d\5d13d16db7c2db3c4dd4a5d02fe9fea7d0c259b0
+i
+9src/main/java/com/yunyuan/searanch/dto/OrderGoodsDTO.java,3\3\331e8c15aab8b640e53525817c880c5151ce889c

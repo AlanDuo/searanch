@@ -1,5 +1,6 @@
 package com.yunyuan.searanch.service;
 
+import com.yunyuan.searanch.dto.AdminRegisterDTO;
 import com.yunyuan.searanch.entity.User;
 import java.util.Map;
 
@@ -8,6 +9,20 @@ import java.util.Map;
  * @date 2020/4/25
  */
 public interface AdminService {
+    /**
+     * 判断该管理员是否已经注册
+     *
+     * @param phone
+     * @return
+     */
+    boolean adminExist(String phone);
+    /**
+     * 管理员注册
+     *
+     * @param adminRegisterDTO
+     * @return
+     */
+    boolean adminRegister(AdminRegisterDTO adminRegisterDTO);
     /**
      * 修改密码
      *

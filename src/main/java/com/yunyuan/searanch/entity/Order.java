@@ -10,6 +10,8 @@ public class Order {
 
     private Long userId;
 
+    private String phone;
+
     private String userName;
 
     private Long goodsId;
@@ -70,6 +72,14 @@ public class Order {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
     public String getUserName() {

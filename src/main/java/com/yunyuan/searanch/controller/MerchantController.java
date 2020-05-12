@@ -3,14 +3,12 @@ package com.yunyuan.searanch.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yunyuan.searanch.dto.GoodsApplyDTO;
-import com.yunyuan.searanch.entity.Goods;
-import com.yunyuan.searanch.entity.MerchantBill;
+import com.yunyuan.searanch.entity.GoodsApply;
 import com.yunyuan.searanch.entity.MerchantRegister;
 import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.service.MerchantService;
 import com.yunyuan.searanch.utils.ResponseData;
 import com.yunyuan.searanch.vo.BillVO;
-import com.yunyuan.searanch.vo.StockVO;
 import com.yunyuan.searanch.vo.TableVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -43,23 +41,7 @@ public class MerchantController {
         this.merchantService=merchantService;
     }
 
-    @ApiOperation(value="库存")
-    @GetMapping("/stock")
-    public TableVO stockDetails(String goodsName,
-                                @RequestParam(value = "page",defaultValue = "1")Integer page,
-                                @RequestParam(value = "limit",defaultValue = "10")Integer limit){
-        Subject subject= SecurityUtils.getSubject();
-        User user=(User)subject.getPrincipal();
-        MerchantRegister merchantRegister=merchantService.getMerchantIdByUserId(user.getUserId());
-        if(merchantRegister==null){
-            return new TableVO();
-        }
-        PageHelper.startPage(page,limit);
-        Map<String,Object> map=merchantService.getStockDetails(merchantRegister.getRegistraId(),goodsName);
-        PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
-        List<StockVO> stockVOList=(List<StockVO>)map.get("stockVOList");
-        return new TableVO<>(pageInfo,stockVOList);
-    }
+
     @ApiOperation(value="账单")
     @GetMapping("/bill")
     public TableVO billDetails(String date,
@@ -71,7 +53,7 @@ public class MerchantController {
         if(merchantRegister==null){
             return new TableVO();
         }
-        PageHelper.startPage(page,limit);
+
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         Date recordDate=null;
         try {
@@ -81,8 +63,9 @@ public class MerchantController {
         }catch (Exception e){
             LOGGER.info(e.getMessage());
         }
+        PageHelper.startPage(page,limit);
         Map<String,Object> map=merchantService.getBill(merchantRegister.getRegistraId(),recordDate);
-        PageInfo pageInfo=new PageInfo<>((List<MerchantBill>)map.get(PAGE_INFO));
+        PageInfo pageInfo=new PageInfo<>((List<GoodsApply>)map.get(PAGE_INFO));
         List<BillVO> billVOList=(List<BillVO>)map.get("billVOList");
         return new TableVO<>(pageInfo,billVOList);
     }

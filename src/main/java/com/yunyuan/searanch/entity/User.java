@@ -1,8 +1,9 @@
 package com.yunyuan.searanch.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
     private Long userId;
 
     private String username;

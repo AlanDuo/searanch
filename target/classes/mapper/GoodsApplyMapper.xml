@@ -9,9 +9,9 @@
     <result column="picture" property="picture" jdbcType="VARCHAR" />
     <result column="amount" property="amount" jdbcType="INTEGER" />
     <result column="breed_time" property="breedTime" jdbcType="DATE" />
-    <result column="plan_up_time" property="planUpTime" jdbcType="DATE" />
+    <result column="plan_take_time" property="planTakeTime" jdbcType="DATE" />
     <result column="country" property="country" jdbcType="VARCHAR" />
-    <result column="region" property="region" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
     <result column="city" property="city" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -73,8 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    apply_id, merchant_id, goods_name, goods_type, picture, amount, breed_time, plan_up_time, 
-    country, region, city
+    apply_id, merchant_id, goods_name, goods_type, picture, amount, breed_time, plan_take_time, 
+    country, province, city
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.GoodsApplyExample" >
     select
@@ -109,12 +109,12 @@
   <insert id="insert" parameterType="com.yunyuan.searanch.entity.GoodsApply" >
     insert into goods_apply (apply_id, merchant_id, goods_name, 
       goods_type, picture, amount, 
-      breed_time, plan_up_time, country, 
-      region, city)
+      breed_time, plan_take_time, country, 
+      province, city)
     values (#{applyId,jdbcType=BIGINT}, #{merchantId,jdbcType=BIGINT}, #{goodsName,jdbcType=VARCHAR}, 
       #{goodsType,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, #{amount,jdbcType=INTEGER}, 
-      #{breedTime,jdbcType=DATE}, #{planUpTime,jdbcType=DATE}, #{country,jdbcType=VARCHAR}, 
-      #{region,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR})
+      #{breedTime,jdbcType=DATE}, #{planTakeTime,jdbcType=DATE}, #{country,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.GoodsApply" >
     insert into goods_apply
@@ -140,14 +140,14 @@
       <if test="breedTime != null" >
         breed_time,
       </if>
-      <if test="planUpTime != null" >
-        plan_up_time,
+      <if test="planTakeTime != null" >
+        plan_take_time,
       </if>
       <if test="country != null" >
         country,
       </if>
-      <if test="region != null" >
-        region,
+      <if test="province != null" >
+        province,
       </if>
       <if test="city != null" >
         city,
@@ -175,14 +175,14 @@
       <if test="breedTime != null" >
         #{breedTime,jdbcType=DATE},
       </if>
-      <if test="planUpTime != null" >
-        #{planUpTime,jdbcType=DATE},
+      <if test="planTakeTime != null" >
+        #{planTakeTime,jdbcType=DATE},
       </if>
       <if test="country != null" >
         #{country,jdbcType=VARCHAR},
       </if>
-      <if test="region != null" >
-        #{region,jdbcType=VARCHAR},
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
       </if>
       <if test="city != null" >
         #{city,jdbcType=VARCHAR},
@@ -219,14 +219,14 @@
       <if test="record.breedTime != null" >
         breed_time = #{record.breedTime,jdbcType=DATE},
       </if>
-      <if test="record.planUpTime != null" >
-        plan_up_time = #{record.planUpTime,jdbcType=DATE},
+      <if test="record.planTakeTime != null" >
+        plan_take_time = #{record.planTakeTime,jdbcType=DATE},
       </if>
       <if test="record.country != null" >
         country = #{record.country,jdbcType=VARCHAR},
       </if>
-      <if test="record.region != null" >
-        region = #{record.region,jdbcType=VARCHAR},
+      <if test="record.province != null" >
+        province = #{record.province,jdbcType=VARCHAR},
       </if>
       <if test="record.city != null" >
         city = #{record.city,jdbcType=VARCHAR},
@@ -245,9 +245,9 @@
       picture = #{record.picture,jdbcType=VARCHAR},
       amount = #{record.amount,jdbcType=INTEGER},
       breed_time = #{record.breedTime,jdbcType=DATE},
-      plan_up_time = #{record.planUpTime,jdbcType=DATE},
+      plan_take_time = #{record.planTakeTime,jdbcType=DATE},
       country = #{record.country,jdbcType=VARCHAR},
-      region = #{record.region,jdbcType=VARCHAR},
+      province = #{record.province,jdbcType=VARCHAR},
       city = #{record.city,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -274,14 +274,14 @@
       <if test="breedTime != null" >
         breed_time = #{breedTime,jdbcType=DATE},
       </if>
-      <if test="planUpTime != null" >
-        plan_up_time = #{planUpTime,jdbcType=DATE},
+      <if test="planTakeTime != null" >
+        plan_take_time = #{planTakeTime,jdbcType=DATE},
       </if>
       <if test="country != null" >
         country = #{country,jdbcType=VARCHAR},
       </if>
-      <if test="region != null" >
-        region = #{region,jdbcType=VARCHAR},
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
       </if>
       <if test="city != null" >
         city = #{city,jdbcType=VARCHAR},
@@ -297,9 +297,9 @@
       picture = #{picture,jdbcType=VARCHAR},
       amount = #{amount,jdbcType=INTEGER},
       breed_time = #{breedTime,jdbcType=DATE},
-      plan_up_time = #{planUpTime,jdbcType=DATE},
+      plan_take_time = #{planTakeTime,jdbcType=DATE},
       country = #{country,jdbcType=VARCHAR},
-      region = #{region,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR}
     where apply_id = #{applyId,jdbcType=BIGINT}
   </update>

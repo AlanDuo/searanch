@@ -17,8 +17,9 @@
     <result column="produce_time" property="produceTime" jdbcType="DATE" />
     <result column="pack_time" property="packTime" jdbcType="DATE" />
     <result column="country" property="country" jdbcType="VARCHAR" />
-    <result column="region" property="region" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
     <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="region" property="region" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -80,7 +81,7 @@
   </sql>
   <sql id="Base_Column_List" >
     goods_id, goods_name, type, process_mode, picture, video, goods_desc, price, up_shelf, 
-    up_time, stock, business, produce_time, pack_time, country, region, city
+    up_time, stock, business, produce_time, pack_time, country, province, city, region
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.GoodsExample" >
     select
@@ -118,13 +119,15 @@
       goods_desc, price, up_shelf, 
       up_time, stock, business, 
       produce_time, pack_time, country, 
-      region, city)
+      province, city, region
+      )
     values (#{goodsId,jdbcType=BIGINT}, #{goodsName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
       #{processMode,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, #{video,jdbcType=VARCHAR}, 
       #{goodsDesc,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{upShelf,jdbcType=BIT}, 
       #{upTime,jdbcType=TIMESTAMP}, #{stock,jdbcType=INTEGER}, #{business,jdbcType=BIGINT}, 
       #{produceTime,jdbcType=DATE}, #{packTime,jdbcType=DATE}, #{country,jdbcType=VARCHAR}, 
-      #{region,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR})
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{region,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Goods" >
     insert into goods
@@ -174,11 +177,14 @@
       <if test="country != null" >
         country,
       </if>
-      <if test="region != null" >
-        region,
+      <if test="province != null" >
+        province,
       </if>
       <if test="city != null" >
         city,
+      </if>
+      <if test="region != null" >
+        region,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -227,11 +233,14 @@
       <if test="country != null" >
         #{country,jdbcType=VARCHAR},
       </if>
-      <if test="region != null" >
-        #{region,jdbcType=VARCHAR},
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
       </if>
       <if test="city != null" >
         #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null" >
+        #{region,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -289,11 +298,14 @@
       <if test="record.country != null" >
         country = #{record.country,jdbcType=VARCHAR},
       </if>
-      <if test="record.region != null" >
-        region = #{record.region,jdbcType=VARCHAR},
+      <if test="record.province != null" >
+        province = #{record.province,jdbcType=VARCHAR},
       </if>
       <if test="record.city != null" >
         city = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.region != null" >
+        region = #{record.region,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -317,8 +329,9 @@
       produce_time = #{record.produceTime,jdbcType=DATE},
       pack_time = #{record.packTime,jdbcType=DATE},
       country = #{record.country,jdbcType=VARCHAR},
-      region = #{record.region,jdbcType=VARCHAR},
-      city = #{record.city,jdbcType=VARCHAR}
+      province = #{record.province,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
+      region = #{record.region,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -368,11 +381,14 @@
       <if test="country != null" >
         country = #{country,jdbcType=VARCHAR},
       </if>
-      <if test="region != null" >
-        region = #{region,jdbcType=VARCHAR},
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
       </if>
       <if test="city != null" >
         city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null" >
+        region = #{region,jdbcType=VARCHAR},
       </if>
     </set>
     where goods_id = #{goodsId,jdbcType=BIGINT}
@@ -393,8 +409,9 @@
       produce_time = #{produceTime,jdbcType=DATE},
       pack_time = #{packTime,jdbcType=DATE},
       country = #{country,jdbcType=VARCHAR},
-      region = #{region,jdbcType=VARCHAR},
-      city = #{city,jdbcType=VARCHAR}
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      region = #{region,jdbcType=VARCHAR}
     where goods_id = #{goodsId,jdbcType=BIGINT}
   </update>
 </mapper>

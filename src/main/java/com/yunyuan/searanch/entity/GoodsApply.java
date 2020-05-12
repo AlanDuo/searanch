@@ -1,5 +1,6 @@
 package com.yunyuan.searanch.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class GoodsApply {
@@ -17,13 +18,21 @@ public class GoodsApply {
 
     private Date breedTime;
 
-    private Date planUpTime;
+    private Date planTakeTime;
 
     private String country;
 
-    private String region;
+    private String province;
 
     private String city;
+
+    private BigDecimal price;
+
+    private Date applyTime;
+
+    private Boolean finished;
+
+    private Date finishTime;
 
     public Long getApplyId() {
         return applyId;
@@ -81,12 +90,12 @@ public class GoodsApply {
         this.breedTime = breedTime;
     }
 
-    public Date getPlanUpTime() {
-        return planUpTime;
+    public Date getPlanTakeTime() {
+        return planTakeTime;
     }
 
-    public void setPlanUpTime(Date planUpTime) {
-        this.planUpTime = planUpTime;
+    public void setPlanTakeTime(Date planTakeTime) {
+        this.planTakeTime = planTakeTime;
     }
 
     public String getCountry() {
@@ -97,12 +106,12 @@ public class GoodsApply {
         this.country = country == null ? null : country.trim();
     }
 
-    public String getRegion() {
-        return region;
+    public String getProvince() {
+        return province;
     }
 
-    public void setRegion(String region) {
-        this.region = region == null ? null : region.trim();
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
     }
 
     public String getCity() {
@@ -111,5 +120,37 @@ public class GoodsApply {
 
     public void setCity(String city) {
         this.city = city == null ? null : city.trim();
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Date getApplyTime() {
+        return applyTime;
+    }
+
+    public void setApplyTime(Date applyTime) {
+        this.applyTime = applyTime;
+    }
+
+    public Boolean getFinished() {
+        return finished;
+    }
+
+    public void setFinished(Boolean finished) {
+        this.finished = finished;
+    }
+
+    public Date getFinishTime() {
+        return finishTime;
+    }
+
+    public void setFinishTime(Date finishTime) {
+        this.finishTime = finishTime;
     }
 }

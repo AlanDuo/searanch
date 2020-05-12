@@ -5,12 +5,11 @@ import com.yunyuan.searanch.dao.GoodsTypeMapper;
 import com.yunyuan.searanch.dao.MerchantRegisterMapper;
 import com.yunyuan.searanch.dao.OrderMapper;
 import com.yunyuan.searanch.dto.OrderDTO;
+import com.yunyuan.searanch.dto.OrderGoodsDTO;
 import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.OrderService;
 import com.yunyuan.searanch.vo.OrderListVO;
 import com.yunyuan.searanch.vo.OrderVO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.security.SecureRandom;
 import java.util.*;
 
 /**
@@ -27,7 +25,6 @@ import java.util.*;
  */
 @Service
 public class OrderServiceImpl implements OrderService{
-    private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceImpl.class);
     @Resource
     private OrderMapper orderMapper;
     @Resource
@@ -44,46 +41,52 @@ public class OrderServiceImpl implements OrderService{
         Order order=new Order();
         BeanUtils.copyProperties(orderDTO,order);
         order.setUserId(user.getUserId());
-        order.setUserName(user.getUsername());
+        if(null!=orderDTO.getAddressee() && !"".equals(orderDTO.getAddress())) {
+            order.setUserName(user.getUsername());
+        }else{
+            order.setUserName(orderDTO.getAddress());
+        }
         order.setPaid(false);
         order.setFinished(false);
         order.setOrderTime(new Date());
-        GoodsExample goodsExample=new GoodsExample();
-        GoodsExample.Criteria goodsCriteria=goodsExample.createCriteria();
-        goodsCriteria.andGoodsIdEqualTo(orderDTO.getGoodsId());
-        Goods goods=goodsMapper.selectByExample(goodsExample).get(0);
-        order.setMerchantId(goods.getBusiness());
-        order.setGoodsName(goods.getGoodsName());
-        MerchantRegisterExample merchantRegisterExample=new MerchantRegisterExample();
-        MerchantRegisterExample.Criteria registerCriteria=merchantRegisterExample.createCriteria();
-        registerCriteria.andRegistraIdEqualTo(goods.getBusiness());
-        MerchantRegister merchantRegister=merchantRegisterMapper.selectByExample(merchantRegisterExample).get(0);
-        order.setMerchant(merchantRegister.getMerchantName());
-        String letterChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String orderNumber="";
-        StringBuilder sb=new StringBuilder();
-        try {
-            Random random=SecureRandom.getInstanceStrong();
-            for(int i=0;i<5;i++){
-                sb.append(letterChar.charAt(random.nextInt(52)));
-            }
-            orderNumber+=sb.toString();
-            orderNumber+=random.nextInt(99999);
-        }catch(Exception e){
-            LOGGER.info(e.getMessage());
-        }
 
-        Long time=System.currentTimeMillis();
-        String timeRecord=time.toString().substring(time.toString().length()-8,time.toString().length());
-        orderNumber+=timeRecord;
-        order.setOrderNumber(orderNumber);
-        return orderMapper.insertSelective(order)>0;
+        List<OrderGoodsDTO> orderGoodsList=orderDTO.getGoodsList();
+        for(OrderGoodsDTO goodsDTO:orderGoodsList) {
+            GoodsExample goodsExample = new GoodsExample();
+            GoodsExample.Criteria goodsCriteria = goodsExample.createCriteria();
+            goodsCriteria.andGoodsIdEqualTo(goodsDTO.getGoodsId());
+            Goods goods = goodsMapper.selectByExample(goodsExample).get(0);
+            order.setMerchantId(goods.getBusiness());
+            order.setGoodsName(goods.getGoodsName());
+            order.setAmount(goodsDTO.getAmount());
+            order.setPrice(goodsDTO.getPrice());
+            if(goodsDTO.getTypeId()!=0 && goodsDTO.getTypeId()!=null){
+                order.setTypeId(goodsDTO.getTypeId());
+            }
+
+            MerchantRegisterExample merchantRegisterExample = new MerchantRegisterExample();
+            MerchantRegisterExample.Criteria registerCriteria = merchantRegisterExample.createCriteria();
+            registerCriteria.andRegistraIdEqualTo(goods.getBusiness());
+            MerchantRegister merchantRegister = merchantRegisterMapper.selectByExample(merchantRegisterExample).get(0);
+            order.setMerchant(merchantRegister.getMerchantName());
+
+            orderMapper.insertSelective(order);
+        }
+        return true;
     }
 
     @Override
-    public boolean payOrder(Long cartId) {
-
-        return false;
+    public boolean payOrder(String orderNumber) {
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andOrderNumberEqualTo(orderNumber);
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        for(Order order:orderList){
+            order.setPaid(true);
+            order.setPayTime(new Date());
+            orderMapper.updateByPrimaryKeySelective(order);
+        }
+        return true;
     }
 
     @Override
@@ -100,14 +103,15 @@ public class OrderServiceImpl implements OrderService{
             OrderListVO orderListVO=new OrderListVO();
             orderListVO.setOrderNumber(order.getOrderNumber());
             Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
-            orderListVO.setGoodsId(order.getGoodsId());
-            orderListVO.setAmount(order.getAmount());
-            orderListVO.setOrderTime(order.getOrderTime());
+
+            BeanUtils.copyProperties(order,orderListVO);
+
             orderListVO.setPrice(order.getPrice().subtract(order.getDiscount()));
             orderListVO.setGoodsName(goods.getGoodsName());
             orderListVO.setDesc(goods.getGoodsDesc());
             orderListVO.setPicture(Arrays.asList(goods.getPicture().split(",")).get(0));
             orderListVO.setType(goodsTypeMapper.selectByPrimaryKey(order.getTypeId()).getTypeDesc());
+
             orderListVOS.add(orderListVO);
         }
         map.put("orderListVOS",orderListVOS);

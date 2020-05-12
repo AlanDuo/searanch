@@ -107,6 +107,7 @@ public class PageServiceImpl implements PageService {
         BeanUtils.copyProperties(goods,goodsInfoVO);
         List<String> pictures=Arrays.asList(goods.getPicture().split(","));
         goodsInfoVO.setPictures(pictures);
+        goodsInfoVO.setDesc(goods.getGoodsDesc());
         EvaluateExample evaluateExample=new EvaluateExample();
         EvaluateExample.Criteria evaluateCriteria=evaluateExample.createCriteria();
         evaluateCriteria.andGoodsIdEqualTo(goodsId);
@@ -156,16 +157,18 @@ public class PageServiceImpl implements PageService {
             EvaluateReplyExample.Criteria evaluateReplyCriteria=evaluateReplyExample.createCriteria();
             evaluateReplyCriteria.andEvaluateIdEqualTo(evaluate.getEvaluateId());
             List<EvaluateReply> evaluateReplyList=evaluateReplyMapper.selectByExample(evaluateReplyExample);
-            List<EvaluateReplyVO> replyVOList=new ArrayList<>();
-            for(EvaluateReply reply:evaluateReplyList) {
-                EvaluateReplyVO evaluateReplyVO = new EvaluateReplyVO();
-                Long replyUser=reply.getReplyUser();
-                String replyNickname=userMapper.selectByPrimaryKey(replyUser).getNickname();
-                evaluateReplyVO.setReplyUser(replyNickname);
-                evaluateReplyVO.setReplyContent(reply.getReplyContent());
-                replyVOList.add(evaluateReplyVO);
+            if(evaluateReplyList.size()!=0) {
+                List<EvaluateReplyVO> replyVOList = new ArrayList<>();
+                for (EvaluateReply reply : evaluateReplyList) {
+                    EvaluateReplyVO evaluateReplyVO = new EvaluateReplyVO();
+                    Long replyUser = reply.getReplyUser();
+                    String replyNickname = userMapper.selectByPrimaryKey(replyUser).getNickname();
+                    evaluateReplyVO.setReplyUser(replyNickname);
+                    evaluateReplyVO.setReplyContent(reply.getReplyContent());
+                    replyVOList.add(evaluateReplyVO);
+                }
+                evaluateVO.setEvaluateReplyVO(replyVOList);
             }
-            evaluateVO.setEvaluateReplyVO(replyVOList);
             evaluateVOList.add(evaluateVO);
         }
         map.put("evaluateVOList",evaluateVOList);

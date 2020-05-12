@@ -6,7 +6,6 @@ import com.yunyuan.searanch.dto.UserRegisterDTO;
 import com.yunyuan.searanch.dto.UserUpdateDTO;
 import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.UserService;
-import com.yunyuan.searanch.utils.FileUploadUtil;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.CachePut;
@@ -14,10 +13,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -75,8 +72,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     @CachePut(value = "user",key = "#userId")
-    public User updateUser(Long userId, UserUpdateDTO userUpdateDTO, MultipartFile file, HttpServletRequest request) {
+    public User updateUser(Long userId, UserUpdateDTO userUpdateDTO) {
         User user=userMapper.selectByPrimaryKey(userId);
+        String phone=user.getPhoneNumber();
         if(null!=userUpdateDTO.getUsername() && !"".equals(userUpdateDTO.getUsername().trim())){
             user.setUsername(userUpdateDTO.getUsername());
         }
@@ -89,18 +87,16 @@ public class UserServiceImpl implements UserService {
         if(null!=userUpdateDTO.getNickname() && !"".equals(userUpdateDTO.getNickname().trim())){
             user.setNickname(userUpdateDTO.getNickname());
         }
-        if(null!=userUpdateDTO.getAddress() && !"".equals(userUpdateDTO.getAddress())){
-            user.setAddress(userUpdateDTO.getAddress());
+        if(null!=userUpdateDTO.getImage() && !"".equals(userUpdateDTO.getImage())){
+            user.setImage(userUpdateDTO.getImage());
         }
-        if(null!=file){
-            FileUploadUtil.uploadFile(file,request);
-            user.setImage(FileUploadUtil.getUrl());
+        if(null!=userUpdateDTO.getEmail() && !"".equals(userUpdateDTO.getEmail())){
+            user.setEmail(userUpdateDTO.getEmail());
         }
         if(userMapper.updateByPrimaryKeySelective(user)>0){
-            redisTemplate.delete("loginUser"+user.getPhoneNumber());
+            redisTemplate.delete("loginUser"+phone);
             return user;
-        }
-        else{
+        } else{
             return null;
         }
     }
@@ -114,6 +110,9 @@ public class UserServiceImpl implements UserService {
         user.setRegisterTime(new Date());
         user.setLoginTime(new Date());
         user.setGrowth(0);
+        if(null==userRegisterDTO.getNickname() || "".equals(userRegisterDTO.getNickname().trim())) {
+            user.setNickname(userRegisterDTO.getPhoneNumber());
+        }
         userMapper.insertSelective(user);
         Long userId=getUserByPhone(user.getPhoneNumber()).getUserId();
         Role role=new Role();
@@ -181,6 +180,7 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(merchantRegisterDTO,merchantRegister);
         merchantRegister.setRegistraTime(new Date());
         merchantRegister.setExamine(false);
+        merchantRegister.setStar(0);
         return merchantRegisterMapper.insertSelective(merchantRegister)>0;
     }
 

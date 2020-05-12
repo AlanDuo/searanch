@@ -2,6 +2,7 @@ package com.yunyuan.searanch.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.yunyuan.searanch.dto.AdminRegisterDTO;
 import com.yunyuan.searanch.entity.MerchantRegister;
 import com.yunyuan.searanch.entity.Order;
 import com.yunyuan.searanch.entity.User;
@@ -16,6 +17,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,6 +35,16 @@ public class AdminController {
     @Autowired
     public AdminController(AdminService adminService){
         this.adminService=adminService;
+    }
+
+    @ApiOperation(value = "管理员注册")
+    @PostMapping("/register")
+    public ResponseData adminRegister(@Validated @RequestBody AdminRegisterDTO adminRegisterDTO){
+        if(adminService.adminExist(adminRegisterDTO.getPhoneNumber())){
+            return new ResponseData(500,"该管理员已经被注册");
+        }
+        adminService.adminRegister(adminRegisterDTO);
+        return ResponseData.ok();
     }
 
     @ApiOperation(value="修改密码")

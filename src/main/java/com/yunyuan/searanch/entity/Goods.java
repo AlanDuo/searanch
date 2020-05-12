@@ -34,9 +34,11 @@ public class Goods {
 
     private String country;
 
-    private String region;
+    private String province;
 
     private String city;
+
+    private String region;
 
     public Long getGoodsId() {
         return goodsId;
@@ -158,12 +160,12 @@ public class Goods {
         this.country = country == null ? null : country.trim();
     }
 
-    public String getRegion() {
-        return region;
+    public String getProvince() {
+        return province;
     }
 
-    public void setRegion(String region) {
-        this.region = region == null ? null : region.trim();
+    public void setProvince(String province) {
+        this.province = province == null ? null : province.trim();
     }
 
     public String getCity() {
@@ -172,5 +174,13 @@ public class Goods {
 
     public void setCity(String city) {
         this.city = city == null ? null : city.trim();
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region == null ? null : region.trim();
     }
 }

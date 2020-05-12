@@ -14,6 +14,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserUpdateDTO implements Serializable {
+
+    private String image;
+
     private String username;
 
     private String password;
@@ -22,5 +25,5 @@ public class UserUpdateDTO implements Serializable {
 
     private String nickname;
 
-    private String address;
+    private String email;
 }

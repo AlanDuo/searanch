@@ -18,14 +18,6 @@ public interface MerchantService {
      * @return
      */
     MerchantRegister getMerchantIdByUserId(Long userId);
-    /**
-     * 库存详情
-     *
-     * @param merchantId
-     * @param goodsName
-     * @return
-     */
-    Map<String,Object> getStockDetails(Long merchantId,String goodsName);
 
     /**
      * 商家账单

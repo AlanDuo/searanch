@@ -1,27 +1,28 @@
 
-osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
-psquid:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
-dsquid:S1192’"LDefine a constant instead of duplicating this literal "registraId" 10 times.(Ç—Æ
-csquid:S00112a"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
-asquid:S1192ò"IDefine a constant instead of duplicating this literal "license" 12 times.(ˆª‡É
-ksquid:S1192”"NDefine a constant instead of duplicating this literal "merchantName" 12 times.(–™éùûÿÿÿÿ
-dsquid:S1192 "GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêİşÿÿÿÿ
-csquid:S00112Z"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
-lsquid:S1192Ú"ODefine a constant instead of duplicating this literal "merchantPhone" 12 times.(ÖÊ¬‘øÿÿÿÿ
-wsquid:S1488:"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
 ]squid:S00112h"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
 
-ksquid:S1192¬"LDefine a constant instead of duplicating this literal "idCardImag" 12 times.(ÁÕÿ‰8ã¼ÎØ›.
-qsquid:S1192¸"MDefine a constant instead of duplicating this literal "licenseImag" 12 times.(ÔÛïÈşÿÿÿÿ8ã¼ÎØ›.
-rsquid:S1192Œ"NDefine a constant instead of duplicating this literal "registraTime" 10 times.(¿ÁÆşÿÿÿÿ8ã¼ÎØ›.
-lsquid:S1192æ"HDefine a constant instead of duplicating this literal "idCard" 12 times.(²«†úÿÿÿÿ8ã¼ÎØ›.
-msquid:S1192Š"IDefine a constant instead of duplicating this literal "address" 12 times.(°³«Ïøÿÿÿÿ8ã¼ÎØ›.
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+ksquid:S1192”"NDefine a constant instead of duplicating this literal "merchantName" 12 times.(–™éùûÿÿÿÿ
 nsquid:S1192Î"JDefine a constant instead of duplicating this literal "username" 12 times.(×œÚşÿÿÿÿ8ã¼ÎØ›.
-ssquid:S1192a"PDefine a constant instead of duplicating this literal " cannot be null" 4 times.(õÜ—ºşÿÿÿÿ8ã¼ÎØ›.
+ksquid:S1192¬"LDefine a constant instead of duplicating this literal "idCardImag" 12 times.(ÁÕÿ‰8ã¼ÎØ›.
+lsquid:S1192æ"HDefine a constant instead of duplicating this literal "idCard" 12 times.(²«†úÿÿÿÿ8ã¼ÎØ›.
 gsquid:S1192ş"IDefine a constant instead of duplicating this literal "country" 12 times.(µ¤ë8ã¼ÎØ›.
-hsquid:S1192Ğ"IDefine a constant instead of duplicating this literal "examine" 10 times.(œë–İ8ã¼ÎØ›.
-jsquid:S00112o"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ8ã¼ÎØ›.
-esquid:S00112v"FDefine and throw a dedicated exception instead of using a generic one.(Áš¹8ã¼ÎØ›.
+wsquid:S1488:"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+rsquid:S1192Ò"NDefine a constant instead of duplicating this literal "registraTime" 10 times.(¿ÁÆşÿÿÿÿ8ã¼ÎØ›.
 esquid:S00112‚"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
 8ã¼ÎØ›.
+jsquid:S00112o"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ8ã¼ÎØ›.
+ssquid:S1192a"PDefine a constant instead of duplicating this literal " cannot be null" 4 times.(õÜ—ºşÿÿÿÿ8ã¼ÎØ›.
+hsquid:S1192–"IDefine a constant instead of duplicating this literal "examine" 10 times.(œë–İ8ã¼ÎØ›.
+dsquid:S1192’"LDefine a constant instead of duplicating this literal "registraId" 10 times.(Ç—Æ
+csquid:S00112a"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
+esquid:S00112v"FDefine and throw a dedicated exception instead of using a generic one.(Áš¹8ã¼ÎØ›.
+lsquid:S1192Ú"ODefine a constant instead of duplicating this literal "merchantPhone" 12 times.(ÖÊ¬‘øÿÿÿÿ
+psquid:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+asquid:S1192ò"IDefine a constant instead of duplicating this literal "license" 12 times.(ˆª‡É
 wsquid:S2293x"YReplace the type specification in this constructor call with the diamond operator ("<>").(·ü–8ã¼ÎØ›.
+dsquid:S1192 "GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêİşÿÿÿÿ
+qsquid:S1192¸"MDefine a constant instead of duplicating this literal "licenseImag" 12 times.(ÔÛïÈşÿÿÿÿ8ã¼ÎØ›.
+csquid:S00112Z"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
+msquid:S1192Ğ"IDefine a constant instead of duplicating this literal "address" 12 times.(°³«Ïøÿÿÿÿ8ã¼ÎØ›.
+hsquid:S1192Ä"JDefine a constant instead of duplicating this literal "province" 12 times.(£†ĞY8ÛıšŸ.

@@ -1,9 +1,7 @@
 package com.yunyuan.searanch.service.impl;
 
-import com.yunyuan.searanch.dao.GoodsMapper;
-import com.yunyuan.searanch.dao.MerchantRegisterMapper;
-import com.yunyuan.searanch.dao.OrderMapper;
-import com.yunyuan.searanch.dao.UserMapper;
+import com.yunyuan.searanch.dao.*;
+import com.yunyuan.searanch.dto.AdminRegisterDTO;
 import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.AdminService;
 import com.yunyuan.searanch.vo.AdminMerchantListVO;
@@ -14,10 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author alan
@@ -32,7 +27,63 @@ public class AdminServiceImpl implements AdminService {
     @Resource
     private MerchantRegisterMapper merchantRegisterMapper;
     @Resource
-    private GoodsMapper goodsMapper;
+    private RoleMapper roleMapper;
+    @Resource
+    private PermissionMapper permissionMapper;
+
+    public User getUserByPhone(String phone) {
+        UserExample userExample=new UserExample();
+        UserExample.Criteria criteria=userExample.createCriteria();
+        criteria.andPhoneNumberEqualTo(phone);
+        try {
+            return userMapper.selectByExample(userExample).get(0);
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    public boolean adminExist(String phone) {
+        User user=getUserByPhone(phone);
+        if(user!=null) {
+            Role role = roleMapper.selectByPrimaryKey(user.getUserId());
+            if("admin".equals(role.getRole()) || "noadmin".equals(role.getRole())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean adminRegister(AdminRegisterDTO adminRegisterDTO) {
+        User user1=getUserByPhone(adminRegisterDTO.getPhoneNumber());
+        if(null!=user1){
+            BeanUtils.copyProperties(adminRegisterDTO,user1);
+            user1.setPassword(new Md5Hash(adminRegisterDTO.getPassword(),adminRegisterDTO.getPhoneNumber(),3).toString());
+            userMapper.updateByPrimaryKeySelective(user1);
+            User user2=getUserByPhone(adminRegisterDTO.getPhoneNumber());
+            Role role=new Role();
+            role.setUserId(user2.getUserId());
+            role.setRole("noadmin");
+            return roleMapper.updateByPrimaryKeySelective(role)>0;
+        }
+        User user=new User();
+        BeanUtils.copyProperties(adminRegisterDTO,user);
+        user.setPassword(new Md5Hash(adminRegisterDTO.getPassword(),adminRegisterDTO.getPhoneNumber(),3).toString());
+        user.setRegisterTime(new Date());
+        user.setGrowth(0);
+        userMapper.insertSelective(user);
+        User user2=getUserByPhone(adminRegisterDTO.getPhoneNumber());
+        Role role=new Role();
+        role.setUserId(user2.getUserId());
+        role.setRole("noadmin");
+        roleMapper.insertSelective(role);
+        Permission permission=new Permission();
+        permission.setUserId(user2.getUserId());
+        permission.setPermission("user:update,user:select");
+        return permissionMapper.insertSelective(permission)>0;
+    }
 
     @Override
     @Transactional(rollbackFor = Exception.class)

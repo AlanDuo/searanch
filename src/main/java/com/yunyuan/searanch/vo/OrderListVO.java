@@ -32,6 +32,11 @@ public class OrderListVO implements Serializable {
 
     private BigDecimal price;
 
+    private Integer goodsEva;
+
     private Date orderTime;
 
+    private Boolean paid;
+
+    private Boolean finished;
 }

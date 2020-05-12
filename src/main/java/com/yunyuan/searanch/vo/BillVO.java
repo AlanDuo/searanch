@@ -13,7 +13,7 @@ import java.util.Date;
  */
 @Data
 public class BillVO implements Serializable {
-    private Date recordDate;
+    private Date applyTime;
 
     private String goodsName;
 
@@ -24,4 +24,6 @@ public class BillVO implements Serializable {
     private Integer amount;
 
     private BigDecimal income;
+
+    private Boolean finished;
 }

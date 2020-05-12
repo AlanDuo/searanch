@@ -1,29 +1,29 @@
 
->squid:S1168£"&Return an empty array instead of null.(¥¹ï
-dsquid:S00112ë"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
-csquid:S00112s"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
-Qsquid:S1118"":Add a private constructor to hide the implicit public one.(„–Û
-]squid:S2147´"ECombine this catch with the one at line 306, which has the same body.(¤·¿Ã
-Dsquid:S1172o"-Remove this unused method parameter "method".(ÂóŒ…
-Esquid:S1172"-Remove this unused method parameter "method".(ÂóŒ…
-Csquid:S4424¥"+Change this method so it throws exceptions.(‰Ëœ¶
 Ksquid:S2864X"4Iterate over the "entrySet" instead of the "keySet".(µÓÎ™
 dsquid:S00112’"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
-psquid:CallToDeprecatedMethod®";Remove this use of "setHostnameVerifier"; it is deprecated.(Å…Û„ıÿÿÿÿ8üÙ™²š.
+dsquid:S00112ë"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+Hsquid:S4424¨"+Change this method so it throws exceptions.(¯éƒàûÿÿÿÿ
+Csquid:S4424¥"+Change this method so it throws exceptions.(‰Ëœ¶
 Esquid:S1172Ê"-Remove this unused method parameter "method".(¹¿Û™
-dsquid:S00112³"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ
-dsquid:S00112µ"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ
+csquid:S00112s"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
 squid:S1186¨"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯éƒàûÿÿÿÿ
 ™squid:S1186¥"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰Ëœ¶
-Dsquid:S1172/"-Remove this unused method parameter "method".(îçâ
 ]squid:S1192["FDefine a constant instead of duplicating this literal "utf-8" 4 times.(ÃèÆ•
-Esquid:S1172¬"-Remove this unused method parameter "method".(¹¿Û™
-osquid:S3776ö"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¢“¼¥üÿÿÿÿ
-usquid:S2293V"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ÿ“æÿùÿÿÿÿ
-dsquid:S00112°"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
-csquid:S00112M"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
-dsquid:S00112Î"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
-Jsquid:S1172è"-Remove this unused method parameter "method".(Î²®šşÿÿÿÿ
-Hsquid:S4424¨"+Change this method so it throws exceptions.(¯éƒàûÿÿÿÿ
 csquid:S001122"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+Esquid:S1172¬"-Remove this unused method parameter "method".(¹¿Û™
+]squid:S2147´"ECombine this catch with the one at line 306, which has the same body.(¤·¿Ã
+csquid:S00112M"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+dsquid:S00112µ"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ
+usquid:S2293V"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ÿ“æÿùÿÿÿÿ
+Esquid:S1172"-Remove this unused method parameter "method".(ÂóŒ…
+Jsquid:S1172è"-Remove this unused method parameter "method".(Î²®šşÿÿÿÿ
+osquid:S3776ö"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¢“¼¥üÿÿÿÿ
+Dsquid:S1172o"-Remove this unused method parameter "method".(ÂóŒ…
+Qsquid:S1118"":Add a private constructor to hide the implicit public one.(„–Û
+Dsquid:S1172/"-Remove this unused method parameter "method".(îçâ
+dsquid:S00112Î"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
+>squid:S1168£"&Return an empty array instead of null.(¥¹ï
+psquid:CallToDeprecatedMethod®";Remove this use of "setHostnameVerifier"; it is deprecated.(Å…Û„ıÿÿÿÿ8üÙ™²š.
+dsquid:S00112³"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ
+dsquid:S00112°"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ
 Dsquid:S1172I"-Remove this unused method parameter "method".(ÂóŒ…

@@ -5,9 +5,6 @@ import com.yunyuan.searanch.dto.UserRegisterDTO;
 import com.yunyuan.searanch.dto.UserUpdateDTO;
 import com.yunyuan.searanch.entity.MerchantRegister;
 import com.yunyuan.searanch.entity.User;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author alan
@@ -48,11 +45,9 @@ public interface UserService {
      *
      * @param userId
      * @param userUpdateDTO
-     * @param file
-     * @param request
      * @return
      */
-    User updateUser(Long userId, UserUpdateDTO userUpdateDTO, MultipartFile file, HttpServletRequest request);
+    User updateUser(Long userId, UserUpdateDTO userUpdateDTO);
     /**
      * 普通用户注册
      *
