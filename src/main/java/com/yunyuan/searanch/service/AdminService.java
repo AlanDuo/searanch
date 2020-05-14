@@ -1,7 +1,11 @@
 package com.yunyuan.searanch.service;
 
+import com.yunyuan.searanch.dto.AdminOrderUpdateDTO;
 import com.yunyuan.searanch.dto.AdminRegisterDTO;
 import com.yunyuan.searanch.entity.User;
+import com.yunyuan.searanch.vo.*;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,24 +38,56 @@ public interface AdminService {
     boolean changePassword(String oldPassword,String newPassword, User user);
 
     /**
+     * 获取问题反馈
+     *
+     * @param role 用户的类型
+     * @return
+     */
+    List<ProblemVO> getProblems(String role);
+
+    /**
+     * 以发送邮件的形式回复问题反馈
+     *
+     * @param feedbackId
+     * @param content
+     * @param userId
+     * @return
+     */
+    boolean dealWithProblem(Long feedbackId, String content,Long userId);
+
+    /**
+     * 问题的细节
+     *
+     * @param feedbackId
+     * @return
+     */
+    ProblemDetailVO problemDetails(Long feedbackId);
+
+    /**
      * 管理员界面---订单列表
      *
      * @param orderNumber
-     * @param goodsName
+     * @param phoneNumber
      * @param userName
-     * @param merchant
      * @return
      */
-    Map<String,Object> adminOrderList(String orderNumber, String goodsName, String userName, String merchant);
+    Map<String,Object> adminOrderList(String orderNumber, String phoneNumber, String userName);
+
+    /**
+     * 管理员查看订单信息
+     *
+     * @param orderNumber
+     * @return
+     */
+    AdminOrderInfoVO adminOrderInfo(String orderNumber);
 
     /**
      * 管理员--更新订单
      *
-     * @param orderNumber
-     * @param amount
+     * @param orderUpdateDTO
      * @return
      */
-    boolean adminUpdateOrder(String orderNumber,Integer amount);
+    boolean adminUpdateOrder(AdminOrderUpdateDTO orderUpdateDTO);
 
     /**
      * 管理员--删除订单
@@ -88,4 +124,19 @@ public interface AdminService {
      * @return
      */
     boolean adminCheckMerchant(Long registerId,boolean check);
+
+    /**
+     * 管理员界面-用户列表
+     *
+     * @return
+     */
+    Map<String,Object> adminUserList();
+
+    /**
+     * 用户购买记录
+     *
+     * @param userId
+     * @return
+     */
+    List<UserConsumeVO> userConsumeRecord(Long userId);
 }

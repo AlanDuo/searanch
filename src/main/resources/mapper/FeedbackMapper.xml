@@ -7,6 +7,11 @@
     <result column="feedback_content" property="feedbackContent" jdbcType="VARCHAR" />
     <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="feedback_time" property="feedbackTime" jdbcType="TIMESTAMP" />
+    <result column="user_type" property="userType" jdbcType="VARCHAR" />
+    <result column="progress_rate" property="progressRate" jdbcType="TINYINT" />
+    <result column="response" property="response" jdbcType="VARCHAR" />
+    <result column="handler" property="handler" jdbcType="BIGINT" />
+    <result column="handler_time" property="handlerTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    feedback_id, feedback_user, feedback_content, image, feedback_time
+    feedback_id, feedback_user, feedback_content, image, feedback_time, user_type, progress_rate, 
+    response, handler, handler_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.FeedbackExample" >
     select
@@ -101,9 +107,13 @@
   </delete>
   <insert id="insert" parameterType="com.yunyuan.searanch.entity.Feedback" >
     insert into feedback (feedback_id, feedback_user, feedback_content, 
-      image, feedback_time)
+      image, feedback_time, user_type, 
+      progress_rate, response, handler, 
+      handler_time)
     values (#{feedbackId,jdbcType=BIGINT}, #{feedbackUser,jdbcType=BIGINT}, #{feedbackContent,jdbcType=VARCHAR}, 
-      #{image,jdbcType=VARCHAR}, #{feedbackTime,jdbcType=TIMESTAMP})
+      #{image,jdbcType=VARCHAR}, #{feedbackTime,jdbcType=TIMESTAMP}, #{userType,jdbcType=VARCHAR}, 
+      #{progressRate,jdbcType=TINYINT}, #{response,jdbcType=VARCHAR}, #{handler,jdbcType=BIGINT}, 
+      #{handlerTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Feedback" >
     insert into feedback
@@ -123,6 +133,21 @@
       <if test="feedbackTime != null" >
         feedback_time,
       </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="progressRate != null" >
+        progress_rate,
+      </if>
+      <if test="response != null" >
+        response,
+      </if>
+      <if test="handler != null" >
+        handler,
+      </if>
+      <if test="handlerTime != null" >
+        handler_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="feedbackId != null" >
@@ -139,6 +164,21 @@
       </if>
       <if test="feedbackTime != null" >
         #{feedbackTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="progressRate != null" >
+        #{progressRate,jdbcType=TINYINT},
+      </if>
+      <if test="response != null" >
+        #{response,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null" >
+        #{handler,jdbcType=BIGINT},
+      </if>
+      <if test="handlerTime != null" >
+        #{handlerTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -166,6 +206,21 @@
       <if test="record.feedbackTime != null" >
         feedback_time = #{record.feedbackTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.userType != null" >
+        user_type = #{record.userType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.progressRate != null" >
+        progress_rate = #{record.progressRate,jdbcType=TINYINT},
+      </if>
+      <if test="record.response != null" >
+        response = #{record.response,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handler != null" >
+        handler = #{record.handler,jdbcType=BIGINT},
+      </if>
+      <if test="record.handlerTime != null" >
+        handler_time = #{record.handlerTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +232,12 @@
       feedback_user = #{record.feedbackUser,jdbcType=BIGINT},
       feedback_content = #{record.feedbackContent,jdbcType=VARCHAR},
       image = #{record.image,jdbcType=VARCHAR},
-      feedback_time = #{record.feedbackTime,jdbcType=TIMESTAMP}
+      feedback_time = #{record.feedbackTime,jdbcType=TIMESTAMP},
+      user_type = #{record.userType,jdbcType=VARCHAR},
+      progress_rate = #{record.progressRate,jdbcType=TINYINT},
+      response = #{record.response,jdbcType=VARCHAR},
+      handler = #{record.handler,jdbcType=BIGINT},
+      handler_time = #{record.handlerTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +257,21 @@
       <if test="feedbackTime != null" >
         feedback_time = #{feedbackTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="progressRate != null" >
+        progress_rate = #{progressRate,jdbcType=TINYINT},
+      </if>
+      <if test="response != null" >
+        response = #{response,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null" >
+        handler = #{handler,jdbcType=BIGINT},
+      </if>
+      <if test="handlerTime != null" >
+        handler_time = #{handlerTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where feedback_id = #{feedbackId,jdbcType=BIGINT}
   </update>
@@ -205,7 +280,12 @@
     set feedback_user = #{feedbackUser,jdbcType=BIGINT},
       feedback_content = #{feedbackContent,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
-      feedback_time = #{feedbackTime,jdbcType=TIMESTAMP}
+      feedback_time = #{feedbackTime,jdbcType=TIMESTAMP},
+      user_type = #{userType,jdbcType=VARCHAR},
+      progress_rate = #{progressRate,jdbcType=TINYINT},
+      response = #{response,jdbcType=VARCHAR},
+      handler = #{handler,jdbcType=BIGINT},
+      handler_time = #{handlerTime,jdbcType=TIMESTAMP}
     where feedback_id = #{feedbackId,jdbcType=BIGINT}
   </update>
 </mapper>

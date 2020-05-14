@@ -70,6 +70,8 @@ public class MerchantServiceImpl implements MerchantService {
         goodsApply.setMerchantId(merchant);
         goodsApply.setApplyTime(new Date());
         goodsApply.setFinished(false);
+        goodsApply.setIsTake(false);
+        goodsApply.setPublish(false);
         return goodsApplyMapper.insertSelective(goodsApply)>0;
     }
 }

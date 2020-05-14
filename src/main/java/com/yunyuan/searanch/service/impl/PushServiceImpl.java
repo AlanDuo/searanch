@@ -53,7 +53,7 @@ public class PushServiceImpl implements PushService {
             push.setPushTo(userIdTo);
             push.setPushContent(subject + ": " + content);
             push.setPushTime(new Date());
-            pushMapper.insert(push);
+            pushMapper.insertSelective(push);
         }
     }
 

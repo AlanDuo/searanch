@@ -1146,6 +1146,76 @@ public class OrderExample {
             return (Criteria) this;
         }
 
+        public Criteria andLogisticsNoIsNull() {
+            addCriterion("logistics_no is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoIsNotNull() {
+            addCriterion("logistics_no is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoEqualTo(String value) {
+            addCriterion("logistics_no =", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoNotEqualTo(String value) {
+            addCriterion("logistics_no <>", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoGreaterThan(String value) {
+            addCriterion("logistics_no >", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoGreaterThanOrEqualTo(String value) {
+            addCriterion("logistics_no >=", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoLessThan(String value) {
+            addCriterion("logistics_no <", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoLessThanOrEqualTo(String value) {
+            addCriterion("logistics_no <=", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoLike(String value) {
+            addCriterion("logistics_no like", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoNotLike(String value) {
+            addCriterion("logistics_no not like", value, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoIn(List<String> values) {
+            addCriterion("logistics_no in", values, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoNotIn(List<String> values) {
+            addCriterion("logistics_no not in", values, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoBetween(String value1, String value2) {
+            addCriterion("logistics_no between", value1, value2, "logisticsNo");
+            return (Criteria) this;
+        }
+
+        public Criteria andLogisticsNoNotBetween(String value1, String value2) {
+            addCriterion("logistics_no not between", value1, value2, "logisticsNo");
+            return (Criteria) this;
+        }
+
         public Criteria andOrderTimeIsNull() {
             addCriterion("order_time is null");
             return (Criteria) this;

@@ -23,11 +23,21 @@ public class AdminMerchantListVO implements Serializable {
 
     private String merchantPhone;
 
+    private String country;
+
+    private String province;
+
+    private String city;
+
+    private String address;
+
     private String idCard;
 
     private String license;
 
-    private Boolean check;
+    private Boolean examine;
+
+    private Integer star;
 
     private Date registraTime;
 }

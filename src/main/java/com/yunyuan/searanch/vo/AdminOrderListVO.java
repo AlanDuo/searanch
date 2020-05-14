@@ -2,6 +2,7 @@ package com.yunyuan.searanch.vo;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -10,18 +11,22 @@ import java.util.Date;
  * @date 2020/4/25
  */
 @Data
-public class AdminOrderListVO {
+public class AdminOrderListVO implements Serializable {
     private String orderNumber;
 
-    private String goodsName;
+    private String phone;
 
     private String userName;
 
-    private String merchant;
-
     private Integer amount;
 
-    private BigDecimal price;
+    private BigDecimal totalPrice;
+
+    private String logisticsNo;
 
     private Date orderTime;
+
+    private Long merchantId;
+
+    private String merchant;
 }

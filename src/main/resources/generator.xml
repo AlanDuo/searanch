@@ -44,8 +44,8 @@
         <!--<table tableName="role" domainObjectName="Role"></table>
         <table tableName="permission" domainObjectName="Permission"></table>-->
         <!--<table tableName="merchant_register" domainObjectName="MerchantRegister"></table>-->
-        <!--<table tableName="feedback" domainObjectName="Feedback"></table>
-        <table tableName="browse" domainObjectName="Browse"></table>-->
+        <!--<table tableName="feedback" domainObjectName="Feedback"></table>-->
+        <!--<table tableName="browse" domainObjectName="Browse"></table>-->
         <!--<table tableName="discount" domainObjectName="Discount"></table>-->
         <!--<table tableName="goods" domainObjectName="Goods"></table>-->
         <!--<table tableName="order" domainObjectName="Order"></table>-->
@@ -56,7 +56,6 @@
         <!--<table tableName="collect" domainObjectName="Collect"></table>-->
         <!--<table tableName="push" domainObjectName="Push"></table>-->
         <!--<table tableName="message" domainObjectName="Message"></table>-->
-        <!--<table tableName="merchant_bill" domainObjectName="MerchantBill"></table>-->
         <table tableName="goods_apply" domainObjectName="GoodsApply"></table>
     </context>
 </generatorConfiguration>

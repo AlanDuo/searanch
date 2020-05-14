@@ -18,6 +18,7 @@
     <result column="province" property="province" jdbcType="VARCHAR" />
     <result column="city" property="city" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="logistics_no" property="logisticsNo" jdbcType="VARCHAR" />
     <result column="order_time" property="orderTime" jdbcType="TIMESTAMP" />
     <result column="paid" property="paid" jdbcType="BIT" />
     <result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
@@ -86,8 +87,8 @@
   </sql>
   <sql id="Base_Column_List" >
     order_id, order_number, user_id, phone, user_name, goods_id, goods_name, type_id, 
-    amount, price, discount, discount_id, country, province, city, address, order_time, 
-    paid, pay_time, finished, finish_time, merchant_id, merchant
+    amount, price, discount, discount_id, country, province, city, address, logistics_no, 
+    order_time, paid, pay_time, finished, finish_time, merchant_id, merchant
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.OrderExample" >
     select
@@ -125,17 +126,19 @@
       goods_name, type_id, amount, 
       price, discount, discount_id, 
       country, province, city, 
-      address, order_time, paid, 
-      pay_time, finished, finish_time, 
-      merchant_id, merchant)
+      address, logistics_no, order_time, 
+      paid, pay_time, finished, 
+      finish_time, merchant_id, merchant
+      )
     values (#{orderId,jdbcType=BIGINT}, #{orderNumber,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
       #{phone,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{goodsId,jdbcType=BIGINT}, 
       #{goodsName,jdbcType=VARCHAR}, #{typeId,jdbcType=BIGINT}, #{amount,jdbcType=INTEGER}, 
       #{price,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, #{discountId,jdbcType=BIGINT}, 
       #{country,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP}, #{paid,jdbcType=BIT}, 
-      #{payTime,jdbcType=TIMESTAMP}, #{finished,jdbcType=BIT}, #{finishTime,jdbcType=TIMESTAMP}, 
-      #{merchantId,jdbcType=BIGINT}, #{merchant,jdbcType=VARCHAR})
+      #{address,jdbcType=VARCHAR}, #{logisticsNo,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP}, 
+      #{paid,jdbcType=BIT}, #{payTime,jdbcType=TIMESTAMP}, #{finished,jdbcType=BIT}, 
+      #{finishTime,jdbcType=TIMESTAMP}, #{merchantId,jdbcType=BIGINT}, #{merchant,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Order" >
     insert into order
@@ -187,6 +190,9 @@
       </if>
       <if test="address != null" >
         address,
+      </if>
+      <if test="logisticsNo != null" >
+        logistics_no,
       </if>
       <if test="orderTime != null" >
         order_time,
@@ -258,6 +264,9 @@
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="logisticsNo != null" >
+        #{logisticsNo,jdbcType=VARCHAR},
       </if>
       <if test="orderTime != null" >
         #{orderTime,jdbcType=TIMESTAMP},
@@ -339,6 +348,9 @@
       <if test="record.address != null" >
         address = #{record.address,jdbcType=VARCHAR},
       </if>
+      <if test="record.logisticsNo != null" >
+        logistics_no = #{record.logisticsNo,jdbcType=VARCHAR},
+      </if>
       <if test="record.orderTime != null" >
         order_time = #{record.orderTime,jdbcType=TIMESTAMP},
       </if>
@@ -383,6 +395,7 @@
       province = #{record.province,jdbcType=VARCHAR},
       city = #{record.city,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
+      logistics_no = #{record.logisticsNo,jdbcType=VARCHAR},
       order_time = #{record.orderTime,jdbcType=TIMESTAMP},
       paid = #{record.paid,jdbcType=BIT},
       pay_time = #{record.payTime,jdbcType=TIMESTAMP},
@@ -442,6 +455,9 @@
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
       </if>
+      <if test="logisticsNo != null" >
+        logistics_no = #{logisticsNo,jdbcType=VARCHAR},
+      </if>
       <if test="orderTime != null" >
         order_time = #{orderTime,jdbcType=TIMESTAMP},
       </if>
@@ -483,6 +499,7 @@
       province = #{province,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
+      logistics_no = #{logisticsNo,jdbcType=VARCHAR},
       order_time = #{orderTime,jdbcType=TIMESTAMP},
       paid = #{paid,jdbcType=BIT},
       pay_time = #{payTime,jdbcType=TIMESTAMP},

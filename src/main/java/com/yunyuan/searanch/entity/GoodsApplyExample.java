@@ -1092,6 +1092,256 @@ public class GoodsApplyExample {
             addCriterionForJDBCDate("finish_time not between", value1, value2, "finishTime");
             return (Criteria) this;
         }
+
+        public Criteria andIsTakeIsNull() {
+            addCriterion("is_take is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeIsNotNull() {
+            addCriterion("is_take is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeEqualTo(Boolean value) {
+            addCriterion("is_take =", value, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeNotEqualTo(Boolean value) {
+            addCriterion("is_take <>", value, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeGreaterThan(Boolean value) {
+            addCriterion("is_take >", value, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("is_take >=", value, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeLessThan(Boolean value) {
+            addCriterion("is_take <", value, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeLessThanOrEqualTo(Boolean value) {
+            addCriterion("is_take <=", value, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeIn(List<Boolean> values) {
+            addCriterion("is_take in", values, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeNotIn(List<Boolean> values) {
+            addCriterion("is_take not in", values, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_take between", value1, value2, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsTakeNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_take not between", value1, value2, "isTake");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksIsNull() {
+            addCriterion("remarks is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksIsNotNull() {
+            addCriterion("remarks is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksEqualTo(String value) {
+            addCriterion("remarks =", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksNotEqualTo(String value) {
+            addCriterion("remarks <>", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksGreaterThan(String value) {
+            addCriterion("remarks >", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksGreaterThanOrEqualTo(String value) {
+            addCriterion("remarks >=", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksLessThan(String value) {
+            addCriterion("remarks <", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksLessThanOrEqualTo(String value) {
+            addCriterion("remarks <=", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksLike(String value) {
+            addCriterion("remarks like", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksNotLike(String value) {
+            addCriterion("remarks not like", value, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksIn(List<String> values) {
+            addCriterion("remarks in", values, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksNotIn(List<String> values) {
+            addCriterion("remarks not in", values, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksBetween(String value1, String value2) {
+            addCriterion("remarks between", value1, value2, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andRemarksNotBetween(String value1, String value2) {
+            addCriterion("remarks not between", value1, value2, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerIsNull() {
+            addCriterion("handler is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerIsNotNull() {
+            addCriterion("handler is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerEqualTo(Long value) {
+            addCriterion("handler =", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerNotEqualTo(Long value) {
+            addCriterion("handler <>", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerGreaterThan(Long value) {
+            addCriterion("handler >", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerGreaterThanOrEqualTo(Long value) {
+            addCriterion("handler >=", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerLessThan(Long value) {
+            addCriterion("handler <", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerLessThanOrEqualTo(Long value) {
+            addCriterion("handler <=", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerIn(List<Long> values) {
+            addCriterion("handler in", values, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerNotIn(List<Long> values) {
+            addCriterion("handler not in", values, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerBetween(Long value1, Long value2) {
+            addCriterion("handler between", value1, value2, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerNotBetween(Long value1, Long value2) {
+            addCriterion("handler not between", value1, value2, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishIsNull() {
+            addCriterion("publish is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishIsNotNull() {
+            addCriterion("publish is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishEqualTo(Boolean value) {
+            addCriterion("publish =", value, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishNotEqualTo(Boolean value) {
+            addCriterion("publish <>", value, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishGreaterThan(Boolean value) {
+            addCriterion("publish >", value, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("publish >=", value, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishLessThan(Boolean value) {
+            addCriterion("publish <", value, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishLessThanOrEqualTo(Boolean value) {
+            addCriterion("publish <=", value, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishIn(List<Boolean> values) {
+            addCriterion("publish in", values, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishNotIn(List<Boolean> values) {
+            addCriterion("publish not in", values, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishBetween(Boolean value1, Boolean value2) {
+            addCriterion("publish between", value1, value2, "publish");
+            return (Criteria) this;
+        }
+
+        public Criteria andPublishNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("publish not between", value1, value2, "publish");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

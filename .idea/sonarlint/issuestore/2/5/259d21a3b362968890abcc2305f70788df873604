@@ -1,22 +1,0 @@
-
-isquid:S1192…"LDefine a constant instead of duplicating this literal "updateTime" 10 times.(¾£ü¨øÿÿÿÿ
-`squid:S1192É"HDefine a constant instead of duplicating this literal "income" 10 times.(ôÔİ´
-lsquid:S1192b"PDefine a constant instead of duplicating this literal " cannot be null" 4 times.(õÜ—ºşÿÿÿÿ
-asquid:S1192‹"IDefine a constant instead of duplicating this literal "goodsId" 10 times.(ìæ¾
-`squid:S1192"HDefine a constant instead of duplicating this literal "amount" 10 times.(­Õ¦
-esquid:S1192“"HDefine a constant instead of duplicating this literal "billId" 10 times.(Êº›¢øÿÿÿÿ
-csquid:S1192Ç"KDefine a constant instead of duplicating this literal "goodsType" 12 times.(¿×‡ï
-isquid:S1192Á"LDefine a constant instead of duplicating this literal "recordDate" 10 times.(…£şÀıÿÿÿÿ
-isquid:S1192Ï"LDefine a constant instead of duplicating this literal "merchantId" 10 times.(ÈÿÛÃşÿÿÿÿ
-wsquid:S1488;"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
-csquid:S00112["FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
-csquid:S00112b"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
-]squid:S00112i"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
-
-csquid:S00112p"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
-^squid:S00112w"FDefine and throw a dedicated exception instead of using a generic one.(Áš¹
-^squid:S00112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
-
-osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
-psquid:S2293J"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
-psquid:S2293y"YReplace the type specification in this constructor call with the diamond operator ("<>").(·ü–

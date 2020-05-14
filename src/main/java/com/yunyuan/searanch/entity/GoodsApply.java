@@ -34,6 +34,14 @@ public class GoodsApply {
 
     private Date finishTime;
 
+    private Boolean isTake;
+
+    private String remarks;
+
+    private Long handler;
+
+    private Boolean publish;
+
     public Long getApplyId() {
         return applyId;
     }
@@ -152,5 +160,37 @@ public class GoodsApply {
 
     public void setFinishTime(Date finishTime) {
         this.finishTime = finishTime;
+    }
+
+    public Boolean getIsTake() {
+        return isTake;
+    }
+
+    public void setIsTake(Boolean isTake) {
+        this.isTake = isTake;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks == null ? null : remarks.trim();
+    }
+
+    public Long getHandler() {
+        return handler;
+    }
+
+    public void setHandler(Long handler) {
+        this.handler = handler;
+    }
+
+    public Boolean getPublish() {
+        return publish;
+    }
+
+    public void setPublish(Boolean publish) {
+        this.publish = publish;
     }
 }

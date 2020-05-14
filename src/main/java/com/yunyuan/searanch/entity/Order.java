@@ -36,6 +36,8 @@ public class Order {
 
     private String address;
 
+    private String logisticsNo;
+
     private Date orderTime;
 
     private Boolean paid;
@@ -176,6 +178,14 @@ public class Order {
 
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
+    }
+
+    public String getLogisticsNo() {
+        return logisticsNo;
+    }
+
+    public void setLogisticsNo(String logisticsNo) {
+        this.logisticsNo = logisticsNo == null ? null : logisticsNo.trim();
     }
 
     public Date getOrderTime() {

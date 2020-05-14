@@ -5,6 +5,8 @@ import java.util.Date;
 public class Evaluate {
     private Long evaluateId;
 
+    private Long orderId;
+
     private Long userId;
 
     private Long goodsId;
@@ -33,6 +35,14 @@ public class Evaluate {
 
     public void setEvaluateId(Long evaluateId) {
         this.evaluateId = evaluateId;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public Long getUserId() {

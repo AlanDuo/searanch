@@ -1,9 +1,7 @@
 package com.yunyuan.searanch.service;
 
-import com.yunyuan.searanch.dto.GoodsAddDTO;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
+import java.math.BigDecimal;
+import java.util.Map;
 
 /**
  * @author alan
@@ -11,12 +9,44 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface GoodsManagerService {
     /**
-     * 增加商品
+     * 待收购商品列表
      *
-     * @param goodsAddDTO
-     * @param file
-     * @param request
      * @return
      */
-    boolean addGoods(GoodsAddDTO goodsAddDTO, MultipartFile file, HttpServletRequest request);
+    Map<String,Object> goodsWaitToTake();
+
+    /**
+     * 对申请收购的商品处理是否收购
+     *
+     * @param applyId
+     * @param isTake
+     * @param remarks
+     * @param handler
+     * @return
+     */
+    boolean sureTakeGoods(Long applyId,boolean isTake,String remarks,Long handler);
+
+    /**
+     * 获取已经收购的商品
+     *
+     * @return
+     */
+    Map<String,Object> getGoodsApplied();
+
+    /**
+     * 发布商品
+     *
+     * @param applyId
+     * @param price
+     * @return
+     */
+    boolean publishGoods(Long applyId, BigDecimal price);
+
+    /**
+     * 获取已经发布的商品
+     *
+     * @param goodsName
+     * @return
+     */
+    Map<String,Object> getPublishedGoods(String goodsName);
 }

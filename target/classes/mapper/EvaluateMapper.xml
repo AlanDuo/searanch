@@ -3,6 +3,7 @@
 <mapper namespace="com.yunyuan.searanch.dao.EvaluateMapper" >
   <resultMap id="BaseResultMap" type="com.yunyuan.searanch.entity.Evaluate" >
     <id column="evaluate_id" property="evaluateId" jdbcType="BIGINT" />
+    <result column="order_id" property="orderId" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="goods_id" property="goodsId" jdbcType="BIGINT" />
     <result column="goods_eva" property="goodsEva" jdbcType="VARCHAR" />
@@ -74,8 +75,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    evaluate_id, user_id, goods_id, goods_eva, service_eva, image, goods_desc, seller_service, 
-    logistics, goods_about, anonymous, evaluate_time
+    evaluate_id, order_id, user_id, goods_id, goods_eva, service_eva, image, goods_desc, 
+    seller_service, logistics, goods_about, anonymous, evaluate_time
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.EvaluateExample" >
     select
@@ -108,22 +109,25 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.yunyuan.searanch.entity.Evaluate" >
-    insert into evaluate (evaluate_id, user_id, goods_id, 
-      goods_eva, service_eva, image, 
-      goods_desc, seller_service, logistics, 
-      goods_about, anonymous, evaluate_time
-      )
-    values (#{evaluateId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{goodsId,jdbcType=BIGINT}, 
-      #{goodsEva,jdbcType=VARCHAR}, #{serviceEva,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
-      #{goodsDesc,jdbcType=INTEGER}, #{sellerService,jdbcType=INTEGER}, #{logistics,jdbcType=INTEGER}, 
-      #{goodsAbout,jdbcType=INTEGER}, #{anonymous,jdbcType=BIT}, #{evaluateTime,jdbcType=TIMESTAMP}
-      )
+    insert into evaluate (evaluate_id, order_id, user_id, 
+      goods_id, goods_eva, service_eva, 
+      image, goods_desc, seller_service, 
+      logistics, goods_about, anonymous, 
+      evaluate_time)
+    values (#{evaluateId,jdbcType=BIGINT}, #{orderId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+      #{goodsId,jdbcType=BIGINT}, #{goodsEva,jdbcType=VARCHAR}, #{serviceEva,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{goodsDesc,jdbcType=INTEGER}, #{sellerService,jdbcType=INTEGER}, 
+      #{logistics,jdbcType=INTEGER}, #{goodsAbout,jdbcType=INTEGER}, #{anonymous,jdbcType=BIT}, 
+      #{evaluateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.Evaluate" >
     insert into evaluate
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="evaluateId != null" >
         evaluate_id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
       </if>
       <if test="userId != null" >
         user_id,
@@ -162,6 +166,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="evaluateId != null" >
         #{evaluateId,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=BIGINT},
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=BIGINT},
@@ -210,6 +217,9 @@
       <if test="record.evaluateId != null" >
         evaluate_id = #{record.evaluateId,jdbcType=BIGINT},
       </if>
+      <if test="record.orderId != null" >
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=BIGINT},
       </if>
@@ -251,6 +261,7 @@
   <update id="updateByExample" parameterType="map" >
     update evaluate
     set evaluate_id = #{record.evaluateId,jdbcType=BIGINT},
+      order_id = #{record.orderId,jdbcType=BIGINT},
       user_id = #{record.userId,jdbcType=BIGINT},
       goods_id = #{record.goodsId,jdbcType=BIGINT},
       goods_eva = #{record.goodsEva,jdbcType=VARCHAR},
@@ -269,6 +280,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.yunyuan.searanch.entity.Evaluate" >
     update evaluate
     <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
       <if test="userId != null" >
         user_id = #{userId,jdbcType=BIGINT},
       </if>
@@ -307,7 +321,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yunyuan.searanch.entity.Evaluate" >
     update evaluate
-    set user_id = #{userId,jdbcType=BIGINT},
+    set order_id = #{orderId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
       goods_id = #{goodsId,jdbcType=BIGINT},
       goods_eva = #{goodsEva,jdbcType=VARCHAR},
       service_eva = #{serviceEva,jdbcType=VARCHAR},

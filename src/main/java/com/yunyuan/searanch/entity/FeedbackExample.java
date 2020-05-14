@@ -424,6 +424,326 @@ public class FeedbackExample {
             addCriterion("feedback_time not between", value1, value2, "feedbackTime");
             return (Criteria) this;
         }
+
+        public Criteria andUserTypeIsNull() {
+            addCriterion("user_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeIsNotNull() {
+            addCriterion("user_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeEqualTo(String value) {
+            addCriterion("user_type =", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeNotEqualTo(String value) {
+            addCriterion("user_type <>", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeGreaterThan(String value) {
+            addCriterion("user_type >", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("user_type >=", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeLessThan(String value) {
+            addCriterion("user_type <", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeLessThanOrEqualTo(String value) {
+            addCriterion("user_type <=", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeLike(String value) {
+            addCriterion("user_type like", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeNotLike(String value) {
+            addCriterion("user_type not like", value, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeIn(List<String> values) {
+            addCriterion("user_type in", values, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeNotIn(List<String> values) {
+            addCriterion("user_type not in", values, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeBetween(String value1, String value2) {
+            addCriterion("user_type between", value1, value2, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andUserTypeNotBetween(String value1, String value2) {
+            addCriterion("user_type not between", value1, value2, "userType");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateIsNull() {
+            addCriterion("progress_rate is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateIsNotNull() {
+            addCriterion("progress_rate is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateEqualTo(Byte value) {
+            addCriterion("progress_rate =", value, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateNotEqualTo(Byte value) {
+            addCriterion("progress_rate <>", value, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateGreaterThan(Byte value) {
+            addCriterion("progress_rate >", value, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateGreaterThanOrEqualTo(Byte value) {
+            addCriterion("progress_rate >=", value, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateLessThan(Byte value) {
+            addCriterion("progress_rate <", value, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateLessThanOrEqualTo(Byte value) {
+            addCriterion("progress_rate <=", value, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateIn(List<Byte> values) {
+            addCriterion("progress_rate in", values, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateNotIn(List<Byte> values) {
+            addCriterion("progress_rate not in", values, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateBetween(Byte value1, Byte value2) {
+            addCriterion("progress_rate between", value1, value2, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andProgressRateNotBetween(Byte value1, Byte value2) {
+            addCriterion("progress_rate not between", value1, value2, "progressRate");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseIsNull() {
+            addCriterion("response is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseIsNotNull() {
+            addCriterion("response is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseEqualTo(String value) {
+            addCriterion("response =", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseNotEqualTo(String value) {
+            addCriterion("response <>", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseGreaterThan(String value) {
+            addCriterion("response >", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseGreaterThanOrEqualTo(String value) {
+            addCriterion("response >=", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseLessThan(String value) {
+            addCriterion("response <", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseLessThanOrEqualTo(String value) {
+            addCriterion("response <=", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseLike(String value) {
+            addCriterion("response like", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseNotLike(String value) {
+            addCriterion("response not like", value, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseIn(List<String> values) {
+            addCriterion("response in", values, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseNotIn(List<String> values) {
+            addCriterion("response not in", values, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseBetween(String value1, String value2) {
+            addCriterion("response between", value1, value2, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andResponseNotBetween(String value1, String value2) {
+            addCriterion("response not between", value1, value2, "response");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerIsNull() {
+            addCriterion("handler is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerIsNotNull() {
+            addCriterion("handler is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerEqualTo(Long value) {
+            addCriterion("handler =", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerNotEqualTo(Long value) {
+            addCriterion("handler <>", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerGreaterThan(Long value) {
+            addCriterion("handler >", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerGreaterThanOrEqualTo(Long value) {
+            addCriterion("handler >=", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerLessThan(Long value) {
+            addCriterion("handler <", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerLessThanOrEqualTo(Long value) {
+            addCriterion("handler <=", value, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerIn(List<Long> values) {
+            addCriterion("handler in", values, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerNotIn(List<Long> values) {
+            addCriterion("handler not in", values, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerBetween(Long value1, Long value2) {
+            addCriterion("handler between", value1, value2, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerNotBetween(Long value1, Long value2) {
+            addCriterion("handler not between", value1, value2, "handler");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeIsNull() {
+            addCriterion("handler_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeIsNotNull() {
+            addCriterion("handler_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeEqualTo(Date value) {
+            addCriterion("handler_time =", value, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeNotEqualTo(Date value) {
+            addCriterion("handler_time <>", value, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeGreaterThan(Date value) {
+            addCriterion("handler_time >", value, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("handler_time >=", value, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeLessThan(Date value) {
+            addCriterion("handler_time <", value, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeLessThanOrEqualTo(Date value) {
+            addCriterion("handler_time <=", value, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeIn(List<Date> values) {
+            addCriterion("handler_time in", values, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeNotIn(List<Date> values) {
+            addCriterion("handler_time not in", values, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeBetween(Date value1, Date value2) {
+            addCriterion("handler_time between", value1, value2, "handlerTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andHandlerTimeNotBetween(Date value1, Date value2) {
+            addCriterion("handler_time not between", value1, value2, "handlerTime");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

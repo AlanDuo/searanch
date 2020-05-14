@@ -1,17 +1,19 @@
 package com.yunyuan.searanch.service.impl;
 
 import com.yunyuan.searanch.dao.*;
+import com.yunyuan.searanch.dto.AdminOrderUpdateDTO;
 import com.yunyuan.searanch.dto.AdminRegisterDTO;
 import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.AdminService;
-import com.yunyuan.searanch.vo.AdminMerchantListVO;
-import com.yunyuan.searanch.vo.AdminOrderListVO;
+import com.yunyuan.searanch.vo.*;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -30,6 +32,12 @@ public class AdminServiceImpl implements AdminService {
     private RoleMapper roleMapper;
     @Resource
     private PermissionMapper permissionMapper;
+    @Resource
+    private FeedbackMapper feedbackMapper;
+    @Resource
+    private EvaluateMapper evaluateMapper;
+    @Resource
+    private RedisTemplate redisTemplate;
 
     public User getUserByPhone(String phone) {
         UserExample userExample=new UserExample();
@@ -92,26 +100,69 @@ public class AdminServiceImpl implements AdminService {
         if (oldPassword.equals(user.getPassword())) {
             newPassword=new Md5Hash(newPassword,user.getPhoneNumber(),3).toString();
             user.setPassword(newPassword);
+            redisTemplate.delete("loginUser"+user.getPhoneNumber());
             return userMapper.insertSelective(user)>0;
         }
         return false;
     }
 
     @Override
-    public Map<String, Object> adminOrderList(String orderNumber, String goodsName, String userName, String merchant) {
+    public List<ProblemVO> getProblems(String role) {
+        FeedbackExample feedbackExample=new FeedbackExample();
+        FeedbackExample.Criteria feedbackCriteria=feedbackExample.createCriteria();
+        feedbackCriteria.andUserTypeLike("%"+role+"%");
+        List<Feedback> feedbackList=feedbackMapper.selectByExample(feedbackExample);
+        List<ProblemVO> problemVOList=new ArrayList<>();
+        for(Feedback feedback:feedbackList){
+            ProblemVO problemVO=new ProblemVO();
+            BeanUtils.copyProperties(feedback,problemVO);
+            User user=userMapper.selectByPrimaryKey(feedback.getFeedbackUser());
+            problemVO.setFeedbackUserId(feedback.getFeedbackUser());
+            problemVO.setFeedbackUser(user.getUsername());
+            problemVO.setEmail(user.getEmail());
+            problemVOList.add(problemVO);
+        }
+        return problemVOList;
+    }
+
+    @Override
+    public boolean dealWithProblem(Long feedbackId, String content, Long userId) {
+        Feedback feedback=feedbackMapper.selectByPrimaryKey(feedbackId);
+        Byte progressRate=2;
+        feedback.setProgressRate(progressRate);
+        feedback.setResponse(content);
+        feedback.setHandler(userId);
+        feedback.setHandlerTime(new Date());
+        return feedbackMapper.updateByPrimaryKeySelective(feedback)>0;
+    }
+
+    @Override
+    public ProblemDetailVO problemDetails(Long feedbackId) {
+        Feedback feedback=feedbackMapper.selectByPrimaryKey(feedbackId);
+        ProblemDetailVO detailVO=new ProblemDetailVO();
+        BeanUtils.copyProperties(feedback,detailVO);
+        User handler=userMapper.selectByPrimaryKey(feedback.getHandler());
+        detailVO.setHandler(handler.getUsername());
+        if(feedback.getProgressRate()==2){
+            detailVO.setProgressRate(true);
+        }else{
+            detailVO.setProgressRate(false);
+        }
+        return detailVO;
+    }
+
+    @Override
+    public Map<String, Object> adminOrderList(String orderNumber, String phoneNumber, String userName) {
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
         if(null!=orderNumber && !"".equals(orderNumber.trim())){
             orderCriteria.andOrderNumberLike("%"+orderNumber+"%");
         }
-        if(null!=goodsName && !"".equals(goodsName.trim())) {
-            orderCriteria.andGoodsNameLike("%"+goodsName+"%");
-        }
         if(null!=userName && !"".equals(userName.trim())){
             orderCriteria.andUserNameLike("%"+userName+"%");
         }
-        if(null!=merchant && !"".equals(merchant.trim())){
-            orderCriteria.andMerchantLike("%"+merchant+"%");
+        if(null!=phoneNumber && !"".equals(phoneNumber.trim())){
+            orderCriteria.andPhoneEqualTo(phoneNumber);
         }
         List<Order> orderList=orderMapper.selectByExample(orderExample);
         Map<String,Object> map=new HashMap<>(2);
@@ -120,6 +171,7 @@ public class AdminServiceImpl implements AdminService {
         for(Order order:orderList){
             AdminOrderListVO adminOrderListVO=new AdminOrderListVO();
             BeanUtils.copyProperties(order,adminOrderListVO);
+            adminOrderListVO.setTotalPrice(order.getPrice().multiply(new BigDecimal(order.getAmount())));
             orderListVOs.add(adminOrderListVO);
         }
         map.put("orderListVOs",orderListVOs);
@@ -127,16 +179,55 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean adminUpdateOrder(String orderNumber, Integer amount) {
+    public AdminOrderInfoVO adminOrderInfo(String orderNumber) {
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
         orderCriteria.andOrderNumberEqualTo(orderNumber);
         Order order=orderMapper.selectByExample(orderExample).get(0);
-        order.setAmount(amount);
-        return orderMapper.insertSelective(order)>0;
+        AdminOrderInfoVO orderInfoVO=new AdminOrderInfoVO();
+        BeanUtils.copyProperties(order,orderInfoVO);
+        EvaluateExample evaluateExample=new EvaluateExample();
+        EvaluateExample.Criteria evaluateCriteria=evaluateExample.createCriteria();
+        evaluateCriteria.andOrderIdEqualTo(order.getOrderId());
+        List<Evaluate> evaluateList=evaluateMapper.selectByExample(evaluateExample);
+        if(evaluateList.size()!=0){
+            orderInfoVO.setEvaluate(evaluateList.get(0).getGoodsEva());
+        }
+        return orderInfoVO;
     }
 
     @Override
+    public boolean adminUpdateOrder(AdminOrderUpdateDTO orderUpdateDTO) {
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andOrderNumberEqualTo(orderUpdateDTO.getOrderNumber());
+        Order order=orderMapper.selectByExample(orderExample).get(0);
+        if(null!=orderUpdateDTO.getPhone() && !"".equals(orderUpdateDTO.getPhone().trim())){
+            order.setPhone(orderUpdateDTO.getPhone());
+        }
+        if(null!=orderUpdateDTO.getAmount() && orderUpdateDTO.getAmount()!=0){
+            order.setAmount(orderUpdateDTO.getAmount());
+        }
+        if(null!=orderUpdateDTO.getCountry() && !"".equals(orderUpdateDTO.getCountry().trim())){
+            order.setCountry(orderUpdateDTO.getCountry());
+        }
+        if(null!=orderUpdateDTO.getProvince() && !"".equals(orderUpdateDTO.getProvince().trim())){
+            order.setProvince(orderUpdateDTO.getProvince());
+        }
+        if(null!=orderUpdateDTO.getCity() && !"".equals(orderUpdateDTO.getCity().trim())){
+            order.setCity(orderUpdateDTO.getCity());
+        }
+        if(null!=orderUpdateDTO.getAddress() && !"".equals(orderUpdateDTO.getAddress().trim())){
+            order.setAddress(orderUpdateDTO.getAddress());
+        }
+        if(null!=orderUpdateDTO.getLogisticsNo() && !"".equals(orderUpdateDTO.getLogisticsNo().trim())){
+            order.setLogisticsNo(orderUpdateDTO.getLogisticsNo());
+        }
+        return orderMapper.updateByPrimaryKeySelective(order)>0;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean adminDeleteOrder(String orderNumber) {
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
@@ -145,7 +236,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Map<String,Object> adminMerchantList(Long merchantId, String userName, String merchantName, Boolean check) {
+    public Map<String,Object> adminMerchantList(Long merchantId, String userName, String phoneNumber, Boolean check) {
         Map<String,Object> map=new HashMap<>(2);
         MerchantRegisterExample merchantRegisterExample=new MerchantRegisterExample();
         MerchantRegisterExample.Criteria registerCriteria=merchantRegisterExample.createCriteria();
@@ -155,8 +246,8 @@ public class AdminServiceImpl implements AdminService {
         if(null!=userName && !"".equals(userName.trim())){
             registerCriteria.andUsernameLike("%"+userName+"%");
         }
-        if(null!=merchantName && !"".equals(merchantName.trim())){
-            registerCriteria.andMerchantNameLike("%"+merchantName+"%");
+        if(null!=phoneNumber && !"".equals(phoneNumber.trim())){
+            registerCriteria.andMerchantPhoneEqualTo(phoneNumber);
         }
         if(null!=check){
             registerCriteria.andExamineEqualTo(check);
@@ -188,5 +279,46 @@ public class AdminServiceImpl implements AdminService {
         MerchantRegister merchantRegister=merchantRegisterMapper.selectByPrimaryKey(registerId);
         merchantRegister.setExamine(check);
         return merchantRegisterMapper.updateByPrimaryKey(merchantRegister)>0;
+    }
+
+    @Override
+    public Map<String,Object> adminUserList() {
+        Map<String,Object> map=new HashMap<>(2);
+        RoleExample roleExample=new RoleExample();
+        RoleExample.Criteria roleCriteria=roleExample.createCriteria();
+        roleCriteria.andRoleEqualTo("user");
+        List<Role> roleList=roleMapper.selectByExample(roleExample);
+        map.put("pageInfo",roleList);
+        List<AdminUserVO> userVOList=new ArrayList<>();
+        for(Role role:roleList){
+            User user=userMapper.selectByPrimaryKey(role.getUserId());
+            AdminUserVO userVO=new AdminUserVO();
+            BeanUtils.copyProperties(user,userVO);
+            userVOList.add(userVO);
+        }
+        map.put("userVOList",userVOList);
+        return map;
+    }
+
+    @Override
+    public List<UserConsumeVO> userConsumeRecord(Long userId) {
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andUserIdEqualTo(userId);
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        List<UserConsumeVO> consumeVOList=new ArrayList<>();
+        for(Order order:orderList){
+            UserConsumeVO consumeVO=new UserConsumeVO();
+            BeanUtils.copyProperties(order,consumeVO);
+            EvaluateExample evaluateExample=new EvaluateExample();
+            EvaluateExample.Criteria evaluateCriteria=evaluateExample.createCriteria();
+            evaluateCriteria.andOrderIdEqualTo(order.getOrderId());
+            List<Evaluate> evaluateList=evaluateMapper.selectByExample(evaluateExample);
+            if(evaluateList.size()!=0){
+                consumeVO.setEvaluate(evaluateList.get(0).getGoodsEva());
+            }
+            consumeVOList.add(consumeVO);
+        }
+        return consumeVOList;
     }
 }

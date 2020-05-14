@@ -5,7 +5,6 @@ import com.yunyuan.searanch.dto.UserUpdateDTO;
 import com.yunyuan.searanch.entity.MerchantRegister;
 import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.service.UserService;
-import com.yunyuan.searanch.utils.FileUploadUtil;
 import com.yunyuan.searanch.utils.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,9 +13,6 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
 
 
 /**
@@ -66,15 +62,10 @@ public class UserController {
 
     @ApiOperation(value="用户反馈")
     @PostMapping("/feedback")
-    public ResponseData uploadFile(MultipartFile file, String content,HttpServletRequest request){
+    public ResponseData uploadFile(String imag, String content){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
-        String url="";
-        if(null!=file) {
-            FileUploadUtil.uploadFile(file, request);
-            url= FileUploadUtil.getUrl();
-        }
-        if(userService.feedback(user.getUserId(),content,url)) {
+        if(userService.feedback(user.getUserId(),content,imag)) {
             return ResponseData.ok();
         }else{
             return ResponseData.error();

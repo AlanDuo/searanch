@@ -1,9 +1,8 @@
 package com.yunyuan.searanch.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Feedback implements Serializable {
+public class Feedback {
     private Long feedbackId;
 
     private Long feedbackUser;
@@ -13,6 +12,16 @@ public class Feedback implements Serializable {
     private String image;
 
     private Date feedbackTime;
+
+    private String userType;
+
+    private Byte progressRate;
+
+    private String response;
+
+    private Long handler;
+
+    private Date handlerTime;
 
     public Long getFeedbackId() {
         return feedbackId;
@@ -52,5 +61,45 @@ public class Feedback implements Serializable {
 
     public void setFeedbackTime(Date feedbackTime) {
         this.feedbackTime = feedbackTime;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType == null ? null : userType.trim();
+    }
+
+    public Byte getProgressRate() {
+        return progressRate;
+    }
+
+    public void setProgressRate(Byte progressRate) {
+        this.progressRate = progressRate;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response == null ? null : response.trim();
+    }
+
+    public Long getHandler() {
+        return handler;
+    }
+
+    public void setHandler(Long handler) {
+        this.handler = handler;
+    }
+
+    public Date getHandlerTime() {
+        return handlerTime;
+    }
+
+    public void setHandlerTime(Date handlerTime) {
+        this.handlerTime = handlerTime;
     }
 }

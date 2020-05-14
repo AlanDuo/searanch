@@ -155,11 +155,11 @@ public class UserServiceImpl implements UserService {
             Long userId=getUserByPhone(user1.getPhoneNumber()).getUserId();
             Role role=new Role();
             role.setUserId(userId);
-            role.setRole("merchant");
+            role.setRole("nomerchant");
             roleMapper.insert(role);
             Permission permission=new Permission();
             permission.setUserId(userId);
-            permission.setPermission("user:update,user:select,goods:apply");
+            permission.setPermission("user:update,user:select");
             permissionMapper.insert(permission);
         }else{
             user.setEmail(merchantRegisterDTO.getEmail());
@@ -170,10 +170,10 @@ public class UserServiceImpl implements UserService {
             redisTemplate.delete("loginUser"+user.getPhoneNumber());
             Long userId=getUserByPhone(merchantRegisterDTO.getMerchantPhone()).getUserId();
             Role role=roleMapper.selectByPrimaryKey(userId);
-            role.setRole("merchant");
+            role.setRole("nomerchant");
             roleMapper.updateByPrimaryKey(role);
             Permission permission=permissionMapper.selectByPrimaryKey(userId);
-            permission.setPermission("user:update,user:select,goods:apply");
+            permission.setPermission("user:update,user:select");
             permissionMapper.updateByPrimaryKey(permission);
         }
         MerchantRegister merchantRegister=new MerchantRegister();
@@ -191,6 +191,10 @@ public class UserServiceImpl implements UserService {
         feedback.setFeedbackUser(userId);
         feedback.setFeedbackContent(content);
         feedback.setFeedbackTime(new Date());
+        Role role=roleMapper.selectByPrimaryKey(userId);
+        feedback.setUserType(role.getRole());
+        Byte progressRate=0;
+        feedback.setProgressRate(progressRate);
         return feedbackMapper.insertSelective(feedback)>0;
     }
 
