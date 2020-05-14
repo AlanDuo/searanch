@@ -1,13 +1,18 @@
 
-wsquid:S14889"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+hsquid:S1192w"LDefine a constant instead of duplicating this literal "feedbackId" 10 times.(¨æè±üÿÿÿÿ
+osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
+dsquid:S1192µ"GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêÝþÿÿÿÿ
 isquid:S1192ï"QDefine a constant instead of duplicating this literal "feedbackContent" 12 times.(ù³¨ð
+psquid:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
+fsquid:S1192û"NDefine a constant instead of duplicating this literal "feedbackTime" 10 times.(«ÉÃƒ
+fsquid:S1192³"NDefine a constant instead of duplicating this literal "feedbackUser" 10 times.(ß¡ûí
 csquid:S00112`"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºþÿÿÿÿ
 csquid:S00112Y"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
-psquid:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
-dsquid:S1192µ"GDefine a constant instead of duplicating this literal "image" 12 times.(ºÃêÝþÿÿÿÿ
 ]squid:S00112g"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
 
-osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
-fsquid:S1192³"NDefine a constant instead of duplicating this literal "feedbackUser" 10 times.(ß¡ûí
-hsquid:S1192w"LDefine a constant instead of duplicating this literal "feedbackId" 10 times.(¨æè±üÿÿÿÿ
-fsquid:S1192û"NDefine a constant instead of duplicating this literal "feedbackTime" 10 times.(«ÉÃƒ
+wsquid:S14889"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
+msquid:S1192ÿ"IDefine a constant instead of duplicating this literal "handler" 10 times.(æïØƒûÿÿÿÿ8Ë×Ñˆ¡.
+qsquid:S1192»"MDefine a constant instead of duplicating this literal "handlerTime" 10 times.(Ô®à‘ýÿÿÿÿ8Ë×Ñˆ¡.
+nsquid:S1192·"JDefine a constant instead of duplicating this literal "userType" 12 times.(‚€³°ÿÿÿÿÿ8Ë×Ñˆ¡.
+msquid:S1192ý"NDefine a constant instead of duplicating this literal "progressRate" 10 times.(Ï¯¯€8Ë×Ñˆ¡.
+isquid:S1192¹"JDefine a constant instead of duplicating this literal "response" 12 times.(¬ÛÖ€8Ë×Ñˆ¡.

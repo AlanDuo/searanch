@@ -1,4 +1,2 @@
 
-Vsquid:S1854'"8Remove this useless assignment to local variable "flag".(‡®¬Ú8ğß›üœ.
-Fsquid:S1481!")Remove this unused "flag" local variable.(ŒÖı$8ßœüœ.
-isquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(Ìì€Õ8»èšüœ.
+lsquid:S1192+"IDefine a constant instead of duplicating this literal "pageInfo" 3 times.(ƒ½†şÿÿÿÿÿ8‡µ›ˆ¡.

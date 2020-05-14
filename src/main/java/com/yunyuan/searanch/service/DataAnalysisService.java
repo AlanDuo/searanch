@@ -1,6 +1,7 @@
 package com.yunyuan.searanch.service;
 
 import com.yunyuan.searanch.entity.Order;
+import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -30,12 +31,20 @@ public interface DataAnalysisService {
     int getOrderAmountByTime(Date date1,Date date2);
 
     /**
-     * 每个月销售额
+     * 根据时间区间查询销售额
+     *
+     * @param date1
+     * @param date2
+     * @return
+     */
+    BigDecimal getSalesVolumeByTime(Date date1, Date date2);
+    /**
+     * 每个月销售额与订单数量
      *
      * @param year
      * @return
      */
-    Map<Integer, BigDecimal> monthlySales(Integer year);
+    Map<Integer, OrderSalesAndQuantityVO> monthlySales(Integer year);
 
     /**
      * 该月份各类商品的销售额
@@ -99,4 +108,29 @@ public interface DataAnalysisService {
      */
     Map<String,BigDecimal> ratioOfCity(Integer year,String province);
 
+    /**
+     * 该城市的销售额与订单总数
+     *
+     * @param year
+     * @param city
+     * @return
+     */
+    OrderSalesAndQuantityVO citySalesAndQuantity(Integer year,String city);
+
+    /**
+     * 该年每个省份的的订单总量与销售额
+     *
+     * @param year
+     * @return
+     */
+    Map<String,OrderSalesAndQuantityVO> eachProvinceSalesAndQuantity(Integer year);
+
+    /**
+     * 该年该省份所有城市的销售额与订单总量
+     *
+     * @param province
+     * @param year
+     * @return
+     */
+    Map<String,OrderSalesAndQuantityVO> cityOfProvinceSalesAndQuantity(String province,Integer year);
 }

@@ -1,3 +1,4 @@
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\GoodsApplyVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\GoodsInfoVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\utils\FileUploadUtil.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\GoodsMapper.java
@@ -36,7 +37,6 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\ProblemDetailVO
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\DataAnalysisService.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\PushService.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\controller\UploadController.java
-D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dto\GoodsAddDTO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\PageService.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\ShopCartVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\SuperManagerService.java
@@ -48,6 +48,7 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\UserConsumeVO.j
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\Message.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\controller\SuperManagerController.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\Role.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\AdminGoodsVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\utils\MessageCodeUtil.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\PermissionExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\OrderMapper.java
@@ -56,6 +57,7 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\controller\DataAna
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\TableVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\GoodsApplyExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\impl\DataAnalysisServiceImpl.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\GoodsAppliedVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\FeedbackMapper.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\ChatService.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\controller\PageController.java

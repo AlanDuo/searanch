@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author alan
  * @date 2020/4/23
  */
-@Api(value = "推送",tags = "推送")
+@Api(value = "推送",tags = "推送(发邮件)")
 @RestController
 public class PushController {
     private PushService pushService;

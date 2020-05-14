@@ -48,7 +48,7 @@
         <!--<table tableName="browse" domainObjectName="Browse"></table>-->
         <!--<table tableName="discount" domainObjectName="Discount"></table>-->
         <!--<table tableName="goods" domainObjectName="Goods"></table>-->
-        <!--<table tableName="order" domainObjectName="Order"></table>-->
+        <table tableName="orders" domainObjectName="Order"></table>
         <!--<table tableName="shop_cart" domainObjectName="ShopCart"></table>
         <table tableName="goods_type" domainObjectName="GoodsType"></table>-->
         <!--<table tableName="evaluate" domainObjectName="Evaluate"></table>-->
@@ -56,6 +56,6 @@
         <!--<table tableName="collect" domainObjectName="Collect"></table>-->
         <!--<table tableName="push" domainObjectName="Push"></table>-->
         <!--<table tableName="message" domainObjectName="Message"></table>-->
-        <table tableName="goods_apply" domainObjectName="GoodsApply"></table>
+        <!--<table tableName="goods_apply" domainObjectName="GoodsApply"></table>-->
     </context>
 </generatorConfiguration>

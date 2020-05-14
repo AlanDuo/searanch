@@ -178,8 +178,6 @@ Csrc/main/java/com/yunyuan/searanch/service/GoodsManagerService.java,a\3\a3e927
 Lsrc/main/java/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.java,c\0\c03969cbbba25e8f53600fd194387165be2430f9
 y
 Isrc/main/java/com/yunyuan/searanch/controller/GoodsManagerController.java,b\3\b3b35adf9e674931d0e91f143e4654446a5d6f12
-g
-7src/main/java/com/yunyuan/searanch/dto/GoodsAddDTO.java,9\3\934c7e450ab151a6b21c4feacd5f6dfab58b2771
 f
 6src/main/java/com/yunyuan/searanch/vo/OrderListVO.java,5\5\555113227da6a9a0a065652ee297b9ec656ccea7
 g
@@ -680,3 +678,11 @@ f
 6src/main/java/com/yunyuan/searanch/vo/AdminUserVO.java,a\8\a8b50b0e6492d08543f093d7bf00e4e2e7134660
 h
 8src/main/java/com/yunyuan/searanch/vo/UserConsumeVO.java,5\8\58c9e5da6e81dc1fcb709e95f4dca50c1e409a27
+i
+9src/main/java/com/yunyuan/searanch/vo/GoodsAppliedVO.java,f\f\ff8e1b0bcd359aed549670aebd52b6424c2477ae
+g
+7src/main/java/com/yunyuan/searanch/vo/GoodsApplyVO.java,b\6\b64c7596190cdc07a7c4ae13d39fbf38f86c593b
+g
+7src/main/java/com/yunyuan/searanch/vo/AdminGoodsVO.java,6\2\6217caf9e2e471074af338cbdc2cc6b1ab8a4246
+r
+Bsrc/main/java/com/yunyuan/searanch/vo/OrderSalesAndQuantityVO.java,9\5\95ed21a93fdd88bec419f703d521786c5f8c5f27

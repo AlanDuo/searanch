@@ -7,6 +7,8 @@ import com.yunyuan.searanch.entity.Order;
 import com.yunyuan.searanch.entity.OrderExample;
 import com.yunyuan.searanch.service.DataAnalysisService;
 import com.yunyuan.searanch.utils.DateUtil;
+import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -47,9 +49,24 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         orderCriteria.andFinishTimeLessThan(date2);
         return orderMapper.countByExample(orderExample);
     }
+
     @Override
-    public Map<Integer, BigDecimal> monthlySales(Integer year) {
-        Map<Integer,BigDecimal> map=new HashMap<>(12);
+    public BigDecimal getSalesVolumeByTime(Date date1, Date date2) {
+        BigDecimal volume=BigDecimal.ZERO;
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andFinishTimeGreaterThanOrEqualTo(date1);
+        orderCriteria.andFinishTimeLessThan(date2);
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        for(Order order:orderList){
+            volume=volume.add(order.getPrice().multiply(new BigDecimal(order.getAmount())));
+        }
+        return volume;
+    }
+
+    @Override
+    public Map<Integer, OrderSalesAndQuantityVO> monthlySales(Integer year) {
+        Map<Integer,OrderSalesAndQuantityVO> map=new HashMap<>(12);
         Date dateStart=null;
         Date dateEnd=null;
         for(int i=1;i<=MONTHS;i++){
@@ -60,7 +77,10 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
             for(Order order:orders){
                 count=count.add(order.getPrice().multiply(new BigDecimal(order.getAmount())));
             }
-            map.put(i,count);
+            OrderSalesAndQuantityVO salesAndQuantityVO=new OrderSalesAndQuantityVO();
+            salesAndQuantityVO.setOrderQuantity(orders.size());
+            salesAndQuantityVO.setSalesVolume(count);
+            map.put(i,salesAndQuantityVO);
         }
         return map;
     }
@@ -284,6 +304,82 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         for(Map.Entry<String,BigDecimal> entry:cityMap.entrySet()){
             BigDecimal ratio=entry.getValue().divide(salesVolume,2,BigDecimal.ROUND_HALF_UP);
             map.put(entry.getKey(),ratio);
+        }
+        return map;
+    }
+
+    @Override
+    public OrderSalesAndQuantityVO citySalesAndQuantity(Integer year,String city) {
+        Date date1=DateUtil.parseDate(year);
+        Date date2=DateUtil.parseDate(year+1);
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andFinishTimeGreaterThanOrEqualTo(date1);
+        orderCriteria.andFinishTimeLessThan(date2);
+        orderCriteria.andCityEqualTo(city);
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        OrderSalesAndQuantityVO salesAndQuantityVO=new OrderSalesAndQuantityVO();
+        salesAndQuantityVO.setOrderQuantity(orderList.size());
+        BigDecimal count=BigDecimal.ZERO;
+        for(Order order:orderList){
+            count=count.add(order.getPrice().multiply(new BigDecimal(order.getAmount())));
+        }
+        salesAndQuantityVO.setSalesVolume(count);
+        return salesAndQuantityVO;
+    }
+
+    @Override
+    public Map<String, OrderSalesAndQuantityVO> eachProvinceSalesAndQuantity(Integer year) {
+        Map<String,OrderSalesAndQuantityVO> map=new HashMap<>();
+        Date date1=DateUtil.parseDate(year);
+        Date date2=DateUtil.parseDate(year+1);
+        List<Order> orderList=getOrdersByTime(date1,date2);
+        BigDecimal thisProvinceVolume;
+        Integer thisProvinceAmount=0;
+        for(Order order:orderList){
+            if (map.containsKey(order.getProvince())) {
+                thisProvinceVolume=map.get(order.getProvince()).getSalesVolume();
+                thisProvinceAmount=map.get(order.getProvince()).getOrderQuantity();
+                thisProvinceVolume=thisProvinceVolume.add(order.getPrice().multiply(new BigDecimal(order.getAmount())));
+                OrderSalesAndQuantityVO salesAndQuantityVO=new OrderSalesAndQuantityVO(thisProvinceVolume,thisProvinceAmount+1);
+                map.put(order.getProvince(),salesAndQuantityVO);
+            }else{
+                thisProvinceVolume=order.getPrice().multiply(new BigDecimal(order.getAmount()));
+                thisProvinceAmount=1;
+                OrderSalesAndQuantityVO salesAndQuantityVO=new OrderSalesAndQuantityVO(thisProvinceVolume,thisProvinceAmount);
+                map.put(order.getProvince(),salesAndQuantityVO);
+            }
+        }
+        return map;
+    }
+
+    @Override
+    @Cacheable(value = "citySales")
+    public Map<String, OrderSalesAndQuantityVO> cityOfProvinceSalesAndQuantity(String province, Integer year) {
+        Map<String,OrderSalesAndQuantityVO> map=new HashMap<>();
+        Date date1=DateUtil.parseDate(year);
+        Date date2=DateUtil.parseDate(year+1);
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andFinishTimeGreaterThanOrEqualTo(date1);
+        orderCriteria.andFinishTimeLessThan(date2);
+        orderCriteria.andProvinceEqualTo("%"+province+"%");
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        BigDecimal thisCityVolume;
+        Integer thisCityAmount=0;
+        for(Order order:orderList){
+            if (map.containsKey(order.getCity())) {
+                thisCityVolume=map.get(order.getCity()).getSalesVolume();
+                thisCityAmount=map.get(order.getCity()).getOrderQuantity();
+                thisCityVolume=thisCityVolume.add(order.getPrice().multiply(new BigDecimal(order.getAmount())));
+                OrderSalesAndQuantityVO salesAndQuantityVO=new OrderSalesAndQuantityVO(thisCityVolume,thisCityAmount+1);
+                map.put(order.getCity(),salesAndQuantityVO);
+            }else{
+                thisCityVolume=order.getPrice().multiply(new BigDecimal(order.getAmount()));
+                thisCityAmount=1;
+                OrderSalesAndQuantityVO salesAndQuantityVO=new OrderSalesAndQuantityVO(thisCityVolume,thisCityAmount);
+                map.put(order.getCity(),salesAndQuantityVO);
+            }
         }
         return map;
     }

@@ -17,7 +17,10 @@
     <result column="apply_time" property="applyTime" jdbcType="DATE" />
     <result column="finished" property="finished" jdbcType="BIT" />
     <result column="finish_time" property="finishTime" jdbcType="DATE" />
+    <result column="is_take" property="isTake" jdbcType="BIT" />
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="handler" property="handler" jdbcType="BIGINT" />
+    <result column="publish" property="publish" jdbcType="BIT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -79,7 +82,8 @@
   </sql>
   <sql id="Base_Column_List" >
     apply_id, merchant_id, goods_name, goods_type, picture, amount, breed_time, plan_take_time, 
-    country, province, city, price, apply_time, finished, finish_time, remarks
+    country, province, city, price, apply_time, finished, finish_time, is_take, remarks, 
+    handler, publish
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.GoodsApplyExample" >
     select
@@ -117,13 +121,15 @@
       breed_time, plan_take_time, country, 
       province, city, price, 
       apply_time, finished, finish_time, 
-      remarks)
+      is_take, remarks, handler, 
+      publish)
     values (#{applyId,jdbcType=BIGINT}, #{merchantId,jdbcType=BIGINT}, #{goodsName,jdbcType=VARCHAR}, 
       #{goodsType,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, #{amount,jdbcType=INTEGER}, 
       #{breedTime,jdbcType=DATE}, #{planTakeTime,jdbcType=DATE}, #{country,jdbcType=VARCHAR}, 
       #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
       #{applyTime,jdbcType=DATE}, #{finished,jdbcType=BIT}, #{finishTime,jdbcType=DATE}, 
-      #{remarks,jdbcType=VARCHAR})
+      #{isTake,jdbcType=BIT}, #{remarks,jdbcType=VARCHAR}, #{handler,jdbcType=BIGINT}, 
+      #{publish,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.GoodsApply" >
     insert into goods_apply
@@ -173,8 +179,17 @@
       <if test="finishTime != null" >
         finish_time,
       </if>
+      <if test="isTake != null" >
+        is_take,
+      </if>
       <if test="remarks != null" >
         remarks,
+      </if>
+      <if test="handler != null" >
+        handler,
+      </if>
+      <if test="publish != null" >
+        publish,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -223,8 +238,17 @@
       <if test="finishTime != null" >
         #{finishTime,jdbcType=DATE},
       </if>
+      <if test="isTake != null" >
+        #{isTake,jdbcType=BIT},
+      </if>
       <if test="remarks != null" >
         #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null" >
+        #{handler,jdbcType=BIGINT},
+      </if>
+      <if test="publish != null" >
+        #{publish,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -282,8 +306,17 @@
       <if test="record.finishTime != null" >
         finish_time = #{record.finishTime,jdbcType=DATE},
       </if>
+      <if test="record.isTake != null" >
+        is_take = #{record.isTake,jdbcType=BIT},
+      </if>
       <if test="record.remarks != null" >
         remarks = #{record.remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handler != null" >
+        handler = #{record.handler,jdbcType=BIGINT},
+      </if>
+      <if test="record.publish != null" >
+        publish = #{record.publish,jdbcType=BIT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -307,7 +340,10 @@
       apply_time = #{record.applyTime,jdbcType=DATE},
       finished = #{record.finished,jdbcType=BIT},
       finish_time = #{record.finishTime,jdbcType=DATE},
-      remarks = #{record.remarks,jdbcType=VARCHAR}
+      is_take = #{record.isTake,jdbcType=BIT},
+      remarks = #{record.remarks,jdbcType=VARCHAR},
+      handler = #{record.handler,jdbcType=BIGINT},
+      publish = #{record.publish,jdbcType=BIT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -357,8 +393,17 @@
       <if test="finishTime != null" >
         finish_time = #{finishTime,jdbcType=DATE},
       </if>
+      <if test="isTake != null" >
+        is_take = #{isTake,jdbcType=BIT},
+      </if>
       <if test="remarks != null" >
         remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null" >
+        handler = #{handler,jdbcType=BIGINT},
+      </if>
+      <if test="publish != null" >
+        publish = #{publish,jdbcType=BIT},
       </if>
     </set>
     where apply_id = #{applyId,jdbcType=BIGINT}
@@ -379,7 +424,10 @@
       apply_time = #{applyTime,jdbcType=DATE},
       finished = #{finished,jdbcType=BIT},
       finish_time = #{finishTime,jdbcType=DATE},
-      remarks = #{remarks,jdbcType=VARCHAR}
+      is_take = #{isTake,jdbcType=BIT},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      handler = #{handler,jdbcType=BIGINT},
+      publish = #{publish,jdbcType=BIT}
     where apply_id = #{applyId,jdbcType=BIGINT}
   </update>
 </mapper>
