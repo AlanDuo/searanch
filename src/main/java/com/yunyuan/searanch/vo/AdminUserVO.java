@@ -1,6 +1,8 @@
 package com.yunyuan.searanch.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -9,6 +11,8 @@ import java.io.Serializable;
  * @date 2020/5/13
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AdminUserVO implements Serializable {
 
     private Long userId;

@@ -1,8 +1,9 @@
 package com.yunyuan.searanch.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class MerchantRegister {
+public class MerchantRegister implements Serializable {
     private Long registraId;
 
     private String username;

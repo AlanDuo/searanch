@@ -1,8 +1,9 @@
 package com.yunyuan.searanch.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Feedback {
+public class Feedback implements Serializable {
     private Long feedbackId;
 
     private Long feedbackUser;

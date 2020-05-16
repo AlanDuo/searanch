@@ -1,8 +1,9 @@
 package com.yunyuan.searanch.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Evaluate {
+public class Evaluate implements Serializable {
     private Long evaluateId;
 
     private Long orderId;

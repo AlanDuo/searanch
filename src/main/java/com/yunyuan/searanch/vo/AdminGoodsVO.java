@@ -1,6 +1,8 @@
 package com.yunyuan.searanch.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -10,6 +12,8 @@ import java.math.BigDecimal;
  * @date 2020/5/14
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AdminGoodsVO implements Serializable {
     private Long goodsId;
 

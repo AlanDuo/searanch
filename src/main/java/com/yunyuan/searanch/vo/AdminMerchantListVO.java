@@ -1,5 +1,6 @@
 package com.yunyuan.searanch.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,6 +39,6 @@ public class AdminMerchantListVO implements Serializable {
     private Boolean examine;
 
     private Integer star;
-
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     private Date registraTime;
 }

@@ -1,5 +1,6 @@
 package com.yunyuan.searanch.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -40,6 +41,7 @@ public class OrderVO implements Serializable {
 
     private String address;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm",timezone = "GMT+8")
     private Date orderTime;
 
     private Boolean paid;

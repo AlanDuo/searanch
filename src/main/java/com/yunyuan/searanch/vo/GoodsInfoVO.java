@@ -1,5 +1,6 @@
 package com.yunyuan.searanch.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.yunyuan.searanch.entity.GoodsType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,10 +34,11 @@ public class GoodsInfoVO implements Serializable {
 
     private Integer stock;
 
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     private Date breedTime;
-
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     private Date produceTime;
-
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     private Date packTime;
 
     private List<DiscountVO> discountInfo;

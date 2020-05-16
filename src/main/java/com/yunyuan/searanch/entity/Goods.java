@@ -1,9 +1,10 @@
 package com.yunyuan.searanch.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Goods {
+public class Goods implements Serializable {
     private Long goodsId;
 
     private String goodsName;

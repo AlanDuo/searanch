@@ -1,8 +1,9 @@
 package com.yunyuan.searanch.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Push {
+public class Push implements Serializable {
     private Long pushId;
 
     private Long pushFrom;
