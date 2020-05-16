@@ -1,5 +1,6 @@
 package com.yunyuan.searanch.service;
 
+import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.vo.GoodsInfoVO;
 import java.util.Map;
 
@@ -30,9 +31,10 @@ public interface PageService {
      * 获取单个商品的信息
      *
      * @param goodsId
+     * @param user
      * @return
      */
-    GoodsInfoVO getGoodsInfo(Long goodsId);
+    GoodsInfoVO getGoodsInfo(Long goodsId, User user);
 
     /**
      * 商品的评价信息

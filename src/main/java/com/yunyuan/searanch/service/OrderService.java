@@ -30,6 +30,14 @@ public interface OrderService {
     boolean payOrder(String orderNumber);
 
     /**
+     * 确认订单完成
+     *
+     * @param orderNumber
+     * @return
+     */
+    boolean sureFinish(String orderNumber);
+
+    /**
      * 查看我的订单
      *
      * @param userId

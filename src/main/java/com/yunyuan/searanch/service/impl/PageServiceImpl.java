@@ -106,7 +106,7 @@ public class PageServiceImpl implements PageService {
 
     @Override
     @Cacheable(value = "goodsInfo")
-    public GoodsInfoVO getGoodsInfo(Long goodsId) {
+    public GoodsInfoVO getGoodsInfo(Long goodsId,User user) {
         GoodsInfoVO goodsInfoVO=new GoodsInfoVO();
         Goods goods=goodsMapper.selectByPrimaryKey(goodsId);
         BeanUtils.copyProperties(goods,goodsInfoVO);
@@ -138,6 +138,26 @@ public class PageServiceImpl implements PageService {
         List<GoodsType> goodsTypes=goodsTypeMapper.selectByExample(goodsTypeExample);
         if(goodsTypes.size()!=0){
             goodsInfoVO.setGoodsTypes(goodsTypes);
+        }
+        if(null!=user) {
+            BrowseExample browseExample = new BrowseExample();
+            BrowseExample.Criteria browseCriteria = browseExample.createCriteria();
+            browseCriteria.andUserIdEqualTo(user.getUserId());
+            browseCriteria.andGoodsIdEqualTo(goodsId);
+            List<Browse> browses=browseMapper.selectByExample(browseExample);
+            if(browses.size()!=0){
+                Browse browse=browses.get(0);
+                browse.setWeight(browse.getWeight()+10);
+                browse.setBrowseTime(new Date());
+                browseMapper.updateByPrimaryKeySelective(browse);
+            }else{
+                Browse browse=new Browse();
+                browse.setUserId(user.getUserId());
+                browse.setGoodsId(goodsId);
+                browse.setWeight(10);
+                browse.setBrowseTime(new Date());
+                browseMapper.insertSelective(browse);
+            }
         }
         return goodsInfoVO;
     }

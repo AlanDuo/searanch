@@ -55,7 +55,9 @@ public class PageController {
     @ApiOperation(value="单个商品的具体信息")
     @GetMapping("/goodsInfo/{goodsId}")
     public ResponseData goodsInfo(@PathVariable("goodsId") Long goodsId){
-        GoodsInfoVO goodsInfoVO=pageService.getGoodsInfo(goodsId);
+        Subject subject= SecurityUtils.getSubject();
+        User user=(User)subject.getPrincipal();
+        GoodsInfoVO goodsInfoVO=pageService.getGoodsInfo(goodsId,user);
         return ResponseData.ok().putDataValue(goodsInfoVO);
     }
     @ApiOperation(value = "获取评论")

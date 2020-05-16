@@ -48,6 +48,12 @@ public class OrderController {
         orderService.payOrder(orderNumber);
         return ResponseData.ok();
     }
+    @ApiOperation(value="确认订单完成")
+    @PostMapping("/sureFinish")
+    public ResponseData sureOrderFinish(String orderNumber){
+        orderService.sureFinish(orderNumber);
+        return ResponseData.ok();
+    }
     @ApiOperation(value="查询订单")
     @GetMapping("/orderList")
     public TableVO searchMyOrder(@RequestParam(value = "page",defaultValue = "1") Integer page,

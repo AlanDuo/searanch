@@ -1,9 +1,6 @@
 package com.yunyuan.searanch.service.impl;
 
-import com.yunyuan.searanch.dao.GoodsMapper;
-import com.yunyuan.searanch.dao.GoodsTypeMapper;
-import com.yunyuan.searanch.dao.MerchantRegisterMapper;
-import com.yunyuan.searanch.dao.OrderMapper;
+import com.yunyuan.searanch.dao.*;
 import com.yunyuan.searanch.dto.OrderDTO;
 import com.yunyuan.searanch.dto.OrderGoodsDTO;
 import com.yunyuan.searanch.entity.*;
@@ -33,6 +30,8 @@ public class OrderServiceImpl implements OrderService{
     private GoodsTypeMapper goodsTypeMapper;
     @Resource
     private MerchantRegisterMapper merchantRegisterMapper;
+    @Resource
+    private UserMapper userMapper;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -77,6 +76,7 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean payOrder(String orderNumber) {
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
@@ -88,6 +88,22 @@ public class OrderServiceImpl implements OrderService{
             orderMapper.updateByPrimaryKeySelective(order);
         }
         return true;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean sureFinish(String orderNumber) {
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andOrderNumberEqualTo(orderNumber);
+        Order order=orderMapper.selectByExample(orderExample).get(0);
+        order.setFinished(true);
+        order.setFinishTime(new Date());
+        orderMapper.updateByPrimaryKeySelective(order);
+        Long userId=order.getUserId();
+        User user=userMapper.selectByPrimaryKey(userId);
+        user.setGrowth(user.getGrowth()+10);
+        return userMapper.updateByPrimaryKeySelective(user)>0;
     }
 
     @Override
