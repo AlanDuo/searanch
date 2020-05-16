@@ -5,37 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="219e5738-92fd-4d55-bcd6-5694ba50a4dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30880c2d0492c2bc07e49d97f3b29c63e27dab36" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30880c2d0492c2bc07e49d97f3b29c63e27dab36" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65dc8a007c47fa21a30fbd3f82df5c15bfab2607" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65dc8a007c47fa21a30fbd3f82df5c15bfab2607" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b35adf9e674931d0e91f143e4654446a5d6f12" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b35adf9e674931d0e91f143e4654446a5d6f12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee731ac687d7459f4dd77002e5034a05215cfc0f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee731ac687d7459f4dd77002e5034a05215cfc0f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/AdminOrderUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/AdminOrderUpdateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/GoodsApplyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/GoodsApplyDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/OrderGoodsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/OrderGoodsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/UserInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/UserInfoVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/DataAnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/DataAnalysisController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PushController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PushController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/GoodsApplyDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/GoodsApplyDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/DataAnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/DataAnalysisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/UserInfoVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/UserInfoVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
@@ -388,7 +360,7 @@
       <workItem from="1589455402178" duration="7725000" />
       <workItem from="1589503198285" duration="15759000" />
       <workItem from="1589550182561" duration="229000" />
-      <workItem from="1589592031858" duration="2497000" />
+      <workItem from="1589592031858" duration="3186000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.0">
       <created>1587972206309</created>
@@ -453,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589467544975</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="version 7.0 修复下单bug">
+      <created>1589596350001</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589596350002</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +492,8 @@
     <MESSAGE value="version 5.0 完成商家用户以及超级管理员部分" />
     <MESSAGE value="version 6.0 还剩下数据分析部分" />
     <MESSAGE value="version 6.1 初步完成数据分析部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 6.1 初步完成数据分析部分" />
+    <MESSAGE value="version 7.0 修复下单bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 7.0 修复下单bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584537764975">
@@ -528,46 +508,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1586682005922" />
-    <state x="181" y="4" key="CommitChangelistDialog2" timestamp="1589467537680">
+    <state x="181" y="4" key="CommitChangelistDialog2" timestamp="1589596342750">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="181" y="4" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589467537680" />
+    <state x="181" y="4" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589596342750" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588067335916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588067335916" />
-    <state width="1493" height="67" key="GridCell.Tab.0.bottom" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.0.bottom" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
-    <state width="1493" height="67" key="GridCell.Tab.0.center" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
+    <state width="1493" height="177" key="GridCell.Tab.0.center" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
-    <state width="1493" height="67" key="GridCell.Tab.0.left" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
+    <state width="1493" height="177" key="GridCell.Tab.0.left" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
-    <state width="1493" height="67" key="GridCell.Tab.0.right" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
+    <state width="1493" height="177" key="GridCell.Tab.0.right" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
-    <state width="1493" height="67" key="GridCell.Tab.1.bottom" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
+    <state width="1493" height="177" key="GridCell.Tab.1.bottom" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
-    <state width="1493" height="67" key="GridCell.Tab.1.center" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
+    <state width="1493" height="177" key="GridCell.Tab.1.center" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
-    <state width="1493" height="67" key="GridCell.Tab.1.left" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
+    <state width="1493" height="177" key="GridCell.Tab.1.left" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
-    <state width="1493" height="67" key="GridCell.Tab.1.right" timestamp="1589594709719">
+    <state width="1493" height="177" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
+    <state width="1493" height="177" key="GridCell.Tab.1.right" timestamp="1589596884691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="67" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589594709719" />
+    <state width="1493" height="177" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589596884691" />
     <state width="1493" height="86" key="GridCell.Tab.2.bottom" timestamp="1586692363058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -592,10 +572,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588924399723" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1589467593556">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1589596532815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589467593556" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589596532815" />
     <state x="695" y="225" width="439" height="330" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1585036887711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -612,10 +592,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587972537318" />
-    <state x="478" y="204" key="git4idea.merge.GitPullDialog" timestamp="1589467565189">
+    <state x="478" y="204" key="git4idea.merge.GitPullDialog" timestamp="1589596491619">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1589467565189" />
+    <state x="478" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1589596491619" />
     <state x="578" y="307" key="git4idea.ui.GitResetDialog" timestamp="1587984317505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

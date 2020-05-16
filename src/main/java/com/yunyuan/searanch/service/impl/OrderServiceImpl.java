@@ -107,11 +107,11 @@ public class OrderServiceImpl implements OrderService{
 
             BeanUtils.copyProperties(order,orderListVO);
 
-            orderListVO.setPrice(order.getPrice().subtract(order.getDiscount()));
+            //orderListVO.setPrice(order.getPrice().subtract(order.getDiscount()));
             orderListVO.setGoodsName(goods.getGoodsName());
             orderListVO.setDesc(goods.getGoodsDesc());
             orderListVO.setPicture(Arrays.asList(goods.getPicture().split(",")).get(0));
-            orderListVO.setType(goodsTypeMapper.selectByPrimaryKey(order.getTypeId()).getTypeDesc());
+            //orderListVO.setType(goodsTypeMapper.selectByPrimaryKey(order.getTypeId()).getTypeDesc());
 
             orderListVOS.add(orderListVO);
         }
