@@ -12,6 +12,7 @@ com\yunyuan\searanch\vo\ProblemVO.class
 com\yunyuan\searanch\service\GoodsManagerService.class
 com\yunyuan\searanch\utils\HttpUtils$1.class
 com\yunyuan\searanch\entity\CollectExample$Criteria.class
+com\yunyuan\searanch\vo\OrderSalesAndQuantityVO.class
 com\yunyuan\searanch\service\impl\UserServiceImpl.class
 com\yunyuan\searanch\controller\GoodsManagerController.class
 com\yunyuan\searanch\entity\MerchantRegister.class

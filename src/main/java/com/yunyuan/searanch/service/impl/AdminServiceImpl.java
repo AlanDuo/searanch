@@ -240,7 +240,7 @@ public class AdminServiceImpl implements AdminService {
         Map<String,Object> map=new HashMap<>(2);
         MerchantRegisterExample merchantRegisterExample=new MerchantRegisterExample();
         MerchantRegisterExample.Criteria registerCriteria=merchantRegisterExample.createCriteria();
-        if(merchantId!=0 && null!=merchantId){
+        if(null!=merchantId && merchantId!=0){
             registerCriteria.andRegistraIdEqualTo(merchantId);
         }
         if(null!=userName && !"".equals(userName.trim())){

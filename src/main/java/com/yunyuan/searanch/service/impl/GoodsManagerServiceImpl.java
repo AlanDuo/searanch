@@ -104,6 +104,7 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
         goods.setUpTime(new Date());
         goods.setStock(goodsApply.getAmount());
         goods.setBusiness(goodsApply.getMerchantId());
+        goods.setProduceTime(new Date());
         return goodsMapper.insertSelective(goods)>0;
     }
 

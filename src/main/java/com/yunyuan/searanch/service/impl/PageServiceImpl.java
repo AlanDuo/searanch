@@ -57,13 +57,18 @@ public class PageServiceImpl implements PageService {
         if(browses.size()==0){
             return recommendWithoutLogin(page, limit);
         }
-        Long goodsId=browses.get(0).getGoodsId();
-        Goods goods=goodsMapper.selectByPrimaryKey(goodsId);
-        String goodsType=goods.getType();
+        List<String> typeList=new ArrayList<>();
+        for(Browse browse:browses){
+            Goods goods=goodsMapper.selectByPrimaryKey(browse.getGoodsId());
+            typeList.add(goods.getType());
+        }
         PageHelper.startPage(page,limit);
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria goodsCriteria=goodsExample.createCriteria();
-        goodsCriteria.andTypeLike("%"+goodsType+"%");
+        for(String goodsType:typeList) {
+            goodsExample.or().andTypeLike("%"+goodsType+"%");
+        }
+
         goodsCriteria.andUpShelfEqualTo(true);
         return goodsResult(goodsExample);
     }

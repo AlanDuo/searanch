@@ -19,7 +19,7 @@ public class OrderDTO {
     @NotBlank(message = "订单编号不能为空")
     private String orderNumber;
 
-    private String phoneNumber;
+    private String phone;
 
     private String addressee;
 

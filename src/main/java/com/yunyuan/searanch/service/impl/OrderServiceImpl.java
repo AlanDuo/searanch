@@ -56,11 +56,12 @@ public class OrderServiceImpl implements OrderService{
             GoodsExample.Criteria goodsCriteria = goodsExample.createCriteria();
             goodsCriteria.andGoodsIdEqualTo(goodsDTO.getGoodsId());
             Goods goods = goodsMapper.selectByExample(goodsExample).get(0);
+            order.setGoodsId(goodsDTO.getGoodsId());
             order.setMerchantId(goods.getBusiness());
             order.setGoodsName(goods.getGoodsName());
             order.setAmount(goodsDTO.getAmount());
             order.setPrice(goodsDTO.getPrice());
-            if(goodsDTO.getTypeId()!=0 && goodsDTO.getTypeId()!=null){
+            if(null!=goodsDTO.getTypeId() && goodsDTO.getTypeId()!=0){
                 order.setTypeId(goodsDTO.getTypeId());
             }
 

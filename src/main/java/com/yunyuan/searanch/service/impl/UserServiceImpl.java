@@ -155,11 +155,11 @@ public class UserServiceImpl implements UserService {
             Long userId=getUserByPhone(user1.getPhoneNumber()).getUserId();
             Role role=new Role();
             role.setUserId(userId);
-            role.setRole("nomerchant");
+            role.setRole("merchant");
             roleMapper.insert(role);
             Permission permission=new Permission();
             permission.setUserId(userId);
-            permission.setPermission("user:update,user:select");
+            permission.setPermission("user:update,user:select,goods:apply");
             permissionMapper.insert(permission);
         }else{
             user.setEmail(merchantRegisterDTO.getEmail());
@@ -170,10 +170,10 @@ public class UserServiceImpl implements UserService {
             redisTemplate.delete("loginUser"+user.getPhoneNumber());
             Long userId=getUserByPhone(merchantRegisterDTO.getMerchantPhone()).getUserId();
             Role role=roleMapper.selectByPrimaryKey(userId);
-            role.setRole("nomerchant");
+            role.setRole("merchant");
             roleMapper.updateByPrimaryKey(role);
             Permission permission=permissionMapper.selectByPrimaryKey(userId);
-            permission.setPermission("user:update,user:select");
+            permission.setPermission("user:update,user:select,goods:apply");
             permissionMapper.updateByPrimaryKey(permission);
         }
         MerchantRegister merchantRegister=new MerchantRegister();

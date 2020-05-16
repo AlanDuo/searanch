@@ -92,6 +92,7 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\Permission.
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\GoodsTypeMapper.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\DiscountMapper.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\impl\ShopCartServiceImpl.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\OrderSalesAndQuantityVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\GoodsTypeExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\impl\SuperManagerServiceImpl.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\AdminOrderListVO.java

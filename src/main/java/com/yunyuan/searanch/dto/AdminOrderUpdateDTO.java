@@ -1,6 +1,8 @@
 package com.yunyuan.searanch.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 
@@ -9,6 +11,8 @@ import javax.validation.constraints.NotBlank;
  * @date 2020/5/13
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AdminOrderUpdateDTO {
     @NotBlank(message = "订单编号不能为空")
     private String orderNumber;
