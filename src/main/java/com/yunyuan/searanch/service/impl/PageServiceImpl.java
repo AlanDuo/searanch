@@ -34,6 +34,10 @@ public class PageServiceImpl implements PageService {
     private GoodsTypeMapper goodsTypeMapper;
     @Resource
     private CollectMapper collectMapper;
+    @Resource
+    private GoodsApplyMapper applyMapper;
+    @Resource
+    private MerchantRegisterMapper merchantRegisterMapper;
 
     @Override
     @Cacheable(value = "goodsNoLogin")
@@ -113,6 +117,14 @@ public class PageServiceImpl implements PageService {
         List<String> pictures=Arrays.asList(goods.getPicture().split(","));
         goodsInfoVO.setPictures(pictures);
         goodsInfoVO.setDesc(goods.getGoodsDesc());
+
+        if(null!=goods.getApplyId() && goods.getApplyId()!=0) {
+            GoodsApply apply = applyMapper.selectByPrimaryKey(goods.getApplyId());
+            goodsInfoVO.setBreedTime(apply.getBreedTime());
+        }
+        MerchantRegister merchant=merchantRegisterMapper.selectByPrimaryKey(goods.getBusiness());
+        goodsInfoVO.setMerchant(merchant.getMerchantName());
+
         EvaluateExample evaluateExample=new EvaluateExample();
         EvaluateExample.Criteria evaluateCriteria=evaluateExample.createCriteria();
         evaluateCriteria.andGoodsIdEqualTo(goodsId);

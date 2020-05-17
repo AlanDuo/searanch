@@ -193,6 +193,66 @@ public class GoodsExample {
             return (Criteria) this;
         }
 
+        public Criteria andApplyIdIsNull() {
+            addCriterion("apply_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdIsNotNull() {
+            addCriterion("apply_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdEqualTo(Long value) {
+            addCriterion("apply_id =", value, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdNotEqualTo(Long value) {
+            addCriterion("apply_id <>", value, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdGreaterThan(Long value) {
+            addCriterion("apply_id >", value, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("apply_id >=", value, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdLessThan(Long value) {
+            addCriterion("apply_id <", value, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdLessThanOrEqualTo(Long value) {
+            addCriterion("apply_id <=", value, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdIn(List<Long> values) {
+            addCriterion("apply_id in", values, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdNotIn(List<Long> values) {
+            addCriterion("apply_id not in", values, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdBetween(Long value1, Long value2) {
+            addCriterion("apply_id between", value1, value2, "applyId");
+            return (Criteria) this;
+        }
+
+        public Criteria andApplyIdNotBetween(Long value1, Long value2) {
+            addCriterion("apply_id not between", value1, value2, "applyId");
+            return (Criteria) this;
+        }
+
         public Criteria andGoodsNameIsNull() {
             addCriterion("goods_name is null");
             return (Criteria) this;

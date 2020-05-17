@@ -1,11 +1,12 @@
 package com.yunyuan.searanch.entity;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Goods implements Serializable {
+public class Goods {
     private Long goodsId;
+
+    private Long applyId;
 
     private String goodsName;
 
@@ -47,6 +48,14 @@ public class Goods implements Serializable {
 
     public void setGoodsId(Long goodsId) {
         this.goodsId = goodsId;
+    }
+
+    public Long getApplyId() {
+        return applyId;
+    }
+
+    public void setApplyId(Long applyId) {
+        this.applyId = applyId;
     }
 
     public String getGoodsName() {

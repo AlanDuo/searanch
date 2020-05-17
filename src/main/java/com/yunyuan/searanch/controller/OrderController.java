@@ -78,4 +78,12 @@ public class OrderController {
             return ResponseData.ok().putDataValue(orderVO);
         }else{return ResponseData.notFound();}
     }
+    @ApiOperation(value="订单评价")
+    @PostMapping("/evaluate")
+    public ResponseData evaluateOrder(String orderNumber,Integer goodsAbout,String goodsEva){
+        Subject subject= SecurityUtils.getSubject();
+        User user=(User)subject.getPrincipal();
+        orderService.evaluateOrder(orderNumber,goodsAbout,goodsEva,user);
+        return ResponseData.ok();
+    }
 }

@@ -12,6 +12,7 @@ import java.util.Map;
  * @date 2020/4/2
  */
 public interface OrderService {
+
     /**
      * 下单
      *
@@ -52,4 +53,15 @@ public interface OrderService {
      * @return
      */
     OrderVO orderInfo(String orderNumber);
+
+    /**
+     * 评价订单
+     *
+     * @param orderNumber
+     * @param goodsAbout
+     * @param goodsEva
+     * @param user
+     * @return
+     */
+    boolean evaluateOrder(String orderNumber,Integer goodsAbout,String goodsEva,User user);
 }

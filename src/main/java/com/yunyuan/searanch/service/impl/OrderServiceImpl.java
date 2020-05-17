@@ -27,11 +27,11 @@ public class OrderServiceImpl implements OrderService{
     @Resource
     private GoodsMapper goodsMapper;
     @Resource
-    private GoodsTypeMapper goodsTypeMapper;
-    @Resource
     private MerchantRegisterMapper merchantRegisterMapper;
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private EvaluateMapper evaluateMapper;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -149,5 +149,22 @@ public class OrderServiceImpl implements OrderService{
         orderVO.setGoodsName(goods.getGoodsName());
         orderVO.setPicture(Arrays.asList(goods.getPicture().split(",")).get(0));
         return orderVO;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean evaluateOrder(String orderNumber, Integer goodsAbout, String goodsEva, User user) {
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andOrderNumberEqualTo(orderNumber);
+        Order order=orderMapper.selectByExample(orderExample).get(0);
+        Evaluate evaluate=new Evaluate();
+        evaluate.setOrderId(order.getOrderId());
+        evaluate.setUserId(order.getUserId());
+        evaluate.setGoodsId(order.getGoodsId());
+        evaluate.setGoodsEva(goodsEva);
+        evaluate.setGoodsAbout(goodsAbout);
+        evaluate.setEvaluateTime(new Date());
+        return evaluateMapper.insertSelective(evaluate)>0;
     }
 }

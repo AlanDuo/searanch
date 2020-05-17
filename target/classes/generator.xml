@@ -47,8 +47,8 @@
         <!--<table tableName="feedback" domainObjectName="Feedback"></table>-->
         <!--<table tableName="browse" domainObjectName="Browse"></table>-->
         <!--<table tableName="discount" domainObjectName="Discount"></table>-->
-        <!--<table tableName="goods" domainObjectName="Goods"></table>-->
-        <table tableName="orders" domainObjectName="Order"></table>
+        <table tableName="goods" domainObjectName="Goods"></table>
+        <!--<table tableName="orders" domainObjectName="Order"></table>-->
         <!--<table tableName="shop_cart" domainObjectName="ShopCart"></table>
         <table tableName="goods_type" domainObjectName="GoodsType"></table>-->
         <!--<table tableName="evaluate" domainObjectName="Evaluate"></table>-->

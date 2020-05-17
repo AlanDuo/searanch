@@ -23,7 +23,7 @@ public class BillVO implements Serializable {
 
     private String goodsName;
 
-    private String type;
+    private String goodsType;
 
     private BigDecimal price;
 
