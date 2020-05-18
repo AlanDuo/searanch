@@ -26,7 +26,7 @@ import java.util.Map;
 @RequestMapping("/page")
 @Api(value = "商品页面展示",tags = "商品页面展示接口")
 public class PageController {
-    private static final String PAGE_INFO="pageInfo";
+    private static final String PAGE_INFO="pag eInfo";
     private PageService pageService;
     @Autowired
     public PageController(PageService pageService){
@@ -80,4 +80,5 @@ public class PageController {
         PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO(pageInfo,(List<PageGoodsVO>)map.get("pageGoodsVOList"));
     }
+
 }

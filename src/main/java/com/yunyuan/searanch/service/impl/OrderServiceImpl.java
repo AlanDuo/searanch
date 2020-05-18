@@ -165,6 +165,32 @@ public class OrderServiceImpl implements OrderService{
         evaluate.setGoodsEva(goodsEva);
         evaluate.setGoodsAbout(goodsAbout);
         evaluate.setEvaluateTime(new Date());
-        return evaluateMapper.insertSelective(evaluate)>0;
+        evaluateMapper.insertSelective(evaluate);
+        OrderExample orderExample1=new OrderExample();
+        OrderExample.Criteria orderCriteria1=orderExample1.createCriteria();
+        orderCriteria1.andMerchantIdEqualTo(order.getMerchantId());
+        List<Order> orderList=orderMapper.selectByExample(orderExample1);
+        int unitNumberSum=0;
+        int mulNumberSum=0;
+        for(Order o:orderList){
+            EvaluateExample evaluateExample=new EvaluateExample();
+            EvaluateExample.Criteria evaluateCriteria=evaluateExample.createCriteria();
+            evaluateCriteria.andOrderIdEqualTo(o.getOrderId());
+            List<Evaluate> evaluateList=evaluateMapper.selectByExample(evaluateExample);
+            if(evaluateList.size()!=0){
+                for(Evaluate e:evaluateList) {
+                    int eva = e.getGoodsAbout();
+                    mulNumberSum += (eva * o.getAmount());
+                    unitNumberSum += o.getAmount();
+                }
+            }
+        }
+        int star=0;
+        if(unitNumberSum!=0) {
+            star = mulNumberSum / unitNumberSum;
+        }
+        MerchantRegister merchant=merchantRegisterMapper.selectByPrimaryKey(order.getMerchantId());
+        merchant.setStar(star);
+        return merchantRegisterMapper.updateByPrimaryKeySelective(merchant)>0;
     }
 }
