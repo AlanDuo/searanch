@@ -72,14 +72,20 @@ public class ShopCartServiceImpl implements ShopCartService {
             BeanUtils.copyProperties(shopCart,shopCartVO);
             Goods goods=goodsMapper.selectByPrimaryKey(goodsId);
             BeanUtils.copyProperties(goods,shopCartVO);
+            shopCartVO.setDesc(goods.getGoodsDesc());
+
             GoodsType goodsType=goodsTypeMapper.selectByPrimaryKey(typeId);
-            BeanUtils.copyProperties(goodsType,shopCartVO);
+            if(null!=goodsType) {
+                BeanUtils.copyProperties(goodsType, shopCartVO);
+            }
+
             DiscountExample discountExample=new DiscountExample();
             DiscountExample.Criteria discountCriteria=discountExample.createCriteria();
             discountCriteria.andWorkEqualTo(true);
             discountCriteria.andGoodsIdEqualTo(goodsId);
-            Discount discount=discountMapper.selectByExample(discountExample).get(0);
-            if(null!=discount) {
+            List<Discount> discountList=discountMapper.selectByExample(discountExample);
+            if(discountList.size()!=0) {
+                Discount discount=discountList.get(0);
                 shopCartVO.setDiscount(discount.getDiscountDesc());
                 if (discount.getDiscountType() == 1 && shopCart.getAddPrice().compareTo(discount.getDiscountTerm())>=0) {
                     //优惠条件为满减

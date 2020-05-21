@@ -9,6 +9,7 @@ import com.yunyuan.searanch.service.PageService;
 import com.yunyuan.searanch.utils.ResponseData;
 import com.yunyuan.searanch.vo.*;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
@@ -26,7 +27,7 @@ import java.util.Map;
 @RequestMapping("/page")
 @Api(value = "商品页面展示",tags = "商品页面展示接口")
 public class PageController {
-    private static final String PAGE_INFO="pag eInfo";
+    private static final String PAGE_INFO="pageInfo";
     private PageService pageService;
     @Autowired
     public PageController(PageService pageService){
@@ -80,5 +81,16 @@ public class PageController {
         PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO(pageInfo,(List<PageGoodsVO>)map.get("pageGoodsVOList"));
     }
-
+    @ApiOperation(value="底部商品推荐")
+    @GetMapping("/bRecommend")
+    @ApiImplicitParam(name = "goodsId",value = "商品id（根据这类商品推荐）",dataType = "Integer")
+    public TableVO bottomRecommend(Integer goodsId,
+                                   @RequestParam(value = "page",defaultValue = "1") Integer page,
+                                   @RequestParam(value = "limit",defaultValue = "10") Integer limit){
+        List<PageGoodsVO> pageGoodsVOS;
+        Map<String,Object> map=pageService.bottomRecommend(page,limit,goodsId);
+        pageGoodsVOS=(List<PageGoodsVO>)map.get("pageGoodsVOList");
+        PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
+        return new TableVO<>(pageInfo,pageGoodsVOS);
+    }
 }

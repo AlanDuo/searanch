@@ -24,6 +24,7 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+    private static final String LOGIN_USER="loginUser";
     @Resource
     private RedisTemplate redisTemplate;
     @Resource
@@ -94,7 +95,7 @@ public class UserServiceImpl implements UserService {
             user.setEmail(userUpdateDTO.getEmail());
         }
         if(userMapper.updateByPrimaryKeySelective(user)>0){
-            redisTemplate.delete("loginUser"+phone);
+            redisTemplate.delete(LOGIN_USER+phone);
             return user;
         } else{
             return null;
@@ -167,7 +168,7 @@ public class UserServiceImpl implements UserService {
                     ,merchantRegisterDTO.getMerchantPhone(),3).toString());
             user.setImage(merchantRegisterDTO.getImage());
             userMapper.updateByPrimaryKey(user);
-            redisTemplate.delete("loginUser"+user.getPhoneNumber());
+            redisTemplate.delete(LOGIN_USER+user.getPhoneNumber());
             Long userId=getUserByPhone(merchantRegisterDTO.getMerchantPhone()).getUserId();
             Role role=roleMapper.selectByPrimaryKey(userId);
             role.setRole("merchant");
@@ -198,5 +199,14 @@ public class UserServiceImpl implements UserService {
         return feedbackMapper.insertSelective(feedback)>0;
     }
 
-
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean resetPassword(String password, String phoneNumber) {
+        User user=getUserByPhone(phoneNumber);
+        user.setPassword(password);
+        if(Boolean.TRUE.equals(redisTemplate.hasKey(LOGIN_USER+phoneNumber))){
+            redisTemplate.delete(LOGIN_USER+phoneNumber);
+        }
+        return userMapper.updateByPrimaryKeySelective(user)>0;
+    }
 }

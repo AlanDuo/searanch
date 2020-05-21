@@ -84,7 +84,7 @@ public class LoginController {
     @PostMapping("/login")
     public ResponseData userLogin(String phoneNumber, String password){
         try {
-            Map<String,String> map=new HashMap<>(7);
+            Map<String,String> map=new HashMap<>(8);
             password=new Md5Hash(password,phoneNumber,3).toString();
             UsernamePasswordToken token=new UsernamePasswordToken(phoneNumber,password);
             Subject subject= SecurityUtils.getSubject();
@@ -98,6 +98,7 @@ public class LoginController {
             map.put("nickname",user.getNickname());
             map.put("image",user.getImage());
             map.put("role",role);
+            map.put("userId",user.getUserId()+"");
             MerchantRegister merchant=userService.getMerchantByPhone(user.getPhoneNumber());
             if(null!=merchant && "merchant".equals(role)){
                 map.put("star",merchant.getStar()+"");
@@ -108,6 +109,20 @@ public class LoginController {
         }catch (Exception e){
             LOGGER.info(e.getMessage());
             return new ResponseData(500,"login failed");
+        }
+    }
+    @ApiOperation(value="密码重置")
+    @PostMapping("/resetPwd")
+    public ResponseData resetPassword(String password,String phoneNumber,String code){
+        if(null==userService.getUserByPhone(phoneNumber)){
+            return new ResponseData(500,"该用户尚未注册");
+        }
+        if(messageCode.equals(code) && phone.equals(phoneNumber)) {
+            password=new Md5Hash(password,phoneNumber,3).toString();
+            userService.resetPassword(password,phoneNumber);
+            return ResponseData.ok();
+        }else{
+            return new ResponseData(500,"验证码错误");
         }
     }
     @ApiOperation(value = "退出登录")

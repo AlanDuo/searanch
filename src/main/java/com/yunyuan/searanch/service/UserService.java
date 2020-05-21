@@ -81,4 +81,12 @@ public interface UserService {
      */
     boolean feedback(Long userId,String content,String image);
 
+    /**
+     * 密码重置
+     *
+     * @param password
+     * @param phoneNumber
+     * @return
+     */
+    boolean resetPassword(String password,String phoneNumber);
 }

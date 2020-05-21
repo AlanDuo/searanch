@@ -225,4 +225,15 @@ public class PageServiceImpl implements PageService {
         return goodsResult(goodsExample);
     }
 
+    @Override
+    public Map<String, Object> bottomRecommend(int page, int limit, long goodsId) {
+        Goods goods=goodsMapper.selectByPrimaryKey(goodsId);
+        PageHelper.startPage(page,limit);
+        GoodsExample goodsExample=new GoodsExample();
+        GoodsExample.Criteria goodsCriteria=goodsExample.createCriteria();
+        goodsCriteria.andUpShelfEqualTo(true);
+        goodsCriteria.andStockGreaterThan(0);
+        goodsCriteria.andTypeLike("%"+goods.getType()+"%");
+        return goodsResult(goodsExample);
+    }
 }

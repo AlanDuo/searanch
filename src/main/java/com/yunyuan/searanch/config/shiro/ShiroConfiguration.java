@@ -38,6 +38,7 @@ public class ShiroConfiguration {
         filterFactory.setSecurityManager(securityManager);
         Map<String,String> filterChainDefinitionMap=new LinkedHashMap<>();
         filterChainDefinitionMap.put("/login","anon");
+        filterChainDefinitionMap.put("/resetPwd","anon");
         filterChainDefinitionMap.put("/userRegister","anon");
         filterChainDefinitionMap.put("/merchantRegister","anon");
         filterChainDefinitionMap.put("/getMessageCode","anon");

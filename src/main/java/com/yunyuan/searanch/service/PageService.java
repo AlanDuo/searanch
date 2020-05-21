@@ -51,4 +51,14 @@ public interface PageService {
      * @return
      */
     Map<String,Object> searchGoods(String searchName);
+
+    /**
+     * 底部商品推荐
+     *
+     * @param page
+     * @param limit
+     * @param goodsId
+     * @return
+     */
+    Map<String,Object> bottomRecommend(int page,int limit,long goodsId);
 }
