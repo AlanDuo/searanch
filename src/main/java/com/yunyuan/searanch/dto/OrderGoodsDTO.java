@@ -16,8 +16,6 @@ import java.math.BigDecimal;
 public class OrderGoodsDTO {
     private Long goodsId;
 
-    private Long typeId;
-
     private Integer amount;
 
     private BigDecimal price;

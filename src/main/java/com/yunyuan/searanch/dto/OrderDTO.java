@@ -15,10 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderDTO {
-
-    @NotBlank(message = "订单编号不能为空")
-    private String orderNumber;
-
+    @NotBlank(message = "手机号不能为空")
     private String phone;
 
     private String addressee;

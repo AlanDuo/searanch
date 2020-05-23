@@ -7,6 +7,8 @@ import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.OrderService;
 import com.yunyuan.searanch.vo.OrderListVO;
 import com.yunyuan.searanch.vo.OrderVO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.security.SecureRandom;
 import java.util.*;
 
 /**
@@ -22,6 +25,7 @@ import java.util.*;
  */
 @Service
 public class OrderServiceImpl implements OrderService{
+    private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceImpl.class);
     @Resource
     private OrderMapper orderMapper;
     @Resource
@@ -36,9 +40,27 @@ public class OrderServiceImpl implements OrderService{
     @Override
     @Transactional(rollbackFor = Exception.class)
     @CacheEvict(value = "order",key = "#user.userId")
-    public boolean addOrder(OrderDTO orderDTO, User user) {
+    public String addOrder(OrderDTO orderDTO, User user) {
         Order order=new Order();
         BeanUtils.copyProperties(orderDTO,order);
+        String str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int len=5;
+        String orderNumber="";
+        try {
+            Random random = SecureRandom.getInstanceStrong();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < len; i++) {
+                int n = random.nextInt(52);
+                sb.append(str.charAt(n));
+            }
+            orderNumber = sb.toString();
+        }catch (Exception e){
+            LOGGER.info(e.getMessage());
+        }
+        Long time=System.currentTimeMillis();
+        String orderTime=time.toString().substring(time.toString().length()-8,time.toString().length());
+        orderNumber+=orderTime;
+        order.setOrderNumber(orderNumber);
         order.setUserId(user.getUserId());
         if(null!=orderDTO.getAddressee() && !"".equals(orderDTO.getAddress())) {
             order.setUserName(user.getUsername());
@@ -60,9 +82,6 @@ public class OrderServiceImpl implements OrderService{
             order.setGoodsName(goods.getGoodsName());
             order.setAmount(goodsDTO.getAmount());
             order.setPrice(goodsDTO.getPrice());
-            if(null!=goodsDTO.getTypeId() && goodsDTO.getTypeId()!=0){
-                order.setTypeId(goodsDTO.getTypeId());
-            }
 
             MerchantRegisterExample merchantRegisterExample = new MerchantRegisterExample();
             MerchantRegisterExample.Criteria registerCriteria = merchantRegisterExample.createCriteria();
@@ -72,7 +91,7 @@ public class OrderServiceImpl implements OrderService{
 
             orderMapper.insertSelective(order);
         }
-        return true;
+        return orderNumber;
     }
 
     @Override

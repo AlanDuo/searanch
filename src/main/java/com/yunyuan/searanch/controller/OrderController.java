@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -39,8 +40,10 @@ public class OrderController {
     public ResponseData addOrder(@Validated @RequestBody OrderDTO orderDTO){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
-        orderService.addOrder(orderDTO,user);
-        return  ResponseData.ok();
+        String orderNumber=orderService.addOrder(orderDTO,user);
+        Map<String,String> map=new HashMap<>(1);
+        map.put("orderNumber",orderNumber);
+        return  ResponseData.ok().putDataValue(map);
     }
     @ApiOperation(value="支付")
     @PostMapping("/pay")

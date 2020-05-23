@@ -20,7 +20,7 @@ public interface OrderService {
      * @param user
      * @return
      */
-    boolean addOrder(OrderDTO orderDTO, User user);
+    String addOrder(OrderDTO orderDTO, User user);
 
     /**
      * 订单支付

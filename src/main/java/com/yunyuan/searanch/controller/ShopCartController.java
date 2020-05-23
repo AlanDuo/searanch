@@ -57,7 +57,7 @@ public class ShopCartController {
     public ResponseData updateShopCart(@PathVariable("cartId")Long cartId, Integer amount){
         User user=currentUser();
         if(null!=user){
-            shopCartService.updateShopCart(cartId,amount);
+            shopCartService.updateShopCart(cartId,amount,user.getUserId());
             return ResponseData.ok();
         }
         return ResponseData.notFound();
@@ -65,8 +65,9 @@ public class ShopCartController {
     @ApiOperation(value="删除购物车")
     @DeleteMapping("/deleteShopCart")
     public ResponseData deleteShopCart(@RequestBody List<Long> cartIdList){
+        User user=currentUser();
         for(Long cartId:cartIdList) {
-            shopCartService.deleteShopCart(cartId);
+            shopCartService.deleteShopCart(cartId,user.getUserId());
         }
         return ResponseData.ok();
     }

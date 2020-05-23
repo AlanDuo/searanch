@@ -101,16 +101,18 @@ public class ShopCartServiceImpl implements ShopCartService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     @CacheEvict(value="shopCart",key = "#userId")
-    public boolean updateShopCart(Long cartId, Integer amount) {
+    public boolean updateShopCart(Long cartId, Integer amount,Long userId) {
         ShopCart shopCart=shopCartMapper.selectByPrimaryKey(cartId);
         shopCart.setAmount(amount);
         return shopCartMapper.updateByPrimaryKey(shopCart)>0;
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     @CacheEvict(value="shopCart",key = "#userId")
-    public boolean deleteShopCart(Long cartId) {
+    public boolean deleteShopCart(Long cartId,Long userId) {
         return shopCartMapper.deleteByPrimaryKey(cartId)>0;
     }
 }

@@ -35,15 +35,17 @@ public interface ShopCartService {
      *
      * @param cartId
      * @param amount
+     * @param userId
      * @return
      */
-    boolean updateShopCart(Long cartId, Integer amount);
+    boolean updateShopCart(Long cartId, Integer amount,Long userId);
 
     /**
      * 删除购物车
      *
      * @param cartId
+     * @param userId
      * @return
      */
-    boolean deleteShopCart(Long cartId);
+    boolean deleteShopCart(Long cartId,Long userId);
 }
