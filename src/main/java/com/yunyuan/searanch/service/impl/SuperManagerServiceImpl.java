@@ -6,7 +6,6 @@ import com.yunyuan.searanch.dao.UserMapper;
 import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.SuperManagerService;
 import com.yunyuan.searanch.vo.AdminListVO;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,22 +29,30 @@ public class SuperManagerServiceImpl implements SuperManagerService {
     private PermissionMapper permissionMapper;
 
     @Override
-    public Map<String, Object> adminList(boolean check) {
+    public Map<String, Object> adminList(boolean check,Long userId,String username,String phoneNumber) {
         Map<String,Object> map=new HashMap<>(2);
-        RoleExample roleExample=new RoleExample();
-        RoleExample.Criteria roleCriteria=roleExample.createCriteria();
-        if(check) {
-            roleCriteria.andRoleEqualTo("admin");
+        UserExample userExample=new UserExample();
+        UserExample.Criteria userCriteria=userExample.createCriteria();
+        if(check){
+            userCriteria.andRoleEqualTo("admin");
         }else{
-            roleCriteria.andRoleEqualTo("noadmin");
+            userCriteria.andRoleEqualTo("noadmin");
         }
-        List<Role> roleList=roleMapper.selectByExample(roleExample);
-        map.put("pageInfo",roleList);
+        if(null!=userId && userId!=0){
+            userCriteria.andUserIdEqualTo(userId);
+        }
+        if(null!=username && !"".equals(username.trim())){
+            userCriteria.andUsernameLike("%"+username+"%");
+        }
+        if(null!=phoneNumber && !"".equals(phoneNumber.trim())){
+            userCriteria.andPhoneNumberLike("%"+phoneNumber+"%");
+        }
+        List<User> users=userMapper.selectByExample(userExample);
+        map.put("pageInfo",users);
         List<AdminListVO> adminListVOList=new ArrayList<>();
-        for(Role role:roleList){
-            User user=userMapper.selectByPrimaryKey(role.getUserId());
+        for(User user:users){
             AdminListVO adminVO=new AdminListVO();
-            adminVO.setUserId(role.getUserId());
+            adminVO.setUserId(user.getUserId());
             adminVO.setUsername(user.getUsername());
             adminVO.setPhoneNumber(user.getPhoneNumber());
             if(check) {
@@ -60,45 +67,23 @@ public class SuperManagerServiceImpl implements SuperManagerService {
     }
 
     @Override
-    public AdminListVO searchAdmin(boolean check, Long userId, String username, String phoneNumber) {
-        UserExample userExample=new UserExample();
-        UserExample.Criteria userCriteria=userExample.createCriteria();
-        if(userId!=0 && null!=userId){
-            userCriteria.andUserIdEqualTo(userId);
-        }
-        if(null!=username && !"".equals(username.trim())){
-            userCriteria.andUsernameEqualTo(username);
-        }
-        if(null!=phoneNumber && !"".equals(phoneNumber.trim())){
-            userCriteria.andPhoneNumberEqualTo(phoneNumber);
-        }
-        List<User> users=userMapper.selectByExample(userExample);
-        if(users.size()!=0){
-            User user=users.get(0);
-            Role role=roleMapper.selectByPrimaryKey(user.getUserId());
-            if("admin".equals(role.getRole()) || "noadmin".equals(role.getRole())) {
-                AdminListVO adminVO=new AdminListVO();
-                BeanUtils.copyProperties(user,adminVO);
-                if(check){
-                    adminVO.setCheck(true);
-                }else{
-                    adminVO.setCheck(false);
-                }
-                return adminVO;
-            }
-        }
-        return null;
-    }
-
-    @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean examineAdmin(Long userId, boolean check) {
         Role role=roleMapper.selectByPrimaryKey(userId);
-        role.setRole("admin");
-        roleMapper.updateByPrimaryKeySelective(role);
+        User user=userMapper.selectByPrimaryKey(userId);
         Permission permission=permissionMapper.selectByPrimaryKey(userId);
-        permission.setPermission("user:add,user:delete,user:update,user:select");
-        return permissionMapper.updateByPrimaryKeySelective(permission)>0;
+        if(check) {
+            role.setRole("admin");
+            user.setRole("admin");
+            permission.setPermission("user:add,user:delete,user:update,user:select");
+        }else{
+            role.setRole("noadmin");
+            user.setRole("noadmin");
+            permission.setPermission("user:update,user:select");
+        }
+        roleMapper.updateByPrimaryKeySelective(role);
+        permissionMapper.updateByPrimaryKeySelective(permission);
+        return userMapper.updateByPrimaryKeySelective(user)>0;
     }
 
     @Override

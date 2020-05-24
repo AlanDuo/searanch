@@ -16,6 +16,7 @@
     <result column="growth" property="growth" jdbcType="INTEGER" />
     <result column="register_time" property="registerTime" jdbcType="DATE" />
     <result column="login_time" property="loginTime" jdbcType="TIMESTAMP" />
+    <result column="role" property="role" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -77,7 +78,7 @@
   </sql>
   <sql id="Base_Column_List" >
     user_id, username, password, phone_number, email, nickname, image, country, province, 
-    city, address, growth, register_time, login_time
+    city, address, growth, register_time, login_time, role
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yunyuan.searanch.entity.UserExample" >
     select
@@ -114,12 +115,14 @@
       phone_number, email, nickname, 
       image, country, province, 
       city, address, growth, 
-      register_time, login_time)
+      register_time, login_time, role
+      )
     values (#{userId,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phoneNumber,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{image,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
       #{city,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{growth,jdbcType=INTEGER}, 
-      #{registerTime,jdbcType=DATE}, #{loginTime,jdbcType=TIMESTAMP})
+      #{registerTime,jdbcType=DATE}, #{loginTime,jdbcType=TIMESTAMP}, #{role,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.yunyuan.searanch.entity.User" >
     insert into user
@@ -166,6 +169,9 @@
       <if test="loginTime != null" >
         login_time,
       </if>
+      <if test="role != null" >
+        role,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -209,6 +215,9 @@
       </if>
       <if test="loginTime != null" >
         #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -263,6 +272,9 @@
       <if test="record.loginTime != null" >
         login_time = #{record.loginTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.role != null" >
+        role = #{record.role,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -283,7 +295,8 @@
       address = #{record.address,jdbcType=VARCHAR},
       growth = #{record.growth,jdbcType=INTEGER},
       register_time = #{record.registerTime,jdbcType=DATE},
-      login_time = #{record.loginTime,jdbcType=TIMESTAMP}
+      login_time = #{record.loginTime,jdbcType=TIMESTAMP},
+      role = #{record.role,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -330,6 +343,9 @@
       <if test="loginTime != null" >
         login_time = #{loginTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=VARCHAR},
+      </if>
     </set>
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
@@ -347,7 +363,8 @@
       address = #{address,jdbcType=VARCHAR},
       growth = #{growth,jdbcType=INTEGER},
       register_time = #{registerTime,jdbcType=DATE},
-      login_time = #{loginTime,jdbcType=TIMESTAMP}
+      login_time = #{loginTime,jdbcType=TIMESTAMP},
+      role = #{role,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
 </mapper>

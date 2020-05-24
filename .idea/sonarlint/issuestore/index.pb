@@ -72,8 +72,6 @@ f
 6src/main/java/com/yunyuan/searanch/dao/UserMapper.java,2\9\294bf6f0db36db744ef739c856a815c1428a6897
 X
 (src/main/resources/mapper/UserMapper.xml,6\5\651284c1cda71fc1d007ccabd7f91b5352909a9f
-P
- src/main/resources/generator.xml,d\9\d988e8ed1ba0c41fa73434beed71c8577864d944
 o
 ?src/main/java/com/yunyuan/searanch/entity/MerchantRegister.java,1\d\1d5dce875f167895bf859e448e00a2551cb4130e
 k

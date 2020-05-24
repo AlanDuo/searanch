@@ -32,6 +32,8 @@ public class User implements Serializable {
 
     private Date loginTime;
 
+    private String role;
+
     public Long getUserId() {
         return userId;
     }
@@ -142,5 +144,13 @@ public class User implements Serializable {
 
     public void setLoginTime(Date loginTime) {
         this.loginTime = loginTime;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role == null ? null : role.trim();
     }
 }

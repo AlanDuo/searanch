@@ -69,6 +69,7 @@ public class AdminServiceImpl implements AdminService {
         if(null!=user1){
             BeanUtils.copyProperties(adminRegisterDTO,user1);
             user1.setPassword(new Md5Hash(adminRegisterDTO.getPassword(),adminRegisterDTO.getPhoneNumber(),3).toString());
+            user1.setRole("noadmin");
             userMapper.updateByPrimaryKeySelective(user1);
             User user2=getUserByPhone(adminRegisterDTO.getPhoneNumber());
             Role role=new Role();
@@ -81,6 +82,7 @@ public class AdminServiceImpl implements AdminService {
         user.setPassword(new Md5Hash(adminRegisterDTO.getPassword(),adminRegisterDTO.getPhoneNumber(),3).toString());
         user.setRegisterTime(new Date());
         user.setGrowth(0);
+        user.setRole("noadmin");
         userMapper.insertSelective(user);
         User user2=getUserByPhone(adminRegisterDTO.getPhoneNumber());
         Role role=new Role();

@@ -1,7 +1,5 @@
 package com.yunyuan.searanch.service;
 
-import com.yunyuan.searanch.vo.AdminListVO;
-
 import java.util.Map;
 
 /**
@@ -9,17 +7,8 @@ import java.util.Map;
  * @date 2020/4/21
  */
 public interface SuperManagerService {
-
     /**
-     * 管理员列表
-     *
-     * @param check
-     * @return
-     */
-    Map<String,Object> adminList(boolean check);
-
-    /**
-     * 管理员查询（精确查询）
+     * 管理员列表兼搜索
      *
      * @param check
      * @param userId
@@ -27,7 +16,7 @@ public interface SuperManagerService {
      * @param phoneNumber
      * @return
      */
-    AdminListVO searchAdmin(boolean check,Long userId,String username,String phoneNumber);
+    Map<String,Object> adminList(boolean check,Long userId,String username,String phoneNumber);
 
     /**
      * 审核管理员
