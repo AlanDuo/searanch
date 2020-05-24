@@ -39,7 +39,7 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    @CacheEvict(value = "order",key = "#user.userId")
+    //@CacheEvict(value = "order",key = "#user.userId")
     public String addOrder(OrderDTO orderDTO, User user) {
         Order order=new Order();
         BeanUtils.copyProperties(orderDTO,order);
@@ -111,11 +111,8 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean sureFinish(String orderNumber) {
-        OrderExample orderExample=new OrderExample();
-        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
-        orderCriteria.andOrderNumberEqualTo(orderNumber);
-        Order order=orderMapper.selectByExample(orderExample).get(0);
+    public boolean sureFinish(Long cardId) {
+        Order order=orderMapper.selectByPrimaryKey(cardId);
         order.setFinished(true);
         order.setFinishTime(new Date());
         orderMapper.updateByPrimaryKeySelective(order);
@@ -126,7 +123,7 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    @Cacheable(value = "order",key = "#userId")
+    //@Cacheable(value = "order",key = "#userId")
     public Map<String,Object> myOrderList(Long userId) {
         Map<String,Object> map=new HashMap<>(2);
         OrderExample orderExample=new OrderExample();
@@ -156,33 +153,43 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     @Cacheable(value = "orderInfo")
-    public OrderVO orderInfo(String orderNumber) {
+    public List<OrderVO> orderInfo(String orderNumber) {
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
         orderCriteria.andOrderNumberEqualTo(orderNumber);
-        Order order=orderMapper.selectByExample(orderExample).get(0);
-        OrderVO orderVO=new OrderVO();
-        BeanUtils.copyProperties(order,orderVO);
-        Long goodsId=order.getGoodsId();
-        Goods goods=goodsMapper.selectByPrimaryKey(goodsId);
-        orderVO.setGoodsName(goods.getGoodsName());
-        orderVO.setPicture(Arrays.asList(goods.getPicture().split(",")).get(0));
-        return orderVO;
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        List<OrderVO> orderVOList=new ArrayList<>();
+        for(Order order:orderList) {
+            OrderVO orderVO = new OrderVO();
+            BeanUtils.copyProperties(order, orderVO);
+            Long goodsId = order.getGoodsId();
+            Goods goods = goodsMapper.selectByPrimaryKey(goodsId);
+            orderVO.setGoodsName(goods.getGoodsName());
+            orderVO.setPicture(Arrays.asList(goods.getPicture().split(",")).get(0));
+            orderVOList.add(orderVO);
+        }
+        return orderVOList;
+    }
+
+    @Override
+    public boolean orderIsFinish(Long orderId) {
+        Order order=orderMapper.selectByPrimaryKey(orderId);
+        return order.getFinished();
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean evaluateOrder(String orderNumber, Integer goodsAbout, String goodsEva, User user) {
-        OrderExample orderExample=new OrderExample();
-        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
-        orderCriteria.andOrderNumberEqualTo(orderNumber);
-        Order order=orderMapper.selectByExample(orderExample).get(0);
+    public boolean evaluateOrder(Long orderId, Integer goodsAbout, String goodsEva, String image, User user) {
+        Order order=orderMapper.selectByPrimaryKey(orderId);
         Evaluate evaluate=new Evaluate();
         evaluate.setOrderId(order.getOrderId());
         evaluate.setUserId(order.getUserId());
         evaluate.setGoodsId(order.getGoodsId());
         evaluate.setGoodsEva(goodsEva);
         evaluate.setGoodsAbout(goodsAbout);
+        if(null!=image && !"".equals(image.trim())){
+            evaluate.setImage(image);
+        }
         evaluate.setEvaluateTime(new Date());
         evaluateMapper.insertSelective(evaluate);
         OrderExample orderExample1=new OrderExample();

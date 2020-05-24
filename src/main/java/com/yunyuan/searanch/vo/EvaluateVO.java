@@ -17,9 +17,9 @@ import java.util.List;
 public class EvaluateVO implements Serializable {
     private String nickname;
 
-    private String goodsEva;
+    private String userImag;
 
-    private String serviceEva;
+    private String goodsEva;
 
     private String image;
 

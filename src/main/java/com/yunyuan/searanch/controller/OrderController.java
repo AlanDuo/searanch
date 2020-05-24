@@ -7,9 +7,11 @@ import com.yunyuan.searanch.entity.Order;
 import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.service.OrderService;
 import com.yunyuan.searanch.utils.ResponseData;
+import com.yunyuan.searanch.vo.OrderListVO;
 import com.yunyuan.searanch.vo.OrderVO;
 import com.yunyuan.searanch.vo.TableVO;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
@@ -52,9 +54,9 @@ public class OrderController {
         return ResponseData.ok();
     }
     @ApiOperation(value="确认订单完成")
-    @PostMapping("/sureFinish")
-    public ResponseData sureOrderFinish(String orderNumber){
-        orderService.sureFinish(orderNumber);
+    @PutMapping("/sureFinish/{orderId}")
+    public ResponseData sureOrderFinish(@PathVariable("orderId") Long orderId){
+        orderService.sureFinish(orderId);
         return ResponseData.ok();
     }
     @ApiOperation(value="查询订单")
@@ -67,7 +69,7 @@ public class OrderController {
             PageHelper.startPage(page, limit);
             Map<String,Object> map=orderService.myOrderList(user.getUserId());
             PageInfo pageInfo=new PageInfo<>((List<Order>)map.get("pageInfo"));
-            List<OrderVO> orderVOList = (List<OrderVO>)map.get("orderListVOS");
+            List<OrderListVO> orderVOList = (List<OrderListVO>)map.get("orderListVOS");
             return new TableVO(pageInfo,orderVOList);
         }else{ return null;}
     }
@@ -77,16 +79,19 @@ public class OrderController {
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
         if(null!=user){
-            OrderVO orderVO=orderService.orderInfo(orderNumber);
-            return ResponseData.ok().putDataValue(orderVO);
+            List<OrderVO> orderVOList=orderService.orderInfo(orderNumber);
+            return ResponseData.ok().putDataValue(orderVOList);
         }else{return ResponseData.notFound();}
     }
     @ApiOperation(value="订单评价")
     @PostMapping("/evaluate")
-    public ResponseData evaluateOrder(String orderNumber,Integer goodsAbout,String goodsEva){
+    public ResponseData evaluateOrder(Long orderId,@RequestParam(value = "goodsAbout",defaultValue = "0")Integer goodsAbout,String goodsEva,String image){
+        if(!orderService.orderIsFinish(orderId)){
+            return new ResponseData(500,"订单尚未完成");
+        }
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
-        orderService.evaluateOrder(orderNumber,goodsAbout,goodsEva,user);
+        orderService.evaluateOrder(orderId,goodsAbout,goodsEva,image,user);
         return ResponseData.ok();
     }
 }

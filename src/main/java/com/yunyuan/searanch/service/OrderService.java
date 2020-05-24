@@ -5,6 +5,7 @@ import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.utils.ResponseData;
 import com.yunyuan.searanch.vo.OrderVO;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,10 +34,10 @@ public interface OrderService {
     /**
      * 确认订单完成
      *
-     * @param orderNumber
+     * @param orderId
      * @return
      */
-    boolean sureFinish(String orderNumber);
+    boolean sureFinish(Long orderId);
 
     /**
      * 查看我的订单
@@ -52,16 +53,24 @@ public interface OrderService {
      * @param orderNumber
      * @return
      */
-    OrderVO orderInfo(String orderNumber);
+    List<OrderVO> orderInfo(String orderNumber);
 
+    /**
+     * 判断订单是否完成
+     *
+     * @param orderId
+     * @return
+     */
+    boolean orderIsFinish(Long orderId);
     /**
      * 评价订单
      *
-     * @param orderNumber
+     * @param orderId
      * @param goodsAbout
      * @param goodsEva
+     * @param image
      * @param user
      * @return
      */
-    boolean evaluateOrder(String orderNumber,Integer goodsAbout,String goodsEva,User user);
+    boolean evaluateOrder(Long orderId,Integer goodsAbout,String goodsEva,String image,User user);
 }

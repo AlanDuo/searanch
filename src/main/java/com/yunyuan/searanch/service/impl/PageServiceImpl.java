@@ -175,7 +175,7 @@ public class PageServiceImpl implements PageService {
     }
 
     @Override
-    @Cacheable(value = "evaluateInfo")
+    //@Cacheable(value = "evaluateInfo")
     public Map<String,Object> evaluateInfo(Long goodsId) {
         Map<String,Object> map=new HashMap<>(2);
         EvaluateExample evaluateExample=new EvaluateExample();
@@ -186,10 +186,12 @@ public class PageServiceImpl implements PageService {
         List<EvaluateVO> evaluateVOList=new ArrayList<>();
         for(Evaluate evaluate:evaluateList){
             EvaluateVO evaluateVO=new EvaluateVO();
-            Long userId=evaluate.getUserId();
-            String nickname=userMapper.selectByPrimaryKey(userId).getNickname();
-            evaluateVO.setNickname(nickname);
             BeanUtils.copyProperties(evaluate,evaluateVO);
+
+            User user = userMapper.selectByPrimaryKey(evaluate.getUserId());
+            evaluateVO.setNickname(user.getNickname());
+            evaluateVO.setUserImag(user.getImage());
+
             EvaluateReplyExample evaluateReplyExample=new EvaluateReplyExample();
             EvaluateReplyExample.Criteria evaluateReplyCriteria=evaluateReplyExample.createCriteria();
             evaluateReplyCriteria.andEvaluateIdEqualTo(evaluate.getEvaluateId());
