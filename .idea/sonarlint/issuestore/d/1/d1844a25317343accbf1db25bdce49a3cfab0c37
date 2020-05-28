@@ -1,4 +1,7 @@
 
-esquid:S1126R"BReplace this if-then-else statement by a single method invocation.(÷ä¸ôùÿÿÿÿ8ÕÆ¦Á .
-esquid:S11263"BReplace this if-then-else statement by a single method invocation.(÷ä¸ôùÿÿÿÿ8ñºÀ .
-dsquid:S1192&"FDefine a constant instead of duplicating this literal "admin" 3 times.(åÌ¸ú8·˜íÁ .
+d
+java:S1126:"BReplace this if-then-else statement by a single method invocation.(÷ä¸ôùÿÿÿÿ8Ïêµ¤.
+h
+java:S1192%"FDefine a constant instead of duplicating this literal "admin" 3 times.(ù³Ôšşÿÿÿÿ8¨îş·¤.
+e
+java:S1192'"HDefine a constant instead of duplicating this literal "noadmin" 3 times.(ø‹”ÿ8“ß€¸¤.

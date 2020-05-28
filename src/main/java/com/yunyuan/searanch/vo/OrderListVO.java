@@ -31,6 +31,8 @@ public class OrderListVO implements Serializable {
 
     private String desc;
 
+    private String processMode;
+
     private Integer amount;
 
     private BigDecimal price;

@@ -25,6 +25,8 @@ public class ShopCartVO implements Serializable {
 
     private String desc;
 
+    private String processMode;
+
     private Integer stock;
 
     private Integer amount;

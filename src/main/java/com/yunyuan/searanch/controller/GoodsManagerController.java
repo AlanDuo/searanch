@@ -41,10 +41,10 @@ public class GoodsManagerController {
 
     @ApiOperation(value = "商品申请列表")
     @GetMapping("/applyList")
-    public TableVO goodsApplyList(@RequestParam(value = "page",defaultValue = "1") Integer page,
+    public TableVO goodsApplyList(String goodsName,@RequestParam(value = "page",defaultValue = "1") Integer page,
                                   @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         PageHelper.startPage(page,limit);
-        Map<String,Object> map=goodsManagerService.goodsWaitToTake();
+        Map<String,Object> map=goodsManagerService.goodsWaitToTake(goodsName);
         List<GoodsApply> goodsApplies=(List<GoodsApply>) map.get(PAGE_INFO);
         PageInfo pageInfo=new PageInfo<>(goodsApplies);
         return new TableVO(pageInfo,(List<GoodsApplyVO>)map.get("applyVOList"));
@@ -53,18 +53,18 @@ public class GoodsManagerController {
     @ApiImplicitParam(name = "isTake",value = "是否收购商品（true或者false）",dataType = "Boolean")
     @PostMapping("/takeGoods")
     @RequiresRoles("admin")
-    public ResponseData takeGoods(Long applyId,Boolean isTake,String remarks){
+    public ResponseData takeGoods(Long applyId,Boolean isTake,BigDecimal price,String remarks){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
-        goodsManagerService.sureTakeGoods(applyId,isTake,remarks,user.getUserId());
+        goodsManagerService.sureTakeGoods(applyId,isTake,price,remarks,user.getUserId());
         return ResponseData.ok();
     }
     @ApiOperation(value="已收购商品列表")
     @GetMapping("/goodsApplied")
-    public TableVO goodsAppliedList(@RequestParam(value = "page",defaultValue = "1") Integer page,
+    public TableVO goodsAppliedList(String goodsName,@RequestParam(value = "page",defaultValue = "1") Integer page,
                                     @RequestParam(value = "limit",defaultValue = "10") Integer limit) {
         PageHelper.startPage(page, limit);
-        Map<String,Object> map=goodsManagerService.getGoodsApplied();
+        Map<String,Object> map=goodsManagerService.getGoodsApplied(goodsName);
         List<GoodsApply> goodsApplies=(List<GoodsApply>) map.get(PAGE_INFO);
         PageInfo pageInfo=new PageInfo<>(goodsApplies);
         return new TableVO(pageInfo,(List< GoodsAppliedVO>)map.get("applyVOList"));
@@ -72,8 +72,8 @@ public class GoodsManagerController {
     @ApiOperation(value="发布商品")
     @PostMapping("/publish")
     @RequiresRoles("admin")
-    public ResponseData publishGoods(Long applyId, BigDecimal price){
-        goodsManagerService.publishGoods(applyId,price);
+    public ResponseData publishGoods(Long applyId, BigDecimal price,String processMode){
+        goodsManagerService.publishGoods(applyId,price,processMode);
         return ResponseData.ok();
     }
     @ApiOperation(value = "已经发布商品列表")

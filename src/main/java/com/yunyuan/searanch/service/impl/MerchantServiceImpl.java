@@ -44,6 +44,7 @@ public class MerchantServiceImpl implements MerchantService {
         Map<String,Object> map=new HashMap<>(2);
         GoodsApplyExample goodsApplyExample=new GoodsApplyExample();
         GoodsApplyExample.Criteria applyCriteria=goodsApplyExample.createCriteria();
+        applyCriteria.andMerchantIdEqualTo(merchantId);
         if(null!=date){
             applyCriteria.andApplyTimeEqualTo(date);
         }
@@ -53,8 +54,13 @@ public class MerchantServiceImpl implements MerchantService {
         for(GoodsApply apply:applyList){
             BillVO billVO=new BillVO();
             BeanUtils.copyProperties(apply,billVO);
-            if(apply.getFinished()){
+            if(null==apply.getPrice()){
+                billVO.setPrice(BigDecimal.ZERO);
+            }
+            if(apply.getFinished() && null==apply.getPrice()){
                 billVO.setIncome(apply.getPrice().multiply(new BigDecimal(apply.getAmount())));
+            }else{
+                billVO.setIncome(BigDecimal.ZERO);
             }
             billVOList.add(billVO);
         }

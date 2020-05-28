@@ -151,9 +151,11 @@ public class AdminController {
     @ApiOperation(value="用户列表")
     @GetMapping("/userList")
     @RequiresRoles("admin")
-    public TableVO userList(){
-        Map<String,Object> map=adminService.adminUserList();
-        List<Role> roleList=(List<Role>)map.get(PAGE_INFO);
+    public TableVO userList(String userName,@RequestParam(value = "page",defaultValue = "1") Integer page,
+                            @RequestParam(value = "limit",defaultValue = "10") Integer limit){
+        PageHelper.startPage(page,limit);
+        Map<String,Object> map=adminService.adminUserList(userName);
+        List<User> roleList=(List<User>)map.get(PAGE_INFO);
         PageInfo pageInfo=new PageInfo<>(roleList);
         return new TableVO<>(pageInfo,(List<AdminUserVO>)map.get("userVOList"));
     }

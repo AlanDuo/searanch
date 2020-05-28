@@ -2,6 +2,7 @@ package com.yunyuan.searanch.service;
 
 import com.yunyuan.searanch.entity.Order;
 import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
+import com.yunyuan.searanch.vo.ProfitVO;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -133,4 +134,12 @@ public interface DataAnalysisService {
      * @return
      */
     Map<String,OrderSalesAndQuantityVO> cityOfProvinceSalesAndQuantity(String province,Integer year);
+
+    /**
+     * 该年每月的销售额，成本，利润
+     *
+     * @param year
+     * @return
+     */
+    Map<Integer, ProfitVO> getEachMonthProfit(Integer year);
 }

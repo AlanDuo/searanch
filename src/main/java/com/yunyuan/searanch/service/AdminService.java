@@ -130,7 +130,7 @@ public interface AdminService {
      *
      * @return
      */
-    Map<String,Object> adminUserList();
+    Map<String,Object> adminUserList(String userName);
 
     /**
      * 用户购买记录

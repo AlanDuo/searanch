@@ -114,6 +114,7 @@ public class UserServiceImpl implements UserService {
         if(null==userRegisterDTO.getNickname() || "".equals(userRegisterDTO.getNickname().trim())) {
             user.setNickname(userRegisterDTO.getPhoneNumber());
         }
+        user.setRole("user");
         userMapper.insertSelective(user);
         Long userId=getUserByPhone(user.getPhoneNumber()).getUserId();
         Role role=new Role();
@@ -152,6 +153,7 @@ public class UserServiceImpl implements UserService {
             user1.setRegisterTime(new Date());
             user1.setLoginTime(new Date());
             user1.setGrowth(0);
+            user1.setRole("merchant");
             userMapper.insertSelective(user1);
             Long userId=getUserByPhone(user1.getPhoneNumber()).getUserId();
             Role role=new Role();
@@ -167,6 +169,7 @@ public class UserServiceImpl implements UserService {
             user.setPassword(new Md5Hash(merchantRegisterDTO.getPassword()
                     ,merchantRegisterDTO.getMerchantPhone(),3).toString());
             user.setImage(merchantRegisterDTO.getImage());
+            user.setRole("merchant");
             userMapper.updateByPrimaryKey(user);
             redisTemplate.delete(LOGIN_USER+user.getPhoneNumber());
             Long userId=getUserByPhone(merchantRegisterDTO.getMerchantPhone()).getUserId();

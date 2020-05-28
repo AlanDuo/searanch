@@ -33,10 +33,13 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
     private OrderMapper orderMapper;
 
     @Override
-    public Map<String, Object> goodsWaitToTake() {
+    public Map<String, Object> goodsWaitToTake(String goodsName) {
         Map<String,Object> map=new HashMap<>(2);
         GoodsApplyExample goodsApplyExample=new GoodsApplyExample();
         GoodsApplyExample.Criteria applyCriteria=goodsApplyExample.createCriteria();
+        if(null!=goodsName && !"".equals(goodsName)){
+            applyCriteria.andGoodsNameLike("%"+goodsName+"%");
+        }
         applyCriteria.andIsTakeEqualTo(false);
         applyCriteria.andFinishedEqualTo(false);
         List<GoodsApply> applyList=goodsApplyMapper.selectByExample(goodsApplyExample);
@@ -55,9 +58,10 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean sureTakeGoods(Long applyId, boolean isTake,String remarks,Long handler) {
+    public boolean sureTakeGoods(Long applyId, boolean isTake,BigDecimal price,String remarks,Long handler) {
         GoodsApply goodsApply=goodsApplyMapper.selectByPrimaryKey(applyId);
         goodsApply.setIsTake(isTake);
+        goodsApply.setPrice(price);
         goodsApply.setFinished(true);
         goodsApply.setFinishTime(new Date());
         if(null!=remarks && !"".equals(remarks.trim())){
@@ -69,10 +73,13 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
     }
 
     @Override
-    public Map<String, Object> getGoodsApplied() {
+    public Map<String, Object> getGoodsApplied(String goodsName) {
         Map<String,Object> map=new HashMap<>(2);
         GoodsApplyExample goodsApplyExample=new GoodsApplyExample();
         GoodsApplyExample.Criteria applyCriteria=goodsApplyExample.createCriteria();
+        if(null!=goodsName && !"".equals(goodsName.trim())){
+            applyCriteria.andGoodsNameLike("%"+goodsName+"%");
+        }
         applyCriteria.andIsTakeEqualTo(true);
         applyCriteria.andPublishEqualTo(false);
         List<GoodsApply> applyList=goodsApplyMapper.selectByExample(goodsApplyExample);
@@ -91,14 +98,14 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean publishGoods(Long applyId, BigDecimal price) {
+    public boolean publishGoods(Long applyId, BigDecimal price,String processMode) {
         GoodsApply goodsApply=goodsApplyMapper.selectByPrimaryKey(applyId);
-        goodsApply.setPrice(price.multiply(BigDecimal.valueOf(0.6)));
-        goodsApplyMapper.updateByPrimaryKeySelective(goodsApply);
         Goods goods=new Goods();
         BeanUtils.copyProperties(goodsApply,goods);
         goods.setType(goodsApply.getGoodsType());
-        goods.setProcessMode("鲜活");
+        if(null!=processMode && !"".equals(processMode.trim())) {
+            goods.setProcessMode(processMode);
+        }
         goods.setPrice(price);
         goods.setUpShelf(true);
         goods.setUpTime(new Date());

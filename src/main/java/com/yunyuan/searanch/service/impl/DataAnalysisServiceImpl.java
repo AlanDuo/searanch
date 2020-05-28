@@ -1,13 +1,13 @@
 package com.yunyuan.searanch.service.impl;
 
+import com.yunyuan.searanch.dao.GoodsApplyMapper;
 import com.yunyuan.searanch.dao.GoodsMapper;
 import com.yunyuan.searanch.dao.OrderMapper;
-import com.yunyuan.searanch.entity.Goods;
-import com.yunyuan.searanch.entity.Order;
-import com.yunyuan.searanch.entity.OrderExample;
+import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.DataAnalysisService;
 import com.yunyuan.searanch.utils.DateUtil;
 import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
+import com.yunyuan.searanch.vo.ProfitVO;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +31,8 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
     private OrderMapper orderMapper;
     @Resource
     private GoodsMapper goodsMapper;
+    @Resource
+    private GoodsApplyMapper applyMapper;
 
     @Override
     public List<Order> getOrdersByTime(Date date1,Date date2){
@@ -330,7 +332,7 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
 
     @Override
     public Map<String, OrderSalesAndQuantityVO> eachProvinceSalesAndQuantity(Integer year) {
-        Map<String,OrderSalesAndQuantityVO> map=new HashMap<>();
+        Map<String,OrderSalesAndQuantityVO> map=provinceInitialize();
         Date date1=DateUtil.parseDate(year);
         Date date2=DateUtil.parseDate(year+1);
         List<Order> orderList=getOrdersByTime(date1,date2);
@@ -354,7 +356,7 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
     }
 
     @Override
-    @Cacheable(value = "citySales")
+    //@Cacheable(value = "citySales")
     public Map<String, OrderSalesAndQuantityVO> cityOfProvinceSalesAndQuantity(String province, Integer year) {
         Map<String,OrderSalesAndQuantityVO> map=new HashMap<>();
         Date date1=DateUtil.parseDate(year);
@@ -381,6 +383,74 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
                 map.put(order.getCity(),salesAndQuantityVO);
             }
         }
+        return map;
+    }
+
+    @Override
+    public Map<Integer, ProfitVO> getEachMonthProfit(Integer year) {
+        Map<Integer,ProfitVO> map=new HashMap<>(12);
+        for(int i=1;i<=MONTHS;i++) {
+            Date date1 = DateUtil.parseDate(year,i);
+            Date date2 = DateUtil.parseDate(year,i+1);
+
+            BigDecimal salesVolume=getSalesVolumeByTime(date1,date2);
+            GoodsApplyExample applyExample=new GoodsApplyExample();
+            GoodsApplyExample.Criteria applyCriteria=applyExample.createCriteria();
+            applyCriteria.andFinishTimeGreaterThanOrEqualTo(date1);
+            applyCriteria.andFinishTimeLessThan(date2);
+            List<GoodsApply> goodsApplyList=applyMapper.selectByExample(applyExample);
+            BigDecimal cost=BigDecimal.ZERO;
+            for(GoodsApply goodsApply:goodsApplyList){
+                if(null!=goodsApply.getPrice()) {
+                    cost=cost.add(goodsApply.getPrice().multiply(new BigDecimal(goodsApply.getAmount())));
+                }
+            }
+            BigDecimal profit=salesVolume.subtract(cost);
+            ProfitVO profitVO=new ProfitVO(salesVolume,cost,profit);
+            map.put(i,profitVO);
+        }
+
+        return map;
+    }
+
+    public Map<String,OrderSalesAndQuantityVO> provinceInitialize(){
+        Map<String,OrderSalesAndQuantityVO> map=new HashMap<>();
+        OrderSalesAndQuantityVO saleVO=new OrderSalesAndQuantityVO(BigDecimal.ZERO,0);
+        map.put("北京",saleVO);
+        map.put("天津",saleVO);
+        map.put("上海",saleVO);
+        map.put("重庆",saleVO);
+        map.put("河南",saleVO);
+        map.put("河北",saleVO);
+        map.put("云南",saleVO);
+        map.put("辽宁",saleVO);
+        map.put("黑龙江",saleVO);
+        map.put("湖南",saleVO);
+        map.put("安徽",saleVO);
+        map.put("山东",saleVO);
+        map.put("新疆",saleVO);
+        map.put("江苏",saleVO);
+        map.put("浙江",saleVO);
+        map.put("江西",saleVO);
+        map.put("湖北",saleVO);
+        map.put("广西",saleVO);
+        map.put("甘肃",saleVO);
+        map.put("山西",saleVO);
+        map.put("内蒙古",saleVO);
+        map.put("陕西",saleVO);
+        map.put("吉林",saleVO);
+        map.put("福建",saleVO);
+        map.put("贵州",saleVO);
+        map.put("广东",saleVO);
+        map.put("青海",saleVO);
+        map.put("西藏",saleVO);
+        map.put("四川",saleVO);
+        map.put("宁夏",saleVO);
+        map.put("海南",saleVO);
+        map.put("台湾",saleVO);
+        map.put("香港",saleVO);
+        map.put("澳门",saleVO);
+        map.put("南海诸岛",saleVO);
         return map;
     }
 }

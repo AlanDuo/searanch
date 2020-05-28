@@ -684,3 +684,7 @@ g
 7src/main/java/com/yunyuan/searanch/vo/AdminGoodsVO.java,6\2\6217caf9e2e471074af338cbdc2cc6b1ab8a4246
 r
 Bsrc/main/java/com/yunyuan/searanch/vo/OrderSalesAndQuantityVO.java,9\5\95ed21a93fdd88bec419f703d521786c5f8c5f27
+P
+ src/main/resources/generator.xml,d\9\d988e8ed1ba0c41fa73434beed71c8577864d944
+c
+3src/main/java/com/yunyuan/searanch/vo/ProfitVO.java,5\8\58fa391dc9384e901e62f762c567a1bbef3458c0

@@ -55,11 +55,11 @@ public class LoginController {
 
     @ApiOperation(value ="用户注册",notes = "普通用户注册")
     @PostMapping("/userRegister")
-    public ResponseData userRegister(String code, @Validated @RequestBody UserRegisterDTO userRegisterDTO){
+    public ResponseData userRegister(@Validated @RequestBody UserRegisterDTO userRegisterDTO){
         if(null!=userService.getUserByPhone(userRegisterDTO.getPhoneNumber())){
             return new ResponseData(500,"该用户已经注册");
         }
-        if (messageCode.equals(code) && userRegisterDTO.getPhoneNumber().equals(phone)) {
+        if (messageCode.equals(userRegisterDTO.getCode()) && userRegisterDTO.getPhoneNumber().equals(phone)) {
             userService.registerUser(userRegisterDTO);
             return ResponseData.ok();
         }else{
@@ -68,12 +68,12 @@ public class LoginController {
     }
     @ApiOperation(value ="商户注册",notes = "商户注册")
     @PostMapping("/merchantRegister")
-    public ResponseData merchantRegister(String code,@Validated @RequestBody MerchantRegisterDTO merchantRegisterDTO){
+    public ResponseData merchantRegister(@Validated @RequestBody MerchantRegisterDTO merchantRegisterDTO){
         if(null!=userService.getMerchantByPhone(merchantRegisterDTO.getMerchantPhone())){
             return new ResponseData(500,"该商户已经注册");
         }
 
-        if(messageCode.equals(code) && merchantRegisterDTO.getMerchantPhone().equals(phone)) {
+        if(messageCode.equals(merchantRegisterDTO.getCode()) && merchantRegisterDTO.getMerchantPhone().equals(phone)) {
             userService.registerMerchant(merchantRegisterDTO);
             return ResponseData.ok();
         }else{
@@ -83,6 +83,9 @@ public class LoginController {
     @ApiOperation(value = "用户登录",notes = "根据手机号密码登录")
     @PostMapping("/login")
     public ResponseData userLogin(String phoneNumber, String password){
+        if(null==userService.getUserByPhone(phoneNumber)){
+            return new ResponseData(500,"用户不存在");
+        }
         try {
             Map<String,String> map=new HashMap<>(8);
             password=new Md5Hash(password,phoneNumber,3).toString();

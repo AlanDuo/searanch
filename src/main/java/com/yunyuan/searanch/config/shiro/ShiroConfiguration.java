@@ -43,7 +43,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/admin/register","anon");
         filterChainDefinitionMap.put("/merchantRegister","anon");
         filterChainDefinitionMap.put("/getMessageCode","anon");
-        filterChainDefinitionMap.put("/uploadImg","anon");
+        filterChainDefinitionMap.put("/upload/**","anon");
         filterChainDefinitionMap.put("/page/**","anon");
         filterChainDefinitionMap.put("/swagger-ui.html","anon");
         filterChainDefinitionMap.put("/swagger-resources/**","anon");

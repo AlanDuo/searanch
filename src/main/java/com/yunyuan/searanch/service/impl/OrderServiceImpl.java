@@ -142,6 +142,7 @@ public class OrderServiceImpl implements OrderService{
             //orderListVO.setPrice(order.getPrice().subtract(order.getDiscount()));
             orderListVO.setGoodsName(goods.getGoodsName());
             orderListVO.setDesc(goods.getGoodsDesc());
+            orderListVO.setProcessMode(goods.getProcessMode());
             orderListVO.setPicture(Arrays.asList(goods.getPicture().split(",")).get(0));
             //orderListVO.setType(goodsTypeMapper.selectByPrimaryKey(order.getTypeId()).getTypeDesc());
 

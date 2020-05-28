@@ -91,6 +91,7 @@ com\yunyuan\searanch\entity\ShopCart.class
 com\yunyuan\searanch\dto\GoodsApplyDTO.class
 com\yunyuan\searanch\entity\PushExample$Criterion.class
 com\yunyuan\searanch\entity\CollectExample$Criterion.class
+com\yunyuan\searanch\vo\ProfitVO.class
 com\yunyuan\searanch\dto\UserUpdateDTO.class
 com\yunyuan\searanch\dto\OrderDTO.class
 com\yunyuan\searanch\utils\FileUploadUtil.class

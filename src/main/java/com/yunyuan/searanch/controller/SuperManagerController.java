@@ -47,12 +47,14 @@ public class SuperManagerController {
 
     @ApiOperation(value="审核管理员")
     @PostMapping("/examine")
+    @RequiresRoles("superAdmin")
     public ResponseData examineAdmin(Long userId,Boolean check){
         superManagerService.examineAdmin(userId,check);
         return ResponseData.ok();
     }
     @ApiOperation(value="删除管理员")
     @DeleteMapping("/delete/{userId}")
+    @RequiresRoles("superAdmin")
     public ResponseData deleteAdmin(@PathVariable("userId")Long userId){
         superManagerService.deleteAdmin(userId);
         return ResponseData.ok();

@@ -238,7 +238,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Map<String,Object> adminMerchantList(Long merchantId, String userName, String phoneNumber, Boolean check) {
+    public Map<String,Object> adminMerchantList(Long merchantId, String userName, String merchantName, Boolean check) {
         Map<String,Object> map=new HashMap<>(2);
         MerchantRegisterExample merchantRegisterExample=new MerchantRegisterExample();
         MerchantRegisterExample.Criteria registerCriteria=merchantRegisterExample.createCriteria();
@@ -248,8 +248,8 @@ public class AdminServiceImpl implements AdminService {
         if(null!=userName && !"".equals(userName.trim())){
             registerCriteria.andUsernameLike("%"+userName+"%");
         }
-        if(null!=phoneNumber && !"".equals(phoneNumber.trim())){
-            registerCriteria.andMerchantPhoneEqualTo(phoneNumber);
+        if(null!=merchantName && !"".equals(merchantName.trim())){
+            registerCriteria.andMerchantNameLike("%"+merchantName+"%");
         }
         if(null!=check){
             registerCriteria.andExamineEqualTo(check);
@@ -284,16 +284,18 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Map<String,Object> adminUserList() {
+    public Map<String,Object> adminUserList(String userName) {
         Map<String,Object> map=new HashMap<>(2);
-        RoleExample roleExample=new RoleExample();
-        RoleExample.Criteria roleCriteria=roleExample.createCriteria();
-        roleCriteria.andRoleEqualTo("user");
-        List<Role> roleList=roleMapper.selectByExample(roleExample);
-        map.put("pageInfo",roleList);
+        UserExample userExample=new UserExample();
+        UserExample.Criteria userCriteria=userExample.createCriteria();
+        if(null!=userName && !"".equals(userName.trim())){
+            userCriteria.andUsernameLike("%"+userName+"%");
+        }
+        userCriteria.andRoleEqualTo("user");
+        List<User> userList=userMapper.selectByExample(userExample);
+        map.put("pageInfo",userList);
         List<AdminUserVO> userVOList=new ArrayList<>();
-        for(Role role:roleList){
-            User user=userMapper.selectByPrimaryKey(role.getUserId());
+        for(User user:userList){
             AdminUserVO userVO=new AdminUserVO();
             BeanUtils.copyProperties(user,userVO);
             userVOList.add(userVO);

@@ -4,6 +4,7 @@ import com.yunyuan.searanch.service.DataAnalysisService;
 import com.yunyuan.searanch.utils.DateUtil;
 import com.yunyuan.searanch.utils.ResponseData;
 import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
+import com.yunyuan.searanch.vo.ProfitVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,6 +103,12 @@ public class DataAnalysisController {
     public ResponseData thisProvinceAllCitySales(@PathVariable("province")String province,
                                                  @RequestParam(value = "year",defaultValue = "2020")Integer year){
         Map<String,OrderSalesAndQuantityVO> map=dataAnalysisService.cityOfProvinceSalesAndQuantity(province, year);
+        return ResponseData.ok().putDataValue(map);
+    }
+    @ApiOperation(value = "该年每月的利润")
+    @GetMapping("/monthProfit/{year}")
+    public ResponseData monthProfit(@PathVariable("year")Integer year){
+        Map<Integer, ProfitVO> map=dataAnalysisService.getEachMonthProfit(year);
         return ResponseData.ok().putDataValue(map);
     }
 }

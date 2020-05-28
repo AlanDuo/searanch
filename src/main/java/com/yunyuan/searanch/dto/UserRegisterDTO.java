@@ -36,4 +36,6 @@ public class UserRegisterDTO implements Serializable {
     private String city;
 
     private String address;
+
+    private String code;
 }

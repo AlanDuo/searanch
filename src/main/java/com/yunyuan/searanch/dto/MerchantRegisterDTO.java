@@ -46,4 +46,6 @@ public class MerchantRegisterDTO implements Serializable {
 
     private String address;
 
+    private String code;
+
 }
