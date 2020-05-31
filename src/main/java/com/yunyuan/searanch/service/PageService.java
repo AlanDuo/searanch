@@ -1,7 +1,10 @@
 package com.yunyuan.searanch.service;
 
 import com.yunyuan.searanch.entity.User;
+import com.yunyuan.searanch.vo.AdsVO;
 import com.yunyuan.searanch.vo.GoodsInfoVO;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -61,4 +64,11 @@ public interface PageService {
      * @return
      */
     Map<String,Object> bottomRecommend(int page,int limit,long goodsId);
+
+    /**
+     * 首页轮播图推荐
+     *
+     * @return
+     */
+    List<AdsVO> adsRecommend();
 }

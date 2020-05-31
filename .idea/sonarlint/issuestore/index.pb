@@ -47,8 +47,6 @@ X
 .src/main/resources/mapper/PermissionMapper.xml,f\9\f97ca35433e8059bab066d91d1f3dda42dfc57c5
 N
 src/main/resources/logback.xml,7\0\7097ec3a5185ee6ac4acfdc815ac0ecc28af4a67
-R
-"src/main/resources/application.yml,a\6\a6d8b8556fee0e03112ce2bf34b8cb27a7dc9e58
 U
 %.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
 4
@@ -684,7 +682,7 @@ g
 7src/main/java/com/yunyuan/searanch/vo/AdminGoodsVO.java,6\2\6217caf9e2e471074af338cbdc2cc6b1ab8a4246
 r
 Bsrc/main/java/com/yunyuan/searanch/vo/OrderSalesAndQuantityVO.java,9\5\95ed21a93fdd88bec419f703d521786c5f8c5f27
-P
- src/main/resources/generator.xml,d\9\d988e8ed1ba0c41fa73434beed71c8577864d944
 c
 3src/main/java/com/yunyuan/searanch/vo/ProfitVO.java,5\8\58fa391dc9384e901e62f762c567a1bbef3458c0
+f
+6src/main/java/com/yunyuan/searanch/vo/SalesRankVO.java,7\4\74fb7fe507720fd352d62e6e9f70147af1acf91c

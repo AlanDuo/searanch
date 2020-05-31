@@ -1,6 +1,9 @@
 package com.yunyuan.searanch.service;
 
+import com.yunyuan.searanch.vo.SalesRankVO;
+
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Map;
 
 /**

@@ -41,9 +41,10 @@ public interface AdminService {
      * 获取问题反馈
      *
      * @param role 用户的类型
+     * @param status 处理状态
      * @return
      */
-    List<ProblemVO> getProblems(String role);
+    List<ProblemVO> getProblems(String role,Byte status);
 
     /**
      * 以发送邮件的形式回复问题反馈
@@ -139,4 +140,12 @@ public interface AdminService {
      * @return
      */
     List<UserConsumeVO> userConsumeRecord(Long userId);
+
+    /**
+     * 将商品加到推送表
+     *
+     * @param goodsId
+     * @return
+     */
+    boolean pushGoodsToAds(Long goodsId);
 }

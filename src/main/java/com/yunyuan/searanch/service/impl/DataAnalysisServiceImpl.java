@@ -8,16 +8,15 @@ import com.yunyuan.searanch.service.DataAnalysisService;
 import com.yunyuan.searanch.utils.DateUtil;
 import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
 import com.yunyuan.searanch.vo.ProfitVO;
+import com.yunyuan.searanch.vo.SalesRankVO;
+import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author alan
@@ -411,6 +410,45 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         }
 
         return map;
+    }
+
+    @Override
+    public List<SalesRankVO> getMonthlySalesRank(Integer year, Integer month){
+        Date date1=DateUtil.parseDate(year,month);
+        Date date2=DateUtil.parseDate(year,month+1);
+        OrderExample orderExample=new OrderExample();
+        OrderExample.Criteria orderCriteria=orderExample.createCriteria();
+        orderCriteria.andFinishTimeGreaterThanOrEqualTo(date1);
+        orderCriteria.andFinishTimeLessThan(date2);
+        List<Order> orderList=orderMapper.selectByExample(orderExample);
+        Map<Long,Integer> salesAmountMap=new HashMap<>();
+        for(Order order:orderList){
+            if(salesAmountMap.containsKey(order.getGoodsId())){
+                int saleAmount=salesAmountMap.get(order.getGoodsId());
+                salesAmountMap.put(order.getGoodsId(),saleAmount+order.getAmount());
+            }else{
+                salesAmountMap.put(order.getGoodsId(),order.getAmount());
+            }
+        }
+        List<Map.Entry<Long ,Integer>> listEntry=new ArrayList<>(salesAmountMap.entrySet());
+        Collections.sort(listEntry,(((o1, o2) -> {
+            return o2.getValue().compareTo(o1.getValue());
+        })));
+        List<SalesRankVO> salesRankList=new ArrayList<>();
+        int count=0;
+        int listSize=listEntry.size();
+        for(Map.Entry<Long,Integer> map:listEntry){
+            if(listSize>10 && count>10){
+                break;
+            }
+            Goods goods=goodsMapper.selectByPrimaryKey(map.getKey());
+            SalesRankVO salesRankVO=new SalesRankVO();
+            BeanUtils.copyProperties(goods,salesRankVO);
+            salesRankVO.setSalesAmount(map.getValue());
+            salesRankList.add(salesRankVO);
+            count++;
+        }
+        return salesRankList;
     }
 
     public Map<String,OrderSalesAndQuantityVO> provinceInitialize(){

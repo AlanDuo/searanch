@@ -5,6 +5,7 @@ import com.yunyuan.searanch.utils.DateUtil;
 import com.yunyuan.searanch.utils.ResponseData;
 import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
 import com.yunyuan.searanch.vo.ProfitVO;
+import com.yunyuan.searanch.vo.SalesRankVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -110,5 +112,13 @@ public class DataAnalysisController {
     public ResponseData monthProfit(@PathVariable("year")Integer year){
         Map<Integer, ProfitVO> map=dataAnalysisService.getEachMonthProfit(year);
         return ResponseData.ok().putDataValue(map);
+    }
+    @ApiOperation(value="月销量排行前十条")
+    @GetMapping("/monthlyRank/{year}/{month}")
+    public ResponseData monthlySalesRank(@RequestParam(name = "year",defaultValue = "2020") @PathVariable("year")Integer year,
+                                         @PathVariable("month")Integer month){
+        List<SalesRankVO> salesRankVOS=dataAnalysisService.getMonthlySalesRank(year,month);
+
+        return ResponseData.ok().putDataValue(salesRankVOS);
     }
 }

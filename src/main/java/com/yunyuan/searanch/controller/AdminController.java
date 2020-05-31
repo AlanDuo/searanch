@@ -6,13 +6,13 @@ import com.yunyuan.searanch.dto.AdminOrderUpdateDTO;
 import com.yunyuan.searanch.dto.AdminRegisterDTO;
 import com.yunyuan.searanch.entity.MerchantRegister;
 import com.yunyuan.searanch.entity.Order;
-import com.yunyuan.searanch.entity.Role;
 import com.yunyuan.searanch.entity.User;
 import com.yunyuan.searanch.service.AdminService;
 import com.yunyuan.searanch.service.PushService;
 import com.yunyuan.searanch.utils.ResponseData;
 import com.yunyuan.searanch.vo.*;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -61,9 +61,10 @@ public class AdminController {
         return ResponseData.ok();
     }
     @ApiOperation(value="海牧场主问题反馈")
+    @ApiImplicitParam(name = "status",value = "问题处理进度（0未处理，1处理中，2已处理）",dataType = "Integer")
     @GetMapping("/problems")
-    public ResponseData merchantProblems(){
-        List<ProblemVO> problemVOS=adminService.getProblems("merchant");
+    public ResponseData merchantProblems(Byte status){
+        List<ProblemVO> problemVOS=adminService.getProblems("merchant",status);
         return ResponseData.ok().putDataValue(problemVOS);
     }
 
@@ -166,5 +167,11 @@ public class AdminController {
     public ResponseData userConsumeRecord(@PathVariable("userId") Long userId){
         List<UserConsumeVO> consumeVOList=adminService.userConsumeRecord(userId);
         return ResponseData.ok().putDataValue(consumeVOList);
+    }
+    @ApiOperation(value = "商品推送到广告位")
+    @PostMapping("/pushGoods/{goodsId}")
+    public ResponseData pushGoodsToAd(@PathVariable("goodsId")Long goodsId){
+        adminService.pushGoodsToAds(goodsId);
+        return ResponseData.ok();
     }
 }

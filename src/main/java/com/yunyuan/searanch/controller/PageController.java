@@ -93,4 +93,10 @@ public class PageController {
         PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO<>(pageInfo,pageGoodsVOS);
     }
+    @ApiOperation(value="首页轮播图")
+    @GetMapping("/adsRecommend")
+    public ResponseData adsRecommend(){
+        List<AdsVO> adsVOList=pageService.adsRecommend();
+        return ResponseData.ok().putDataValue(adsVOList);
+    }
 }

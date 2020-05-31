@@ -38,6 +38,8 @@ public class PageServiceImpl implements PageService {
     private GoodsApplyMapper applyMapper;
     @Resource
     private MerchantRegisterMapper merchantRegisterMapper;
+    @Resource
+    private GoodsPushMapper goodsPushMapper;
 
     @Override
     @Cacheable(value = "goodsNoLogin")
@@ -237,5 +239,21 @@ public class PageServiceImpl implements PageService {
         goodsCriteria.andStockGreaterThan(0);
         goodsCriteria.andTypeLike("%"+goods.getType()+"%");
         return goodsResult(goodsExample);
+    }
+
+    @Override
+    public List<AdsVO> adsRecommend(){
+        List<AdsVO> adsVOList=new ArrayList<>();
+        GoodsPushExample goodsPushExample=new GoodsPushExample();
+        goodsPushExample.setOrderByClause("push_id DESC");
+        GoodsPushExample.Criteria goodsPushCriteria=goodsPushExample.createCriteria();
+        List<GoodsPush> goodsPushList=goodsPushMapper.selectByExample(goodsPushExample);
+        for(GoodsPush goodsPush:goodsPushList){
+            Goods goods=goodsMapper.selectByPrimaryKey(goodsPush.getGoodsId());
+            AdsVO adsVO=new AdsVO();
+            BeanUtils.copyProperties(goods,adsVO);
+            adsVOList.add(adsVO);
+        }
+        return adsVOList;
     }
 }

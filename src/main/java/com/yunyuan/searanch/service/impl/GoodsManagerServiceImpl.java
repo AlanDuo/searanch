@@ -9,6 +9,7 @@ import com.yunyuan.searanch.service.GoodsManagerService;
 import com.yunyuan.searanch.vo.AdminGoodsVO;
 import com.yunyuan.searanch.vo.GoodsAppliedVO;
 import com.yunyuan.searanch.vo.GoodsApplyVO;
+import com.yunyuan.searanch.vo.SalesRankVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,7 +62,11 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
     public boolean sureTakeGoods(Long applyId, boolean isTake,BigDecimal price,String remarks,Long handler) {
         GoodsApply goodsApply=goodsApplyMapper.selectByPrimaryKey(applyId);
         goodsApply.setIsTake(isTake);
+        if(null==price){
+            price=BigDecimal.ZERO;
+        }
         goodsApply.setPrice(price);
+
         goodsApply.setFinished(true);
         goodsApply.setFinishTime(new Date());
         if(null!=remarks && !"".equals(remarks.trim())){

@@ -37,6 +37,8 @@ public class AdminServiceImpl implements AdminService {
     @Resource
     private EvaluateMapper evaluateMapper;
     @Resource
+    private GoodsPushMapper goodsPushMapper;
+    @Resource
     private RedisTemplate redisTemplate;
 
     public User getUserByPhone(String phone) {
@@ -109,10 +111,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<ProblemVO> getProblems(String role) {
+    public List<ProblemVO> getProblems(String role,Byte status) {
         FeedbackExample feedbackExample=new FeedbackExample();
         FeedbackExample.Criteria feedbackCriteria=feedbackExample.createCriteria();
         feedbackCriteria.andUserTypeLike("%"+role+"%");
+        feedbackCriteria.andProgressRateEqualTo(status);
         List<Feedback> feedbackList=feedbackMapper.selectByExample(feedbackExample);
         List<ProblemVO> problemVOList=new ArrayList<>();
         for(Feedback feedback:feedbackList){
@@ -324,5 +327,13 @@ public class AdminServiceImpl implements AdminService {
             consumeVOList.add(consumeVO);
         }
         return consumeVOList;
+    }
+
+    @Override
+    public boolean pushGoodsToAds(Long goodsId) {
+        GoodsPush goodsPush=new GoodsPush();
+        goodsPush.setGoodsId(goodsId);
+        goodsPush.setPushTime(new Date());
+        return goodsPushMapper.insertSelective(goodsPush)>0;
     }
 }

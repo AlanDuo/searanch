@@ -3,6 +3,7 @@ package com.yunyuan.searanch.service;
 import com.yunyuan.searanch.entity.Order;
 import com.yunyuan.searanch.vo.OrderSalesAndQuantityVO;
 import com.yunyuan.searanch.vo.ProfitVO;
+import com.yunyuan.searanch.vo.SalesRankVO;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -142,4 +143,12 @@ public interface DataAnalysisService {
      * @return
      */
     Map<Integer, ProfitVO> getEachMonthProfit(Integer year);
+    /**
+     * 月销量排行
+     *
+     * @param year
+     * @param month
+     * @return
+     */
+    List<SalesRankVO> getMonthlySalesRank(Integer year, Integer month);
 }
