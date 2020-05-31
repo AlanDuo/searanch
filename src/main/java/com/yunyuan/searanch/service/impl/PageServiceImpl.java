@@ -101,7 +101,7 @@ public class PageServiceImpl implements PageService {
             CollectExample.Criteria collectCriteria=collectExample.createCriteria();
             collectCriteria.andGoodsIdEqualTo(goods.getGoodsId());
             int collectAmount=collectMapper.countByExample(collectExample);
-            pageGoodsVO.setCollectAmount(collectAmount);
+            pageGoodsVO.setLikeAmount(collectAmount);
             BeanUtils.copyProperties(goods,pageGoodsVO);
             pageGoodsVO.setDesc(goods.getGoodsDesc());
             pageGoodsVOList.add(pageGoodsVO);
@@ -248,12 +248,36 @@ public class PageServiceImpl implements PageService {
         goodsPushExample.setOrderByClause("push_id DESC");
         GoodsPushExample.Criteria goodsPushCriteria=goodsPushExample.createCriteria();
         List<GoodsPush> goodsPushList=goodsPushMapper.selectByExample(goodsPushExample);
+        int len=goodsPushList.size();
+        int count=0;
         for(GoodsPush goodsPush:goodsPushList){
+            if(len>5 && count>5){
+                break;
+            }
             Goods goods=goodsMapper.selectByPrimaryKey(goodsPush.getGoodsId());
             AdsVO adsVO=new AdsVO();
             BeanUtils.copyProperties(goods,adsVO);
             adsVOList.add(adsVO);
+            count++;
         }
         return adsVOList;
+    }
+
+    @Override
+    public int getLikeTimes(Long userId, Long goodsId) {
+        CollectExample collectExample=new CollectExample();
+        CollectExample.Criteria collectCriteria=collectExample.createCriteria();
+        collectCriteria.andUserIdEqualTo(userId);
+        collectCriteria.andGoodsIdEqualTo(goodsId);
+        return collectMapper.countByExample(collectExample);
+    }
+
+    @Override
+    public boolean likeGoods(Long userId, Long goodsId) {
+        Collect collect=new Collect();
+        collect.setUserId(userId);
+        collect.setGoodsId(goodsId);
+        collect.setCollectTime(new Date());
+        return collectMapper.insertSelective(collect)>0;
     }
 }

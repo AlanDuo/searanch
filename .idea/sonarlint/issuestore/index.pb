@@ -654,12 +654,8 @@ e
 5src/main/java/com/yunyuan/searanch/vo/UserInfoVO.java,a\f\af5405b2941a49936f13bfa3e49208340876688b
 T
 $target/maven-archiver/pom.properties,5\a\5acbe6c306dee4498a010b1ca2096853e29e16a4
-‚
-Rtarget/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst,8\a\8ae396f369da14bb5c0973286facff8fb2c70d56
 €
 Ptarget/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst,3\d\3da01db98b88a8057c03354880f06dba49d3e795
-Š
-Ztarget/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst,a\7\a7fa8b0772ec3c4ca9f2834f568ba1e29fe9750f
 ˆ
 Xtarget/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst,4\0\4032e4ef0f8712e43ff2a568e798808b0d0cb7e9
 d
@@ -686,3 +682,13 @@ c
 3src/main/java/com/yunyuan/searanch/vo/ProfitVO.java,5\8\58fa391dc9384e901e62f762c567a1bbef3458c0
 f
 6src/main/java/com/yunyuan/searanch/vo/SalesRankVO.java,7\4\74fb7fe507720fd352d62e6e9f70147af1acf91c
+]
+-src/main/resources/mapper/GoodsPushMapper.xml,0\7\07654fad3e7144546a9a75dbb6a39efe2ce816e1
+k
+;src/main/java/com/yunyuan/searanch/dao/GoodsPushMapper.java,2\f\2ffb4a8bd1c53d88405ce2408d140cc3e156b1e5
+o
+?src/main/java/com/yunyuan/searanch/entity/GoodsPushExample.java,9\d\9d1150453fabc55790cc3b52f8c4bfe3cf626128
+`
+0src/main/java/com/yunyuan/searanch/vo/AdsVO.java,f\3\f30b8c25531851e968a6e369f0dce2e1922670bc
+h
+8src/main/java/com/yunyuan/searanch/entity/GoodsPush.java,4\3\43f354607d32ccd59b205c6c6961363ae40334e5

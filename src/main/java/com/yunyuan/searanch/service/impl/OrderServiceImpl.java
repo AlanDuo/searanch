@@ -179,6 +179,15 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    public int orderEvaluateTimes(Long orderId, User user) {
+        EvaluateExample evaluateExample=new EvaluateExample();
+        EvaluateExample.Criteria evaluateCriteria=evaluateExample.createCriteria();
+        evaluateCriteria.andOrderIdEqualTo(orderId);
+        evaluateCriteria.andUserIdEqualTo(user.getUserId());
+        return evaluateMapper.countByExample(evaluateExample);
+    }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean evaluateOrder(Long orderId, Integer goodsAbout, String goodsEva, String image, User user) {
         Order order=orderMapper.selectByPrimaryKey(orderId);

@@ -1396,6 +1396,126 @@ public class OrderExample {
             return (Criteria) this;
         }
 
+        public Criteria andDeliverIsNull() {
+            addCriterion("deliver is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverIsNotNull() {
+            addCriterion("deliver is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverEqualTo(Boolean value) {
+            addCriterion("deliver =", value, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverNotEqualTo(Boolean value) {
+            addCriterion("deliver <>", value, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverGreaterThan(Boolean value) {
+            addCriterion("deliver >", value, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("deliver >=", value, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverLessThan(Boolean value) {
+            addCriterion("deliver <", value, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverLessThanOrEqualTo(Boolean value) {
+            addCriterion("deliver <=", value, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverIn(List<Boolean> values) {
+            addCriterion("deliver in", values, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverNotIn(List<Boolean> values) {
+            addCriterion("deliver not in", values, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverBetween(Boolean value1, Boolean value2) {
+            addCriterion("deliver between", value1, value2, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("deliver not between", value1, value2, "deliver");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeIsNull() {
+            addCriterion("deliver_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeIsNotNull() {
+            addCriterion("deliver_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeEqualTo(Date value) {
+            addCriterion("deliver_time =", value, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeNotEqualTo(Date value) {
+            addCriterion("deliver_time <>", value, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeGreaterThan(Date value) {
+            addCriterion("deliver_time >", value, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("deliver_time >=", value, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeLessThan(Date value) {
+            addCriterion("deliver_time <", value, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeLessThanOrEqualTo(Date value) {
+            addCriterion("deliver_time <=", value, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeIn(List<Date> values) {
+            addCriterion("deliver_time in", values, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeNotIn(List<Date> values) {
+            addCriterion("deliver_time not in", values, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeBetween(Date value1, Date value2) {
+            addCriterion("deliver_time between", value1, value2, "deliverTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDeliverTimeNotBetween(Date value1, Date value2) {
+            addCriterion("deliver_time not between", value1, value2, "deliverTime");
+            return (Criteria) this;
+        }
+
         public Criteria andFinishedIsNull() {
             addCriterion("finished is null");
             return (Criteria) this;

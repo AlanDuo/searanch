@@ -41,6 +41,7 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\PageServic
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\ShopCartVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\SuperManagerService.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\OrderService.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\GoodsPushMapper.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\CollectExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\config\shiro\CustomRealm.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\ShopCartService.java
@@ -53,6 +54,7 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\utils\MessageCodeU
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\PermissionExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\OrderMapper.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\AdminUserVO.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\GoodsPushExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\controller\DataAnalysisController.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\TableVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\GoodsApplyExample.java
@@ -81,12 +83,14 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\User.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\controller\PushController.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\Push.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\AdminMerchantListVO.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\SalesRankVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\Browse.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\config\websocket\WebSocketConfig.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dto\OrderGoodsDTO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\AdminService.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\controller\GoodsManagerController.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dto\UserRegisterDTO.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\GoodsPush.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\EvaluateReplyExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\Permission.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dao\GoodsTypeMapper.java
@@ -108,6 +112,7 @@ D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\dto\OrderDTO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\ShopCart.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\config\shiro\ShiroConfiguration.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\service\GoodsManagerService.java
+D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\AdsVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\BrowseExample.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo\EvaluateVO.java
 D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\entity\MessageExample.java

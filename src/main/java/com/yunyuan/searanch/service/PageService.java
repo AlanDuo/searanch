@@ -71,4 +71,22 @@ public interface PageService {
      * @return
      */
     List<AdsVO> adsRecommend();
+
+    /**
+     * 获取点赞的次数
+     *
+     * @param userId
+     * @param goodsId
+     * @return
+     */
+    int getLikeTimes(Long userId,Long goodsId);
+
+    /**
+     * 点赞商品
+     *
+     * @param userId
+     * @param goodsId
+     * @return
+     */
+    boolean likeGoods(Long userId,Long goodsId);
 }

@@ -63,6 +63,7 @@ public class AdminController {
     @ApiOperation(value="海牧场主问题反馈")
     @ApiImplicitParam(name = "status",value = "问题处理进度（0未处理，1处理中，2已处理）",dataType = "Integer")
     @GetMapping("/problems")
+    @RequiresRoles("admin")
     public ResponseData merchantProblems(Byte status){
         List<ProblemVO> problemVOS=adminService.getProblems("merchant",status);
         return ResponseData.ok().putDataValue(problemVOS);
@@ -82,6 +83,7 @@ public class AdminController {
 
     @ApiOperation(value="查看问题")
     @GetMapping("/proInfo/{feedbackId}")
+    @RequiresRoles("admin")
     public ResponseData problemInfo(@PathVariable("feedbackId")Long feedbackId){
         ProblemDetailVO detailVO =adminService.problemDetails(feedbackId);
         return ResponseData.ok().putDataValue(detailVO);
@@ -89,19 +91,21 @@ public class AdminController {
 
 
     @ApiOperation(value="订单列表")
+    @ApiImplicitParam(name = "deliver",value = "是否发货（true或者false）",dataType = "Boolean")
     @GetMapping("/orderList")
     @RequiresRoles("admin")
-    public TableVO getOrderList(String orderNumber, String phoneNumber, String userName,
+    public TableVO getOrderList(String orderNumber, String phoneNumber, String userName,Boolean deliver,
                                 @RequestParam(value = "page",defaultValue = "1") Integer page,
                                 @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         PageHelper.startPage(page,limit);
-        Map<String,Object> map=adminService.adminOrderList(orderNumber,phoneNumber,userName);
+        Map<String,Object> map=adminService.adminOrderList(orderNumber,phoneNumber,userName,deliver);
         PageInfo pageInfo=new PageInfo<>((List<Order>)map.get(PAGE_INFO));
         return new TableVO(pageInfo,(List<AdminOrderListVO>)map.get("orderListVOs"));
     }
 
     @ApiOperation(value="订单信息")
     @GetMapping("/orderInfo")
+    @RequiresRoles("admin")
     public ResponseData orderInfoForUpdate(String orderNumber){
         AdminOrderInfoVO orderInfoVO=adminService.adminOrderInfo(orderNumber);
         return ResponseData.ok().putDataValue(orderInfoVO);
@@ -152,10 +156,11 @@ public class AdminController {
     @ApiOperation(value="用户列表")
     @GetMapping("/userList")
     @RequiresRoles("admin")
-    public TableVO userList(String userName,@RequestParam(value = "page",defaultValue = "1") Integer page,
+    public TableVO userList(String userName,String phoneNumber,
+                            @RequestParam(value = "page",defaultValue = "1") Integer page,
                             @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         PageHelper.startPage(page,limit);
-        Map<String,Object> map=adminService.adminUserList(userName);
+        Map<String,Object> map=adminService.adminUserList(userName,phoneNumber);
         List<User> roleList=(List<User>)map.get(PAGE_INFO);
         PageInfo pageInfo=new PageInfo<>(roleList);
         return new TableVO<>(pageInfo,(List<AdminUserVO>)map.get("userVOList"));
@@ -170,8 +175,15 @@ public class AdminController {
     }
     @ApiOperation(value = "商品推送到广告位")
     @PostMapping("/pushGoods/{goodsId}")
+    @RequiresRoles("admin")
     public ResponseData pushGoodsToAd(@PathVariable("goodsId")Long goodsId){
         adminService.pushGoodsToAds(goodsId);
+        return ResponseData.ok();
+    }
+    @ApiOperation(value="发货")
+    @PostMapping("/deliver")
+    public ResponseData deliverGoods(Long orderId,String logisticsNo){
+        adminService.deliverGoods(orderId,logisticsNo);
         return ResponseData.ok();
     }
 }

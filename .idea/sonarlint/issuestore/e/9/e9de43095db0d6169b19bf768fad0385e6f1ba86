@@ -1,7 +1,11 @@
 
+q
+java:S3252G"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Ξ’¦ϋÿÿÿÿ8ιθ²¤.
+q
+java:S3252/"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Ξ’¦ϋÿÿÿÿ8ιθ²¤.
+T
+java:S1481ω"6Remove this unused "goodsPushCriteria" local variable.(ÒΫ¤8ό•ΪΒ¦.
 r
-java:S3252ι"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Ξ’¦ϋÿÿÿÿ8„Ήª¤.
-q
-java:S3252E"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Ξ’¦ϋÿÿÿÿ8ιθ²¤.
-q
-java:S3252-"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Ξ’¦ϋÿÿÿÿ8ιθ²¤.
+java:S3252λ"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Ξ’¦ϋÿÿÿÿ8„Ήª¤.
+c
+java:S1854ω"ERemove this useless assignment to local variable "goodsPushCriteria".(ÒΫ¤8ό•ΪΒ¦.

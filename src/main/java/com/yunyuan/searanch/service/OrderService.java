@@ -62,6 +62,16 @@ public interface OrderService {
      * @return
      */
     boolean orderIsFinish(Long orderId);
+
+    /**
+     * 获取用户已经评价订单的次数
+     *
+     * @param orderId
+     * @param user
+     * @return
+     */
+    int orderEvaluateTimes(Long orderId,User user);
+
     /**
      * 评价订单
      *

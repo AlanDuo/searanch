@@ -1,10 +1,9 @@
 package com.yunyuan.searanch.entity;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Order implements Serializable {
+public class Order {
     private Long orderId;
 
     private String orderNumber;
@@ -44,6 +43,10 @@ public class Order implements Serializable {
     private Boolean paid;
 
     private Date payTime;
+
+    private Boolean deliver;
+
+    private Date deliverTime;
 
     private Boolean finished;
 
@@ -211,6 +214,22 @@ public class Order implements Serializable {
 
     public void setPayTime(Date payTime) {
         this.payTime = payTime;
+    }
+
+    public Boolean getDeliver() {
+        return deliver;
+    }
+
+    public void setDeliver(Boolean deliver) {
+        this.deliver = deliver;
+    }
+
+    public Date getDeliverTime() {
+        return deliverTime;
+    }
+
+    public void setDeliverTime(Date deliverTime) {
+        this.deliverTime = deliverTime;
     }
 
     public Boolean getFinished() {

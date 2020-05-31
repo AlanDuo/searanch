@@ -99,4 +99,15 @@ public class PageController {
         List<AdsVO> adsVOList=pageService.adsRecommend();
         return ResponseData.ok().putDataValue(adsVOList);
     }
+    @ApiOperation(value = "点赞")
+    @PostMapping("/like/{goodsId}")
+    public ResponseData likeGoods(@PathVariable("goodsId")Long goodsId){
+        Subject subject= SecurityUtils.getSubject();
+        User user=(User)subject.getPrincipal();
+        if(pageService.getLikeTimes(user.getUserId(),goodsId)>0){
+            return new ResponseData(500,"你已经点过赞");
+        }
+        pageService.likeGoods(user.getUserId(),goodsId);
+        return ResponseData.ok();
+    }
 }

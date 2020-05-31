@@ -91,6 +91,9 @@ public class OrderController {
         }
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
+        if(orderService.orderEvaluateTimes(orderId,user)>=2){
+            return new ResponseData(500,"评价订单次数已达上限");
+        }
         orderService.evaluateOrder(orderId,goodsAbout,goodsEva,image,user);
         return ResponseData.ok();
     }

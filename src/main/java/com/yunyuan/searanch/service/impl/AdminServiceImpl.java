@@ -8,7 +8,10 @@ import com.yunyuan.searanch.service.AdminService;
 import com.yunyuan.searanch.vo.*;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +25,10 @@ import java.util.*;
  */
 @Service
 public class AdminServiceImpl implements AdminService {
+    @Value("${spring.mail.username}")
+    private String from;
+    @Resource
+    private JavaMailSender mailSender;
     @Resource
     private UserMapper userMapper;
     @Resource
@@ -38,6 +45,8 @@ public class AdminServiceImpl implements AdminService {
     private EvaluateMapper evaluateMapper;
     @Resource
     private GoodsPushMapper goodsPushMapper;
+    @Resource
+    private PushMapper pushMapper;
     @Resource
     private RedisTemplate redisTemplate;
 
@@ -157,7 +166,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Map<String, Object> adminOrderList(String orderNumber, String phoneNumber, String userName) {
+    public Map<String, Object> adminOrderList(String orderNumber, String phoneNumber, String userName,Boolean deliver) {
         OrderExample orderExample=new OrderExample();
         OrderExample.Criteria orderCriteria=orderExample.createCriteria();
         if(null!=orderNumber && !"".equals(orderNumber.trim())){
@@ -168,6 +177,9 @@ public class AdminServiceImpl implements AdminService {
         }
         if(null!=phoneNumber && !"".equals(phoneNumber.trim())){
             orderCriteria.andPhoneEqualTo(phoneNumber);
+        }
+        if(null!=deliver){
+            orderCriteria.andDeliverEqualTo(deliver);
         }
         List<Order> orderList=orderMapper.selectByExample(orderExample);
         Map<String,Object> map=new HashMap<>(2);
@@ -287,12 +299,15 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Map<String,Object> adminUserList(String userName) {
+    public Map<String,Object> adminUserList(String userName,String phoneNumber) {
         Map<String,Object> map=new HashMap<>(2);
         UserExample userExample=new UserExample();
         UserExample.Criteria userCriteria=userExample.createCriteria();
         if(null!=userName && !"".equals(userName.trim())){
             userCriteria.andUsernameLike("%"+userName+"%");
+        }
+        if(null!=phoneNumber && !"".equals(phoneNumber.trim())){
+            userCriteria.andPhoneNumberEqualTo(phoneNumber);
         }
         userCriteria.andRoleEqualTo("user");
         List<User> userList=userMapper.selectByExample(userExample);
@@ -335,5 +350,35 @@ public class AdminServiceImpl implements AdminService {
         goodsPush.setGoodsId(goodsId);
         goodsPush.setPushTime(new Date());
         return goodsPushMapper.insertSelective(goodsPush)>0;
+    }
+
+    @Override
+    public boolean deliverGoods(Long orderId, String logisticsNo) {
+        Order order=orderMapper.selectByPrimaryKey(orderId);
+        order.setLogisticsNo(logisticsNo);
+        order.setDeliver(true);
+        order.setDeliverTime(new Date());
+        orderMapper.insertSelective(order);
+
+        SimpleMailMessage message=new SimpleMailMessage();
+        Long userId=order.getUserId();
+        String email=userMapper.selectByPrimaryKey(userId).getEmail();
+        String subject="发货通知";
+        String content="亲爱的客官!您的"+order.getGoodsName()+"已经发货";
+        message.setTo(email);
+        message.setSubject(subject);
+        message.setText(content);
+        message.setFrom(from);
+        mailSender.send(message);
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andEmailEqualTo(email);
+        Long userIdTo = userMapper.selectByExample(userExample).get(0).getUserId();
+        Push push = new Push();
+        push.setPushFrom(userId);
+        push.setPushTo(userIdTo);
+        push.setPushContent(subject + ": " + content);
+        push.setPushTime(new Date());
+        return pushMapper.insertSelective(push)>0;
     }
 }

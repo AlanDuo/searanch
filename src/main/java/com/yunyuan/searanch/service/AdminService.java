@@ -72,7 +72,7 @@ public interface AdminService {
      * @param userName
      * @return
      */
-    Map<String,Object> adminOrderList(String orderNumber, String phoneNumber, String userName);
+    Map<String,Object> adminOrderList(String orderNumber, String phoneNumber, String userName,Boolean deliver);
 
     /**
      * 管理员查看订单信息
@@ -129,9 +129,11 @@ public interface AdminService {
     /**
      * 管理员界面-用户列表
      *
+     * @param userName
+     * @param phoneNumber
      * @return
      */
-    Map<String,Object> adminUserList(String userName);
+    Map<String,Object> adminUserList(String userName,String phoneNumber);
 
     /**
      * 用户购买记录
@@ -148,4 +150,13 @@ public interface AdminService {
      * @return
      */
     boolean pushGoodsToAds(Long goodsId);
+
+    /**
+     * 商品发货
+     *
+     * @param orderId
+     * @param logisticsNo
+     * @return
+     */
+    boolean deliverGoods(Long orderId,String logisticsNo);
 }
