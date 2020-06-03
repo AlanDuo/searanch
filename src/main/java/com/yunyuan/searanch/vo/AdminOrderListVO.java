@@ -17,6 +17,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AdminOrderListVO implements Serializable {
+    private Long orderId;
+
     private String orderNumber;
 
     private String phone;

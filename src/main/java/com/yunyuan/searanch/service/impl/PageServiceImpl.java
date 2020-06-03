@@ -42,41 +42,26 @@ public class PageServiceImpl implements PageService {
     private GoodsPushMapper goodsPushMapper;
 
     @Override
-    @Cacheable(value = "goodsNoLogin")
+    //@Cacheable(value = "goodsNoLogin")
     public Map<String,Object> recommendWithoutLogin(int page,int limit) {
         PageHelper.startPage(page,limit);
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria goodsCriteria=goodsExample.createCriteria();
         goodsCriteria.andUpShelfEqualTo(true);
         goodsCriteria.andStockGreaterThan(0);
-        return goodsResult(goodsExample);
+        return goodsResult(goodsExample,null);
     }
 
     @Override
-    @Cacheable(value = "goodsWithLogin")
+    //@Cacheable(value = "goodsWithLogin")
     public Map<String,Object> recommendWithLogin(int page,int limit,Long userId) {
-        BrowseExample browseExample=new BrowseExample();
-        browseExample.setOrderByClause("weight desc");
-        BrowseExample.Criteria browseCriteria=browseExample.createCriteria();
-        browseCriteria.andUserIdEqualTo(userId);
-        List<Browse> browses=browseMapper.selectByExample(browseExample);
-        if(browses.size()==0){
-            return recommendWithoutLogin(page, limit);
-        }
-        List<String> typeList=new ArrayList<>();
-        for(Browse browse:browses){
-            Goods goods=goodsMapper.selectByPrimaryKey(browse.getGoodsId());
-            typeList.add(goods.getType());
-        }
+        List<String> typeList=getRecentBrowse(userId);
         PageHelper.startPage(page,limit);
         GoodsExample goodsExample=new GoodsExample();
-        GoodsExample.Criteria goodsCriteria=goodsExample.createCriteria();
         for(String goodsType:typeList) {
             goodsExample.or().andTypeLike("%"+goodsType+"%");
         }
-
-        goodsCriteria.andUpShelfEqualTo(true);
-        return goodsResult(goodsExample);
+        return goodsResult(goodsExample,userId);
     }
 
     /**
@@ -85,7 +70,7 @@ public class PageServiceImpl implements PageService {
      * @param goodsExample
      * @return
      */
-    private Map<String,Object> goodsResult(GoodsExample goodsExample){
+    private Map<String,Object> goodsResult(GoodsExample goodsExample,Long userId){
         Map<String,Object> map=new HashMap<>(2);
         List<Goods> goodsList=goodsMapper.selectByExample(goodsExample);
         map.put("pageInfo",goodsList);
@@ -104,10 +89,49 @@ public class PageServiceImpl implements PageService {
             pageGoodsVO.setLikeAmount(collectAmount);
             BeanUtils.copyProperties(goods,pageGoodsVO);
             pageGoodsVO.setDesc(goods.getGoodsDesc());
+            if(null!=userId){
+                CollectExample collectExample1=new CollectExample();
+                CollectExample.Criteria collectCriteria1=collectExample1.createCriteria();
+                collectCriteria1.andGoodsIdEqualTo(goods.getGoodsId());
+                collectCriteria1.andUserIdEqualTo(userId);
+                int isLike=collectMapper.countByExample(collectExample1);
+                System.out.println(isLike);
+                if(isLike>0){
+                    pageGoodsVO.setIsLike(true);
+                }else{
+                    pageGoodsVO.setIsLike(false);
+                }
+            }
             pageGoodsVOList.add(pageGoodsVO);
         }
         map.put("pageGoodsVOList",pageGoodsVOList);
         return map;
+    }
+
+    @Override
+    public List<String> getRecentBrowse(Long userId) {
+        if(null==userId){
+            return null;
+        }
+        BrowseExample browseExample=new BrowseExample();
+        browseExample.setOrderByClause("weight desc");
+        BrowseExample.Criteria browseCriteria=browseExample.createCriteria();
+        browseCriteria.andUserIdEqualTo(userId);
+        List<Browse> browses=browseMapper.selectByExample(browseExample);
+        if(browses.size()==0){
+            return null;
+        }
+        List<String> typeList=new ArrayList<>();
+        for(Browse browse:browses){
+            if(typeList.size()>5){
+                break;
+            }
+            Goods goods=goodsMapper.selectByPrimaryKey(browse.getGoodsId());
+            if(!typeList.contains(goods.getType())) {
+                typeList.add(goods.getType());
+            }
+        }
+        return typeList;
     }
 
     @Override
@@ -217,7 +241,7 @@ public class PageServiceImpl implements PageService {
     }
 
     @Override
-    public Map<String, Object> searchGoods(String searchName) {
+    public Map<String, Object> searchGoods(String searchName,Long userId) {
         GoodsExample goodsExample=new GoodsExample();
         goodsExample.or().andGoodsNameLike("%"+searchName+"%");
         goodsExample.or().andTypeLike("%"+searchName+"%");
@@ -226,7 +250,7 @@ public class PageServiceImpl implements PageService {
         goodsExample.or().andCountryLike("%"+searchName+"%");
         goodsExample.or().andRegionLike("%"+searchName+"%");
         goodsExample.or().andCityLike("%"+searchName+"%");
-        return goodsResult(goodsExample);
+        return goodsResult(goodsExample,userId);
     }
 
     @Override
@@ -238,7 +262,7 @@ public class PageServiceImpl implements PageService {
         goodsCriteria.andUpShelfEqualTo(true);
         goodsCriteria.andStockGreaterThan(0);
         goodsCriteria.andTypeLike("%"+goods.getType()+"%");
-        return goodsResult(goodsExample);
+        return goodsResult(goodsExample,null);
     }
 
     @Override
@@ -279,5 +303,14 @@ public class PageServiceImpl implements PageService {
         collect.setGoodsId(goodsId);
         collect.setCollectTime(new Date());
         return collectMapper.insertSelective(collect)>0;
+    }
+
+    @Override
+    public boolean cancelLike(Long userId, Long goodsId) {
+        CollectExample collectExample=new CollectExample();
+        CollectExample.Criteria collectCriteria=collectExample.createCriteria();
+        collectCriteria.andUserIdEqualTo(userId);
+        collectCriteria.andGoodsIdEqualTo(goodsId);
+        return collectMapper.deleteByExample(collectExample)>0;
     }
 }

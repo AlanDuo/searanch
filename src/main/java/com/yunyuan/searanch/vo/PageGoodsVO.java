@@ -22,4 +22,6 @@ public class PageGoodsVO implements Serializable {
     private BigDecimal price;
     private Integer evaluateAmount;
     private Integer likeAmount;
+    private Boolean isLike;
+    private String type;
 }

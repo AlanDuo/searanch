@@ -536,8 +536,6 @@ c
 3src/main/java/com/yunyuan/searanch/entity/Push.java,e\d\edfe0a1f8a0ca4959a7d696440a4ce22579a4d1b
 j
 :src/main/java/com/yunyuan/searanch/entity/PushExample.java,7\6\76462f763968a0d2cbc5ad278f85cc35b4a3524c
-Z
-*src/main/resources/mapper/BrowseMapper.xml,b\f\bf0f6aaed9c0e83a68192499789e70ef15ea04d7
 [
 +src/main/resources/mapper/CollectMapper.xml,8\c\8c0faeacaa20a7d1c8b36fc1be9a1a4b86c6bef7
 \
@@ -692,3 +690,5 @@ o
 0src/main/java/com/yunyuan/searanch/vo/AdsVO.java,f\3\f30b8c25531851e968a6e369f0dce2e1922670bc
 h
 8src/main/java/com/yunyuan/searanch/entity/GoodsPush.java,4\3\43f354607d32ccd59b205c6c6961363ae40334e5
+P
+ src/main/resources/generator.xml,d\9\d988e8ed1ba0c41fa73434beed71c8577864d944

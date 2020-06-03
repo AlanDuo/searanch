@@ -16,6 +16,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -40,16 +41,28 @@ public class PageController {
                                   @RequestParam(value = "limit",defaultValue = "10") Integer limit){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
-        List<PageGoodsVO> pageGoodsVOS;
+        List<PageGoodsVO> pageGoodsVOS=new ArrayList<>();
         Map<String,Object> map;
-        if (null==user){
-            //用户没有登陆，随便推荐
+        List<String> typeList=null;
+        if(null!=user) {
+            typeList = pageService.getRecentBrowse(user.getUserId());
+        }
+        if (null==user || null==typeList){
+            //用户没有登陆或者没有浏览过商品，随便推荐
             map=pageService.recommendWithoutLogin(page,limit);
+            pageGoodsVOS=(List<PageGoodsVO>)map.get("pageGoodsVOList");
         }else{
             //用户登录，根据用户的习惯推荐
             map=pageService.recommendWithLogin(page,limit,user.getUserId());
+            List<PageGoodsVO> pageGoodsNoSort=(List<PageGoodsVO>)map.get("pageGoodsVOList");
+            for(String type:typeList){
+                for(PageGoodsVO pageGoodsVO:pageGoodsNoSort){
+                    if(pageGoodsVO.getType().equals(type)){
+                        pageGoodsVOS.add(pageGoodsVO);
+                    }
+                }
+            }
         }
-        pageGoodsVOS=(List<PageGoodsVO>)map.get("pageGoodsVOList");
         PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO<>(pageInfo,pageGoodsVOS);
     }
@@ -76,8 +89,14 @@ public class PageController {
     public TableVO searchGoods(@RequestParam(value = "page",defaultValue = "1") Integer page,
                                @RequestParam(value = "limit",defaultValue = "10") Integer limit,
                                @PathVariable("searchName") String searchName){
+        Subject subject= SecurityUtils.getSubject();
+        User user=(User)subject.getPrincipal();
+        Long userId=null;
+        if(null!=user){
+            userId=user.getUserId();
+        }
         PageHelper.startPage(page,limit);
-        Map<String,Object> map=pageService.searchGoods(searchName);
+        Map<String,Object> map=pageService.searchGoods(searchName,userId);
         PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO(pageInfo,(List<PageGoodsVO>)map.get("pageGoodsVOList"));
     }
@@ -105,7 +124,8 @@ public class PageController {
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
         if(pageService.getLikeTimes(user.getUserId(),goodsId)>0){
-            return new ResponseData(500,"你已经点过赞");
+            pageService.cancelLike(user.getUserId(),goodsId);
+            return new ResponseData(200,"你已取消点赞");
         }
         pageService.likeGoods(user.getUserId(),goodsId);
         return ResponseData.ok();

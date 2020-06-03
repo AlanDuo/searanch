@@ -50,8 +50,11 @@ public class OrderController {
     @ApiOperation(value="支付")
     @PostMapping("/pay")
     public ResponseData pay(String orderNumber){
-        orderService.payOrder(orderNumber);
-        return ResponseData.ok();
+        if(orderService.payOrder(orderNumber)) {
+            return ResponseData.ok();
+        }else{
+            return new ResponseData(500,"库存不足");
+        }
     }
     @ApiOperation(value="确认订单完成")
     @PutMapping("/sureFinish/{orderId}")

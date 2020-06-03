@@ -295,7 +295,32 @@ public class AdminServiceImpl implements AdminService {
     public boolean adminCheckMerchant(Long registerId, boolean check) {
         MerchantRegister merchantRegister=merchantRegisterMapper.selectByPrimaryKey(registerId);
         merchantRegister.setExamine(check);
-        return merchantRegisterMapper.updateByPrimaryKey(merchantRegister)>0;
+        merchantRegisterMapper.updateByPrimaryKey(merchantRegister);
+        SimpleMailMessage message=new SimpleMailMessage();
+        User user=getUserByPhone(merchantRegister.getMerchantPhone());
+        String email=user.getEmail();
+        String subject="商户审核通知";
+        String content =null;
+        if(check) {
+            content = "恭喜您！成为了海洋牧场的商户，期待更多的合作！";
+        }else{
+            content="很遗憾！您未能通过审核，请重新上传资料";
+        }
+        message.setTo(email);
+        message.setSubject(subject);
+        message.setText(content);
+        message.setFrom(from);
+        mailSender.send(message);
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andEmailEqualTo(email);
+        Long userIdTo = userMapper.selectByExample(userExample).get(0).getUserId();
+        Push push = new Push();
+        push.setPushFrom(user.getUserId());
+        push.setPushTo(userIdTo);
+        push.setPushContent(subject + ": " + content);
+        push.setPushTime(new Date());
+        return pushMapper.insertSelective(push)>0;
     }
 
     @Override
@@ -358,13 +383,13 @@ public class AdminServiceImpl implements AdminService {
         order.setLogisticsNo(logisticsNo);
         order.setDeliver(true);
         order.setDeliverTime(new Date());
-        orderMapper.insertSelective(order);
+        orderMapper.updateByPrimaryKeySelective(order);
 
         SimpleMailMessage message=new SimpleMailMessage();
         Long userId=order.getUserId();
         String email=userMapper.selectByPrimaryKey(userId).getEmail();
         String subject="发货通知";
-        String content="亲爱的客官!您的"+order.getGoodsName()+"已经发货";
+        String content="亲爱的客官!您的"+order.getGoodsName()+"已经发货"+"物流单号为："+logisticsNo;
         message.setTo(email);
         message.setSubject(subject);
         message.setText(content);

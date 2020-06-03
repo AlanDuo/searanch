@@ -19,6 +19,8 @@ public class AdminGoodsVO implements Serializable {
 
     private String goodsName;
 
+    private String type;
+
     private String picture;
 
     private String goodsDesc;

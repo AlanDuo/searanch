@@ -105,6 +105,12 @@ public class OrderServiceImpl implements OrderService{
             order.setPaid(true);
             order.setPayTime(new Date());
             orderMapper.updateByPrimaryKeySelective(order);
+            Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
+            if(goods.getStock()<order.getAmount()){
+                return false;
+            }
+            goods.setStock(goods.getStock()-order.getAmount());
+            goodsMapper.updateByPrimaryKey(goods);
         }
         return true;
     }

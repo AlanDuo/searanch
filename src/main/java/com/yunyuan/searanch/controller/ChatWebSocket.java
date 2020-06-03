@@ -51,18 +51,30 @@ public class ChatWebSocket {
         String toMessage=jsonObject.getString("toMessage");
         ChatWebSocket chat;
         if(chatService.isAdmin(Long.parseLong(to))){
-            chat=adminClient.get(to);
-        }else{
-            chat=merchantClient.get(to);
-        }
-        if(null!=chat){
-            Session toSession=chat.session;
-            if(toSession.isOpen()){
-                toSession.getAsyncRemote().sendText(this.userId+":"+toMessage);
-                chatService.addChatRecord(Long.parseLong(this.userId),Long.parseLong(to),toMessage);
+            for(Map.Entry<String,ChatWebSocket> map:adminClient.entrySet()) {
+                chat = map.getValue();
+                if(null!=chat) {
+                    Session toSession = chat.session;
+                    if (toSession.isOpen()) {
+                        toSession.getAsyncRemote().sendText(this.userId + ":" + toMessage);
+                        chatService.addChatRecord(Long.parseLong(this.userId), Long.parseLong(to), toMessage);
+                    }
+                }
+                else{
+                    session.getAsyncRemote().sendText("您好！对方不在线，请稍后联系！");
+                }
             }
         }else{
-            session.getAsyncRemote().sendText("您好！对方不在线，请稍后联系！");
+            chat=merchantClient.get(to);
+            if(null!=chat){
+                Session toSession=chat.session;
+                if(toSession.isOpen()){
+                    toSession.getAsyncRemote().sendText(this.userId+":"+toMessage);
+                    chatService.addChatRecord(Long.parseLong(this.userId),Long.parseLong(to),toMessage);
+                }
+            }else{
+                session.getAsyncRemote().sendText("您好！对方不在线，请稍后联系！");
+            }
         }
     }
     @OnClose

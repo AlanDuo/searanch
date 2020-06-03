@@ -1,32 +1,60 @@
 
-nsquid:S1192¼
-"JDefine a constant instead of duplicating this literal "finished" 10 times.(‚ ¯–ıÿÿÿÿ8Ä¡’Ô›.
-lsquid:S1192Ä"HDefine a constant instead of duplicating this literal "typeId" 10 times.(Êæ¦´øÿÿÿÿ8Ä¡’Ô›.
-wsquid:S1488:"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì
-`squid:S1192€"HDefine a constant instead of duplicating this literal "amount" 10 times.(­Õ¦
-gsquid:S1192ğ"IDefine a constant instead of duplicating this literal "country" 12 times.(µ¤ë8ÇıšŸ.
-csquid:S00112Z"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ
-psquid:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù
-asquid:S1192Â"IDefine a constant instead of duplicating this literal "goodsId" 10 times.(ìæ¾
-isquid:S1192ü"JDefine a constant instead of duplicating this literal "userName" 12 times.( Ö¨•8Ä¡’Ô›.
-gsquid:S1192ú"HDefine a constant instead of duplicating this literal "userId" 10 times.(İ§‰ 8Ä¡’Ô›.
-]squid:S00112h"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
-
-osquid:S1192ş"KDefine a constant instead of duplicating this literal "goodsName" 12 times.(è‚‡Ÿûÿÿÿÿ8Ä¡’Ô›.
-fsquid:S1192Â"IDefine a constant instead of duplicating this literal "address" 12 times.(°³«Ïøÿÿÿÿ
-osquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe
-isquid:S1192´"LDefine a constant instead of duplicating this literal "discountId" 10 times.(ßÇˆ–ÿÿÿÿÿ
-`squid:S1192x"IDefine a constant instead of duplicating this literal "orderId" 10 times.(ÄæíÃ
-nsquid:S1192ğ"JDefine a constant instead of duplicating this literal "merchant" 12 times.(²æÏúúÿÿÿÿ8Ä¡’Ô›.
-esquid:S1192´"MDefine a constant instead of duplicating this literal "orderNumber" 12 times.(ßéÙÙ
-csquid:S00112a"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ
-hsquid:S1192¶"JDefine a constant instead of duplicating this literal "province" 12 times.(£†ĞY8ÇıšŸ.
-psquid:S1192ø
-"LDefine a constant instead of duplicating this literal "finishTime" 10 times.(…îÂõıÿÿÿÿ8Ä¡’Ô›.
-gsquid:S1192ø"JDefine a constant instead of duplicating this literal "discount" 10 times.(áÓúÿÿÿÿ
-hsquid:S1192€
-"IDefine a constant instead of duplicating this literal "payTime" 10 times.(Ú¬ï8Ä¡’Ô›.
-psquid:S1192´"LDefine a constant instead of duplicating this literal "merchantId" 10 times.(ÈÿÛÃşÿÿÿÿ8Ä¡’Ô›.
-dsquid:S1192¼"GDefine a constant instead of duplicating this literal "price" 10 times.(º ‘Öøÿÿÿÿ
-osquid:S1192ˆ	"KDefine a constant instead of duplicating this literal "orderTime" 10 times.(óÌ‘ªøÿÿÿÿ8Ä¡’Ô›.
-ksquid:S1192¶"GDefine a constant instead of duplicating this literal "phone" 12 times.(ºÔñŠÿÿÿÿÿ8Á–ÌÂ .
+n
+java:S1192ş"KDefine a constant instead of duplicating this literal "goodsName" 12 times.(è‚‡Ÿûÿÿÿÿ8³ıñË¦.
+g
+java:S1192¶"JDefine a constant instead of duplicating this literal "province" 12 times.(£†ĞY8³ıñË¦.
+l
+java:S1192Â"IDefine a constant instead of duplicating this literal "address" 12 times.(°³«Ïøÿÿÿÿ8³ıñË¦.
+j
+java:S1192¼"GDefine a constant instead of duplicating this literal "price" 10 times.(º ‘Öøÿÿÿÿ8³ıñË¦.
+j
+java:S1192¶"GDefine a constant instead of duplicating this literal "phone" 12 times.(ºÔñŠÿÿÿÿÿ8³ıñË¦.
+k
+java:S1192´"MDefine a constant instead of duplicating this literal "orderNumber" 12 times.(ßéÙÙ8³ıñË¦.
+g
+java:S1192Â"IDefine a constant instead of duplicating this literal "goodsId" 10 times.(ìæ¾8³ıñË¦.
+f
+java:S1192x"IDefine a constant instead of duplicating this literal "orderId" 10 times.(ÄæíÃ8³ıñË¦.
+p
+java:S1192ˆ	"MDefine a constant instead of duplicating this literal "logisticsNo" 12 times.(÷Ó¾Ìøÿÿÿÿ8³ıñË¦.
+m
+java:S1192ú"JDefine a constant instead of duplicating this literal "finished" 10 times.(‚ ¯–ıÿÿÿÿ8³ıñË¦.
+h
+java:S1192ü"JDefine a constant instead of duplicating this literal "userName" 12 times.( Ö¨•8³ıñË¦.
+f
+java:S1192ú"HDefine a constant instead of duplicating this literal "userId" 10 times.(İ§‰ 8³ıñË¦.
+f
+java:S1192€"HDefine a constant instead of duplicating this literal "amount" 10 times.(­Õ¦8³ıñË¦.
+n
+java:S1192Î	"KDefine a constant instead of duplicating this literal "orderTime" 10 times.(óÌ‘ªøÿÿÿÿ8³ıñË¦.
+m
+java:S1192®"JDefine a constant instead of duplicating this literal "merchant" 12 times.(²æÏúúÿÿÿÿ8³ıñË¦.
+k
+java:S1192Ä"HDefine a constant instead of duplicating this literal "typeId" 10 times.(Êæ¦´øÿÿÿÿ8³ıñË¦.
+g
+java:S1192Æ
+"IDefine a constant instead of duplicating this literal "payTime" 10 times.(Ú¬ï8³ıñË¦.
+f
+java:S1192ğ"IDefine a constant instead of duplicating this literal "country" 12 times.(µ¤ë8³ıñË¦.
+o
+java:S1192¶"LDefine a constant instead of duplicating this literal "finishTime" 10 times.(…îÂõıÿÿÿÿ8³ıñË¦.
+g
+java:S1192‚"IDefine a constant instead of duplicating this literal "deliver" 10 times.(ëØêğ8³ıñË¦.
+m
+java:S1192ø"JDefine a constant instead of duplicating this literal "discount" 10 times.(áÓúÿÿÿÿ8³ıñË¦.
+o
+java:S1192´"LDefine a constant instead of duplicating this literal "discountId" 10 times.(ßÇˆ–ÿÿÿÿÿ8³ıñË¦.
+o
+java:S1192ò"LDefine a constant instead of duplicating this literal "merchantId" 10 times.(ÈÿÛÃşÿÿÿÿ8³ıñË¦.
+k
+java:S1192¾"MDefine a constant instead of duplicating this literal "deliverTime" 10 times.(Ò¸½8³ıñË¦.
+g	java:S112Z"FDefine and throw a dedicated exception instead of using a generic one.(ÔÁñÍøÿÿÿÿ8³ıñË¦.
+g	java:S112a"FDefine and throw a dedicated exception instead of using a generic one.(õÜ—ºşÿÿÿÿ8³ıñË¦.
+a	java:S112h"FDefine and throw a dedicated exception instead of using a generic one.(ìá¤
+8³ıñË¦.
+}
+java:S1488:"`Immediately return this expression instead of assigning it to the temporary variable "criteria".(¶Õ¯ì8³ıñË¦.
+u
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏßÉe8³ıñË¦.
+v
+java:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(óÎ³Ù8³ıñË¦.

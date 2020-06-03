@@ -31,6 +31,13 @@ public interface PageService {
     Map<String,Object> recommendWithLogin(int page,int limit,Long userId);
 
     /**
+     * 获取用户最经常浏览的商品
+     *
+     * @param userId
+     * @return
+     */
+    List<String> getRecentBrowse(Long userId);
+    /**
      * 获取单个商品的信息
      *
      * @param goodsId
@@ -51,9 +58,10 @@ public interface PageService {
      * 搜索商品
      *
      * @param searchName
+     * @param userId
      * @return
      */
-    Map<String,Object> searchGoods(String searchName);
+    Map<String,Object> searchGoods(String searchName,Long userId);
 
     /**
      * 底部商品推荐
@@ -89,4 +97,13 @@ public interface PageService {
      * @return
      */
     boolean likeGoods(Long userId,Long goodsId);
+
+    /**
+     * 取消点赞
+     *
+     * @param userId
+     * @param goodsId
+     * @return
+     */
+    boolean cancelLike(Long userId,Long goodsId);
 }

@@ -9,10 +9,14 @@ import com.yunyuan.searanch.utils.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -34,8 +38,10 @@ public class UserController {
     public ResponseData userInfo(){
         Subject subject= SecurityUtils.getSubject();
         User user=(User)subject.getPrincipal();
+        Long userId=user.getUserId();
+        User user1=userService.getUserById(userId);
         UserInfoVO userInfoVO=new UserInfoVO();
-        BeanUtils.copyProperties(user,userInfoVO);
+        BeanUtils.copyProperties(user1,userInfoVO);
         MerchantRegister merchant=userService.getMerchantByPhone(user.getPhoneNumber());
         if(null!=merchant){
             userInfoVO.setCountry(merchant.getCountry());
@@ -70,5 +76,17 @@ public class UserController {
         }else{
             return ResponseData.error();
         }
+    }
+    @ApiOperation(value="根据用户id获取用户信息")
+    @GetMapping("/info/{userId}")
+    @RequiresRoles("admin")
+    public ResponseData getUserInfoById(@PathVariable("userId")Long userId){
+        User user=userService.getUserById(userId);
+        Map<String,Object> map=new HashMap<>();
+        map.put("userId",user.getUserId());
+        map.put("userName",user.getUsername());
+        map.put("phoneNumber",user.getPhoneNumber());
+        map.put("email",user.getEmail());
+        return ResponseData.ok().putDataValue(map);
     }
 }

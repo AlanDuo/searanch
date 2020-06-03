@@ -1,11 +1,18 @@
 
-q
-java:S3252G"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8éè²¤.
-q
-java:S3252/"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8éè²¤.
-T
-java:S1481ù"6Remove this unused "goodsPushCriteria" local variable.(ÒÛ¤8ü•ÚÂ¦.
+H
+java:S1168r"+Return an empty collection instead of null.(¥¹ï8Ç‹ÌŸ§.
+_
+java:S1126c"BReplace this if-then-else statement by a single method invocation.(ŞŞÈÔ8àÜÎ—§.
 r
-java:S3252ë"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8„¹ª¤.
+java:S3252ƒ"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8ËòµŸ§.
 c
-java:S1854ù"ERemove this useless assignment to local variable "goodsPushCriteria".(ÒÛ¤8ü•ÚÂ¦.
+java:S1854‘"ERemove this useless assignment to local variable "goodsPushCriteria".(ÒÛ¤8ËòµŸ§.
+q
+java:S3252/"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8àÜÎ—§.
+q
+java:S3252;"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(™Î’¦ûÿÿÿÿ8Îİ—§.
+H
+java:S1168z"+Return an empty collection instead of null.(¥¹ï8è•¹Ÿ§.
+T
+java:S1481‘"6Remove this unused "goodsPushCriteria" local variable.(ÒÛ¤8ËòµŸ§.
+Z	java:S106b"9Replace this use of System.out or System.err by a logger.(Í”¬ãÿÿÿÿÿ8àÜÎ—§.

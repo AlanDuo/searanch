@@ -60,7 +60,6 @@ public class PushServiceImpl implements PushService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void sendMailAllMerchant(String subject, String content, Long userId) {
-        List<String> emails=new ArrayList<>();
         MerchantRegisterExample merchantRegisterExample=new MerchantRegisterExample();
         List<MerchantRegister> merchantRegisters= registerMapper.selectByExample(merchantRegisterExample);
         for(MerchantRegister merchantRegister:merchantRegisters){
@@ -72,6 +71,16 @@ public class PushServiceImpl implements PushService {
                 continue;
             }
             User user=users.get(0);
+            sendMail(subject,content,userId,user.getEmail());
+        }
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void sendMailToAllUser(String subject, String content, Long userId) {
+        UserExample userExample=new UserExample();
+        List<User> userList=userMapper.selectByExample(userExample);
+        for(User user:userList){
             sendMail(subject,content,userId,user.getEmail());
         }
     }
