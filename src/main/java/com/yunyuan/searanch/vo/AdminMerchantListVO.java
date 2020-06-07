@@ -24,6 +24,8 @@ public class AdminMerchantListVO implements Serializable {
 
     private String merchantPhone;
 
+    private String email;
+
     private String country;
 
     private String province;

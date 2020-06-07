@@ -70,6 +70,7 @@ public class OrderServiceImpl implements OrderService{
         order.setPaid(false);
         order.setFinished(false);
         order.setOrderTime(new Date());
+        order.setDeliver(false);
 
         List<OrderGoodsDTO> orderGoodsList=orderDTO.getGoodsList();
         for(OrderGoodsDTO goodsDTO:orderGoodsList) {

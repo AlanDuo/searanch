@@ -275,6 +275,8 @@ public class AdminServiceImpl implements AdminService {
         for(MerchantRegister merchantRegister:merchantRegisters){
             AdminMerchantListVO adminMerchantVO=new AdminMerchantListVO();
             BeanUtils.copyProperties(merchantRegister,adminMerchantVO);
+            User user=getUserByPhone(merchantRegister.getMerchantPhone());
+            adminMerchantVO.setEmail(user.getEmail());
             merchantListVOList.add(adminMerchantVO);
         }
         map.put("adminMerchantVOs",merchantListVOList);

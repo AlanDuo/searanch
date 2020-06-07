@@ -5,60 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="219e5738-92fd-4d55-bcd6-5694ba50a4dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1ad846f5de8bb82c607ac60d1247a8b62d2140a7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1ad846f5de8bb82c607ac60d1247a8b62d2140a7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30880c2d0492c2bc07e49d97f3b29c63e27dab36" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30880c2d0492c2bc07e49d97f3b29c63e27dab36" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/5173fe6f2324c2d47563dd70e399390e9bc59931" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/5173fe6f2324c2d47563dd70e399390e9bc59931" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/559ca728a25fbb92edd29045ca3d77cadf0c9386" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/559ca728a25fbb92edd29045ca3d77cadf0c9386" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e009534e1ebd4f3524b56c533ede46438ced20a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e009534e1ebd4f3524b56c533ede46438ced20a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65a4ea8cdf8a71dcd5640a98b52548623cd28d08" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65a4ea8cdf8a71dcd5640a98b52548623cd28d08" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a8a2ec167b68e860ab5f29aea8616ba3f3a9a34" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a8a2ec167b68e860ab5f29aea8616ba3f3a9a34" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d4a44d8ee14dcd89a4716a009a569dd308d9205" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d4a44d8ee14dcd89a4716a009a569dd308d9205" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8ae396f369da14bb5c0973286facff8fb2c70d56" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d988e8ed1ba0c41fa73434beed71c8577864d944" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/95f26a8b5410c7184a925d463683fea22e4cc429" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/95f26a8b5410c7184a925d463683fea22e4cc429" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9cd1590a7486e8141bf3edefe122ea4087a113ac" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9cd1590a7486e8141bf3edefe122ea4087a113ac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2ed2240a6c3918595ebbbcfd1ba87ba8db1a201" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2ed2240a6c3918595ebbbcfd1ba87ba8db1a201" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a7fa8b0772ec3c4ca9f2834f568ba1e29fe9750f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b35adf9e674931d0e91f143e4654446a5d6f12" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b35adf9e674931d0e91f143e4654446a5d6f12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf0f6aaed9c0e83a68192499789e70ef15ea04d7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c03969cbbba25e8f53600fd194387165be2430f9" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c03969cbbba25e8f53600fd194387165be2430f9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee731ac687d7459f4dd77002e5034a05215cfc0f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee731ac687d7459f4dd77002e5034a05215cfc0f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f5b2000daac5716f28eedca0d10265c3135bf1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f5b2000daac5716f28eedca0d10265c3135bf1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff7e0c89f8ff36287d1f982c522377d495086b5d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff7e0c89f8ff36287d1f982c522377d495086b5d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatWebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatWebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/PushController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/PushController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/PageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/PageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/PushService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/PushService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PushServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PushServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/AdminGoodsVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/AdminGoodsVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/AdminOrderListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/AdminOrderListVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/PageGoodsVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/PageGoodsVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/AdminMerchantListVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/AdminMerchantListVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ChatController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ChatWebSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ChatWebSocket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PushController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PushController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/PageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/PageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/PushService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/PushService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/AdminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PushServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PushServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminGoodsVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminGoodsVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminOrderListVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminOrderListVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/PageGoodsVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/PageGoodsVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminMerchantListVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/AdminMerchantListVO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
@@ -227,6 +198,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yunyuan.searanch.controller.TestB" />
+      <module name="searanch" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yunyuan.searanch.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -273,9 +258,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="swagger-ui.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/searanch/springfox-swagger-ui-2.9.2.jar/META-INF/resources/swagger-ui.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <configuration name="SearanchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="searanch" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.yunyuan.searanch.SearanchApplication" />
@@ -303,11 +285,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestB" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SearanchApplicationTests.contextLoads" />
         <item itemvalue="JUnit.SearanchApplicationTests" />
         <item itemvalue="Application.MessageCodeUtil" />
-        <item itemvalue="JavaScript Debug.swagger-ui.html" />
       </list>
     </recent_temporary>
   </component>
@@ -453,6 +435,11 @@
       <workItem from="1591014552547" duration="7109000" />
       <workItem from="1591059890031" duration="11963000" />
       <workItem from="1591098906321" duration="1212000" />
+      <workItem from="1591147729023" duration="337000" />
+      <workItem from="1591407207256" duration="2932000" />
+      <workItem from="1591428537254" duration="1489000" />
+      <workItem from="1591441940903" duration="4094000" />
+      <workItem from="1591500333131" duration="370000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.0">
       <created>1587972206309</created>
@@ -608,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590907673284</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="version 12.0 修改了下单不减库存的问题，修改了webSocket">
+      <created>1591148006875</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591148006875</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +675,8 @@
     <MESSAGE value="version 10.1 增加每月利润计算及修复了部分bug" />
     <MESSAGE value="version 11.0 增加轮播图广告位" />
     <MESSAGE value="version 11.1 增加收获点赞" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 11.1 增加收获点赞" />
+    <MESSAGE value="version 12.0 修改了下单不减库存的问题，修改了webSocket" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 12.0 修改了下单不减库存的问题，修改了webSocket" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584537764975">
@@ -700,10 +695,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="271" width="462" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1590146582206" />
-    <state x="343" y="15" key="CommitChangelistDialog2" timestamp="1590907667348">
+    <state x="162" y="15" key="CommitChangelistDialog2" timestamp="1591148000848">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="343" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590907667348" />
+    <state x="162" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591148000848" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588067335916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -712,38 +707,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="589" y="309" width="382" height="206" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1589686695375" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1591110709975">
+    <state width="746" height="106" key="GridCell.Tab.0.bottom" timestamp="1591446268045">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591110709975" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1591110709975">
+    <state width="746" height="106" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
+    <state width="746" height="106" key="GridCell.Tab.0.center" timestamp="1591446268045">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591110709975" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1591110709975">
+    <state width="746" height="106" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
+    <state width="746" height="106" key="GridCell.Tab.0.left" timestamp="1591446268045">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591110709975" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1591110709975">
+    <state width="746" height="106" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
+    <state width="746" height="106" key="GridCell.Tab.0.right" timestamp="1591446268045">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591110709975" />
-    <state width="1493" height="203" key="GridCell.Tab.1.bottom" timestamp="1591110709976">
+    <state width="746" height="106" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
+    <state width="1493" height="224" key="GridCell.Tab.1.bottom" timestamp="1591429202399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591110709976" />
-    <state width="1493" height="203" key="GridCell.Tab.1.center" timestamp="1591110709975">
+    <state width="1493" height="224" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
+    <state width="1493" height="224" key="GridCell.Tab.1.center" timestamp="1591429202399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591110709975" />
-    <state width="1493" height="203" key="GridCell.Tab.1.left" timestamp="1591110709975">
+    <state width="1493" height="224" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
+    <state width="1493" height="224" key="GridCell.Tab.1.left" timestamp="1591429202399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591110709975" />
-    <state width="1493" height="203" key="GridCell.Tab.1.right" timestamp="1591110709976">
+    <state width="1493" height="224" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
+    <state width="1493" height="224" key="GridCell.Tab.1.right" timestamp="1591429202399">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591110709976" />
+    <state width="1493" height="224" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
     <state width="1493" height="86" key="GridCell.Tab.2.bottom" timestamp="1586692363058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -764,14 +759,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="508" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587983753034" />
-    <state x="123" y="50" key="SettingsEditor" timestamp="1590889161012">
+    <state x="123" y="50" key="SettingsEditor" timestamp="1591446252919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="123" y="50" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590889161012" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1590907683079">
+    <state x="123" y="50" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591446252919" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591148050876">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590907683079" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591148050876" />
     <state x="695" y="225" width="439" height="330" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1585036887711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -804,9 +799,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="287" y="94" width="715" height="602" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1536.824@0.0.1536.824" timestamp="1587969573012" />
-    <state x="487" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591062519950">
+    <state x="487" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591443974645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="487" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591062519950" />
+    <state x="487" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591443974645" />
   </component>
 </project>

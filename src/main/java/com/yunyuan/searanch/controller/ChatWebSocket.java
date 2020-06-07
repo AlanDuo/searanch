@@ -11,6 +11,7 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -79,6 +80,16 @@ public class ChatWebSocket {
     }
     @OnClose
     public void onClose(){
+        if(!chatService.isAdmin(Long.parseLong(userId))){
+            adminClient.remove(userId,this);
+            List<Map<Long,String>> userList=ChatController.messageUser;
+            if(adminClient.size()==0) {
+                userList.clear();
+            }
+        }else{
+            adminClient.remove(userId,this);
+        }
+
         LOGGER.info("close");
     }
     @OnError
