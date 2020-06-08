@@ -44,9 +44,10 @@ public interface GoodsManagerService {
      * @param applyId
      * @param price
      * @param processMode
+     * @param goodsDesc
      * @return
      */
-    boolean publishGoods(Long applyId, BigDecimal price,String processMode);
+    boolean publishGoods(Long applyId, BigDecimal price,String processMode,String goodsDesc);
 
     /**
      * 获取已经发布的商品

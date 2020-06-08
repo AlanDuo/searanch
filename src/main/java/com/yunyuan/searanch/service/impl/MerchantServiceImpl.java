@@ -57,7 +57,7 @@ public class MerchantServiceImpl implements MerchantService {
             if(null==apply.getPrice()){
                 billVO.setPrice(BigDecimal.ZERO);
             }
-            if(apply.getFinished() && null==apply.getPrice()){
+            if(apply.getFinished() && null!=apply.getPrice()){
                 billVO.setIncome(apply.getPrice().multiply(new BigDecimal(apply.getAmount())));
             }else{
                 billVO.setIncome(BigDecimal.ZERO);

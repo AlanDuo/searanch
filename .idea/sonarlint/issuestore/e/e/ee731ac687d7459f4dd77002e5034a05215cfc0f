@@ -1,13 +1,13 @@
 
+L
+java:S1874”".Remove this use of "divide"; it is deprecated.(›ζ‘8τη― ¤.
+L
+java:S1874²".Remove this use of "divide"; it is deprecated.(›ζ‘8τη― ¤.
 S
 java:S1874²"5Remove this use of "ROUND_HALF_UP"; it is deprecated.(›ζ‘8τη― ¤.
 D
 java:S1110²"!Remove these useless parentheses.(οχ© ϊÿÿÿÿ8ÒψΤ±¦.
-L
-java:S1874²".Remove this use of "divide"; it is deprecated.(›ζ‘8τη― ¤.
-S
-java:S1874”"5Remove this use of "ROUND_HALF_UP"; it is deprecated.(›ζ‘8τη― ¤.
 v
 java:S1602²"SRemove useless curly braces around statement and then remove useless return keyword(οχ© ϊÿÿÿÿ8ÒψΤ±¦.
-L
-java:S1874”".Remove this use of "divide"; it is deprecated.(›ζ‘8τη― ¤.
+S
+java:S1874”"5Remove this use of "ROUND_HALF_UP"; it is deprecated.(›ζ‘8τη― ¤.

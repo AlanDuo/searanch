@@ -72,8 +72,8 @@ public class GoodsManagerController {
     @ApiOperation(value="发布商品")
     @PostMapping("/publish")
     @RequiresRoles("admin")
-    public ResponseData publishGoods(Long applyId, BigDecimal price,String processMode){
-        goodsManagerService.publishGoods(applyId,price,processMode);
+    public ResponseData publishGoods(Long applyId, BigDecimal price,String processMode,String goodsDesc){
+        goodsManagerService.publishGoods(applyId,price,processMode,goodsDesc);
         return ResponseData.ok();
     }
     @ApiOperation(value = "已经发布商品列表")

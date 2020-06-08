@@ -103,7 +103,7 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean publishGoods(Long applyId, BigDecimal price,String processMode) {
+    public boolean publishGoods(Long applyId, BigDecimal price,String processMode,String goodsDesc) {
         GoodsApply goodsApply=goodsApplyMapper.selectByPrimaryKey(applyId);
         Goods goods=new Goods();
         BeanUtils.copyProperties(goodsApply,goods);
@@ -111,12 +111,17 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
         if(null!=processMode && !"".equals(processMode.trim())) {
             goods.setProcessMode(processMode);
         }
+        if(null!=goodsDesc && !"".equals(goodsDesc.trim())){
+            goods.setGoodsDesc(goodsDesc);
+        }
         goods.setPrice(price);
         goods.setUpShelf(true);
         goods.setUpTime(new Date());
         goods.setStock(goodsApply.getAmount());
         goods.setBusiness(goodsApply.getMerchantId());
         goods.setProduceTime(new Date());
+        goodsApply.setPublish(true);
+        goodsApplyMapper.updateByPrimaryKeySelective(goodsApply);
         return goodsMapper.insertSelective(goods)>0;
     }
 

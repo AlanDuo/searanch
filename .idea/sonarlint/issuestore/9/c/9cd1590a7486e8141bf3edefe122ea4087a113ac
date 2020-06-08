@@ -1,7 +1,7 @@
 
-g
-java:S32522"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ñ¨Û¡ıÿÿÿÿ8İç¡ÿ¦.
 o
 java:S37761"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ê‘—í8ç‹è§.
 S
 java:S2696"6Make the enclosing method "static" or remove this set.(âîè–8İç¡ÿ¦.
+g
+java:S32522"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ñ¨Û¡ıÿÿÿÿ8İç¡ÿ¦.
