@@ -94,6 +94,9 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         List<Order> orderList=getOrdersByTime(date1,date2);
         for(Order order:orderList){
             Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
+            if(null==goods){
+                continue;
+            }
             String type=goods.getType();
             if(map.containsKey(type)){
                 BigDecimal sum=map.get(type);
@@ -113,6 +116,9 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         List<Order> orderList=getOrdersByTime(date1,date2);
         for(Order order:orderList){
            Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
+            if(null==goods){
+                continue;
+            }
            if(!goods.getType().equals(type)){
                continue;
            }
@@ -181,6 +187,9 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         int k=1;
         for(Order order:orderList){
             Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
+            if(null==goods){
+                continue;
+            }
             if (typeMap.containsKey(goods.getType())) {
                 k=typeMap.get(goods.getType());
                 typeMap.put(goods.getType(),k+1);
@@ -229,7 +238,9 @@ public class DataAnalysisServiceImpl implements DataAnalysisService {
         int thisType=0;
         for(Order order:orderList){
             Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
-
+            if(null==goods){
+                continue;
+            }
             if(!goods.getType().equals(type)){
                 continue;
             }

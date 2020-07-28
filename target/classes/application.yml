@@ -52,8 +52,8 @@ spring:
     timeout: 6000    #连接超时
   mail:
     host: smtp.126.com
-    username: luohuiduo@126.com
-    password: JHNXGLRIDYMMXFCK
+    username: oceanpastuer@126.com
+    password: AHKUEYULPAQRQRNX
     default-encoding: UTF-8
     protocol: smtp
     port: 465

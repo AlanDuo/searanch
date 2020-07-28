@@ -44,7 +44,7 @@ public class PageServiceImpl implements PageService {
     @Override
     //@Cacheable(value = "goodsNoLogin")
     public Map<String,Object> recommendWithoutLogin(int page,int limit) {
-        PageHelper.startPage(page,limit);
+        //PageHelper.startPage(page,limit);
         GoodsExample goodsExample=new GoodsExample();
         GoodsExample.Criteria goodsCriteria=goodsExample.createCriteria();
         goodsCriteria.andUpShelfEqualTo(true);
@@ -56,7 +56,7 @@ public class PageServiceImpl implements PageService {
     //@Cacheable(value = "goodsWithLogin")
     public Map<String,Object> recommendWithLogin(int page,int limit,Long userId) {
         List<String> typeList=getRecentBrowse(userId);
-        PageHelper.startPage(page,limit);
+        //PageHelper.startPage(page,limit);
         GoodsExample goodsExample=new GoodsExample();
         for(String goodsType:typeList) {
             goodsExample.or().andTypeLike("%"+goodsType+"%");
@@ -135,7 +135,7 @@ public class PageServiceImpl implements PageService {
     }
 
     @Override
-    @Cacheable(value = "goodsInfo")
+    //@Cacheable(value = "goodsInfo")
     public GoodsInfoVO getGoodsInfo(Long goodsId,User user) {
         GoodsInfoVO goodsInfoVO=new GoodsInfoVO();
         Goods goods=goodsMapper.selectByPrimaryKey(goodsId);
@@ -143,6 +143,7 @@ public class PageServiceImpl implements PageService {
         List<String> pictures=Arrays.asList(goods.getPicture().split(","));
         goodsInfoVO.setPictures(pictures);
         goodsInfoVO.setDesc(goods.getGoodsDesc());
+        goodsInfoVO.setType(goods.getType());
 
         if(null!=goods.getApplyId() && goods.getApplyId()!=0) {
             GoodsApply apply = applyMapper.selectByPrimaryKey(goods.getApplyId());

@@ -34,10 +34,10 @@ public class ShopCartController {
 
     @ApiOperation(value="添加购物车")
     @PostMapping("/addShopCart")
-    public ResponseData addShopCart(Long goodsId,Long typeId,Integer amount){
+    public ResponseData addShopCart(Long goodsId,Integer amount){
         User user=currentUser();
         if(null!=user) {
-            shopCartService.addShopCart(user.getUserId(), goodsId, typeId, amount);
+            shopCartService.addShopCart(user.getUserId(), goodsId, amount);
             return ResponseData.ok();
         }
         return ResponseData.forbidden();

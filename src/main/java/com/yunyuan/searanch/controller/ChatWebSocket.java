@@ -57,6 +57,7 @@ public class ChatWebSocket {
                 if(null!=chat) {
                     Session toSession = chat.session;
                     if (toSession.isOpen()) {
+                        System.out.println(this.userId+"发送给的管理员为"+to);
                         toSession.getAsyncRemote().sendText(this.userId + ":" + toMessage);
                         chatService.addChatRecord(Long.parseLong(this.userId), Long.parseLong(to), toMessage);
                     }
@@ -66,15 +67,20 @@ public class ChatWebSocket {
                 }
             }
         }else{
-            chat=merchantClient.get(to);
-            if(null!=chat){
-                Session toSession=chat.session;
-                if(toSession.isOpen()){
-                    toSession.getAsyncRemote().sendText(this.userId+":"+toMessage);
-                    chatService.addChatRecord(Long.parseLong(this.userId),Long.parseLong(to),toMessage);
+            if(null!=to && !"undefined".equals(to) && !"NaN".equals(to)) {
+                chat = merchantClient.get(to);
+                if (null != chat) {
+                    Session toSession = chat.session;
+                    if (toSession.isOpen()) {
+                        System.out.println(this.userId+"管理员发送给的商家为"+to);
+                        toSession.getAsyncRemote().sendText(this.userId + ":" + toMessage);
+                        chatService.addChatRecord(Long.parseLong(this.userId), Long.parseLong(to), toMessage);
+                    }
+                } else {
+                    session.getAsyncRemote().sendText("您好！对方不在线，请稍后联系！");
                 }
             }else{
-                session.getAsyncRemote().sendText("您好！对方不在线，请稍后联系！");
+                session.getAsyncRemote().sendText("发送对象为空");
             }
         }
     }

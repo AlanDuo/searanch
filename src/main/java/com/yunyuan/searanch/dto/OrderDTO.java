@@ -30,4 +30,6 @@ public class OrderDTO {
     @NotBlank(message = "地址不能为空")
     private String address;
 
+    private List<Long> cartId;
+
 }

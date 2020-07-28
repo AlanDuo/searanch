@@ -36,10 +36,12 @@ public class OrderServiceImpl implements OrderService{
     private UserMapper userMapper;
     @Resource
     private EvaluateMapper evaluateMapper;
+    @Resource
+    private ShopCartMapper shopCartMapper;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    //@CacheEvict(value = "order",key = "#user.userId")
+    @CacheEvict(value="shopCart",key = "#user.userId")
     public String addOrder(OrderDTO orderDTO, User user) {
         Order order=new Order();
         BeanUtils.copyProperties(orderDTO,order);
@@ -92,6 +94,9 @@ public class OrderServiceImpl implements OrderService{
 
             orderMapper.insertSelective(order);
         }
+        for(Long cardId:orderDTO.getCartId()) {
+            shopCartMapper.deleteByPrimaryKey(cardId);
+        }
         return orderNumber;
     }
 
@@ -143,7 +148,12 @@ public class OrderServiceImpl implements OrderService{
             OrderListVO orderListVO=new OrderListVO();
             orderListVO.setOrderNumber(order.getOrderNumber());
             Goods goods=goodsMapper.selectByPrimaryKey(order.getGoodsId());
-
+            if(null==goods){
+                orderListVO.setGoodsName("该商品已经删除");
+                orderListVO.setDesc("无法查看");
+                orderListVOS.add(orderListVO);
+                continue;
+            }
             BeanUtils.copyProperties(order,orderListVO);
 
             //orderListVO.setPrice(order.getPrice().subtract(order.getDiscount()));

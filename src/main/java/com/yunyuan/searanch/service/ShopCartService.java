@@ -16,11 +16,10 @@ public interface ShopCartService {
      *
      * @param userId
      * @param goodsId
-     * @param typeId
      * @param amount
      * @return
      */
-    boolean addShopCart(Long userId,Long goodsId,Long typeId,Integer amount);
+    boolean addShopCart(Long userId,Long goodsId,Integer amount);
 
     /**
      * 我的购物车

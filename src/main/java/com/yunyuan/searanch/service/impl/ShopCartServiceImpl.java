@@ -4,7 +4,6 @@ import com.yunyuan.searanch.dao.DiscountMapper;
 import com.yunyuan.searanch.dao.GoodsMapper;
 import com.yunyuan.searanch.dao.GoodsTypeMapper;
 import com.yunyuan.searanch.dao.ShopCartMapper;
-import com.yunyuan.searanch.dto.ShopCartDTO;
 import com.yunyuan.searanch.entity.*;
 import com.yunyuan.searanch.service.ShopCartService;
 import com.yunyuan.searanch.vo.ShopCartVO;
@@ -38,23 +37,27 @@ public class ShopCartServiceImpl implements ShopCartService {
     @Override
     @CacheEvict(value="shopCart",key = "#userId")
     @Transactional(rollbackFor = Exception.class)
-    public boolean addShopCart(Long userId,Long goodsId,Long typeId,Integer amount) {
-        ShopCart shopCart=new ShopCart();
-        shopCart.setUserId(userId);
-        shopCart.setGoods(goodsId);
-        shopCart.setTypeId(typeId);
-        shopCart.setAmount(amount);
-        GoodsType goodsType=goodsTypeMapper.selectByPrimaryKey(typeId);
-        BigDecimal price;
-        if(goodsType!=null) {
-            price=goodsType.getPrice();
-        }else{
-            price=goodsMapper.selectByPrimaryKey(goodsId).getPrice();
+    public boolean addShopCart(Long userId,Long goodsId,Integer amount) {
+        ShopCartExample shopCartExample=new ShopCartExample();
+        ShopCartExample.Criteria shopCartCriteria=shopCartExample.createCriteria();
+        shopCartCriteria.andUserIdEqualTo(userId);
+        shopCartCriteria.andGoodsEqualTo(goodsId);
+        List<ShopCart> shopCartList=shopCartMapper.selectByExample(shopCartExample);
+        if(shopCartList.size()==0) {
+            ShopCart shopCart = new ShopCart();
+            shopCart.setUserId(userId);
+            shopCart.setGoods(goodsId);
+            shopCart.setAmount(amount);
+            BigDecimal price= goodsMapper.selectByPrimaryKey(goodsId).getPrice();
+            shopCart.setAddPrice(price);
+            shopCart.setAddTime(new Date());
+            shopCart.setInvalid(true);
+            shopCart.setTypeId(0L);
+            return shopCartMapper.insertSelective(shopCart) > 0;
         }
-        shopCart.setAddPrice(price);
-        shopCart.setAddTime(new Date());
-        shopCart.setInvalid(true);
-        return shopCartMapper.insertSelective(shopCart)>0;
+        ShopCart shopCart=shopCartList.get(0);
+        shopCart.setAmount(shopCart.getAmount()+amount);
+        return shopCartMapper.updateByPrimaryKeySelective(shopCart)>0;
     }
 
     @Override
@@ -71,6 +74,9 @@ public class ShopCartServiceImpl implements ShopCartService {
             ShopCartVO shopCartVO=new ShopCartVO();
             BeanUtils.copyProperties(shopCart,shopCartVO);
             Goods goods=goodsMapper.selectByPrimaryKey(goodsId);
+            if(null==goods){
+                continue;
+            }
             BeanUtils.copyProperties(goods,shopCartVO);
             shopCartVO.setDesc(goods.getGoodsDesc());
 

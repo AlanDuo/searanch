@@ -95,7 +95,7 @@ public class PageController {
         if(null!=user){
             userId=user.getUserId();
         }
-        PageHelper.startPage(page,limit);
+        //PageHelper.startPage(page,limit);
         Map<String,Object> map=pageService.searchGoods(searchName,userId);
         PageInfo pageInfo=new PageInfo<>((List<Goods>)map.get(PAGE_INFO));
         return new TableVO(pageInfo,(List<PageGoodsVO>)map.get("pageGoodsVOList"));

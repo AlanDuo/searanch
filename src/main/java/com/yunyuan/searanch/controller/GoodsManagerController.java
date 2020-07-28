@@ -87,4 +87,11 @@ public class GoodsManagerController {
         PageInfo pageInfo=new PageInfo<>(goodsList);
         return new TableVO<>(pageInfo,(List<AdminGoodsVO>)map.get("goodsVOList"));
     }
+    @ApiOperation(value="下架商品")
+    @PostMapping("/downShelf/{goodsId}")
+    @RequiresRoles("admin")
+    public ResponseData downShelfGoods(@PathVariable("goodsId")Long goodsId){
+        goodsManagerService.downShelfGoods(goodsId);
+        return ResponseData.ok();
+    }
 }

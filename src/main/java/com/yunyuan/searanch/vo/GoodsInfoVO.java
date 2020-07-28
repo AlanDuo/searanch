@@ -26,6 +26,8 @@ public class GoodsInfoVO implements Serializable {
 
     private String processMode;
 
+    private String type;
+
     private String merchant;
 
     private String country;

@@ -133,6 +133,7 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
         if(null!=goodsName && !"".equals(goodsName)) {
             goodsCriteria.andGoodsNameLike("%" + goodsName + "%");
         }
+        goodsCriteria.andUpShelfEqualTo(true);
         List<Goods> goodsList=goodsMapper.selectByExample(goodsExample);
         map.put("pageInfo",goodsList);
         List<AdminGoodsVO> goodsVOList=new ArrayList<>();
@@ -152,5 +153,11 @@ public class GoodsManagerServiceImpl implements GoodsManagerService {
         }
         map.put("goodsVOList",goodsVOList);
         return map;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean downShelfGoods(Long goodsId) {
+        return goodsMapper.deleteByPrimaryKey(goodsId)>0;
     }
 }

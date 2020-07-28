@@ -56,4 +56,12 @@ public interface GoodsManagerService {
      * @return
      */
     Map<String,Object> getPublishedGoods(String goodsName);
+
+    /**
+     * 下架商品
+     *
+     * @param goodsId
+     * @return
+     */
+    boolean downShelfGoods(Long goodsId);
 }

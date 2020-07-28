@@ -5,23 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="219e5738-92fd-4d55-bcd6-5694ba50a4dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/searanch.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1abc14155f014873c816401a40859a4ee0a622a7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1abc14155f014873c816401a40859a4ee0a622a7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2af052d3307f936c725fa85c7740ae6e77a4a742" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2af052d3307f936c725fa85c7740ae6e77a4a742" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30880c2d0492c2bc07e49d97f3b29c63e27dab36" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30880c2d0492c2bc07e49d97f3b29c63e27dab36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/3228dc9f88b9d9c858111fcceaffc079199ffbae" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/3228dc9f88b9d9c858111fcceaffc079199ffbae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3da01db98b88a8057c03354880f06dba49d3e795" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/4032e4ef0f8712e43ff2a568e798808b0d0cb7e9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/559ca728a25fbb92edd29045ca3d77cadf0c9386" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/559ca728a25fbb92edd29045ca3d77cadf0c9386" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5acbe6c306dee4498a010b1ca2096853e29e16a4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e009534e1ebd4f3524b56c533ede46438ced20a" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e009534e1ebd4f3524b56c533ede46438ced20a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65dc8a007c47fa21a30fbd3f82df5c15bfab2607" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65dc8a007c47fa21a30fbd3f82df5c15bfab2607" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65a4ea8cdf8a71dcd5640a98b52548623cd28d08" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65a4ea8cdf8a71dcd5640a98b52548623cd28d08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/674c0ee671b278f48d62f59045778c6706c5f191" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/674c0ee671b278f48d62f59045778c6706c5f191" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a8a2ec167b68e860ab5f29aea8616ba3f3a9a34" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a8a2ec167b68e860ab5f29aea8616ba3f3a9a34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d4a44d8ee14dcd89a4716a009a569dd308d9205" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/d/6d4a44d8ee14dcd89a4716a009a569dd308d9205" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8ae396f369da14bb5c0973286facff8fb2c70d56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8d1d8139d93bff40e866952fc62bad94745eefcb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8d1d8139d93bff40e866952fc62bad94745eefcb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/95f26a8b5410c7184a925d463683fea22e4cc429" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/95f26a8b5410c7184a925d463683fea22e4cc429" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9cd1590a7486e8141bf3edefe122ea4087a113ac" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9cd1590a7486e8141bf3edefe122ea4087a113ac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a7fa8b0772ec3c4ca9f2834f568ba1e29fe9750f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b35adf9e674931d0e91f143e4654446a5d6f12" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3b35adf9e674931d0e91f143e4654446a5d6f12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf56b014f2c83efa94c23969978e3da88474970f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd467235866e782be4782ee87c226b6f50b80162" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd467235866e782be4782ee87c226b6f50b80162" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9de43095db0d6169b19bf768fad0385e6f1ba86" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee731ac687d7459f4dd77002e5034a05215cfc0f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee731ac687d7459f4dd77002e5034a05215cfc0f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eee5bd392cb3498729d31b6d5fe21c3cbc008827" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f5b2000daac5716f28eedca0d10265c3135bf1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f5b2000daac5716f28eedca0d10265c3135bf1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searanch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/searanch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatWebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ChatWebSocket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/GoodsManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/GoodsManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ShopCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/controller/ShopCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/dto/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/GoodsManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/GoodsManagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/ShopCartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/ShopCartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/MerchantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/MerchantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/PageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/ShopCartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/service/impl/ShopCartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/GoodsInfoVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunyuan/searanch/vo/GoodsInfoVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/searanch.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ChatWebSocket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ChatWebSocket.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/GoodsManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/GoodsManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/PageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ShopCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/controller/ShopCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/OrderDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/dto/OrderDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/GoodsManagerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/GoodsManagerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/ShopCartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/ShopCartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/DataAnalysisServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/GoodsManagerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/MerchantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/MerchantServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/PageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/ShopCartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/service/impl/ShopCartServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/GoodsInfoVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunyuan/searanch/vo/GoodsInfoVO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/searanch-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
@@ -80,6 +121,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -122,6 +164,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -130,7 +173,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/xzlmk-spring_boot_vue_chat-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../FenghHuang/FengHuangProject" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -148,6 +191,7 @@
       <recent name="com.yunyuan.searanch.config.shiro" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA\workplace\searanch\src\main\resources\static" />
       <recent name="D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\utils" />
       <recent name="D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\vo" />
       <recent name="D:\IDEA\workplace\searanch\src\main\java\com\yunyuan\searanch\config\swagger" />
@@ -433,7 +477,19 @@
       <workItem from="1591441940903" duration="4094000" />
       <workItem from="1591500333131" duration="514000" />
       <workItem from="1591586968212" duration="1435000" />
-      <workItem from="1591611851980" duration="1847000" />
+      <workItem from="1591611851980" duration="1983000" />
+      <workItem from="1591614002712" duration="667000" />
+      <workItem from="1591619247928" duration="5604000" />
+      <workItem from="1591628945312" duration="1403000" />
+      <workItem from="1591664876776" duration="11957000" />
+      <workItem from="1591692511643" duration="1625000" />
+      <workItem from="1591704059738" duration="685000" />
+      <workItem from="1591712131270" duration="3999000" />
+      <workItem from="1591772618444" duration="798000" />
+      <workItem from="1591784130036" duration="3924000" />
+      <workItem from="1593914861611" duration="590000" />
+      <workItem from="1595238370270" duration="760000" />
+      <workItem from="1595559934740" duration="239000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.0">
       <created>1587972206309</created>
@@ -603,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591500819187</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="version 12.2 修改了商品管理">
+      <created>1591613881885</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1591613881885</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,16 +741,14 @@
     <MESSAGE value="version 11.1 增加收获点赞" />
     <MESSAGE value="version 12.0 修改了下单不减库存的问题，修改了webSocket" />
     <MESSAGE value="version 12.1 修改了聊天" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 12.1 修改了聊天" />
+    <MESSAGE value="version 12.2 修改了商品管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 12.2 修改了商品管理" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584537764975">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-837" y="210" width="388" height="553" key="#com.intellij.ide.util.MemberChooser" timestamp="1591624276157">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584537764975" />
-    <state x="866" y="166" width="388" height="553" key="#com.intellij.ide.util.MemberChooser" timestamp="1591082836864">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
+    <state x="-837" y="210" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1591624276157" />
     <state x="866" y="166" width="388" height="553" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1591082836864" />
     <state x="520" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586682005922">
       <screen x="0" y="0" width="1536" height="824" />
@@ -697,58 +758,68 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="271" width="462" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1590146582206" />
-    <state x="162" y="15" key="CommitChangelistDialog2" timestamp="1591500812729">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="203" y="19" key="CommitChangelistDialog2" timestamp="1591613873314">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="162" y="15" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591500812729" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588067335916">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="203" y="19" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591613873314" />
+    <state x="686" y="212" key="FileChooserDialogImpl" timestamp="1595238805699">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588067335916" />
+    <state x="686" y="212" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595238805699" />
     <state x="589" y="309" width="382" height="206" key="Github.CreateGistDialog" timestamp="1589686695375">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="589" y="309" width="382" height="206" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1589686695375" />
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom" timestamp="1591613341090">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="101" key="GridCell.Tab.0.bottom" timestamp="1591788203055">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="106" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
-    <state width="1877" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341090" />
-    <state width="1877" height="263" key="GridCell.Tab.0.center" timestamp="1591613341090">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1591786444212" />
+    <state width="1493" height="101" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591788203055" />
+    <state width="1493" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591716963898" />
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591773537234" />
+    <state width="1493" height="101" key="GridCell.Tab.0.center" timestamp="1591788203055">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="106" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
-    <state width="1877" height="263" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341090" />
-    <state width="1877" height="263" key="GridCell.Tab.0.left" timestamp="1591613341090">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="252" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1591786444212" />
+    <state width="1493" height="101" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591788203055" />
+    <state width="1493" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591716963898" />
+    <state width="1877" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591773537234" />
+    <state width="1493" height="101" key="GridCell.Tab.0.left" timestamp="1591788203054">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="106" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
-    <state width="1877" height="263" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341090" />
-    <state width="1877" height="263" key="GridCell.Tab.0.right" timestamp="1591613341090">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="252" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1591786444212" />
+    <state width="1493" height="101" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591788203054" />
+    <state width="1493" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591716963897" />
+    <state width="1877" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591773537234" />
+    <state width="1493" height="101" key="GridCell.Tab.0.right" timestamp="1591788203055">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="106" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591446268045" />
-    <state width="1877" height="263" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341090" />
-    <state width="1877" height="263" key="GridCell.Tab.1.bottom" timestamp="1591613341091">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="252" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1591786444212" />
+    <state width="1493" height="101" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591788203055" />
+    <state width="1493" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591716963898" />
+    <state width="1877" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591773537234" />
+    <state width="1493" height="188" key="GridCell.Tab.1.bottom" timestamp="1591716963898">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
-    <state width="1877" height="263" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341091" />
-    <state width="1877" height="263" key="GridCell.Tab.1.center" timestamp="1591613341091">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="188" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591716963898" />
+    <state width="937" height="221" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591682500218" />
+    <state width="1493" height="188" key="GridCell.Tab.1.center" timestamp="1591716963898">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
-    <state width="1877" height="263" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341091" />
-    <state width="1877" height="263" key="GridCell.Tab.1.left" timestamp="1591613341090">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="188" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591716963898" />
+    <state width="937" height="221" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591682500217" />
+    <state width="1493" height="188" key="GridCell.Tab.1.left" timestamp="1591716963898">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
-    <state width="1877" height="263" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341090" />
-    <state width="1877" height="263" key="GridCell.Tab.1.right" timestamp="1591613341091">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="188" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591716963898" />
+    <state width="937" height="221" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591682500217" />
+    <state width="1493" height="188" key="GridCell.Tab.1.right" timestamp="1591716963898">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="224" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591429202399" />
-    <state width="1877" height="263" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591613341091" />
+    <state width="1493" height="188" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591716963898" />
+    <state width="937" height="221" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591682500218" />
     <state width="1493" height="86" key="GridCell.Tab.2.bottom" timestamp="1586692363058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -769,25 +840,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="508" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587983753034" />
-    <state x="-64" y="54" key="SettingsEditor" timestamp="1591500852922">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1591614068807">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-64" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591500852922" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591500828559">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591614068807" />
+    <state x="451" y="184" key="Vcs.Push.Dialog.v2" timestamp="1591614078059">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591500828559" />
-    <state x="695" y="225" width="439" height="330" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1585036887711">
+    <state x="451" y="184" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591614078059" />
+    <state x="78" y="119" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591787307618">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="695" y="225" width="439" height="330" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.824@0.0.1536.824" timestamp="1585036887711" />
-    <state x="478" y="52" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584864531720">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="478" y="52" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1584864531720" />
-    <state x="78" y="119" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591067058151">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
+    <state x="78" y="119" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591787307618" />
     <state x="78" y="119" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1591067058151" />
     <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587972537318">
       <screen x="0" y="0" width="1536" height="824" />
@@ -809,9 +875,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="287" y="94" width="715" height="602" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1536.824@0.0.1536.824" timestamp="1587969573012" />
-    <state x="487" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591443974645">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="609" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1591665384716">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1311" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1591622840883" />
     <state x="487" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591443974645" />
+    <state x="609" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591665384716" />
   </component>
 </project>
